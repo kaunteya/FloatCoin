@@ -31,6 +31,8 @@ class ViewController: NSViewController {
         Swift.print("View appeared")
         timer.fire()
         self.view.window!.isMovableByWindowBackground = true
+        self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+
     }
 
     override func viewDidDisappear() {
