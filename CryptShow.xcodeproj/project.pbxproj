@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E372E7DE1F47633F00AEB397 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7DD1F47633F00AEB397 /* Currency.swift */; };
 		E37BEB7C1F475B3D00EE726A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BEB7B1F475B3D00EE726A /* AppDelegate.swift */; };
 		E37BEB7E1F475B3D00EE726A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BEB7D1F475B3D00EE726A /* ViewController.swift */; };
 		E37BEB801F475B3D00EE726A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E37BEB7F1F475B3D00EE726A /* Assets.xcassets */; };
 		E37BEB831F475B3D00EE726A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E37BEB811F475B3D00EE726A /* Main.storyboard */; };
 		E37BEB8E1F475B3E00EE726A /* CryptShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BEB8D1F475B3E00EE726A /* CryptShowTests.swift */; };
+		E37BEB991F475C5100EE726A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BEB981F475C5100EE726A /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E372E7DD1F47633F00AEB397 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		E37BEB781F475B3D00EE726A /* CryptShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37BEB7B1F475B3D00EE726A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E37BEB7D1F475B3D00EE726A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		E37BEB891F475B3E00EE726A /* CryptShowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptShowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37BEB8D1F475B3E00EE726A /* CryptShowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptShowTests.swift; sourceTree = "<group>"; };
 		E37BEB8F1F475B3E00EE726A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E37BEB981F475C5100EE726A /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			children = (
 				E37BEB7B1F475B3D00EE726A /* AppDelegate.swift */,
 				E37BEB7D1F475B3D00EE726A /* ViewController.swift */,
+				E37BEB981F475C5100EE726A /* HttpClient.swift */,
+				E372E7DD1F47633F00AEB397 /* Currency.swift */,
 				E37BEB7F1F475B3D00EE726A /* Assets.xcassets */,
 				E37BEB811F475B3D00EE726A /* Main.storyboard */,
 				E37BEB841F475B3D00EE726A /* Info.plist */,
@@ -197,7 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E372E7DE1F47633F00AEB397 /* Currency.swift in Sources */,
 				E37BEB7E1F475B3D00EE726A /* ViewController.swift in Sources */,
+				E37BEB991F475C5100EE726A /* HttpClient.swift in Sources */,
 				E37BEB7C1F475B3D00EE726A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +411,7 @@
 				E37BEB941F475B3E00EE726A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E37BEB951F475B3E00EE726A /* Build configuration list for PBXNativeTarget "CryptShowTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +420,7 @@
 				E37BEB971F475B3E00EE726A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
