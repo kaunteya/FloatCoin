@@ -14,6 +14,8 @@
 		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
 		E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8081F47843200AEB397 /* HttpClient.swift */; };
 		E372E80B1F47843200AEB397 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency.swift */; };
+		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
+		E372E80F1F47864E00AEB397 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E372E80D1F47864E00AEB397 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		E372E7FF1F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E372E8081F47843200AEB397 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		E372E8091F47843200AEB397 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
+				E372E80C1F47864E00AEB397 /* LICENSE */,
+				E372E80D1F47864E00AEB397 /* README.md */,
 			);
 			path = CryptoBar;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E372E80E1F47864E00AEB397 /* LICENSE in Resources */,
 				E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */,
 				E372E7F31F47835500AEB397 /* Main.storyboard in Resources */,
 			);
@@ -205,6 +212,7 @@
 			files = (
 				E372E80B1F47843200AEB397 /* Currency.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
+				E372E80F1F47864E00AEB397 /* README.md in Sources */,
 				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);
