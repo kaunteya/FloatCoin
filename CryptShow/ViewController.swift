@@ -9,13 +9,20 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    let showPairs = ["BTC:USD", "BCH:USD", "ETH:USD"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
         HttpClient.getConversions { json in
-            let dict = json["data"] as! JSONArray
-            Swift.print("Completion \(dict.first)")
+
+            var mainString = ""
+            let allCurrency = json["data"] as! [JSONDictionary]
+            for iCurrency in allCurrency {
+                if let currency = Currency(iCurrency) {
+                    mainString += " [\(currency.name):\(currency.price)]"
+                }
+            }
+            self.view.window?.title = mainString
         }
     }
 

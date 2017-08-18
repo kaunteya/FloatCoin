@@ -8,9 +8,14 @@
 
 import Foundation
 struct Currency {
-    let pair: String
-    let last: Double
+    let name: String
+    let price: Int
 
+    init?(_ json : JSONDictionary) {
+        let pair = json["pair"] as! String
+        self.name = pair.components(separatedBy: ":").first!
+        self.price =  Int(Double(json["last"] as! String)!)
+    }
 }
 
 //{

@@ -13,7 +13,7 @@ typealias JSONArray      = [JSON]
 typealias JSONDictionary = [String : JSON]
 
 struct HttpClient {
-    static let url = URL(string: "https://cex.io/api/tickers/USD/EUR/RUB/BTC")!
+    static let url = URL(string: "https://cex.io/api/tickers/USD")!
     static func getConversions(completion: @escaping (JSONDictionary) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
