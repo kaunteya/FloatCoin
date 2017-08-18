@@ -7,17 +7,23 @@
 //
 
 import Foundation
+
 struct Currency {
     let name: String
     let price: Int
 
-    init?(_ json : JSONDictionary) {
-        let pair = json["pair"] as! String
-        self.name = pair.components(separatedBy: ":").first!
-        self.price =  Int(Double(json["last"] as! String)!)
+    init?(json : JSONDictionary) {
+        guard let pair = json["pair"] as? String,
+            let name = pair.components(separatedBy: ":").first,
+            let priceStringDouble = json["last"] as? String else {
+                return nil
+        }
+        self.name = name
+        self.price =  Int(Double(priceStringDouble)!)
     }
 }
 
+// Sample JSON
 //{
 //    ask = "4346.7769";
 //    bid = "4328.0005";

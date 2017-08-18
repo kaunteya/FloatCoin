@@ -42,7 +42,6 @@ class ViewController: NSViewController {
 
     func networkReq() {
         HttpClient.getConversions { json in
-
             var mainString = ""
             let allCurrency = json["data"] as! [JSONDictionary]
             for iCurrency in allCurrency {
