@@ -9,10 +9,37 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    let showPairs = ["BTC:USD", "BCH:USD", "ETH:USD"]
+
+    var timer: Timer!
+    @IBOutlet weak var mainLabel: NSTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+
+    @IBAction func actionClose(_ sender: Any) {
+        
+    }
+
+    func timerAction() {
+        networkReq()
+    }
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        Swift.print("View appeared")
+        timer.fire()
+        self.view.window!.isMovableByWindowBackground = true
+    }
+
+    override func viewDidDisappear() {
+        Swift.print("View disappeared")
+        viewDidDisappear()
+        timer.invalidate()
+    }
+
+    func networkReq() {
         HttpClient.getConversions { json in
 
             var mainString = ""
@@ -22,10 +49,11 @@ class ViewController: NSViewController {
                     mainString += " [\(currency.name):\(currency.price)]"
                 }
             }
-            self.view.window?.title = mainString
+            DispatchQueue.main.async {
+                Swift.print("Timer action \(mainString)")
+                self.mainLabel.stringValue = mainString
+            }
         }
     }
-
-
 }
 
