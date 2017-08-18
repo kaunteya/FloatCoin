@@ -36,8 +36,7 @@ class ViewController: NSViewController {
     }
 
     override func viewDidDisappear() {
-        Swift.print("View disappeared")
-        viewDidDisappear()
+        super.viewDidDisappear()
         timer.invalidate()
     }
 
@@ -48,7 +47,7 @@ class ViewController: NSViewController {
             let allCurrency = json["data"] as! [JSONDictionary]
             for iCurrency in allCurrency {
                 if let currency = Currency(iCurrency) {
-                    mainString += " [\(currency.name):\(currency.price)]"
+                    mainString += "  [\(currency.name):\(currency.price)]"
                 }
             }
             DispatchQueue.main.async {

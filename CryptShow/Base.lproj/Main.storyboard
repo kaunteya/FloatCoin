@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -688,6 +689,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="103" height="21"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <box boxType="custom" borderType="line" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-eA-hvg">
+                                <rect key="frame" x="0.0" y="0.0" width="103" height="21"/>
+                                <view key="contentView" id="Xfc-fg-8dp">
+                                    <rect key="frame" x="1" y="1" width="101" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="fillColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9l-EI-DIC">
                                 <rect key="frame" x="2" y="2" width="99" height="17"/>
                                 <subviews>
@@ -705,7 +714,7 @@
                                         <rect key="frame" x="16" y="1.5" width="85" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="6yn-qR-nw8">
                                             <font key="font" metaFont="systemSemibold" size="11"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="0.94704241071428574" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
@@ -724,9 +733,13 @@
                             </stackView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="pNU-eA-hvg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="6bL-rC-QXS"/>
                             <constraint firstAttribute="trailing" secondItem="t9l-EI-DIC" secondAttribute="trailing" constant="2" id="QnQ-Cx-Hq2"/>
+                            <constraint firstAttribute="bottom" secondItem="pNU-eA-hvg" secondAttribute="bottom" id="SwG-JD-GKo"/>
+                            <constraint firstAttribute="trailing" secondItem="pNU-eA-hvg" secondAttribute="trailing" id="gdp-4E-xGc"/>
                             <constraint firstAttribute="bottom" secondItem="t9l-EI-DIC" secondAttribute="bottom" constant="2" id="kmR-Z8-kUV"/>
                             <constraint firstItem="t9l-EI-DIC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="2" id="pUh-WL-JuY"/>
+                            <constraint firstItem="pNU-eA-hvg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="w92-c6-gWt"/>
                             <constraint firstItem="t9l-EI-DIC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="2" id="xop-1j-22g"/>
                         </constraints>
                     </view>
