@@ -45,7 +45,7 @@ class ViewController: NSViewController {
             var mainString = ""
             let allCurrency = json["data"] as! [JSONDictionary]
             for iCurrency in allCurrency {
-                if let currency = Currency(iCurrency) {
+                if let currency = Currency(json: iCurrency) {
                     mainString += "  [\(currency.name):\(currency.price)]"
                 }
             }
