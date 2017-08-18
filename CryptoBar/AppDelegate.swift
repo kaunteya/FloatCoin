@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CryptShow
+//  CryptoBar
 //
-//  Created by Kaunteya Suryawanshi on 18/08/17.
+//  Created by Kaunteya Suryawanshi on 19/08/17.
 //  Copyright © 2017 Kaunteya Suryawanshi. All rights reserved.
 //
 

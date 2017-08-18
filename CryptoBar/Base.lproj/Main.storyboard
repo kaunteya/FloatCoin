@@ -14,11 +14,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="CryptShow" id="1Xt-HY-uBw">
+                            <menuItem title="CryptoBar" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="CryptShow" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="CryptoBar" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About CryptShow" id="5kV-Vb-QxS">
+                                        <menuItem title="About CryptoBar" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -32,7 +32,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide CryptShow" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide CryptoBar" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -50,7 +50,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit CryptShow" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit CryptoBar" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -643,7 +643,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="CryptShow Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="CryptoBar Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -657,7 +657,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CryptShow" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CryptoBar" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -669,52 +669,52 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="391" height="1"/>
+                        <rect key="contentRect" x="196" y="240" width="280" height="18"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="kUf-Ni-Gqb" kind="relationship" relationship="window.shadowedContentViewController" id="Mhn-ik-QRi"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30.5" y="116.5"/>
+            <point key="canvasLocation" x="101" y="136"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="ZED-bz-zm2">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CryptShow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="GJj-rc-58U">
                         <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="zT6-T5-WNy">
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
                                 <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
                             </visualEffectView>
-                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9l-EI-DIC">
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
                                 <rect key="frame" x="2" y="2" width="191" height="17"/>
                                 <subviews>
-                                    <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bGW-GM-fc0">
+                                    <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                         <rect key="frame" x="0.0" y="1" width="13" height="15"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Close" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="PQB-cV-7Q9">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Close" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3wq-Xs-eLk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="terminate:" target="rPt-NT-nkU" id="nMe-bO-IzO"/>
+                                            <action selector="terminate:" target="5fK-fP-AMS" id="PMq-Ss-fXj"/>
                                         </connections>
                                     </button>
-                                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mG-7n-nHT">
+                                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-TC-tuG">
                                         <rect key="frame" x="14" y="1.5" width="179" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="6yn-qR-nw8">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="xQo-94-79p">
                                             <font key="font" metaFont="systemSemibold" size="11"/>
-                                            <color key="textColor" white="0.94704241071428574" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="7G0-Ec-QsS"/>
+                                    <constraint firstAttribute="height" constant="17" id="l5I-S3-7Ry"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -727,21 +727,21 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="zT6-T5-WNy" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="O9a-kr-8x7"/>
-                            <constraint firstAttribute="trailing" secondItem="t9l-EI-DIC" secondAttribute="trailing" constant="2" id="QnQ-Cx-Hq2"/>
-                            <constraint firstItem="zT6-T5-WNy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="WXx-V5-rss"/>
-                            <constraint firstAttribute="bottom" secondItem="zT6-T5-WNy" secondAttribute="bottom" id="XwT-6c-nmF"/>
-                            <constraint firstAttribute="trailing" secondItem="zT6-T5-WNy" secondAttribute="trailing" id="jyo-RL-w3Y"/>
-                            <constraint firstAttribute="bottom" secondItem="t9l-EI-DIC" secondAttribute="bottom" constant="2" id="kmR-Z8-kUV"/>
-                            <constraint firstItem="t9l-EI-DIC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="2" id="pUh-WL-JuY"/>
-                            <constraint firstItem="t9l-EI-DIC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="2" id="xop-1j-22g"/>
+                            <constraint firstAttribute="trailing" secondItem="amr-hQ-OVf" secondAttribute="trailing" id="1xU-hZ-2eL"/>
+                            <constraint firstAttribute="trailing" secondItem="fsM-tt-TSe" secondAttribute="trailing" constant="2" id="1zT-l9-BzT"/>
+                            <constraint firstItem="amr-hQ-OVf" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="8rK-bG-viB"/>
+                            <constraint firstAttribute="bottom" secondItem="fsM-tt-TSe" secondAttribute="bottom" constant="2" id="ViP-aO-0VK"/>
+                            <constraint firstItem="fsM-tt-TSe" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="2" id="c7S-Ac-kvK"/>
+                            <constraint firstItem="amr-hQ-OVf" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" id="rNv-a7-4gc"/>
+                            <constraint firstAttribute="bottom" secondItem="amr-hQ-OVf" secondAttribute="bottom" id="wU5-Hq-4hX"/>
+                            <constraint firstItem="fsM-tt-TSe" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="2" id="zHx-gl-jZS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainLabel" destination="4mG-7n-nHT" id="feh-Aa-0DZ"/>
+                        <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76.5" y="301.5"/>
         </scene>
