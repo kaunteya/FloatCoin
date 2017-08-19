@@ -15,7 +15,6 @@
 		E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8081F47843200AEB397 /* HttpClient.swift */; };
 		E372E80B1F47843200AEB397 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
-		E372E80F1F47864E00AEB397 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E372E80D1F47864E00AEB397 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,7 +211,6 @@
 			files = (
 				E372E80B1F47843200AEB397 /* Currency.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
-				E372E80F1F47864E00AEB397 /* README.md in Sources */,
 				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);

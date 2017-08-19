@@ -24,15 +24,15 @@ class ViewController: NSViewController {
     }
 
     func timerAction() {
-        networkReq()
+        fetchCurrentValuesFromNetwork()
     }
+
     override func viewWillAppear() {
         super.viewWillAppear()
         Swift.print("View appeared")
         timer.fire()
         self.view.window!.isMovableByWindowBackground = true
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
-
     }
 
     override func viewDidDisappear() {
@@ -40,19 +40,26 @@ class ViewController: NSViewController {
         timer.invalidate()
     }
 
-    func networkReq() {
-        HttpClient.getConversions { json in
-            var mainString = ""
-            let allCurrency = json["data"] as! [JSONDictionary]
-            for iCurrency in allCurrency {
-                if let currency = Currency(json: iCurrency) {
-                    mainString += "  [\(currency.name):\(currency.price)]"
-                }
-            }
+    func fetchCurrentValuesFromNetwork() {
+        HttpClient.getConversions(completion: { (json) in
+            self.updateCurrienciesFor(json)
+        }, failure: { (error) in
             DispatchQueue.main.async {
-                Swift.print("Timer action \(mainString)")
-                self.mainLabel.stringValue = mainString
+                self.mainLabel.stringValue = error.localizedDescription
             }
+        })
+    }
+
+    func updateCurrienciesFor(_ json: JSONDictionary) {
+        var mainString = ""
+        let allCurrencies = json["data"] as! [JSONDictionary]
+        for eachCurrency in allCurrencies {
+            if let currency = Currency(json: eachCurrency) {
+                mainString += "  [\(currency.name):\(currency.price)]"
+            }
+        }
+        DispatchQueue.main.async {
+            self.mainLabel.stringValue = mainString
         }
     }
 }
