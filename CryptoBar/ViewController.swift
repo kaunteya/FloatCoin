@@ -19,11 +19,17 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchCurrentValuesFromNetwork()
         }
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            self.lastUpdateLabel.stringValue = "Last update \(self.lastUpdateTime.timeAgoSinceNow))"
+            var count = Int(Date().timeIntervalSince(self.lastUpdateTime))
+            var unit = "seconds"
+            if count > 60 {
+                count = count % 60
+                unit = "minutes"
+            }
+            self.lastUpdateLabel.stringValue = "Updated \(count) \(unit) ago"
         }
     }
 
