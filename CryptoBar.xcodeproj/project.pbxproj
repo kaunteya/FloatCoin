@@ -565,6 +565,7 @@
 				E372E8041F47835500AEB397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E372E8051F47835500AEB397 /* Build configuration list for PBXNativeTarget "CryptoBarTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +574,7 @@
 				E372E8071F47835500AEB397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
