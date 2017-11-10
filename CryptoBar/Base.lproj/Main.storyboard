@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -671,6 +671,9 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="280" height="18"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="Phu-6y-fND"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="kUf-Ni-Gqb" kind="relationship" relationship="window.shadowedContentViewController" id="Mhn-ik-QRi"/>
@@ -685,17 +688,17 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
+                        <rect key="frame" x="0.0" y="0.0" width="195" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="195" height="29"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
-                                <rect key="frame" x="2" y="2" width="191" height="17"/>
+                                <rect key="frame" x="2" y="2" width="191" height="25"/>
                                 <subviews>
                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
-                                        <rect key="frame" x="0.0" y="1" width="13" height="15"/>
+                                        <rect key="frame" x="0.0" y="5" width="13" height="15"/>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Close" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3wq-Xs-eLk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -704,17 +707,38 @@
                                             <action selector="terminate:" target="5fK-fP-AMS" id="PMq-Ss-fXj"/>
                                         </connections>
                                     </button>
-                                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-TC-tuG">
-                                        <rect key="frame" x="14" y="1.5" width="179" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="xQo-94-79p">
-                                            <font key="font" metaFont="systemSemibold" size="11"/>
-                                            <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
+                                        <rect key="frame" x="16" y="0.0" width="175" height="25"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-TC-tuG">
+                                                <rect key="frame" x="-2" y="11" width="48" height="14"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="xQo-94-79p">
+                                                    <font key="font" metaFont="systemSemibold" size="11"/>
+                                                    <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-83-XTr">
+                                                <rect key="frame" x="-2" y="0.0" width="56" height="11"/>
+                                                <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last update" id="Jwb-nf-s13">
+                                                    <font key="font" metaFont="miniSystem"/>
+                                                    <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="l5I-S3-7Ry"/>
+                                    <constraint firstAttribute="height" constant="25" id="l5I-S3-7Ry"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -738,6 +762,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lastUpdateLabel" destination="EN0-83-XTr" id="jv1-H2-V4i"/>
                         <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
                     </connections>
                 </viewController>

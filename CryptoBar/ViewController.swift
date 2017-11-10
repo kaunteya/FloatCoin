@@ -7,24 +7,28 @@
 //
 
 import Cocoa
+import DateToolsSwift
 
 class ViewController: NSViewController {
 
     var timer: Timer!
+    @IBOutlet weak var lastUpdateLabel: NSTextField!
     @IBOutlet weak var mainLabel: NSTextField!
-
+    var lastUpdateTime = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+            self.fetchCurrentValuesFromNetwork()
+        }
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.lastUpdateLabel.stringValue = "Last update \(self.lastUpdateTime.timeAgoSinceNow))"
+        }
     }
 
     @IBAction func actionClose(_ sender: Any) {
 
-    }
-
-    func timerAction() {
-        fetchCurrentValuesFromNetwork()
     }
 
     override func viewWillAppear() {
@@ -43,6 +47,7 @@ class ViewController: NSViewController {
     func fetchCurrentValuesFromNetwork() {
         HttpClient.getConversions(completion: { (json) in
             self.updateCurrienciesFor(json)
+            self.lastUpdateTime = Date()
         }, failure: { (error) in
             DispatchQueue.main.async {
                 self.mainLabel.stringValue = error.localizedDescription
