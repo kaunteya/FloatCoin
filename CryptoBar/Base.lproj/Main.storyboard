@@ -707,11 +707,11 @@
                                             <action selector="terminate:" target="5fK-fP-AMS" id="PMq-Ss-fXj"/>
                                         </connections>
                                     </button>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
                                         <rect key="frame" x="16" y="0.0" width="175" height="61"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                                <rect key="frame" x="0.0" y="11" width="50" height="50"/>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
+                                                <rect key="frame" x="0.0" y="11" width="175" height="50"/>
                                             </stackView>
                                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-83-XTr">
                                                 <rect key="frame" x="-2" y="0.0" width="179" height="11"/>
@@ -722,6 +722,10 @@
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="leading" secondItem="3eh-Gg-ewA" secondAttribute="leading" id="7iw-kU-IGB"/>
+                                            <constraint firstAttribute="trailing" secondItem="9EW-c1-Jdy" secondAttribute="trailing" id="cEg-Xv-g6z"/>
+                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -732,6 +736,10 @@
                                         </customSpacing>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3eh-Gg-ewA" secondAttribute="bottom" id="XBt-Bk-M5e"/>
+                                    <constraint firstItem="3eh-Gg-ewA" firstAttribute="top" secondItem="fsM-tt-TSe" secondAttribute="top" id="iu3-Er-EZ4"/>
+                                </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>

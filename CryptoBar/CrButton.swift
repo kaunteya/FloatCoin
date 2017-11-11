@@ -17,19 +17,27 @@ class CrButton: NSControl {
     
     init(_ pair: String) {
         self.pair = pair
-        pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10)))
+        pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withBackgroundColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)).withFont(.systemFont(ofSize: 10)))
         pairLabel.maximumNumberOfLines = 1
         pairLabel.setContentCompressionResistancePriority(1000, for: .horizontal)
-        priceLabel = NSTextField(labelWithAttributedString: "1234".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10)))
+        
+        priceLabel = NSTextField(labelWithAttributedString: "1234".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withBackgroundColor(#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)).withFont(.systemFont(ofSize: 10)))
         priceLabel.setContentCompressionResistancePriority(1000, for: .horizontal)
+        
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
         self.layer?.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+
         let stackView = NSStackView(views: [pairLabel, priceLabel])
         stackView.orientation = .vertical
         stackView.spacing = 1
+        stackView.heightAnchor.constraint(equalToConstant: pairLabel.frame.height * 2).isActive = true
+        
+//        myView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
+        
         self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
@@ -38,7 +46,7 @@ class CrButton: NSControl {
     
     func set(price: Double) {
         let priceStr = String(format: "%.4f", price)
-        priceLabel.attributedStringValue = "\(priceStr)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10))
+        priceLabel.attributedStringValue = "\(priceStr)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withBackgroundColor(#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)).withFont(.systemFont(ofSize: 10))
     }
     
     required init?(coder: NSCoder) {

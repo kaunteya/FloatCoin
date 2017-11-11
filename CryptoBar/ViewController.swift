@@ -49,6 +49,12 @@ class ViewController: NSViewController {
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
     }
 
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        let height1 = buttonStack.arrangedSubviews.first!.frame.height
+        buttonStack.heightAnchor.constraint(equalToConstant: height1).isActive = true
+    }
+
     override func viewDidDisappear() {
         super.viewDidDisappear()
         timer.invalidate()
