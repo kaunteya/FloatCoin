@@ -8,15 +8,15 @@
 
 import Cocoa
 
-let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD"]//, "BCH:USD"]
+let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD", "ZEC:USD"]
 
 class ViewController: NSViewController {
     @IBOutlet weak var pairsMenu: NSMenu!
-    
+    @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
-    var timer: Timer!
     @IBOutlet weak var lastUpdateLabel: NSTextField!
     @IBOutlet weak var mainLabel: NSTextField!
+    var timer: Timer!
     var lastUpdateTime = Date()
     var thinView: Bool = false {
         didSet {
@@ -60,7 +60,7 @@ class ViewController: NSViewController {
         timer.invalidate()
     }
 
-    @IBOutlet var optionsMenu: NSMenu!
+
     @IBAction func actionOptions(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: sender.frame.height)
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
