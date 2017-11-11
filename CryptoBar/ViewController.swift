@@ -69,15 +69,15 @@ class ViewController: NSViewController {
 
     func updateCurrienciesFor(_ json: JSONDictionary) {
         let allCurrencies = json["data"] as! [JSONDictionary]
-        var dict = [String: Double]()
+        var dict = [String: Currency]()
         for eachCurrency in allCurrencies {
             if let currency = Currency(json: eachCurrency) {
-                dict[currency.pair] = currency.price
+                dict[currency.pair] = currency
             }
         }
         DispatchQueue.main.async {
             for button in self.buttonStack.arrangedSubviews as! [CrButton] {
-                button.price = dict[button.pair]!
+                button.currency = dict[button.pair]!
             }
         }
     }

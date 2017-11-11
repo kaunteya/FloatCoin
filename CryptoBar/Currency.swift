@@ -9,16 +9,38 @@
 import Foundation
 
 struct Currency {
-    let price: Double
+    let ask: Double
+    let bid: Double
+    let high: String
+    let last: Double
+    let low: String
     let pair: String
+    let timestamp: Date
+    let volume: String
+    let volume30d: String
+
     init?(json : JSONDictionary) {
-        guard let pair = json["pair"] as? String,
-            let priceString = json["last"] as? String,
-            let priceDouble = Double(priceString) else {
+        guard let ask = json["ask"] as? Double,
+            let bid = json["bid"] as? Double,
+            let high = json["high"] as? String,
+            let ll = json["last"] as? String, let last = Double(ll),
+            let low = json["low"] as? String,
+            let pair = json["pair"] as? String,
+            let tt = json["timestamp"] as? String, let timestamp = Double(tt),
+            let volume = json["volume"] as? String,
+            let volume30d = json["volume30d"] as? String else {
                 return nil
         }
+
+        self.ask = ask
+        self.bid = bid
+        self.high = high
+        self.last = last
+        self.low = low
         self.pair = pair
-        self.price = priceDouble
+        self.timestamp = Date(timeIntervalSince1970: timestamp)
+        self.volume = volume
+        self.volume30d = volume30d
     }
 }
 
