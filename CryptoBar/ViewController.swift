@@ -77,13 +77,8 @@ class ViewController: NSViewController {
     
     func pairClicked(_ sender: NSMenuItem) {
         sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
-        let index = pairsMenu.index(of: sender)
         let enable = sender.state == NSControlStateValueOn
-        if enable {
-            self.buttonStack.insertArrangedSubview(CrButton(sender.title, thinView: thinView), at: index)
-        } else {
-            buttonStack.arrangedSubviews[index].removeFromSuperview()
-        }
+        buttonStack.arrangedSubviews.filter { sender.title == ($0 as! CrButton).pair }.first!.isHidden = !enable
     }
     
     
