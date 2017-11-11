@@ -62,7 +62,7 @@ class CrButton: NSControl {
         self.layer?.backgroundColor = defaultBackgroundColor.cgColor
         self.layer?.borderWidth = 1
         self.layer?.cornerRadius = 3.0
-        self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.layer?.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let stackView = NSStackView(views: [pairLabel, priceLabel])
         stackView.orientation = .vertical
         stackView.spacing = 0
