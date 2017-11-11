@@ -57,10 +57,10 @@ class CrButton: NSControl {
         self.pair = pair
         pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.boldSystemFont(ofSize: 10)))
         pairLabel.maximumNumberOfLines = 1
-        pairLabel.setContentCompressionResistancePriority(1000, for: .horizontal)
+        pairLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         pairLabel.setContentHuggingPriority(900, for: .horizontal)
         priceLabel = NSTextField(labelWithString: "")
-        priceLabel.setContentCompressionResistancePriority(1000, for: .horizontal)
+        priceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         priceLabel.setContentHuggingPriority(900, for: .horizontal)
         
         super.init(frame: NSZeroRect)
