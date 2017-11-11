@@ -13,12 +13,6 @@ import SwiftyAttributes
 fileprivate let defaultBackgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
 
 class CrButton: NSControl {
-    var thinView: Bool = false {
-        didSet {
-            stackView.orientation = thinView ? .horizontal : .vertical
-            stackView.spacing = thinView ? 1 : 0
-        }
-    }
     let pair: String
     var currency: Currency? {
         didSet {
@@ -54,7 +48,7 @@ class CrButton: NSControl {
     private let priceLabel: NSTextField
     var stackView: NSStackView!
     
-    init(_ pair: String) {
+    init(_ pair: String, thinView: Bool) {
         self.pair = pair
         pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.boldSystemFont(ofSize: 10)))
         pairLabel.maximumNumberOfLines = 1
@@ -75,7 +69,7 @@ class CrButton: NSControl {
         self.layer?.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         stackView = NSStackView(views: [pairLabel, priceLabel])
         stackView.orientation = .vertical
-        
+        set(thinView: thinView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
         
@@ -85,6 +79,11 @@ class CrButton: NSControl {
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
+    }
+    
+    func set(thinView: Bool) {
+        stackView.orientation = thinView ? .horizontal : .vertical
+        stackView.spacing = thinView ? 1 : 0
     }
     
     required init?(coder: NSCoder) {

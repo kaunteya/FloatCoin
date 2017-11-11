@@ -11,20 +11,25 @@ import Cocoa
 let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD"]//, "BCH:USD"]
 
 class ViewController: NSViewController {
-
+    @IBOutlet weak var pairsMenu: NSMenu!
+    
     @IBOutlet weak var buttonStack: NSStackView!
     var timer: Timer!
     @IBOutlet weak var lastUpdateLabel: NSTextField!
     @IBOutlet weak var mainLabel: NSTextField!
     var lastUpdateTime = Date()
-    
+    var thinView: Bool = false {
+        didSet {
+            let buttons = buttonStack.arrangedSubviews as! [CrButton]
+            buttons.forEach{ $0.set(thinView: thinView) }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         pairs.forEach { pair in
-            let button = CrButton(pair)
-            button.thinView = false
-            self.buttonStack.addArrangedSubview(button)
+            self.buttonStack.addArrangedSubview(CrButton(pair, thinView: thinView))
         }
+        thinView = false 
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchCurrentValuesFromNetwork()
         }
@@ -46,6 +51,7 @@ class ViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
+        updatePairsMenu()
         buttonStack.heightAnchor.constraint(equalTo: buttonStack.arrangedSubviews.first!.heightAnchor).isActive = true
     }
 
@@ -60,13 +66,30 @@ class ViewController: NSViewController {
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
     }
     
+    func updatePairsMenu() {
+        for pair in pairs {
+            let item = NSMenuItem(title: pair, action: #selector(pairClicked), keyEquivalent: "")
+            item.target = self
+            item.state = NSControlStateValueOn
+            pairsMenu.addItem(item)
+        }
+    }
+    
+    func pairClicked(_ sender: NSMenuItem) {
+        sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
+        let index = pairsMenu.index(of: sender)
+        let enable = sender.state == NSControlStateValueOn
+        if enable {
+            self.buttonStack.insertArrangedSubview(CrButton(sender.title, thinView: thinView), at: index)
+        } else {
+            buttonStack.arrangedSubviews[index].removeFromSuperview()
+        }
+    }
+    
+    
     @IBAction func actionThinView(_ sender: NSMenuItem) {
         sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
-        let enableThinView = sender.state == NSControlStateValueOn
-        Swift.print("Thin View \(enableThinView)")
-        for button in buttonStack.arrangedSubviews as! [CrButton] {
-            button.thinView = enableThinView
-        }
+        thinView = sender.state == NSControlStateValueOn
     }
 
     func fetchCurrentValuesFromNetwork() {
