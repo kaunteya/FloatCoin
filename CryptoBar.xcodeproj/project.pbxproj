@@ -18,6 +18,7 @@
 		E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8081F47843200AEB397 /* HttpClient.swift */; };
 		E372E80B1F47843200AEB397 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
+		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E372E8091F47843200AEB397 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
+				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 				E372E8081F47843200AEB397 /* HttpClient.swift */,
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E372E80B1F47843200AEB397 /* Currency.swift in Sources */,
+				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
 				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
 				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,

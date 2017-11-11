@@ -26,6 +26,7 @@ class ViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pairs.forEach { pair in
             self.buttonStack.addArrangedSubview(CrButton(pair, thinView: thinView))
         }
@@ -43,7 +44,7 @@ class ViewController: NSViewController {
 
     override func viewWillAppear() {
         super.viewWillAppear()
-        Swift.print("View appeared")
+(NSApp.delegate as! AppDelegate).window = self.view.window
         timer.fire()
         self.view.window!.isMovableByWindowBackground = true
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
@@ -60,7 +61,10 @@ class ViewController: NSViewController {
         timer.invalidate()
     }
 
-
+    @IBAction func actionClose(_ sender: NSButton) {
+        self.view.window?.orderOut(sender)
+    }
+    
     @IBAction func actionOptions(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: sender.frame.height)
         optionsMenu.popUp(positioning: nil, at: p, in: sender)

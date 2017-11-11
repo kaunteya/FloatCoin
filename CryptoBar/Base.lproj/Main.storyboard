@@ -709,7 +709,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="terminate:" target="5fK-fP-AMS" id="PMq-Ss-fXj"/>
+                                            <action selector="actionClose:" target="kUf-Ni-Gqb" id="JB9-Qq-OXt"/>
                                         </connections>
                                     </button>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">

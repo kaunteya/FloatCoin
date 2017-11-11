@@ -6,11 +6,19 @@
 //  Copyright © 2017 Kaunteya Suryawanshi. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) { }
-
+    var statusItemController: StatusController!
+    var window: NSWindow!
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        statusItemController = StatusController(statusImage: #imageLiteral(resourceName: "statusIcon"), isTemplate: true, clickHandler: { statusItem in
+            Swift.print("click")
+            self.window.orderFront(self)
+        })
+    }
 }
