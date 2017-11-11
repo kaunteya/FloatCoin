@@ -688,14 +688,14 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="195" height="65"/>
+                        <rect key="frame" x="0.0" y="0.0" width="218" height="65"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="218" height="65"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
-                                <rect key="frame" x="2" y="2" width="191" height="61"/>
+                                <rect key="frame" x="2" y="2" width="214" height="61"/>
                                 <subviews>
                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                         <rect key="frame" x="0.0" y="46" width="13" height="15"/>
@@ -735,6 +735,16 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
+                                        <rect key="frame" x="194" y="48" width="20" height="13"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="actionOptions:" target="kUf-Ni-Gqb" id="C1Q-ek-xSm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="3eh-Gg-ewA" secondAttribute="bottom" id="XBt-Bk-M5e"/>
@@ -743,8 +753,10 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -765,9 +777,32 @@
                         <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
                         <outlet property="lastUpdateLabel" destination="EN0-83-XTr" id="jv1-H2-V4i"/>
                         <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
+                        <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
                 </viewController>
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="w9R-vv-P9Z">
+                    <items>
+                        <menuItem title="Thin view" id="XBV-hL-j5z">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="actionThinView:" target="kUf-Ni-Gqb" id="fNk-wl-33h"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="About" id="AqJ-Jj-mR9">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="orderFrontStandardAboutPanel:" target="5fK-fP-AMS" id="t7Y-e7-7EX"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" id="ce0-Hi-FKh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="terminate:" target="5fK-fP-AMS" id="ppy-ia-9Rt"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
                 <button verticalHuggingPriority="750" id="Kk2-mo-HuI">
                     <rect key="frame" x="0.0" y="0.0" width="94" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -791,5 +826,6 @@
     </scenes>
     <resources>
         <image name="Close" width="13.5" height="13"/>
+        <image name="Gear" width="13.5" height="13.5"/>
     </resources>
 </document>

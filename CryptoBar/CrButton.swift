@@ -10,8 +10,15 @@ import Foundation
 import AppKit
 import SwiftyAttributes
 
+fileprivate let defaultBackgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+
 class CrButton: NSControl {
-    let defaultBackgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    var thinView: Bool = false {
+        didSet {
+            stackView.orientation = thinView ? .horizontal : .vertical
+            stackView.spacing = thinView ? 1 : 0
+        }
+    }
     let pair: String
     var currency: Currency? {
         didSet {
@@ -36,18 +43,15 @@ class CrButton: NSControl {
         }
     }
 
-    var price: Double? {
-        didSet {
-        }
-    }
     func flickBackground(color: Color) {
         self.layer?.backgroundColor = color.cgColor
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
-            self.layer?.backgroundColor = self.defaultBackgroundColor.cgColor
+            self.layer?.backgroundColor = defaultBackgroundColor.cgColor
         }
     }
     private let pairLabel: NSTextField
     private let priceLabel: NSTextField
+    var stackView: NSStackView!
     
     init(_ pair: String) {
         self.pair = pair
@@ -63,14 +67,13 @@ class CrButton: NSControl {
         self.layer?.borderWidth = 1
         self.layer?.cornerRadius = 3.0
         self.layer?.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        let stackView = NSStackView(views: [pairLabel, priceLabel])
+        stackView = NSStackView(views: [pairLabel, priceLabel])
         stackView.orientation = .vertical
-        stackView.spacing = 0
-        stackView.heightAnchor.constraint(equalToConstant: pairLabel.frame.height * 2).isActive = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
         
+        stackView.setHuggingPriority(1000, for: .vertical)
         self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true

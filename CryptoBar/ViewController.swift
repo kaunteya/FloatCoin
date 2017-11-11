@@ -21,7 +21,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pairs.forEach { pair in
-            self.buttonStack.addArrangedSubview(CrButton(pair))
+            let button = CrButton(pair)
+            button.thinView = false
+            self.buttonStack.addArrangedSubview(button)
         }
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchCurrentValuesFromNetwork()
@@ -29,16 +31,9 @@ class ViewController: NSViewController {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             var count = Int(Date().timeIntervalSince(self.lastUpdateTime))
             var unit = "seconds"
-            if count > 60 {
-                count = count % 60
-                unit = "minutes"
-            }
+            if count > 60 { count = count % 60; unit = "minutes" }
             self.lastUpdateLabel.stringValue = "Updated \(count) \(unit) ago"
         }
-    }
-
-    @IBAction func actionClose(_ sender: Any) {
-
     }
 
     override func viewWillAppear() {
@@ -51,8 +46,7 @@ class ViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        let height1 = buttonStack.arrangedSubviews.first!.frame.height
-        buttonStack.heightAnchor.constraint(equalToConstant: height1).isActive = true
+        buttonStack.heightAnchor.constraint(equalTo: buttonStack.arrangedSubviews.first!.heightAnchor).isActive = true
     }
 
     override func viewDidDisappear() {
@@ -60,11 +54,26 @@ class ViewController: NSViewController {
         timer.invalidate()
     }
 
+    @IBOutlet var optionsMenu: NSMenu!
+    @IBAction func actionOptions(_ sender: NSButton) {
+        let p = NSPoint(x: 0, y: sender.frame.height)
+        optionsMenu.popUp(positioning: nil, at: p, in: sender)
+    }
+    
+    @IBAction func actionThinView(_ sender: NSMenuItem) {
+        sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
+        let enableThinView = sender.state == NSControlStateValueOn
+        Swift.print("Thin View \(enableThinView)")
+        for button in buttonStack.arrangedSubviews as! [CrButton] {
+            button.thinView = enableThinView
+        }
+    }
+
     func fetchCurrentValuesFromNetwork() {
         HttpClient.getConversions(completion: { (json) in
             self.updateCurrienciesFor(json)
             self.lastUpdateTime = Date()
-        }, failure: { _ in  })
+        }, failure: { _ in })
     }
 
     func updateCurrienciesFor(_ json: JSONDictionary) {
