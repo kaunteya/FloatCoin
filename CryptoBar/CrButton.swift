@@ -29,8 +29,9 @@ class CrButton: NSControl {
             } else if oldValue != nil && oldValue!.last < currency!.last {
                 flickBackground(color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
             }
-            let priceStr = String(format: "%.4f", currency!.last)
-            priceLabel.attributedStringValue = "\(priceStr)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 9))
+            
+            let priceString = currency!.last.format(precision: 4)!
+            priceLabel.attributedStringValue = priceString.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 9))
             self.toolTip = """
             Ask: \(currency!.ask)
             Bid: \(currency!.bid)
@@ -59,9 +60,12 @@ class CrButton: NSControl {
         pairLabel.maximumNumberOfLines = 1
         pairLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         pairLabel.setContentHuggingPriority(900, for: .horizontal)
+        pairLabel.alignment = .center
+        
         priceLabel = NSTextField(labelWithString: "")
         priceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         priceLabel.setContentHuggingPriority(900, for: .horizontal)
+        priceLabel.alignment = .center
         
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
@@ -85,5 +89,14 @@ class CrButton: NSControl {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension Double {
+    func format(precision: Int) -> String? {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = precision
+        return formatter.string(from: NSNumber(value: self))
     }
 }
