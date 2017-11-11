@@ -3,7 +3,9 @@
 
 target 'CryptoBar' do
     use_frameworks!
-    pod 'DateToolsSwift'
+#    pod 'DateToolsSwift'
+    pod 'SwiftyAttributes'
+    
 
 
   target 'CryptoBarTests' do

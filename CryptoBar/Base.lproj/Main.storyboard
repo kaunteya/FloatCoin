@@ -688,17 +688,17 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="195" height="29"/>
+                        <rect key="frame" x="0.0" y="0.0" width="195" height="65"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="195" height="65"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
-                                <rect key="frame" x="2" y="2" width="191" height="25"/>
+                                <rect key="frame" x="2" y="2" width="191" height="61"/>
                                 <subviews>
                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
-                                        <rect key="frame" x="0.0" y="10" width="13" height="15"/>
+                                        <rect key="frame" x="0.0" y="46" width="13" height="15"/>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Close" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3wq-Xs-eLk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -707,17 +707,12 @@
                                             <action selector="terminate:" target="5fK-fP-AMS" id="PMq-Ss-fXj"/>
                                         </connections>
                                     </button>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
-                                        <rect key="frame" x="16" y="0.0" width="175" height="25"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
+                                        <rect key="frame" x="16" y="0.0" width="175" height="61"/>
                                         <subviews>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-TC-tuG">
-                                                <rect key="frame" x="-2" y="11" width="48" height="14"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="xQo-94-79p">
-                                                    <font key="font" metaFont="systemSemibold" size="11"/>
-                                                    <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
+                                                <rect key="frame" x="0.0" y="11" width="50" height="50"/>
+                                            </stackView>
                                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-83-XTr">
                                                 <rect key="frame" x="-2" y="0.0" width="179" height="11"/>
                                                 <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Last update" id="Jwb-nf-s13">
@@ -737,9 +732,6 @@
                                         </customSpacing>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="l5I-S3-7Ry"/>
-                                </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -762,11 +754,29 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
                         <outlet property="lastUpdateLabel" destination="EN0-83-XTr" id="jv1-H2-V4i"/>
                         <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
                     </connections>
                 </viewController>
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <button verticalHuggingPriority="750" id="Kk2-mo-HuI">
+                    <rect key="frame" x="0.0" y="0.0" width="94" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WBG-iw-EWR">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField verticalHuggingPriority="750" id="ItB-TC-tuG">
+                    <rect key="frame" x="0.0" y="0.0" width="48" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="xQo-94-79p">
+                        <font key="font" metaFont="systemSemibold" size="11"/>
+                        <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </objects>
             <point key="canvasLocation" x="76.5" y="301.5"/>
         </scene>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C97F172CD6802F0F9D301B19 /* Pods_CryptoBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2063B17D7D87A5BF05891D5A /* Pods_CryptoBarTests.framework */; };
 		CFA443D6EF37643CBE02D2B7 /* Pods_CryptoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */; };
+		E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3482D2C1FB62AB3009BAA2D /* CrButton.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
 		B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
+		E3482D2C1FB62AB3009BAA2D /* CrButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrButton.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* CryptoBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
+				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 				E372E8081F47843200AEB397 /* HttpClient.swift */,
 				E372E8091F47843200AEB397 /* Currency.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
@@ -283,11 +286,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,6 +355,7 @@
 				E372E80B1F47843200AEB397 /* Currency.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
 				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
+				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,10 +7,12 @@
 //
 
 import Cocoa
-import DateToolsSwift
+
+let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD"]//, "BCH:USD"]
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var buttonStack: NSStackView!
     var timer: Timer!
     @IBOutlet weak var lastUpdateLabel: NSTextField!
     @IBOutlet weak var mainLabel: NSTextField!
@@ -18,7 +20,9 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pairs.forEach { pair in
+            self.buttonStack.addArrangedSubview(CrButton(pair))
+        }
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchCurrentValuesFromNetwork()
         }
@@ -56,21 +60,23 @@ class ViewController: NSViewController {
             self.lastUpdateTime = Date()
         }, failure: { (error) in
             DispatchQueue.main.async {
-                self.mainLabel.stringValue = error.localizedDescription
+                self.lastUpdateLabel.stringValue = error.localizedDescription
             }
         })
     }
 
     func updateCurrienciesFor(_ json: JSONDictionary) {
-        var mainString = ""
         let allCurrencies = json["data"] as! [JSONDictionary]
+        var dict = [String: Double]()
         for eachCurrency in allCurrencies {
             if let currency = Currency(json: eachCurrency) {
-                mainString += "  [\(currency.name):\(currency.price)]"
+                dict[currency.pair] = currency.price
             }
         }
         DispatchQueue.main.async {
-            self.mainLabel.stringValue = mainString
+            for button in self.buttonStack.arrangedSubviews as! [CrButton] {
+                button.set(price: dict[button.pair]!)
+            }
         }
     }
 }
