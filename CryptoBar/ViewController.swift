@@ -77,7 +77,7 @@ class ViewController: NSViewController {
         }
         DispatchQueue.main.async {
             for button in self.buttonStack.arrangedSubviews as! [CrButton] {
-                button.set(price: dict[button.pair]!)
+                button.price = dict[button.pair]!
             }
         }
     }

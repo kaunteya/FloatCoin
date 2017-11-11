@@ -11,7 +11,26 @@ import AppKit
 import SwiftyAttributes
 
 class CrButton: NSControl {
+    let defaultBackgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     let pair: String
+    var price: Double? {
+        didSet {
+            guard price != nil else { fatalError() }
+            if oldValue != nil && oldValue! < price! {
+                flickBackground(color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
+            } else if oldValue != nil && oldValue! > price!{
+                flickBackground(color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
+            }
+            let priceStr = String(format: "%.4f", price!)
+            priceLabel.attributedStringValue = "\(priceStr)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 9))
+        }
+    }
+    func flickBackground(color: Color) {
+        self.layer?.backgroundColor = color.cgColor
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+            self.layer?.backgroundColor = self.defaultBackgroundColor.cgColor
+        }
+    }
     private let pairLabel: NSTextField
     private let priceLabel: NSTextField
     
@@ -25,7 +44,7 @@ class CrButton: NSControl {
         
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
-        self.layer?.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        self.layer?.backgroundColor = defaultBackgroundColor.cgColor
         self.layer?.borderWidth = 1
         self.layer?.cornerRadius = 3.0
         self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -41,11 +60,6 @@ class CrButton: NSControl {
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
-    }
-    
-    func set(price: Double) {
-        let priceStr = String(format: "%.4f", price)
-        priceLabel.attributedStringValue = "\(priceStr)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 9))
     }
     
     required init?(coder: NSCoder) {
