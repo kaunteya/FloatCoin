@@ -64,11 +64,7 @@ class ViewController: NSViewController {
         HttpClient.getConversions(completion: { (json) in
             self.updateCurrienciesFor(json)
             self.lastUpdateTime = Date()
-        }, failure: { (error) in
-            DispatchQueue.main.async {
-                self.lastUpdateLabel.stringValue = error.localizedDescription
-            }
-        })
+        }, failure: { _ in  })
     }
 
     func updateCurrienciesFor(_ json: JSONDictionary) {
