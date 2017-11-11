@@ -53,6 +53,7 @@
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
+		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		E372E7EA1F47835400AEB397 /* CryptoBar */ = {
 			isa = PBXGroup;
 			children = (
+				E39313BB1FB74C18006E915C /* CryptoBar.entitlements */,
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
@@ -200,6 +202,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KQQ77ZBE5E;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					E372E7F81F47835500AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -491,6 +498,7 @@
 			baseConfigurationReference = 3C9033F6BE9660D568A796DD /* Pods-CryptoBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
@@ -508,6 +516,7 @@
 			baseConfigurationReference = 75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
