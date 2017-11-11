@@ -715,17 +715,17 @@
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
                                         <rect key="frame" x="16" y="0.0" width="181" height="61"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                                <rect key="frame" x="0.0" y="11" width="181" height="50"/>
-                                            </stackView>
                                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-83-XTr">
-                                                <rect key="frame" x="-2" y="0.0" width="185" height="11"/>
+                                                <rect key="frame" x="-2" y="50" width="185" height="11"/>
                                                 <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Last update" id="Jwb-nf-s13">
                                                     <font key="font" metaFont="miniSystem"/>
                                                     <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="9EW-c1-Jdy" firstAttribute="leading" secondItem="3eh-Gg-ewA" secondAttribute="leading" id="7iw-kU-IGB"/>
