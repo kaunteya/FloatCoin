@@ -689,14 +689,14 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="218" height="65"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="65"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="218" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="65"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
-                                <rect key="frame" x="2" y="2" width="214" height="61"/>
+                                <rect key="frame" x="2" y="2" width="398" height="61"/>
                                 <subviews>
                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                         <rect key="frame" x="0.0" y="46" width="13" height="15"/>
@@ -712,36 +712,11 @@
                                             <action selector="actionClose:" target="kUf-Ni-Gqb" id="JB9-Qq-OXt"/>
                                         </connections>
                                     </button>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-Gg-ewA">
-                                        <rect key="frame" x="16" y="0.0" width="181" height="61"/>
-                                        <subviews>
-                                            <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-83-XTr">
-                                                <rect key="frame" x="-2" y="50" width="185" height="11"/>
-                                                <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Last update" id="Jwb-nf-s13">
-                                                    <font key="font" metaFont="miniSystem"/>
-                                                    <color key="textColor" white="0.94704241069999995" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                                <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="leading" secondItem="3eh-Gg-ewA" secondAttribute="leading" id="7iw-kU-IGB"/>
-                                            <constraint firstAttribute="trailing" secondItem="9EW-c1-Jdy" secondAttribute="trailing" id="cEg-Xv-g6z"/>
-                                        </constraints>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
+                                        <rect key="frame" x="16" y="0.0" width="365" height="61"/>
                                     </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
-                                        <rect key="frame" x="200" y="47" width="14" height="14"/>
+                                        <rect key="frame" x="384" y="47" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="Pi4-rS-s1z"/>
                                             <constraint firstAttribute="width" secondItem="U9d-5D-JBC" secondAttribute="height" multiplier="1:1" id="xfb-bD-Jrz"/>
@@ -756,8 +731,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="3eh-Gg-ewA" secondAttribute="bottom" id="XBt-Bk-M5e"/>
-                                    <constraint firstItem="3eh-Gg-ewA" firstAttribute="top" secondItem="fsM-tt-TSe" secondAttribute="top" id="iu3-Er-EZ4"/>
+                                    <constraint firstAttribute="bottom" secondItem="9EW-c1-Jdy" secondAttribute="bottom" id="uWl-4d-P5s"/>
+                                    <constraint firstItem="9EW-c1-Jdy" firstAttribute="top" secondItem="fsM-tt-TSe" secondAttribute="top" id="w4E-kW-NCr"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -784,7 +759,6 @@
                     </view>
                     <connections>
                         <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
-                        <outlet property="lastUpdateLabel" destination="EN0-83-XTr" id="jv1-H2-V4i"/>
                         <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                         <outlet property="pairsMenu" destination="zMh-t6-oCa" id="c6V-kA-YCz"/>

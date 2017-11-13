@@ -17,11 +17,14 @@ class CrButton: NSControl {
     var currency: Currency? {
         didSet {
             guard currency != nil else { fatalError() }
-            
-            if oldValue != nil && oldValue!.last < currency!.last {
-                flickBackground(color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
-            } else if oldValue != nil && oldValue!.last < currency!.last {
-                flickBackground(color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
+            if let lastPrice = oldValue?.last {
+                if lastPrice < currency!.last {
+                    flickBackground(#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
+                } else if lastPrice > currency!.last {
+                    flickBackground(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1))
+                } else {
+                    flickBackground(#colorLiteral(red: 0.9500998855, green: 0.943575263, blue: 0.9372867942, alpha: 0.5))
+                }
             }
             
             let priceString = currency!.last.format(precision: 4)!
@@ -38,7 +41,7 @@ class CrButton: NSControl {
         }
     }
 
-    func flickBackground(color: Color) {
+    func flickBackground(_ color: Color) {
         self.layer?.backgroundColor = color.cgColor
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
             self.layer?.backgroundColor = defaultBackgroundColor.cgColor

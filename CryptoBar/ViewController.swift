@@ -14,7 +14,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var pairsMenu: NSMenu!
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
-    @IBOutlet weak var lastUpdateLabel: NSTextField!
     @IBOutlet weak var mainLabel: NSTextField!
     var timer: Timer!
     var lastUpdateTime = Date()
@@ -34,12 +33,6 @@ class ViewController: NSViewController {
         thinView = false 
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchCurrentValuesFromNetwork()
-        }
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            var count = Int(Date().timeIntervalSince(self.lastUpdateTime))
-            var unit = "seconds"
-            if count > 60 { count = count % 60; unit = "minutes" }
-            self.lastUpdateLabel.stringValue = "Updated \(count) \(unit) ago"
         }
     }
 
