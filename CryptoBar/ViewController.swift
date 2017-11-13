@@ -26,7 +26,8 @@ class ViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updatePairsMenu()
+
         pairs.forEach { pair in
             self.buttonStack.addArrangedSubview(CrButton(pair, thinView: thinView))
         }
@@ -42,9 +43,13 @@ class ViewController: NSViewController {
         }
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        (NSApp.delegate as! AppDelegate).window = self.view.window
+    }
+
     override func viewWillAppear() {
         super.viewWillAppear()
-(NSApp.delegate as! AppDelegate).window = self.view.window
         timer.fire()
         self.view.window!.isMovableByWindowBackground = true
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
@@ -52,7 +57,7 @@ class ViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        updatePairsMenu()
+
         buttonStack.heightAnchor.constraint(equalTo: buttonStack.arrangedSubviews.first!.heightAnchor).isActive = true
     }
 
