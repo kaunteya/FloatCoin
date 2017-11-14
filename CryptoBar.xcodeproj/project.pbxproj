@@ -39,7 +39,7 @@
 		B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3482D2C1FB62AB3009BAA2D /* CrButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrButton.swift; sourceTree = "<group>"; };
-		E372E7E81F47835400AEB397 /* CryptoBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E372E7EF1F47835400AEB397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		E372E7E91F47835400AEB397 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E372E7E81F47835400AEB397 /* CryptoBar.app */,
+				E372E7E81F47835400AEB397 /* FloatCoin.app */,
 				E372E7F91F47835500AEB397 /* CryptoBarTests.xctest */,
 			);
 			name = Products;
@@ -147,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E372E7E71F47835400AEB397 /* CryptoBar */ = {
+		E372E7E71F47835400AEB397 /* FloatCoin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E372E8021F47835500AEB397 /* Build configuration list for PBXNativeTarget "CryptoBar" */;
+			buildConfigurationList = E372E8021F47835500AEB397 /* Build configuration list for PBXNativeTarget "FloatCoin" */;
 			buildPhases = (
 				F71AAE730AD700F8C6239A16 /* [CP] Check Pods Manifest.lock */,
 				E372E7E41F47835400AEB397 /* Sources */,
@@ -162,9 +162,9 @@
 			);
 			dependencies = (
 			);
-			name = CryptoBar;
+			name = FloatCoin;
 			productName = CryptoBar;
-			productReference = E372E7E81F47835400AEB397 /* CryptoBar.app */;
+			productReference = E372E7E81F47835400AEB397 /* FloatCoin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E372E7F81F47835500AEB397 /* CryptoBarTests */ = {
@@ -229,7 +229,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E372E7E71F47835400AEB397 /* CryptoBar */,
+				E372E7E71F47835400AEB397 /* FloatCoin */,
 				E372E7F81F47835500AEB397 /* CryptoBarTests */,
 			);
 		};
@@ -384,7 +384,7 @@
 /* Begin PBXTargetDependency section */
 		E372E7FB1F47835500AEB397 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E372E7E71F47835400AEB397 /* CryptoBar */;
+			target = E372E7E71F47835400AEB397 /* FloatCoin */;
 			targetProxy = E372E7FA1F47835500AEB397 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E372E8021F47835500AEB397 /* Build configuration list for PBXNativeTarget "CryptoBar" */ = {
+		E372E8021F47835500AEB397 /* Build configuration list for PBXNativeTarget "FloatCoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E372E8031F47835500AEB397 /* Debug */,
