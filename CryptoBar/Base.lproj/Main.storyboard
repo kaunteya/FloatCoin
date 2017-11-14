@@ -658,7 +658,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CryptoBar" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FloatCoin" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -687,21 +687,21 @@
         <!--View Controller-->
         <scene sceneID="ZED-bz-zm2">
             <objects>
-                <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="CryptoBar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="65"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="68"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="402" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="68"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-tt-TSe">
-                                <rect key="frame" x="2" y="2" width="398" height="61"/>
+                                <rect key="frame" x="2" y="2" width="398" height="64"/>
                                 <subviews>
                                     <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
-                                        <rect key="frame" x="0.0" y="46" width="13" height="15"/>
+                                        <rect key="frame" x="0.0" y="49" width="13" height="15"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="13" id="h5U-6C-cdL"/>
+                                            <constraint firstAttribute="width" constant="13" id="eQr-Ei-c0I"/>
                                             <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
                                         </constraints>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Close" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3wq-Xs-eLk">
@@ -716,7 +716,7 @@
                                         <rect key="frame" x="16" y="0.0" width="365" height="61"/>
                                     </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
-                                        <rect key="frame" x="384" y="47" width="14" height="14"/>
+                                        <rect key="frame" x="384" y="50" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="Pi4-rS-s1z"/>
                                             <constraint firstAttribute="width" secondItem="U9d-5D-JBC" secondAttribute="height" multiplier="1:1" id="xfb-bD-Jrz"/>
@@ -732,7 +732,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="9EW-c1-Jdy" secondAttribute="bottom" id="uWl-4d-P5s"/>
-                                    <constraint firstItem="9EW-c1-Jdy" firstAttribute="top" secondItem="fsM-tt-TSe" secondAttribute="top" id="w4E-kW-NCr"/>
+                                    <constraint firstItem="9EW-c1-Jdy" firstAttribute="top" secondItem="fsM-tt-TSe" secondAttribute="top" constant="3" id="w4E-kW-NCr"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
