@@ -28,7 +28,7 @@ class CrButton: NSControl {
             }
             
             let priceString = currency!.last.format(precision: 4)!
-            priceLabel.attributedStringValue = priceString.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 9))
+            priceLabel.attributedStringValue = priceString.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10))
             self.toolTip = """
             Ask: \(currency!.ask)
             Bid: \(currency!.bid)
@@ -53,7 +53,7 @@ class CrButton: NSControl {
     
     init(_ pair: String, thinView: Bool) {
         self.pair = pair
-        pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.boldSystemFont(ofSize: 10)))
+        pairLabel = NSTextField(labelWithAttributedString: pair.withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.boldSystemFont(ofSize: 11)))
         pairLabel.maximumNumberOfLines = 1
         pairLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         pairLabel.setContentHuggingPriority(900, for: .horizontal)
