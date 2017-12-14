@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD", "ZEC:USD"]
+let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD", "ZEC:USD", "XRP:USD", "BTG:USD"]
 
 class ViewController: NSViewController {
     @IBOutlet weak var pairsMenu: NSMenu!
