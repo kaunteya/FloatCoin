@@ -16,7 +16,6 @@
 		E339CC041FF0320D009570AF /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
 		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
 		E339CC061FF0320D009570AF /* Cryptoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* Cryptoable.swift */; };
-		E339CC081FF0CECD009570AF /* UserPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC071FF0CECD009570AF /* UserPairs.swift */; };
 		E339CC0A1FF0D873009570AF /* RatesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesFetcher.swift */; };
 		E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3482D2C1FB62AB3009BAA2D /* CrButton.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 		E339CBFD1FF0320C009570AF /* Kraken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kraken.swift; sourceTree = "<group>"; };
 		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
 		E339CBFF1FF0320C009570AF /* Cryptoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptoable.swift; sourceTree = "<group>"; };
-		E339CC071FF0CECD009570AF /* UserPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPairs.swift; sourceTree = "<group>"; };
 		E339CC091FF0D873009570AF /* RatesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFetcher.swift; sourceTree = "<group>"; };
 		E3482D2C1FB62AB3009BAA2D /* CrButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrButton.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +126,6 @@
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
 				E339CC091FF0D873009570AF /* RatesFetcher.swift */,
-				E339CC071FF0CECD009570AF /* UserPairs.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
@@ -403,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E339CC081FF0CECD009570AF /* UserPairs.swift in Sources */,
 				E339CC021FF0320D009570AF /* Coinbase.swift in Sources */,
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,

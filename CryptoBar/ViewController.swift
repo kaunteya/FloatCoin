@@ -32,10 +32,11 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ratesFetcher.userSettings.orderedPairs.forEach { (exchange, pair) in
-            let aButton = CrButton(exchange: exchange, pair: pair, thinView: thinView)
+        ratesFetcher.userExchangePairList.forEach { exchangePair in
+            let aButton = CrButton(exchangePair: exchangePair, thinView: thinView)
             self.buttonStack.addArrangedSubview(aButton)
         }
+        ratesFetcher.delegate = self
         thinView = false
     }
 
@@ -74,7 +75,15 @@ class ViewController: NSViewController {
         sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
         thinView = sender.state == NSControlStateValueOn
     }
+}
 
-    func update(price: Double, for pair: Pair) {
+extension ViewController: RatesDelegate {
+    func ratesUpdated(for exchangePair: UserExchangePair, price: Double) {
+        DispatchQueue.main.async {
+            for button in self.buttonStack.arrangedSubviews as! [CrButton]
+                where button.exchangePair == exchangePair {
+                    button.price = price
+            }
+        }
     }
 }

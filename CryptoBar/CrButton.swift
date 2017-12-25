@@ -13,7 +13,7 @@ import SwiftyAttributes
 fileprivate let defaultBackgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
 
 class CrButton: NSControl {
-    let pair: Pair
+    let exchangePair: UserExchangePair
     var price: Double? {
         didSet {
             guard price != nil else { fatalError() }
@@ -32,10 +32,10 @@ class CrButton: NSControl {
     private let priceLabel: NSTextField
     var stackView: NSStackView!
 
-    init(exchange: Exchange, pair: Pair, thinView: Bool) {
-        self.pair = pair
+    init(exchangePair: UserExchangePair, thinView: Bool) {
+        self.exchangePair = exchangePair
         pairLabel = NSTextField(
-            labelWithAttributedString: pair.joined(":")
+            labelWithAttributedString: exchangePair.pair.joined(":")
             .withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
             .withFont(.boldSystemFont(ofSize: 11))
         )
@@ -60,7 +60,7 @@ class CrButton: NSControl {
         set(thinView: thinView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
-        self.toolTip = exchange.description
+        self.toolTip = exchangePair.exchange.description
         stackView.setHuggingPriority(1000, for: .horizontal)
         stackView.setHuggingPriority(1000, for: .vertical)
         self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true

@@ -17,7 +17,6 @@ struct CEX: Cryptoable {
 
         let cur = pp.map { $0.stringValue }.joined(separator: "/")
         let url = URL(string: "https://cex.io/api/tickers/\(cur)/")
-        Swift.print("CEX URL \(url!)")
         return URLRequest(url: url!)
     }
 
@@ -41,7 +40,9 @@ struct CEX: Cryptoable {
     }
 
     static func fetchRate(pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
-        URLSession.shared.dataTask(with: urlRequest(for: pairs)) { (data, response, error) in
+        let urlRequest = self.urlRequest(for: pairs)
+        Swift.print("CEX URL \(urlRequest)")
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 Swift.print("Error \(error!)")
                 return;

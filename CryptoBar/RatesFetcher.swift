@@ -8,19 +8,27 @@
 
 import Foundation
 
+typealias UserExchangePair = (exchange: Exchange, pair: Pair)
+
 protocol RatesDelegate {
-    func ratesUpdated(for pair: Pair, price: Double)
+    func ratesUpdated(for exchangePair: UserExchangePair, price: Double)
 }
 
 class RatesFetcher {
     var timer: Timer!
-    let userSettings: UserSettings
+    var userExchangePairList: [UserExchangePair]
     var delegate: RatesDelegate?
     init() {
-        userSettings = UserSettings(settings:
-            [(Exchange.kraken, Pair("BTC:USD")), (Exchange.cex, Pair("ETH:USD"))]
-        )
-        start()
+        userExchangePairList = [(Exchange.kraken, Pair("BTC:USD")), (Exchange.cex, Pair("ETH:USD"))]
+    }
+
+    func pairs(for exchange: Exchange) -> [Pair] {
+        let filterd = userExchangePairList.filter { (aExchange, aPair) -> Bool in
+            return exchange == aExchange
+        }
+        return filterd.map { (_, pair) -> Pair in
+            return pair
+        }
     }
 
     func start() {
@@ -31,10 +39,15 @@ class RatesFetcher {
     }
 
     func stop() {
+        Swift.print("STOP TIMER------------------")
         timer.invalidate()
     }
     
     func fetchCurrentRates() {
-
+        CEX.fetchRate(pairs: pairs(for: .cex)) { pricesDict in
+            pricesDict.forEach({ (pair, price) in
+                self.delegate?.ratesUpdated(for: (Exchange.cex, pair), price: price)
+            })
+        }
     }
 }
