@@ -32,7 +32,7 @@ class CrButton: NSControl {
     private let priceLabel: NSTextField
     var stackView: NSStackView!
 
-    init(provider: APIProvider, pair: Pair, thinView: Bool) {
+    init(exchange: Exchange, pair: Pair, thinView: Bool) {
         self.pair = pair
         pairLabel = NSTextField(
             labelWithAttributedString: pair.joined(":")
@@ -60,7 +60,7 @@ class CrButton: NSControl {
         set(thinView: thinView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
-        self.toolTip = provider.description
+        self.toolTip = exchange.description
         stackView.setHuggingPriority(1000, for: .horizontal)
         stackView.setHuggingPriority(1000, for: .vertical)
         self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true

@@ -32,8 +32,8 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ratesFetcher.userSettings.orderedPairs.forEach { (provider, pair) in
-            let aButton = CrButton(provider: provider, pair: pair, thinView: thinView)
+        ratesFetcher.userSettings.orderedPairs.forEach { (exchange, pair) in
+            let aButton = CrButton(exchange: exchange, pair: pair, thinView: thinView)
             self.buttonStack.addArrangedSubview(aButton)
         }
         thinView = false

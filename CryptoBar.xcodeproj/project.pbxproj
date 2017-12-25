@@ -12,7 +12,7 @@
 		E339CC001FF0320D009570AF /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBF91FF0320B009570AF /* Currency.swift */; };
 		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
 		E339CC021FF0320D009570AF /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFB1FF0320B009570AF /* Coinbase.swift */; };
-		E339CC031FF0320D009570AF /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* APIProvider.swift */; };
+		E339CC031FF0320D009570AF /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* Exchange.swift */; };
 		E339CC041FF0320D009570AF /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
 		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
 		E339CC061FF0320D009570AF /* Cryptoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* Cryptoable.swift */; };
@@ -50,7 +50,7 @@
 		E339CBF91FF0320B009570AF /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../crypt/Jo/Jo/Model/Currency.swift; sourceTree = "<group>"; };
 		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		E339CBFB1FF0320B009570AF /* Coinbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
-		E339CBFC1FF0320C009570AF /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		E339CBFC1FF0320C009570AF /* Exchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		E339CBFD1FF0320C009570AF /* Kraken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kraken.swift; sourceTree = "<group>"; };
 		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
 		E339CBFF1FF0320C009570AF /* Cryptoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptoable.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				E339CC071FF0CECD009570AF /* UserPairs.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 				E372E8081F47843200AEB397 /* HttpClient.swift */,
-				E339CBFC1FF0320C009570AF /* APIProvider.swift */,
+				E339CBFC1FF0320C009570AF /* Exchange.swift */,
 				E339CBFE1FF0320C009570AF /* CEX.swift */,
 				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
 				E339CBFF1FF0320C009570AF /* Cryptoable.swift */,
@@ -403,7 +403,7 @@
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
 				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,
 				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
-				E339CC031FF0320D009570AF /* APIProvider.swift in Sources */,
+				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
 				E339CC001FF0320D009570AF /* Currency.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);

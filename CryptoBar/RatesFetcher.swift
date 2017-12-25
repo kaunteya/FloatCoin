@@ -18,7 +18,7 @@ class RatesFetcher {
     var delegate: RatesDelegate?
     init() {
         userSettings = UserSettings(settings:
-            [(APIProvider.kraken, Pair("BTC:USD")), (APIProvider.cex, Pair("ETH:USD"))]
+            [(Exchange.kraken, Pair("BTC:USD")), (Exchange.cex, Pair("ETH:USD"))]
         )
         start()
     }
@@ -35,6 +35,6 @@ class RatesFetcher {
     }
     
     func fetchCurrentRates() {
-        
+
     }
 }

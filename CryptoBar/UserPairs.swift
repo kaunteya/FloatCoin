@@ -8,18 +8,17 @@
 
 import Foundation
 
-typealias APIProviderPair = (provider: APIProvider, pair: Pair)//TODO: Update to Pair
+typealias UserExchangePair = (exchange: Exchange, pair: Pair)
 
-//[(APIProvider.kraken, "BTC:USD"), (APIProvider.cex, "ETH:USD")]
 class UserSettings {
-    var orderedPairs:[APIProviderPair]
-    init(settings: [APIProviderPair]) {
+    var orderedPairs:[UserExchangePair]
+    init(settings: [UserExchangePair]) {
         orderedPairs = settings
     }
 
-    func pairs(for provider: APIProvider) -> [Pair] {
-        let filterd = orderedPairs.filter { (aProvider, aPair) -> Bool in
-            return provider == aProvider
+    func pairs(for exchange: Exchange) -> [Pair] {
+        let filterd = orderedPairs.filter { (aExchange, aPair) -> Bool in
+            return exchange == aExchange
         }
         return filterd.map { (_, pair) -> Pair in
             return pair

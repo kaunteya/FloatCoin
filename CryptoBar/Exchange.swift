@@ -7,7 +7,7 @@
 //
 
 import Foundation
-enum APIProvider {
+enum Exchange {
     case kraken, coinbase, cex
     var description: String {
         switch self {
