@@ -24,8 +24,6 @@
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
 		E372E7F31F47835500AEB397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E372E7F11F47835500AEB397 /* Main.storyboard */; };
 		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
-		E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8081F47843200AEB397 /* HttpClient.swift */; };
-		E372E80B1F47843200AEB397 /* Currency1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency1.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
 		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
 /* End PBXBuildFile section */
@@ -66,12 +64,11 @@
 		E372E7F91F47835500AEB397 /* CryptoBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBarTests.swift; sourceTree = "<group>"; };
 		E372E7FF1F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E372E8081F47843200AEB397 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		E372E8091F47843200AEB397 /* Currency1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency1.swift; sourceTree = "<group>"; };
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
+		E3FB7D8D1FF1167700371D5F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,15 +130,9 @@
 				E339CC091FF0D873009570AF /* RatesFetcher.swift */,
 				E339CC071FF0CECD009570AF /* UserPairs.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
-				E372E8081F47843200AEB397 /* HttpClient.swift */,
-				E339CBFC1FF0320C009570AF /* Exchange.swift */,
-				E339CBFE1FF0320C009570AF /* CEX.swift */,
-				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
-				E339CBFF1FF0320C009570AF /* Cryptoable.swift */,
-				E372E8091F47843200AEB397 /* Currency1.swift */,
+				E3FB7D8C1FF1167600371D5F /* Models */,
+				E3FB7D8B1FF1165400371D5F /* Exchange */,
 				E339CBF91FF0320B009570AF /* Currency.swift */,
-				E339CBFD1FF0320C009570AF /* Kraken.swift */,
-				E339CBFA1FF0320B009570AF /* Pair.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
@@ -158,6 +149,27 @@
 				E372E7FF1F47835500AEB397 /* Info.plist */,
 			);
 			path = CryptoBarTests;
+			sourceTree = "<group>";
+		};
+		E3FB7D8B1FF1165400371D5F /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				E339CBFE1FF0320C009570AF /* CEX.swift */,
+				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
+				E339CBFF1FF0320C009570AF /* Cryptoable.swift */,
+				E339CBFD1FF0320C009570AF /* Kraken.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		E3FB7D8C1FF1167600371D5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E339CBFC1FF0320C009570AF /* Exchange.swift */,
+				E3FB7D8D1FF1167700371D5F /* Currency.swift */,
+				E339CBFA1FF0320B009570AF /* Pair.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED25DB62DC89DEB20A3C9F9E /* Pods */ = {
@@ -393,11 +405,9 @@
 			files = (
 				E339CC081FF0CECD009570AF /* UserPairs.swift in Sources */,
 				E339CC021FF0320D009570AF /* Coinbase.swift in Sources */,
-				E372E80B1F47843200AEB397 /* Currency1.swift in Sources */,
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
-				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
 				E339CC061FF0320D009570AF /* Cryptoable.swift in Sources */,
 				E339CC0A1FF0D873009570AF /* RatesFetcher.swift in Sources */,
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
