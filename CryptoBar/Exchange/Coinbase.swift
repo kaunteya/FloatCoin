@@ -36,7 +36,6 @@ struct Coinbase: ExchangeDelegate {
         let urlRequest = self.urlRequest(for: [pair])
         Swift.print("Coinbase URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            Swift.print("Fetching URL \(response!.url!)")
             guard error == nil else {
                 Swift.print("Error \(error!)")
                 return;

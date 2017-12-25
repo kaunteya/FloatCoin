@@ -19,7 +19,7 @@ class RatesFetcher {
     var userExchangePairList: [UserExchangePair]
     var delegate: RatesDelegate?
     init() {
-        userExchangePairList = [(Exchange.coinbase, Pair("BTC:USD")), (Exchange.cex, Pair("ETH:USD"))]
+        userExchangePairList = [(Exchange.coinbase, Pair("BTC:USD"))]//, (Exchange.cex, Pair("ETH:USD"))]
     }
 
     func pairs(for exchange: Exchange) -> [Pair] {
@@ -43,12 +43,12 @@ class RatesFetcher {
     }
     
     func fetchCurrentRates() {
-        Exchange.all.forEach {
-            let pars = self.pairs(for: $0)
+        Exchange.all.forEach { exchange in
+            let pars = self.pairs(for: exchange)
             guard pars.count != 0 else { return }
-            $0.type.fetchRate(pars, completion: { pricesDict in
+            exchange.type.fetchRate(pars, completion: { pricesDict in
                 pricesDict.forEach { (pair, price) in
-                    self.delegate?.ratesUpdated(for: (Exchange.cex, pair), price: price)
+                    self.delegate?.ratesUpdated(for: (exchange, pair), price: price)
                 }
             })
         }
