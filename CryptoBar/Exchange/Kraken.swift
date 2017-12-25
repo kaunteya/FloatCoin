@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct Kraken : Cryptoable {
+struct Kraken : ExchangeDelegate {
+    static var name: Exchange = .kraken
+
     static func urlRequest(for pairs: [Pair]) -> URLRequest {
         var tickerURLComponent = URLComponents(string: "https://api.kraken.com/0/public/Ticker")!
         let pairList = pairs.map {$0.rawPairForAPI}.joined(separator: ",")
@@ -15,10 +17,10 @@ struct Kraken : Cryptoable {
         return URLRequest(url: tickerURLComponent.url!)
     }
 
-    static func fetchRate(pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
-        Swift.print("Send request to \(urlRequest(for: pairs).url!)")
-
-        URLSession.shared.dataTask(with: urlRequest(for: pairs)) { (data, response, error) in
+    static func fetchRate(_ pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
+        let urlRequest = self.urlRequest(for: pairs)
+        Swift.print("Kraken URL \(urlRequest)")
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 Swift.print("Error \(error!)")
                 return;

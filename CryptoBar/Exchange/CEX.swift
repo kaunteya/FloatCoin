@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct CEX: Cryptoable {
+struct CEX: ExchangeDelegate {
+    static var name: Exchange = .cex
+
     static func urlRequest(for pairs: [Pair]) -> URLRequest {
         var pp = Set<Currency>()
         pairs.forEach {
@@ -39,7 +41,7 @@ struct CEX: Cryptoable {
         return ["USD", "EUR", "GBP", "BTC"].map { Currency($0)! }
     }
 
-    static func fetchRate(pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
+    static func fetchRate(_ pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
         Swift.print("CEX URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
