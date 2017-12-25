@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		C97F172CD6802F0F9D301B19 /* Pods_CryptoBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2063B17D7D87A5BF05891D5A /* Pods_CryptoBarTests.framework */; };
 		CFA443D6EF37643CBE02D2B7 /* Pods_CryptoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */; };
+		E339CC001FF0320D009570AF /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBF91FF0320B009570AF /* Currency.swift */; };
+		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
+		E339CC021FF0320D009570AF /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFB1FF0320B009570AF /* Coinbase.swift */; };
+		E339CC031FF0320D009570AF /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* APIProvider.swift */; };
+		E339CC041FF0320D009570AF /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
+		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
+		E339CC061FF0320D009570AF /* Cryptoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* Cryptoable.swift */; };
+		E339CC081FF0CECD009570AF /* UserPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC071FF0CECD009570AF /* UserPairs.swift */; };
+		E339CC0A1FF0D873009570AF /* RatesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesFetcher.swift */; };
 		E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3482D2C1FB62AB3009BAA2D /* CrButton.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
@@ -16,7 +25,7 @@
 		E372E7F31F47835500AEB397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E372E7F11F47835500AEB397 /* Main.storyboard */; };
 		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
 		E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8081F47843200AEB397 /* HttpClient.swift */; };
-		E372E80B1F47843200AEB397 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency.swift */; };
+		E372E80B1F47843200AEB397 /* Currency1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8091F47843200AEB397 /* Currency1.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
 		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +47,15 @@
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
 		B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
+		E339CBF91FF0320B009570AF /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../crypt/Jo/Jo/Model/Currency.swift; sourceTree = "<group>"; };
+		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		E339CBFB1FF0320B009570AF /* Coinbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
+		E339CBFC1FF0320C009570AF /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		E339CBFD1FF0320C009570AF /* Kraken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kraken.swift; sourceTree = "<group>"; };
+		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
+		E339CBFF1FF0320C009570AF /* Cryptoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptoable.swift; sourceTree = "<group>"; };
+		E339CC071FF0CECD009570AF /* UserPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPairs.swift; sourceTree = "<group>"; };
+		E339CC091FF0D873009570AF /* RatesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFetcher.swift; sourceTree = "<group>"; };
 		E3482D2C1FB62AB3009BAA2D /* CrButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrButton.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +67,7 @@
 		E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBarTests.swift; sourceTree = "<group>"; };
 		E372E7FF1F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E372E8081F47843200AEB397 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		E372E8091F47843200AEB397 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E372E8091F47843200AEB397 /* Currency1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency1.swift; sourceTree = "<group>"; };
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
@@ -112,9 +130,18 @@
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
+				E339CC091FF0D873009570AF /* RatesFetcher.swift */,
+				E339CC071FF0CECD009570AF /* UserPairs.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 				E372E8081F47843200AEB397 /* HttpClient.swift */,
-				E372E8091F47843200AEB397 /* Currency.swift */,
+				E339CBFC1FF0320C009570AF /* APIProvider.swift */,
+				E339CBFE1FF0320C009570AF /* CEX.swift */,
+				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
+				E339CBFF1FF0320C009570AF /* Cryptoable.swift */,
+				E372E8091F47843200AEB397 /* Currency1.swift */,
+				E339CBF91FF0320B009570AF /* Currency.swift */,
+				E339CBFD1FF0320C009570AF /* Kraken.swift */,
+				E339CBFA1FF0320B009570AF /* Pair.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
@@ -195,12 +222,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Kaunteya Suryawanshi";
 				TargetAttributes = {
 					E372E7E71F47835400AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KQQ77ZBE5E;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -211,6 +239,7 @@
 					E372E7F81F47835500AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KQQ77ZBE5E;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E372E7E71F47835400AEB397;
 					};
@@ -362,11 +391,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E372E80B1F47843200AEB397 /* Currency.swift in Sources */,
+				E339CC081FF0CECD009570AF /* UserPairs.swift in Sources */,
+				E339CC021FF0320D009570AF /* Coinbase.swift in Sources */,
+				E372E80B1F47843200AEB397 /* Currency1.swift in Sources */,
+				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
 				E372E80A1F47843200AEB397 /* HttpClient.swift in Sources */,
+				E339CC061FF0320D009570AF /* Cryptoable.swift in Sources */,
+				E339CC0A1FF0D873009570AF /* RatesFetcher.swift in Sources */,
+				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
 				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,
+				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
+				E339CC031FF0320D009570AF /* APIProvider.swift in Sources */,
+				E339CC001FF0320D009570AF /* Currency.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +449,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -419,7 +459,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -461,7 +505,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -469,7 +515,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

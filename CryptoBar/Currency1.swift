@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency1 {
     let ask: Double
     let bid: Double
     let high: String
