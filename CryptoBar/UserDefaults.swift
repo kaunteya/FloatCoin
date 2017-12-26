@@ -16,10 +16,17 @@ extension UserDefaults {
         let newList = userExchangePairList + [exchangePair]
         UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
     }
-
+    class func removeExchangePair(at indexSet: IndexSet) {
+        var newList = userExchangePairList
+        //Sort elements in decending order to avoid removal in invalid index
+        indexSet.sorted {$0 > $1}.forEach {
+            newList.remove(at: $0)
+        }
+        UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
+    }
     class func remove(exchangePair: UserExchangePair) {
         let newList = userExchangePairList.filter { $0 != exchangePair}
-        UserDefaults.standard.set(newList, forKey: keyUserExchange)
+        UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
     }
 
     class var userExchangePairList: [UserExchangePair] {

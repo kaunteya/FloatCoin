@@ -24,19 +24,17 @@ class PairVC: NSViewController {
         return Exchange.all[exchangePopupButton.indexOfSelectedItem]
     }
 
-    var selectedBase: Currency? {
-        guard basePopupButton.indexOfSelectedItem >= 0 else { return nil }
+    var selectedBase: Currency {
+        assert( basePopupButton.indexOfSelectedItem >= 0)
         return selectedExchange.type.baseCryptoCurriencies()[basePopupButton.indexOfSelectedItem]
     }
 
-    var selectedFIAT: Currency? {
-        guard let selectedBase = selectedBase, fiatPopUpButton.indexOfSelectedItem >= 0 else { return nil }
+    var selectedFIAT: Currency {
+        assert(fiatPopUpButton.indexOfSelectedItem >= 0)
         return selectedExchange.type.FIATCurriences(crypto: selectedBase)[fiatPopUpButton.indexOfSelectedItem]
     }
 
-    var selectedUserExchangePair: UserExchangePair? {
-        guard let selectedBase = selectedBase,
-            let selectedFIAT = selectedFIAT else { return nil; }
+    var selectedUserExchangePair: UserExchangePair {
         return UserExchangePair(
             exchange: selectedExchange,
             pair: Pair(a: selectedBase, b: selectedFIAT)
@@ -49,9 +47,10 @@ class PairVC: NSViewController {
             exchangePopupButton.addItem(withTitle: ex.description)
         }
         exchangePopupButton.selectItem(at: 1)
+        actionExchangeSelected(nil)
     }
 
-    @IBAction func actionExchangeSelected(_ sender: NSPopUpButton) {
+    @IBAction func actionExchangeSelected(_ sender: NSPopUpButton?) {
         let baseCurriencies = selectedExchange.type.baseCryptoCurriencies()
         basePopupButton.removeAllItems()
         baseCurriencies.forEach {
@@ -67,21 +66,23 @@ class PairVC: NSViewController {
 
     @IBAction func actionBaseCurrencySelected(_ sender: NSPopUpButton) {
         fiatPopUpButton.removeAllItems()
-        let fiatList = selectedExchange.type.FIATCurriences(crypto: selectedBase!)
+        let fiatList = selectedExchange.type.FIATCurriences(crypto: selectedBase)
         fiatList.forEach {
             fiatPopUpButton.addItem(withTitle: $0.stringValue)
         }
     }
 
     @IBAction func add(_ sender: Any) {
-        guard let selectedUserExchangePair = selectedUserExchangePair else { return}
         UserDefaults.add(exchangePair: selectedUserExchangePair)
         tableView.reloadData()
-        tableView.scrollRowToVisible(tableView.numberOfRows - 1)
+        let lastRow = tableView.numberOfRows - 1
+        tableView.selectRowIndexes(IndexSet(integer: lastRow), byExtendingSelection: false)
+        tableView.scrollRowToVisible(lastRow)
     }
+
     @IBAction func delete(_ sender: Any) {
-        guard let selectedUserExchangePair = selectedUserExchangePair else { return}
-        UserDefaults.remove(exchangePair: selectedUserExchangePair)
+        UserDefaults.removeExchangePair(at: tableView.selectedRowIndexes)
+        tableView.removeRows(at: tableView.selectedRowIndexes, withAnimation: .slideDown)
     }
 }
 
@@ -103,4 +104,3 @@ class TableViewPairCell: NSTableCellView {
     @IBOutlet weak var pairLabel: NSTextField!
     @IBOutlet weak var exchangeLabel: NSTextField!
 }
-

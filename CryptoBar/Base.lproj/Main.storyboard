@@ -832,7 +832,7 @@
                                                     <rect key="frame" x="1" y="0.0" width="157" height="134"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="35" rowSizeStyle="automatic" headerView="Q1D-5R-uEp" viewBased="YES" floatsGroupRows="NO" id="FF2-Aq-3Ra">
+                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowHeight="35" rowSizeStyle="automatic" headerView="Q1D-5R-uEp" viewBased="YES" floatsGroupRows="NO" id="FF2-Aq-3Ra">
                                                             <rect key="frame" x="0.0" y="0.0" width="161" height="111"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
