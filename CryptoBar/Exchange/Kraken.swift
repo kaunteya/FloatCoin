@@ -43,27 +43,27 @@ struct Kraken : ExchangeDelegate {
     }
 
     static func baseCryptoCurriencies() -> [Currency] {
-        return ["XBT", "BCH", "DASH", "EOS", "ETC", "ETH", "GNO", "ICN", "LTC", "MLN", "REP", "USDT", "XDG", "XLM", "XMR", "XRP", "ZEC"].map{ Currency($0)! }
+        return ["BTC", "BCH", "DASH", "EOS", "ETC", "ETH", "GNO", "ICN", "LTC", "MLN", "REP", "USDT", "XDG", "XLM", "XMR", "XRP", "ZEC"].map{ Currency($0)! }
     }
 
     private static let fiat: [String : [String]] = [
-        "XBT" : ["CAD", "EUR", "GBP", "JPY", "USD"],
-        "BCH" : ["EUR", "USD", "XBT"],
-        "DASH": ["EUR", "USD", "XBT"],
-        "EOS" : ["ETH", "XBT"],
-        "ETC" : ["ETH", "XBT", "EUR", "USD"],
-        "ETH" : ["XBT", "CAD", "EUR", "GBP", "JPY", "USD"],
-        "GNO" : ["ETH", "XBT"],
-        "ICN" : ["ETH", "XBT"],
-        "LTC" : ["XBT", "EUR", "USD"],
-        "MLN" : ["ETH", "XBT"],
-        "REP" : ["ETH", "XBT", "EUR"],
+        "BTC" : ["CAD", "EUR", "GBP", "JPY", "USD"],
+        "BCH" : ["EUR", "USD", "BTC"],
+        "DASH": ["EUR", "USD", "BTC"],
+        "EOS" : ["ETH", "BTC"],
+        "ETC" : ["BTC", "ETH", "EUR", "USD"],
+        "ETH" : ["BTC", "CAD", "EUR", "GBP", "JPY", "USD"],
+        "GNO" : ["ETH", "BTC"],
+        "ICN" : ["ETH", "BTC"],
+        "LTC" : ["BTC", "EUR", "USD"],
+        "MLN" : ["ETH", "BTC"],
+        "REP" : ["ETH", "BTC", "EUR"],
         "USDT": ["USD"],
-        "XDG" : ["XBT"],
-        "XLM" : ["XBT"],
-        "XMR" : ["XBT", "EUR", "USD"],
-        "XRP" : ["XBT", "EUR", "USD"],
-        "ZEC" : ["XBT", "EUR", "USD"]
+        "XDG" : ["BTC"],
+        "XLM" : ["BTC"],
+        "XMR" : ["BTC", "EUR", "USD"],
+        "XRP" : ["BTC", "EUR", "USD"],
+        "ZEC" : ["BTC", "EUR", "USD"]
     ]
 
     static func FIATCurriences(crypto: Currency) -> [Currency] {

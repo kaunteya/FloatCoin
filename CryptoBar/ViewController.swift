@@ -8,8 +8,6 @@
 
 import Cocoa
 
-let pairs = ["BTC:USD", "ETH:USD", "BCH:USD", "DASH:USD", "ZEC:USD", "XRP:USD", "BTG:USD"]
-
 class ViewController: NSViewController {
     @IBOutlet weak var pairsMenu: NSMenu!
     @IBOutlet var optionsMenu: NSMenu!
@@ -26,7 +24,8 @@ class ViewController: NSViewController {
     }
 
     required init?(coder: NSCoder) {
-        ratesFetcher = RatesFetcher()
+        UserDefaults.addDefaultCurrencies()
+        ratesFetcher = RatesFetcher(exchagePairList: UserDefaults.userExchangePairList)
         super.init(coder: coder)
     }
 

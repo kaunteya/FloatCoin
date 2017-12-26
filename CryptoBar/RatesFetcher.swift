@@ -17,11 +17,8 @@ class RatesFetcher {
     var timer: Timer!
     var userExchangePairList: [UserExchangePair]
     var delegate: RatesDelegate?
-    init() {
-        userExchangePairList = [
-            UserExchangePair(exchange: .coinbase, pair: Pair("BTC:USD")),
-            UserExchangePair(exchange: .cex, pair: Pair("ETH:USD"))
-        ]
+    init(exchagePairList: [UserExchangePair]) {
+        userExchangePairList = exchagePairList
     }
 
     func pairs(for exchange: Exchange) -> [Pair] {

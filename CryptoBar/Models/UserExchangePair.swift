@@ -10,7 +10,6 @@ import Foundation
 
 struct UserExchangePair {
     let exchange: Exchange, pair: Pair
-
 }
 
 extension UserExchangePair: LosslessStringConvertible {
