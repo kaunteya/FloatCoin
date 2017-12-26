@@ -23,7 +23,7 @@ struct CEX: ExchangeDelegate {
     }
 
     static func baseCryptoCurriencies() -> [Currency] {
-        return ["BTC", "ETH", "BCH", "BTG", "DAS", "XRP", "ZEC", "GHS"].map { Currency($0)! }
+        return ["ETH", "BTC", "BCH", "BTG", "DASH", "XRP", "ZEC", "GHS"].map { Currency($0)! }
     }
 
     private static let fiat: [String : [String]] = [
@@ -38,7 +38,7 @@ struct CEX: ExchangeDelegate {
     ]
 
     static func FIATCurriences(crypto: Currency) -> [Currency] {
-        return ["USD", "EUR", "GBP", "BTC"].map { Currency($0)! }
+         return fiat[crypto.stringValue]!.map { Currency($0)! }
     }
 
     static func fetchRate(_ pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {

@@ -7,11 +7,13 @@
 //
 
 import Foundation
-enum Exchange {
+enum Exchange: String {
     case kraken, coinbase, cex
 
-    static var all: Set<Exchange> {
-        return [Exchange.kraken, Exchange.cex, Exchange.coinbase]
+    // Whenever new exchange is added to the enum, add it to `all`.
+    // In all make sure that it always stays sorted
+    static var all: [Exchange] {
+        return [Exchange.cex, Exchange.coinbase, Exchange.kraken]
     }
 
     var description: String {

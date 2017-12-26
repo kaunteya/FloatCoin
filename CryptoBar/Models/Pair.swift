@@ -14,8 +14,8 @@ struct Pair {
 
 extension Pair {
     /// Supply ABC:XYZ
-    init(_ description: String) {
-        let split = description.split(separator: ":")
+    init(_ aColonB: String) {
+        let split = aColonB.split(separator: ":")
         guard split.count == 2 else {
             fatalError()
         }

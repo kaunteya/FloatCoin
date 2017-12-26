@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		C97F172CD6802F0F9D301B19 /* Pods_CryptoBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2063B17D7D87A5BF05891D5A /* Pods_CryptoBarTests.framework */; };
 		CFA443D6EF37643CBE02D2B7 /* Pods_CryptoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */; };
-		E339CC001FF0320D009570AF /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBF91FF0320B009570AF /* Currency.swift */; };
+		E3389FF71FF24994002A0511 /* UserExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF61FF24994002A0511 /* UserExchangePair.swift */; };
+		E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
+		E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FFC1FF2505D002A0511 /* UserDefaults.swift */; };
 		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
 		E339CC021FF0320D009570AF /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFB1FF0320B009570AF /* Coinbase.swift */; };
 		E339CC031FF0320D009570AF /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* Exchange.swift */; };
@@ -25,6 +27,7 @@
 		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
 		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
+		E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB7D8E1FF145AC00371D5F /* PairVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,9 @@
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
 		B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
-		E339CBF91FF0320B009570AF /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../crypt/Jo/Jo/Model/Currency.swift; sourceTree = "<group>"; };
+		E3389FF61FF24994002A0511 /* UserExchangePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExchangePair.swift; sourceTree = "<group>"; };
+		E3389FF81FF24EA9002A0511 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../../../../.Trash/Currency.swift; sourceTree = "<group>"; };
+		E3389FFC1FF2505D002A0511 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		E339CBFB1FF0320B009570AF /* Coinbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
 		E339CBFC1FF0320C009570AF /* Exchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
@@ -66,7 +71,7 @@
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
-		E3FB7D8D1FF1167700371D5F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +130,12 @@
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
+				E3FB7D8E1FF145AC00371D5F /* PairVC.swift */,
 				E339CC091FF0D873009570AF /* RatesFetcher.swift */,
 				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
+				E3389FFC1FF2505D002A0511 /* UserDefaults.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
-				E339CBF91FF0320B009570AF /* Currency.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
@@ -163,8 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				E339CBFC1FF0320C009570AF /* Exchange.swift */,
-				E3FB7D8D1FF1167700371D5F /* Currency.swift */,
+				E3389FF81FF24EA9002A0511 /* Currency.swift */,
 				E339CBFA1FF0320B009570AF /* Pair.swift */,
+				E3389FF61FF24994002A0511 /* UserExchangePair.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,13 +411,16 @@
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
+				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
 				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,
 				E339CC0A1FF0D873009570AF /* RatesFetcher.swift in Sources */,
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
 				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,
 				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
-				E339CC001FF0320D009570AF /* Currency.swift in Sources */,
+				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,
+				E3389FF71FF24994002A0511 /* UserExchangePair.swift in Sources */,
+				E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

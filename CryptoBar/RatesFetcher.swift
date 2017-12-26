@@ -8,7 +8,6 @@
 
 import Foundation
 
-typealias UserExchangePair = (exchange: Exchange, pair: Pair)
 
 protocol RatesDelegate {
     func ratesUpdated(for exchangePair: UserExchangePair, price: Double)
@@ -19,20 +18,21 @@ class RatesFetcher {
     var userExchangePairList: [UserExchangePair]
     var delegate: RatesDelegate?
     init() {
-        userExchangePairList = [(Exchange.coinbase, Pair("BTC:USD")), (Exchange.cex, Pair("ETH:USD"))]
+        userExchangePairList = [
+            UserExchangePair(exchange: .coinbase, pair: Pair("BTC:USD")),
+            UserExchangePair(exchange: .cex, pair: Pair("ETH:USD"))
+        ]
     }
 
     func pairs(for exchange: Exchange) -> [Pair] {
-        let filterd = userExchangePairList.filter { (aExchange, aPair) -> Bool in
-            return exchange == aExchange
+        let filterd = userExchangePairList.filter {
+            return exchange == $0.exchange
         }
-        return filterd.map { (_, pair) -> Pair in
-            return pair
-        }
+        return filterd.map { return $0.pair }
     }
 
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
             self.fetchCurrentRates()
         }
         timer.fire()
@@ -44,11 +44,14 @@ class RatesFetcher {
     
     func fetchCurrentRates() {
         Exchange.all.forEach { exchange in
-            let pars = self.pairs(for: exchange)
-            guard pars.count != 0 else { return }
-            exchange.type.fetchRate(pars, completion: { pricesDict in
+            let pairs = self.pairs(for: exchange)
+            guard pairs.count != 0 else { return }
+            exchange.type.fetchRate(pairs, completion: { pricesDict in
                 pricesDict.forEach { (pair, price) in
-                    self.delegate?.ratesUpdated(for: (exchange, pair), price: price)
+                    self.delegate?.ratesUpdated(
+                        for: UserExchangePair(exchange: exchange, pair: pair),
+                        price: price
+                    )
                 }
             })
         }
