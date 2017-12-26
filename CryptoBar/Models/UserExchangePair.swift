@@ -23,7 +23,7 @@ extension UserExchangePair: LosslessStringConvertible {
 
 
     var description: String {
-        // returns format "cex|BTC:USD"
+        // returns format "cex|BTC:USD". Dont change this format as it is persistant
         return "\(exchange.rawValue)|\(pair.joined(":"))"
     }
 }
