@@ -78,6 +78,7 @@ class PairVC: NSViewController {
         )
         UserDefaults.add(exchangePair: userExPair)
         tableView.reloadData()
+        tableView.scrollRowToVisible(tableView.numberOfRows - 1)
     }
     @IBAction func delete(_ sender: Any) {
     }
