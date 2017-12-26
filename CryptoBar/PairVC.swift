@@ -34,6 +34,15 @@ class PairVC: NSViewController {
         return selectedExchange.type.FIATCurriences(crypto: selectedBase)[fiatPopUpButton.indexOfSelectedItem]
     }
 
+    var selectedUserExchangePair: UserExchangePair? {
+        guard let selectedBase = selectedBase,
+            let selectedFIAT = selectedFIAT else { return nil; }
+        return UserExchangePair(
+            exchange: selectedExchange,
+            pair: Pair(a: selectedBase, b: selectedFIAT)
+        )
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         Exchange.all.forEach { (ex) in
@@ -49,38 +58,30 @@ class PairVC: NSViewController {
             basePopupButton.addItem(withTitle: $0.stringValue)
         }
         basePopupButton.selectItem(at: 0)
-//        Swift.print("Base \(baseCurriencies.first!)")
         let fiatList = selectedExchange.type.FIATCurriences(crypto: baseCurriencies.first!)
-//        Swift.print("FIAT \(fiatList)")
         fiatPopUpButton.removeAllItems()
         fiatList.forEach {
             fiatPopUpButton.addItem(withTitle: $0.stringValue)
         }
-
     }
+
     @IBAction func actionBaseCurrencySelected(_ sender: NSPopUpButton) {
         fiatPopUpButton.removeAllItems()
-        let selectedExchange = Exchange.all[exchangePopupButton.indexOfSelectedItem]
-        let baseCurrency = selectedExchange.type.baseCryptoCurriencies()[sender.indexOfSelectedItem]
-        let fiatList = selectedExchange.type.FIATCurriences(crypto: baseCurrency)
+        let fiatList = selectedExchange.type.FIATCurriences(crypto: selectedBase!)
         fiatList.forEach {
             fiatPopUpButton.addItem(withTitle: $0.stringValue)
         }
     }
 
-    let userExhangeKey = "userKeys"
     @IBAction func add(_ sender: Any) {
-        guard let selectedBase = selectedBase,
-            let selectedFIAT = selectedFIAT else { return; }
-        let userExPair = UserExchangePair(
-            exchange: selectedExchange,
-            pair: Pair(a: selectedBase, b: selectedFIAT)
-        )
-        UserDefaults.add(exchangePair: userExPair)
+        guard let selectedUserExchangePair = selectedUserExchangePair else { return}
+        UserDefaults.add(exchangePair: selectedUserExchangePair)
         tableView.reloadData()
         tableView.scrollRowToVisible(tableView.numberOfRows - 1)
     }
     @IBAction func delete(_ sender: Any) {
+        guard let selectedUserExchangePair = selectedUserExchangePair else { return}
+        UserDefaults.remove(exchangePair: selectedUserExchangePair)
     }
 }
 
@@ -90,8 +91,16 @@ extension PairVC: NSTableViewDataSource, NSTableViewDelegate {
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let current = UserDefaults.userExchangePairList[row]
-        let cell = tableView.make(withIdentifier: "cell", owner: nil) as! NSTableCellView
+        let cell = tableView.make(withIdentifier: "cell", owner: nil) as! TableViewPairCell
         cell.textField?.stringValue = current.description
+        cell.pairLabel.stringValue = current.pair.joined(":")
+        cell.exchangeLabel.stringValue = current.exchange.description
         return cell
     }
 }
+
+class TableViewPairCell: NSTableCellView {
+    @IBOutlet weak var pairLabel: NSTextField!
+    @IBOutlet weak var exchangeLabel: NSTextField!
+}
+

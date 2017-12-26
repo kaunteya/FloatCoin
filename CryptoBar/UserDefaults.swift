@@ -17,7 +17,7 @@ extension UserDefaults {
         UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
     }
 
-    class func removeExchangePair(exchangePair: UserExchangePair) {
+    class func remove(exchangePair: UserExchangePair) {
         let newList = userExchangePairList.filter { $0 != exchangePair}
         UserDefaults.standard.set(newList, forKey: keyUserExchange)
     }
