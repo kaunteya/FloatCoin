@@ -37,21 +37,6 @@ class ViewController: NSViewController {
             self.buttonStack.addArrangedSubview(aButton)
         }
         thinView = false
-        NotificationCenter.default.addObserver(self, selector: #selector(onPairAdd), name: UserDefaults.notificationPairAdded, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onPairDelete), name: UserDefaults.notificationPairRemoved, object: nil)
-    }
-
-    func onPairAdd(notification: Notification) {
-        let newPair = RatesController.userExchangePairList.last!
-        let aButton = CrButton(exchangePair: newPair, thinView: thinView)
-        self.buttonStack.addArrangedSubview(aButton)
-    }
-
-    func onPairDelete(notification: Notification) {
-        let indexSet = notification.userInfo!["indexSet"] as! IndexSet
-        indexSet.sorted {$0 > $1}.forEach {
-            self.buttonStack.arrangedSubviews[$0].removeFromSuperview()
-        }
     }
 
     override func awakeFromNib() {
@@ -86,6 +71,17 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: RatesDelegate {
+    func pairAdded(userPair: UserExchangePair) {
+        let aButton = CrButton(exchangePair: userPair, thinView: thinView)
+        self.buttonStack.addArrangedSubview(aButton)
+    }
+
+    func pairsRemoved(at indexSet: IndexSet) {
+        indexSet.sorted {$0 > $1}.forEach {
+            self.buttonStack.arrangedSubviews[$0].removeFromSuperview()
+        }
+    }
+
     func ratesUpdated(for exchangePair: UserExchangePair, price: Double) {
         DispatchQueue.main.async {
             for button in self.buttonStack.arrangedSubviews as! [CrButton]
