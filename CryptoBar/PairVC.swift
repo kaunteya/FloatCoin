@@ -73,6 +73,10 @@ class PairVC: NSViewController {
     }
 
     @IBAction func add(_ sender: Any) {
+        guard !UserDefaults.userExchangePairList.contains(selectedUserExchangePair) else {
+            Swift.print("Alrady contains \(selectedUserExchangePair)");
+            return
+        }
         UserDefaults.add(exchangePair: selectedUserExchangePair)
         tableView.reloadData()
         let lastRow = tableView.numberOfRows - 1
