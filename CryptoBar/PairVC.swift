@@ -90,6 +90,7 @@ extension PairVC: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return UserDefaults.userExchangePairList.count
     }
+
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let current = UserDefaults.userExchangePairList[row]
         let cell = tableView.make(withIdentifier: "cell", owner: nil) as! TableViewPairCell

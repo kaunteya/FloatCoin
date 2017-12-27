@@ -36,3 +36,11 @@ extension UserExchangePair: Hashable {
         return lhs.exchange == rhs.exchange && lhs.pair == rhs.pair
     }
 }
+
+extension Sequence where Iterator.Element == UserExchangePair {
+    func allPairs(of exchange: Exchange) -> [Pair] {
+        return self.filter {
+            return exchange == $0.exchange
+        }.map { return $0.pair }
+    }
+}

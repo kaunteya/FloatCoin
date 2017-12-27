@@ -9,9 +9,10 @@
 import Foundation
 
 
-fileprivate let keyUserExchange = "userKeys"
 extension UserDefaults {
-
+    static let keyUserExchange = "userKeys"
+    static let notificationPairAdded = NSNotification.Name(rawValue: "notificationPairAdded")
+    static let notificationPairRemoved = NSNotification.Name(rawValue: "notificationPairRemoved")
     class func addDefaultCurrencies() {
         guard UserDefaults.standard.value(forKey: keyUserExchange) == nil else {
             return
@@ -24,9 +25,11 @@ extension UserDefaults {
         ]
         UserDefaults.standard.set(list.map {$0.description}, forKey: keyUserExchange)
     }
+    
     class func add(exchangePair: UserExchangePair) {
         let newList = userExchangePairList + [exchangePair]
         UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
+        NotificationCenter.default.post(name: notificationPairAdded, object: nil, userInfo: nil)
     }
 
     class func removeExchangePair(at indexSet: IndexSet) {
@@ -34,6 +37,7 @@ extension UserDefaults {
         //Sort elements in decending order to avoid removal in invalid index
         indexSet.sorted {$0 > $1}.forEach { newList.remove(at: $0) }
         UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
+        NotificationCenter.default.post(name: notificationPairRemoved, object: nil, userInfo: ["indexSet": indexSet])
     }
 
     class var userExchangePairList: [UserExchangePair] {

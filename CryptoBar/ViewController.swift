@@ -12,9 +12,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var pairsMenu: NSMenu!
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
-    @IBOutlet weak var mainLabel: NSTextField!
-    var lastUpdateTime = Date()
-    var ratesFetcher: RatesFetcher
+
+    var ratesController: RatesController
 
     var thinView: Bool = false { //TODO: isThinView
         didSet {
@@ -25,18 +24,34 @@ class ViewController: NSViewController {
 
     required init?(coder: NSCoder) {
         UserDefaults.addDefaultCurrencies()
-        ratesFetcher = RatesFetcher(exchagePairList: UserDefaults.userExchangePairList)
+        ratesController = RatesController()
         super.init(coder: coder)
+        ratesController.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ratesFetcher.userExchangePairList.forEach { exchangePair in
+        ratesController.startTimer()
+        RatesController.userExchangePairList.forEach { exchangePair in
             let aButton = CrButton(exchangePair: exchangePair, thinView: thinView)
             self.buttonStack.addArrangedSubview(aButton)
         }
-        ratesFetcher.delegate = self
         thinView = false
+        NotificationCenter.default.addObserver(self, selector: #selector(onPairAdd), name: UserDefaults.notificationPairAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onPairDelete), name: UserDefaults.notificationPairRemoved, object: nil)
+    }
+
+    func onPairAdd(notification: Notification) {
+        let newPair = RatesController.userExchangePairList.last!
+        let aButton = CrButton(exchangePair: newPair, thinView: thinView)
+        self.buttonStack.addArrangedSubview(aButton)
+    }
+
+    func onPairDelete(notification: Notification) {
+        let indexSet = notification.userInfo!["indexSet"] as! IndexSet
+        indexSet.sorted {$0 > $1}.forEach {
+            self.buttonStack.arrangedSubviews[$0].removeFromSuperview()
+        }
     }
 
     override func awakeFromNib() {
@@ -52,13 +67,7 @@ class ViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        ratesFetcher.start()
         buttonStack.heightAnchor.constraint(equalTo: buttonStack.arrangedSubviews.first!.heightAnchor).isActive = true
-    }
-
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        ratesFetcher.stop()
     }
 
     @IBAction func actionClose(_ sender: NSButton) {

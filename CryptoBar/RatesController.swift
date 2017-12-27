@@ -13,35 +13,28 @@ protocol RatesDelegate {
     func ratesUpdated(for exchangePair: UserExchangePair, price: Double)
 }
 
-class RatesFetcher {
+class RatesController {
     var timer: Timer!
-    var userExchangePairList: [UserExchangePair]
     var delegate: RatesDelegate?
-    init(exchagePairList: [UserExchangePair]) {
-        userExchangePairList = exchagePairList
+
+    static var userExchangePairList: [UserExchangePair] {
+        return UserDefaults.userExchangePairList
     }
 
-    func pairs(for exchange: Exchange) -> [Pair] {
-        let filterd = userExchangePairList.filter {
-            return exchange == $0.exchange
-        }
-        return filterd.map { return $0.pair }
-    }
-
-    func start() {
+    func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            self.fetchCurrentRates()
+            self.fetchCurrentRates(for: RatesController.userExchangePairList)
         }
         timer.fire()
     }
 
-    func stop() {
+    func stopTimer() {
         timer.invalidate()
     }
-    
-    func fetchCurrentRates() {
+
+    func fetchCurrentRates(for exchangePairList: [UserExchangePair]) {
         Exchange.all.forEach { exchange in
-            let pairs = self.pairs(for: exchange)
+            let pairs = exchangePairList.allPairs(of: exchange)
             guard pairs.count != 0 else { return }
             exchange.type.fetchRate(pairs, completion: { pricesDict in
                 pricesDict.forEach { (pair, price) in
@@ -53,5 +46,6 @@ class RatesFetcher {
             })
         }
     }
-
 }
+
+

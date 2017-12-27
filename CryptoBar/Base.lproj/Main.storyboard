@@ -905,7 +905,7 @@
                                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
-                                                <tableHeaderView key="headerView" id="Q1D-5R-uEp" customClass="TableHeaderView" customModule="FloatCoin" customModuleProvider="target">
+                                                <tableHeaderView key="headerView" id="Q1D-5R-uEp">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="23"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableHeaderView>
