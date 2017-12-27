@@ -32,6 +32,7 @@ class RatesController: NSObject {
     func onPairAdd(notification: Notification) {
         let newPair = RatesController.userExchangePairList.last!
         delegate?.pairAdded(userPair: newPair)
+        self.fetchRate(for: newPair)
     }
 
     func onPairDelete(notification: Notification) {
@@ -41,7 +42,7 @@ class RatesController: NSObject {
 
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            self.fetchCurrentRates(for: RatesController.userExchangePairList)
+            self.fetchRates(for: RatesController.userExchangePairList)
         }
         timer.fire()
     }
@@ -50,7 +51,10 @@ class RatesController: NSObject {
         timer.invalidate()
     }
 
-    func fetchCurrentRates(for exchangePairList: [UserExchangePair]) {
+    /// Fetch rate for list of userExchangePair
+    /// This method aggregates all pairs of each exchange ans sends only one request
+    /// per exchange
+    private func fetchRates(for exchangePairList: [UserExchangePair]) {
         Exchange.all.forEach { exchange in
             let pairs = exchangePairList.allPairs(of: exchange)
             guard pairs.count != 0 else { return }
@@ -64,6 +68,17 @@ class RatesController: NSObject {
             })
         }
     }
+
+    // Fetch rate for single userExchangePair
+    // This will be used when rate is to be fetched of newly added element
+    private func fetchRate(for exchangePair: UserExchangePair) {
+        exchangePair.exchange.type.fetchRate([exchangePair.pair]) { (pricesDict) in
+            pricesDict.forEach{ (pair, price) in
+                self.delegate?.ratesUpdated(for: exchangePair, price: price)
+            }
+        }
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(UserDefaults.notificationPairAdded)
         NotificationCenter.default.removeObserver(UserDefaults.notificationPairRemoved)
