@@ -759,7 +759,6 @@
                     </view>
                     <connections>
                         <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
-                        <outlet property="mainLabel" destination="ItB-TC-tuG" id="6uf-UC-0D3"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,6 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var pairsMenu: NSMenu!
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
 

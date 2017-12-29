@@ -30,6 +30,7 @@ class CrButton: NSControl {
     }
     private let pairLabel: NSTextField
     private let priceLabel: NSTextField
+    private let exchangeLabel: NSTextField
     var stackView: NSStackView!
 
     init(exchangePair: UserExchangePair, thinView: Bool) {
@@ -48,14 +49,21 @@ class CrButton: NSControl {
         priceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         priceLabel.setContentHuggingPriority(900, for: .horizontal)
         priceLabel.alignment = .center
-        
+
+        exchangeLabel = NSTextField(labelWithAttributedString: exchangePair.exchange.description
+            .withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+            .withFont(.boldSystemFont(ofSize: 9)))
+        exchangeLabel.setContentCompressionResistancePriority(999, for: .horizontal)
+        exchangeLabel.setContentHuggingPriority(900, for: .horizontal)
+        exchangeLabel.alignment = .right
+
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
         self.layer?.backgroundColor = defaultBackgroundColor.cgColor
         self.layer?.borderWidth = 1
         self.layer?.cornerRadius = 3.0
         self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        stackView = NSStackView(views: [pairLabel, priceLabel])
+        stackView = NSStackView(views: [pairLabel, priceLabel, exchangeLabel])
         stackView.orientation = .vertical
         set(thinView: thinView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
