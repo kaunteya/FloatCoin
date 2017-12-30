@@ -14,11 +14,26 @@ class PairView: NSView {
     private var fiatPriceLabel: NSTextField
     var stackView: NSStackView!
 
+    var price: Double? {
+        didSet {
+            guard price != nil else { fatalError() }
+            let priceString = "\(pair.b.symbol) \(price!.format(precision: 4)!)"
+            let color: NSColor
+            if oldValue != nil {
+                color = price! < oldValue! ? #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1) : #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            } else {
+                color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+            fiatPriceLabel.attributedStringValue = priceString.withTextColor(color).withFont(.systemFont(ofSize: 10))
+
+        }
+    }
+
     init(_ pair: Pair) {
         self.pair = pair
         basePriceLabel = NSTextField(
             labelWithAttributedString: pair.a.description
-                .withTextColor(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
+                .withTextColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
                 .withFont(.systemFont(ofSize: 11))
         )
         basePriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
@@ -35,9 +50,9 @@ class PairView: NSView {
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
 
-        self.layer?.borderWidth = 1
-        self.layer?.cornerRadius = 2.0
-        self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        self.layer?.borderWidth = 1
+//        self.layer?.cornerRadius = 2.0
+//        self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
         stackView = NSStackView(views: [basePriceLabel, fiatPriceLabel])
         stackView.orientation = .horizontal
@@ -52,9 +67,6 @@ class PairView: NSView {
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
 
-    func set(price: Double) {
-        fiatPriceLabel.attributedStringValue = "\(pair.b.symbol) \(price)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10))
-    }
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

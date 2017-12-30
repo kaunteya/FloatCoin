@@ -50,7 +50,7 @@ class ExchangeView: NSView {
     func set(price: Double, of pair: Pair) {
         if let pairViewList = pairStackView.arrangedSubviews as? [PairView],
          let pairView = pairViewList.first(where: { $0.pair == pair}) {
-            pairView.set(price: price)
+            pairView.price = price
         }
     }
 
