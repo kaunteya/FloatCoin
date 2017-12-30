@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol RatesDelegate {
-    func ratesUpdated(for exchangePair: UserExchangePair, price: Double)
+    func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double)
 }
 
 class RatesController: NSObject {
@@ -22,8 +22,11 @@ class RatesController: NSObject {
     }
 
     func startTimer() {
+        log.debug("Timer started")
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            self.fetchRates(for: RatesController.userExchangePairList)
+            if let all = UserDefaults.pairsForAllExchanges {
+                self.fetchRates(for: all)
+            }
         }
         timer.fire()
     }
@@ -35,27 +38,24 @@ class RatesController: NSObject {
     /// Fetch rate for list of userExchangePair
     /// This method aggregates all pairs of each exchange ans sends only one request
     /// per exchange
-    private func fetchRates(for exchangePairList: [UserExchangePair]) {
-        Exchange.all.forEach { exchange in
-            let pairs = exchangePairList.allPairs(of: exchange)
-            guard pairs.count != 0 else { return }
-            exchange.type.fetchRate(pairs, completion: { pricesDict in
+    private func fetchRates(for dict: [Exchange: Set<Pair>]) {
+        dict.keys.forEach { exchange in
+            let pairs = dict[exchange]!
+            exchange.type.fetchRate(pairs, completion: { (pricesDict) in
                 pricesDict.forEach { (pair, price) in
-                    self.delegate?.ratesUpdated(
-                        for: UserExchangePair(exchange: exchange, pair: pair),
-                        price: price
-                    )
+                    self.delegate?.ratesUpdated(for: exchange, pair: pair, price: price)
                 }
             })
         }
+
     }
 
     // Fetch rate for single userExchangePair
     // This will be used when rate is to be fetched of newly added element
-    private func fetchRate(for exchangePair: UserExchangePair) {
-        exchangePair.exchange.type.fetchRate([exchangePair.pair]) { (pricesDict) in
+    private func fetchRate(exchange: Exchange, pair: Pair) {
+        exchange.type.fetchRate([pair]) { (pricesDict) in
             pricesDict.forEach{ (pair, price) in
-                self.delegate?.ratesUpdated(for: exchangePair, price: price)
+                self.delegate?.ratesUpdated(for: exchange, pair: pair, price: price)
             }
         }
     }

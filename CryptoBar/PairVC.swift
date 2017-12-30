@@ -10,11 +10,6 @@ import AppKit
 
 class PairVC: NSViewController {
 
-    var list: [UserExchangePair] = [
-        UserExchangePair(exchange: .coinbase, pair: Pair("BTC:USD")),
-        UserExchangePair(exchange: .cex, pair: Pair("BTC:USD")),
-    ]
-
     @IBOutlet weak var exchangePopupButton: NSPopUpButton!
     @IBOutlet weak var basePopupButton: NSPopUpButton!
     @IBOutlet weak var fiatPopUpButton: NSPopUpButton!
@@ -31,6 +26,10 @@ class PairVC: NSViewController {
     var selectedFIAT: Currency {
         assert(fiatPopUpButton.indexOfSelectedItem >= 0)
         return selectedExchange.type.FIATCurriences(crypto: selectedBase)[fiatPopUpButton.indexOfSelectedItem]
+    }
+
+    var selectedPair: Pair {
+        return Pair(a: selectedBase, b: selectedFIAT)
     }
 
     var selectedUserExchangePair: UserExchangePair {
@@ -72,10 +71,11 @@ class PairVC: NSViewController {
     }
 
     @IBAction func add(_ sender: Any) {
-        guard !UserDefaults.userExchangePairList.contains(selectedUserExchangePair) else {
-            Swift.print("Alrady contains \(selectedUserExchangePair)");
+        guard !UserDefaults.has(exchange: selectedExchange, pair: selectedPair) else {
+            log.warning("Alrady contains \(selectedExchange.description) \(selectedPair.description)");
             return
         }
+
         UserDefaults.add(exchange: selectedExchange, pair: Pair(a: selectedBase, b: selectedFIAT))
         self.dismiss(sender)
     }

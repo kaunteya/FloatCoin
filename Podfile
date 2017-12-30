@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
  platform :osx, '10.12'
 
-target 'CryptoBar' do
+target 'FloatCoin' do
     use_frameworks!
 #    pod 'DateToolsSwift'
     pod 'SwiftyAttributes'
-    
+    pod 'SwiftyBeaver'    
 
 
   target 'CryptoBarTests' do

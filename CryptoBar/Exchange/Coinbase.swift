@@ -34,17 +34,17 @@ struct Coinbase: ExchangeDelegate {
 
     static func sendRequest(pair: Pair, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: [pair])
-        Swift.print("Coinbase URL \(urlRequest)")
+        log.info("Coinbase URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                Swift.print("Error \(error!)")
+                log.error("Error \(error!)")
                 return;
             }
             guard data != nil else {
-                Swift.print("Data is nil"); return;
+                log.error("Data is nil"); return;
             }
             guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any] else {
-                Swift.print("JSON parsing error")
+                log.error("JSON parsing error ")
                 return;
             }
             let amount = Double((json["data"] as! [String: String])["amount"]!)!

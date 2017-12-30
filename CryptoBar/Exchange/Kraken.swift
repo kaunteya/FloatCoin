@@ -19,20 +19,21 @@ struct Kraken : ExchangeDelegate {
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
-        Swift.print("Kraken URL \(urlRequest)")
+        log.info("Kraken URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                Swift.print("Error \(error!)")
+                log.error("Error \(error!)")
                 return;
             }
             guard data != nil else {
-                Swift.print("Data is nil"); return;
+                log.error("Data is nil"); return;
             }
-            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any] else {
-                Swift.print("JSON parsing error")
+            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any],
+            let result = json["result"] as? [String: Any] else {
+                log.error("JSON parsing error")
                 return;
             }
-            let result = json["result"] as! [String: Any]
+
             var dict = [Pair: Double]()
             for (pair, info) in result {
                 let valStr = ((info as! [String: Any])["c"] as! [String]).first!

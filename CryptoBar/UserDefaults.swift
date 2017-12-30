@@ -20,7 +20,7 @@ extension UserDefaults {
 
         var list = dict[exchange.rawValue] ?? [String]()
         guard !list.contains(pair.joined(":")) else {
-            Swift.print("Already present!!")
+            log.warning("Already present!!")
             return
         }
         list.append(pair.joined(":"))
@@ -44,7 +44,16 @@ extension UserDefaults {
             return UserExchangePair($0)!
         } ?? [UserExchangePair]()
     }
-    
+
+    class func has(exchange: Exchange, pair: Pair) -> Bool {
+        if let all = pairsForAllExchanges {
+            return all.contains(where: { (aExchange, aPairList) -> Bool in
+                return exchange == aExchange && aPairList.contains(pair)
+            })
+        }
+        return false
+    }
+
     class var pairsForAllExchanges: [Exchange: Set<Pair>]? {
         guard let dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]]else {
             return nil

@@ -7,6 +7,15 @@
 //
 
 import AppKit
+import SwiftyBeaver
+
+let log: SwiftyBeaver.Type = {
+    let log = SwiftyBeaver.self
+    let console = ConsoleDestination()
+    console.minLevel = .debug
+    log.addDestination(console)
+    return log
+}()
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,9 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+
         statusItemController = StatusController(statusImage: #imageLiteral(resourceName: "statusIcon"), isTemplate: true, clickHandler: { statusItem in
-            Swift.print("click")
+            log.info("click")
             self.window.orderFront(self)
         })
     }

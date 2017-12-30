@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */; };
 		C97F172CD6802F0F9D301B19 /* Pods_CryptoBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2063B17D7D87A5BF05891D5A /* Pods_CryptoBarTests.framework */; };
 		CFA443D6EF37643CBE02D2B7 /* Pods_CryptoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */; };
 		E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
@@ -50,6 +51,7 @@
 		3BBAAD2C59CD5CACE5B32BE9 /* Pods-CryptoBarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C9033F6BE9660D568A796DD /* Pods-CryptoBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.debug.xcconfig"; sourceTree = "<group>"; };
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
+		7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.release.xcconfig"; sourceTree = "<group>"; };
 		B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3211CBC1FF3A94200704CE3 /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
@@ -81,6 +83,8 @@
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
+		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA443D6EF37643CBE02D2B7 /* Pods_CryptoBar.framework in Frameworks */,
+				48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +113,7 @@
 			children = (
 				B7A45F556913B2CF81FB477E /* Pods_CryptoBar.framework */,
 				2063B17D7D87A5BF05891D5A /* Pods_CryptoBarTests.framework */,
+				E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */,
 				3BBAAD2C59CD5CACE5B32BE9 /* Pods-CryptoBarTests.debug.xcconfig */,
 				DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */,
+				F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */,
+				7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -369,16 +377,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3573D6FA8A69BD784D8365F /* [CP] Copy Pods Resources */ = {
@@ -393,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4E50683261A77B2A3AB44ED /* [CP] Copy Pods Resources */ = {
@@ -422,7 +432,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CryptoBar-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FloatCoin-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -595,7 +605,7 @@
 		};
 		E372E8031F47835500AEB397 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C9033F6BE9660D568A796DD /* Pods-CryptoBar.debug.xcconfig */;
+			baseConfigurationReference = F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;
@@ -614,7 +624,7 @@
 		};
 		E372E8041F47835500AEB397 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */;
+			baseConfigurationReference = 7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;

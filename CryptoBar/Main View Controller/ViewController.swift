@@ -32,9 +32,10 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        log.error("Started")
+        Swift.print("Hello")
         ratesController.startTimer()
         loadExchangePairs()
-
     }
 
     private func loadExchangePairs() {
@@ -98,7 +99,7 @@ extension ViewController: PairManagerDelegate {
 }
 
 extension ViewController: RatesDelegate {
-    func ratesUpdated(for exchangePair: UserExchangePair, price: Double) {
+    func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double) {
         DispatchQueue.main.async {
 //            for button in self.buttonStack.arrangedSubviews as! [CrButton]
 //                where button.exchangePair == exchangePair {
