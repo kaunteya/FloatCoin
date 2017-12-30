@@ -14,30 +14,43 @@ class ViewController: NSViewController {
 
     var ratesController: RatesController
 
+    // Deals with adding and deleting pairs
+    let pairsManager = PairsManager()
     var thinView: Bool = false { //TODO: isThinView
         didSet {
-            let buttons = buttonStack.arrangedSubviews as! [CrButton]
-            buttons.forEach{ $0.set(thinView: thinView) }
+//            let buttons = buttonStack.arrangedSubviews as! [CrButton]
+//            buttons.forEach{ $0.set(thinView: thinView) }
         }
     }
 
     required init?(coder: NSCoder) {
-        UserDefaults.addDefaultCurrencies()
         ratesController = RatesController()
         super.init(coder: coder)
         ratesController.delegate = self
+        pairsManager.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ratesController.startTimer()
-        RatesController.userExchangePairList.forEach { exchangePair in
-            let aButton = CrButton(exchangePair: exchangePair, thinView: thinView)
-            self.buttonStack.addArrangedSubview(aButton)
-        }
-        thinView = false
+        loadExchangePairs()
+
     }
 
+    private func loadExchangePairs() {
+
+        guard let exchangePair = UserDefaults.pairsForAllExchanges else {
+            //For no pairs show a view to that will have a add button in it.
+            return
+        }
+
+        exchangePair.keys.forEach { (exchange) in
+            let pairList = exchangePair[exchange].map { Array($0) } ?? [Pair]()
+            let exchangeView = ExchangeView(exchange: exchange, pairList: pairList.sorted())
+            self.buttonStack.addArrangedSubview(exchangeView)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         (NSApp.delegate as! AppDelegate).window = self.view.window
@@ -47,11 +60,6 @@ class ViewController: NSViewController {
         super.viewWillAppear()
         self.view.window!.isMovableByWindowBackground = true
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
-    }
-
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        buttonStack.heightAnchor.constraint(equalTo: buttonStack.arrangedSubviews.first!.heightAnchor).isActive = true
     }
 
     @IBAction func actionClose(_ sender: NSButton) {
@@ -69,24 +77,33 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController: RatesDelegate {
-    func pairAdded(userPair: UserExchangePair) {
-        let aButton = CrButton(exchangePair: userPair, thinView: thinView)
-        self.buttonStack.addArrangedSubview(aButton)
-    }
+extension ViewController: PairManagerDelegate {
+    func pair(added pair: Pair, to exchange: Exchange) {
+        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
+        let filteredExchange = exchangeViews.filter { $0.exchange == exchange }
 
-    func pairsRemoved(at indexSet: IndexSet) {
-        indexSet.sorted {$0 > $1}.forEach {
-            self.buttonStack.arrangedSubviews[$0].removeFromSuperview()
+        // If exchange available
+        if let selectedExchange = filteredExchange.first {
+            selectedExchange.add(newPair: pair)
+        } else {
+            // If exchange NOT available
+            let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
+            self.buttonStack.addArrangedSubview(exchangeView)
         }
     }
 
+    func pair(removed pair: Pair, to exchange: Exchange) {
+        
+    }
+}
+
+extension ViewController: RatesDelegate {
     func ratesUpdated(for exchangePair: UserExchangePair, price: Double) {
         DispatchQueue.main.async {
-            for button in self.buttonStack.arrangedSubviews as! [CrButton]
-                where button.exchangePair == exchangePair {
-                    button.price = price
-            }
+//            for button in self.buttonStack.arrangedSubviews as! [CrButton]
+//                where button.exchangePair == exchangePair {
+//                    button.price = price
+//            }
         }
     }
 }

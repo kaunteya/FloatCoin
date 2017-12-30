@@ -10,39 +10,49 @@ import Foundation
 
 
 extension UserDefaults {
-    static let keyUserExchange = "userKeys"
-    static let notificationPairAdded = NSNotification.Name(rawValue: "notificationPairAdded")
-    static let notificationPairRemoved = NSNotification.Name(rawValue: "notificationPairRemoved")
-    class func addDefaultCurrencies() {
-        guard UserDefaults.standard.value(forKey: keyUserExchange) == nil else {
+    private static let keyUserExchange = "userKeys"
+
+    static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
+    static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
+    
+    class func add(exchange: Exchange, pair: Pair) {
+        var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]] ?? [String: [String]]()
+
+        var list = dict[exchange.rawValue] ?? [String]()
+        guard !list.contains(pair.joined(":")) else {
+            Swift.print("Already present!!")
             return
         }
-        Swift.print("Initialising Defaults")
-        let list = [
-            UserExchangePair(exchange: .cex, pair: Pair("BTC:USD")),
-            UserExchangePair(exchange: .kraken, pair: Pair("BTC:USD")),
-            UserExchangePair(exchange: .coinbase, pair: Pair("BTC:USD"))
-        ]
-        UserDefaults.standard.set(list.map {$0.description}, forKey: keyUserExchange)
-    }
-    
-    class func add(exchangePair: UserExchangePair) {
-        let newList = userExchangePairList + [exchangePair]
-        UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
-        NotificationCenter.default.post(name: notificationPairAdded, object: nil, userInfo: nil)
+        list.append(pair.joined(":"))
+        dict[exchange.rawValue] = list.sorted()
+        UserDefaults.standard.set(dict, forKey: keyUserExchange)
+
+        NotificationCenter.default.post(name: notificationPairDidAdd, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
     }
 
-    class func removeExchangePair(at indexSet: IndexSet) {
-        var newList = userExchangePairList
-        //Sort elements in decending order to avoid removal in invalid index
-        indexSet.sorted {$0 > $1}.forEach { newList.remove(at: $0) }
-        UserDefaults.standard.set(newList.map {$0.description}, forKey: keyUserExchange)
-        NotificationCenter.default.post(name: notificationPairRemoved, object: nil, userInfo: ["indexSet": indexSet])
+    class func remove(exchange: Exchange, pair: Pair) {
+        var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as! [String: [String]]
+        var list = dict[exchange.rawValue]!
+        dict[exchange.rawValue] = list.filter{ $0 != pair.joined(":") }
+        UserDefaults.standard.set(dict, forKey: keyUserExchange)
+
+        NotificationCenter.default.post(name: notificationPairDidRemove, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
     }
 
     class var userExchangePairList: [UserExchangePair] {
         return UserDefaults.standard.stringArray(forKey: keyUserExchange)?.map {
             return UserExchangePair($0)!
         } ?? [UserExchangePair]()
+    }
+    
+    class var pairsForAllExchanges: [Exchange: Set<Pair>]? {
+        guard let dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]]else {
+            return nil
+        }
+        var newDict = [Exchange: Set<Pair>]()
+        for (key, value) in dict {
+            newDict[Exchange(rawValue: key)!] = Set(value.map { Pair($0)})
+        }
+        return newDict
     }
 }

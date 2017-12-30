@@ -36,7 +36,11 @@ extension Pair: Hashable {
         return (a.stringValue + b.stringValue).hashValue
     }
 }
-
+extension Pair: Comparable {
+    static func <(lhs: Pair, rhs: Pair) -> Bool {
+        return lhs.joined(":") < rhs.joined(":")
+    }
+}
 extension Pair: CustomStringConvertible {
     var description: String {
         return self.joined(":")

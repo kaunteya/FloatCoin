@@ -11,8 +11,6 @@ import Foundation
 
 protocol RatesDelegate {
     func ratesUpdated(for exchangePair: UserExchangePair, price: Double)
-    func pairAdded(userPair: UserExchangePair)
-    func pairsRemoved(at indexSet: IndexSet)
 }
 
 class RatesController: NSObject {
@@ -21,23 +19,6 @@ class RatesController: NSObject {
 
     static var userExchangePairList: [UserExchangePair] {
         return UserDefaults.userExchangePairList
-    }
-
-    override init() {
-        super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(onPairAdd), name: UserDefaults.notificationPairAdded, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onPairDelete), name: UserDefaults.notificationPairRemoved, object: nil)
-    }
-
-    func onPairAdd(notification: Notification) {
-        let newPair = RatesController.userExchangePairList.last!
-        delegate?.pairAdded(userPair: newPair)
-        self.fetchRate(for: newPair)
-    }
-
-    func onPairDelete(notification: Notification) {
-        let indexSet = notification.userInfo!["indexSet"] as! IndexSet
-        delegate?.pairsRemoved(at: indexSet)
     }
 
     func startTimer() {
@@ -79,10 +60,6 @@ class RatesController: NSObject {
         }
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(UserDefaults.notificationPairAdded)
-        NotificationCenter.default.removeObserver(UserDefaults.notificationPairRemoved)
-    }
 }
 
 

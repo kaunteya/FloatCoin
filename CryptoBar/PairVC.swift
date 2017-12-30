@@ -14,8 +14,7 @@ class PairVC: NSViewController {
         UserExchangePair(exchange: .coinbase, pair: Pair("BTC:USD")),
         UserExchangePair(exchange: .cex, pair: Pair("BTC:USD")),
     ]
-    @IBOutlet weak var tableView: NSTableView!
-    
+
     @IBOutlet weak var exchangePopupButton: NSPopUpButton!
     @IBOutlet weak var basePopupButton: NSPopUpButton!
     @IBOutlet weak var fiatPopUpButton: NSPopUpButton!
@@ -77,35 +76,8 @@ class PairVC: NSViewController {
             Swift.print("Alrady contains \(selectedUserExchangePair)");
             return
         }
-        UserDefaults.add(exchangePair: selectedUserExchangePair)
-        tableView.reloadData()
-        let lastRow = tableView.numberOfRows - 1
-        tableView.selectRowIndexes(IndexSet(integer: lastRow), byExtendingSelection: false)
-        tableView.scrollRowToVisible(lastRow)
-    }
-
-    @IBAction func delete(_ sender: Any) {
-        UserDefaults.removeExchangePair(at: tableView.selectedRowIndexes)
-        tableView.removeRows(at: tableView.selectedRowIndexes, withAnimation: .slideDown)
+        UserDefaults.add(exchange: selectedExchange, pair: Pair(a: selectedBase, b: selectedFIAT))
+        self.dismiss(sender)
     }
 }
 
-extension PairVC: NSTableViewDataSource, NSTableViewDelegate {
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return UserDefaults.userExchangePairList.count
-    }
-
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let current = UserDefaults.userExchangePairList[row]
-        let cell = tableView.make(withIdentifier: "cell", owner: nil) as! TableViewPairCell
-        cell.textField?.stringValue = current.description
-        cell.pairLabel.stringValue = current.pair.joined(":")
-        cell.exchangeLabel.stringValue = current.exchange.description
-        return cell
-    }
-}
-
-class TableViewPairCell: NSTableCellView {
-    @IBOutlet weak var pairLabel: NSTextField!
-    @IBOutlet weak var exchangeLabel: NSTextField!
-}
