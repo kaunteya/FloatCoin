@@ -21,7 +21,7 @@ class ExchangeView: NSView {
         titleLabel = NSTextField(
             labelWithAttributedString: exchange.description
                 .withTextColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
-                .withFont(.boldSystemFont(ofSize: 12))
+                .withFont(.systemFont(ofSize: 12))
         )
 
         super.init(frame: NSZeroRect)
@@ -29,7 +29,7 @@ class ExchangeView: NSView {
 
         pairStackView = NSStackView(views:pairViewList)
         pairStackView.spacing = 4
-        stackView = NSStackView(views: [titleLabel, seperatorView(), pairStackView])
+        stackView = NSStackView(views: [titleLabel, pairStackView])
         stackView.orientation = .vertical
         stackView.spacing = 1
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,15 +40,6 @@ class ExchangeView: NSView {
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
-    }
-
-    private  func seperatorView() -> NSView {
-        let view = NSView()
-        view.wantsLayer = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        view.layer?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6534991197)
-        return view
     }
 
     func add(newPair: Pair) {
@@ -72,14 +63,14 @@ fileprivate class PairView: NSView {
         basePriceLabel = NSTextField(
             labelWithAttributedString: pair.a.description
                 .withTextColor(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
-                .withFont(.boldSystemFont(ofSize: 12))
+                .withFont(.systemFont(ofSize: 11))
         )
         basePriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         basePriceLabel.setContentHuggingPriority(900, for: .horizontal)
         fiatPriceLabel = NSTextField(
             labelWithAttributedString: pair.b.stringValue
                 .withTextColor(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
-                .withFont(.boldSystemFont(ofSize: 12))
+                .withFont(.systemFont(ofSize: 11))
         )
         fiatPriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         fiatPriceLabel.setContentHuggingPriority(900, for: .horizontal)
@@ -109,7 +100,7 @@ fileprivate class PairView: NSView {
         fiatPriceLabel = NSTextField(
             labelWithAttributedString: pair.b.stringValue
                 .withTextColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
-                .withFont(.boldSystemFont(ofSize: 10))
+                .withFont(.systemFont(ofSize: 10))
         )
     }
     required init?(coder decoder: NSCoder) {
