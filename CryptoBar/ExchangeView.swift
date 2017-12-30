@@ -52,15 +52,8 @@ class ExchangeView: NSView {
     }
 
     func add(newPair: Pair) {
-        let pairViewList = pairStackView.arrangedSubviews as! [PairView]
-        for (index, view) in pairViewList.enumerated() {
-            if view.pair > newPair {
-                pairStackView.insertArrangedSubview(PairView(newPair), at: index)
-                return
-            }
-        }
-        //Last element
-        pairStackView.insertArrangedSubview(PairView(newPair), at: pairViewList.count)
+        let pairView = PairView(newPair)
+        pairStackView.sortedInsertSubView(newView: pairView)
     }
 
     required init?(coder decoder: NSCoder) {
@@ -122,5 +115,10 @@ fileprivate class PairView: NSView {
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
+extension PairView: Comparable {
+    static func <(lhs: PairView, rhs: PairView) -> Bool {
+        return lhs.pair < rhs.pair
+    }
 }
