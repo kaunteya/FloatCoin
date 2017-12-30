@@ -10,7 +10,7 @@ import Foundation
 struct CEX: ExchangeDelegate {
     static var name: Exchange = .cex
 
-    static func urlRequest(for pairs: [Pair]) -> URLRequest {
+    static func urlRequest(for pairs: Set<Pair>) -> URLRequest {
         var pp = Set<Currency>()
         pairs.forEach {
             pp.insert($0.a)
@@ -40,8 +40,7 @@ struct CEX: ExchangeDelegate {
     static func FIATCurriences(crypto: Currency) -> [Currency] {
          return fiat[crypto.stringValue]!.map { Currency($0)! }
     }
-
-    static func fetchRate(_ pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
+    static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
         Swift.print("CEX URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in

@@ -10,14 +10,14 @@ import Foundation
 struct Kraken : ExchangeDelegate {
     static var name: Exchange = .kraken
 
-    static func urlRequest(for pairs: [Pair]) -> URLRequest {
+    static func urlRequest(for pairs: Set<Pair>) -> URLRequest {
         var tickerURLComponent = URLComponents(string: "https://api.kraken.com/0/public/Ticker")!
         let pairList = pairs.map {$0.rawPairForAPI}.joined(separator: ",")
         tickerURLComponent.queryItems = [URLQueryItem(name: "pair", value: pairList)]
         return URLRequest(url: tickerURLComponent.url!)
     }
 
-    static func fetchRate(_ pairs: [Pair], completion: @escaping ([Pair : Double]) -> Void) {
+    static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
         Swift.print("Kraken URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
