@@ -15,6 +15,7 @@
 		E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC21FF7855700704CE3 /* PairsManager.swift */; };
 		E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
 		E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC61FF7B32200704CE3 /* PairView.swift */; };
+		E321F5131FF7DD500076AD61 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E3389FF71FF24994002A0511 /* UserExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF61FF24994002A0511 /* UserExchangePair.swift */; };
 		E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FFC1FF2505D002A0511 /* UserDefaults.swift */; };
@@ -472,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E321F5131FF7DD500076AD61 /* Currency.swift in Sources */,
 				E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */,
 				E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */,
 			);

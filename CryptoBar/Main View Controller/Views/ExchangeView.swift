@@ -47,6 +47,13 @@ class ExchangeView: NSView {
         pairStackView.sortedInsertSubView(newView: pairView)
     }
 
+    func set(price: Double, of pair: Pair) {
+        if let pairViewList = pairStackView.arrangedSubviews as? [PairView],
+         let pairView = pairViewList.first(where: { $0.pair == pair}) {
+            pairView.set(price: price)
+        }
+    }
+
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

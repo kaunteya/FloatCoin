@@ -19,6 +19,11 @@ class CryptoBarTests: XCTestCase {
         XCTAssertEqual(testArray.sortedInsertionIndex(newObj: 35), 3)
         XCTAssertEqual(testArray.sortedInsertionIndex(newObj: 45), 4)
     }
-    
+
+    func testCurrencySymbol() {
+        XCTAssertEqual(Currency("USD")!.symbol, "$")
+        XCTAssertEqual(Currency("INR")!.symbol, "₹")
+        XCTAssertEqual(Currency("EUR")!.symbol, "€")
+    }
 
 }

@@ -39,5 +39,4 @@ class PairsManager: NSObject {
         NotificationCenter.default.removeObserver(UserDefaults.notificationPairDidAdd)
         NotificationCenter.default.removeObserver(UserDefaults.notificationPairDidRemove)
     }
-
 }

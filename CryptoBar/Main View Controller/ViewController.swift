@@ -101,10 +101,11 @@ extension ViewController: PairManagerDelegate {
 extension ViewController: RatesDelegate {
     func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double) {
         DispatchQueue.main.async {
-//            for button in self.buttonStack.arrangedSubviews as! [CrButton]
-//                where button.exchangePair == exchangePair {
-//                    button.price = price
-//            }
+            if let list = self.buttonStack.arrangedSubviews as? [ExchangeView] {
+                if let exchangeView = list.first(where: { $0.exchange == exchange }) {
+                    exchangeView.set(price: price, of: pair)
+                }
+            }
         }
     }
 }

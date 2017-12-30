@@ -23,8 +23,9 @@ class PairView: NSView {
         )
         basePriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         basePriceLabel.setContentHuggingPriority(900, for: .horizontal)
+
         fiatPriceLabel = NSTextField(
-            labelWithAttributedString: pair.b.stringValue
+            labelWithAttributedString: ""
                 .withTextColor(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
                 .withFont(.systemFont(ofSize: 11))
         )
@@ -34,7 +35,6 @@ class PairView: NSView {
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
 
-        //        self.layer?.backgroundColor = defaultBackgroundColor.cgColor
         self.layer?.borderWidth = 1
         self.layer?.cornerRadius = 2.0
         self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -53,11 +53,7 @@ class PairView: NSView {
     }
 
     func set(price: Double) {
-        fiatPriceLabel = NSTextField(
-            labelWithAttributedString: pair.b.stringValue
-                .withTextColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
-                .withFont(.systemFont(ofSize: 10))
-        )
+        fiatPriceLabel.attributedStringValue = "\(pair.b.symbol) \(price)".withTextColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).withFont(.systemFont(ofSize: 10))
     }
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
