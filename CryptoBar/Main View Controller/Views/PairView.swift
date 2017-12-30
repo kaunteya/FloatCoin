@@ -34,7 +34,7 @@ class PairView: NSView {
         basePriceLabel = NSTextField(
             labelWithAttributedString: pair.a.description
                 .withTextColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-                .withFont(.systemFont(ofSize: 11))
+                .withFont(.systemFont(ofSize: 10))
         )
         basePriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         basePriceLabel.setContentHuggingPriority(900, for: .horizontal)
@@ -42,7 +42,7 @@ class PairView: NSView {
         fiatPriceLabel = NSTextField(
             labelWithAttributedString: ""
                 .withTextColor(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
-                .withFont(.systemFont(ofSize: 11))
+                .withFont(.systemFont(ofSize: 10))
         )
         fiatPriceLabel.setContentCompressionResistancePriority(999, for: .horizontal)
         fiatPriceLabel.setContentHuggingPriority(900, for: .horizontal)
@@ -61,9 +61,9 @@ class PairView: NSView {
         self.addSubview(stackView)
         stackView.setHuggingPriority(1000, for: .horizontal)
         stackView.setHuggingPriority(1000, for: .vertical)
-        self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true
+        self.leftAnchor.constraint(equalTo: stackView.leftAnchor).isActive = true
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
+        self.rightAnchor.constraint(equalTo: stackView.rightAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
 
