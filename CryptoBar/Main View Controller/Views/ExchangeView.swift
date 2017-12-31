@@ -28,7 +28,7 @@ class ExchangeView: NSView {
         let pairViewList = pairList.map{ PairView($0) }
 
         pairStackView = NSStackView(views:pairViewList)
-        pairStackView.spacing = 4
+        pairStackView.spacing = 2
         stackView = NSStackView(views: [titleLabel, pairStackView])
         stackView.orientation = .vertical
         stackView.spacing = 1

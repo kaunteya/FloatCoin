@@ -23,7 +23,7 @@ class RatesController: NSObject {
 
     func startTimer() {
         log.debug("Timer started")
-        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
             if let all = UserDefaults.pairsForAllExchanges {
                 self.fetchRates(for: all)
             }
