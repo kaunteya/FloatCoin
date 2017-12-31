@@ -18,10 +18,7 @@ extension UserDefaults {
         var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]] ?? [String: [String]]()
 
         var list = dict[exchange.rawValue] ?? [String]()
-        guard !list.contains(pair.joined(":")) else {
-            log.warning("Already present!!")
-            return
-        }
+        assert(!list.contains(pair.joined(":")), "Pair already added")
         list.append(pair.joined(":"))
         dict[exchange.rawValue] = list.sorted()
         UserDefaults.standard.set(dict, forKey: keyUserExchange)

@@ -14,7 +14,7 @@ class PairView: NSButton {
     private var fiatPriceLabel: NSTextField
     private var deleteButton: NSButton!
     var stackView: NSStackView!
-
+    private let defaultBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.290602993)
     private var trackingArea: NSTrackingArea?
 
     var price: Double? {
@@ -59,6 +59,7 @@ class PairView: NSButton {
         self.wantsLayer = true
         self.layer?.cornerRadius = 2.0
         self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.layer?.backgroundColor = defaultBackgroundColor.cgColor
 
         stackView = NSStackView(views: [basePriceLabel, fiatPriceLabel])
         stackView.orientation = .horizontal
@@ -76,7 +77,7 @@ class PairView: NSButton {
 
     func buttonPressed() {
         log.error("Button \(pair) pressed \(self.state)")
-        self.layer?.backgroundColor = state == NSOnState ? #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) : nil
+        self.layer?.backgroundColor = state == NSOnState ? #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) : defaultBackgroundColor.cgColor
     }
 
     required init?(coder decoder: NSCoder) {

@@ -24,6 +24,7 @@ class ViewController: NSViewController {
     }
 
     required init?(coder: NSCoder) {
+        //TODO: Create objects in Storyboard
         ratesController = RatesController()
         super.init(coder: coder)
         ratesController.delegate = self
@@ -32,8 +33,6 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        log.error("Started")
-        Swift.print("Hello")
         ratesController.startTimer()
         loadExchangePairs()
     }
@@ -41,7 +40,7 @@ class ViewController: NSViewController {
     private func loadExchangePairs() {
 
         guard let exchangePair = UserDefaults.pairsForAllExchanges else {
-            //For no pairs show a view to that will have a add button in it.
+            //TODO: For no pairs show a view to that will have a add button in it.
             return
         }
 
@@ -93,14 +92,15 @@ extension ViewController: PairManagerDelegate {
     func pair(added pair: Pair, to exchange: Exchange) {
         let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
 
-        // If exchange available
+        // If exchange view available
         if let selectedExchange = exchangeViews[exchange] {
             selectedExchange.add(pair)
         } else {
-            // If exchange NOT available
+            // If exchange view NOT available
             let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
             self.buttonStack.addArrangedSubview(exchangeView)
         }
+        ratesController.fetchRate(exchange: exchange, pair: pair)
     }
 
     func pair(removed pair: Pair, from exchange: Exchange) {

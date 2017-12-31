@@ -48,7 +48,7 @@ class RatesController: NSObject {
 
     // Fetch rate for single userExchangePair
     // This will be used when rate is to be fetched of newly added element
-    private func fetchRate(exchange: Exchange, pair: Pair) {
+    func fetchRate(exchange: Exchange, pair: Pair) {
         exchange.type.fetchRate([pair]) { (pricesDict) in
             pricesDict.forEach{ (pair, price) in
                 self.delegate?.ratesUpdated(for: exchange, pair: pair, price: price)

@@ -65,7 +65,7 @@ class PairVC: NSViewController {
 
     @IBAction func add(_ sender: Any) {
         guard !UserDefaults.has(exchange: selectedExchange, pair: selectedPair) else {
-            log.warning("Alrady contains \(selectedExchange.description) \(selectedPair.description)");
+            log.warning("Already contains \(selectedExchange.description) \(selectedPair.description)");
             return
         }
 
