@@ -713,10 +713,24 @@
                                 </connections>
                             </button>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-Xy-lT5">
-                                <rect key="frame" x="372" y="54" width="30" height="14"/>
+                                <rect key="frame" x="356" y="54" width="46" height="14"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T9g-Nv-qKt">
                                         <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="14" id="5V5-yX-Qmp"/>
+                                            <constraint firstAttribute="width" secondItem="T9g-Nv-qKt" secondAttribute="height" multiplier="1:1" id="8gU-bK-TQe"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Delete" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Kx3-zr-sO7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="actionDelete:" target="kUf-Ni-Gqb" id="0vG-SU-inr"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
+                                        <rect key="frame" x="16" y="0.0" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="Pi4-rS-s1z"/>
                                             <constraint firstAttribute="width" secondItem="U9d-5D-JBC" secondAttribute="height" multiplier="1:1" id="xfb-bD-Jrz"/>
@@ -731,7 +745,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-D8-YHs">
-                                        <rect key="frame" x="16" y="0.0" width="14" height="14"/>
+                                        <rect key="frame" x="32" y="0.0" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="IRP-wU-cgD"/>
                                             <constraint firstAttribute="width" secondItem="IJK-D8-YHs" secondAttribute="height" multiplier="1:1" id="KNF-7t-Gt8"/>
@@ -748,8 +762,10 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -1040,10 +1056,60 @@ DQ
             </objects>
             <point key="canvasLocation" x="76.5" y="488.5"/>
         </scene>
+        <!--Delete ConfirmVC-->
+        <scene sceneID="HYJ-Xb-gDe">
+            <objects>
+                <viewController id="Vc6-nf-z7T" customClass="DeleteConfirmVC" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wcf-5U-Q6c">
+                        <rect key="frame" x="0.0" y="0.0" width="257" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fvd-Nx-nh8">
+                                <rect key="frame" x="4" y="3" width="121" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Delete selected pairs?" id="ZHq-Uw-nnQ">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-pj-xdb">
+                                <rect key="frame" x="203" y="1" width="53" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lwK-sE-HoM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6g-kx-VCB">
+                                <rect key="frame" x="142" y="1" width="55" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L1w-2p-Q0D">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="Vc6-nf-z7T" id="aC6-A5-lPv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="2oS-S4-0sm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471.5" y="305.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add" width="13" height="13"/>
         <image name="Close" width="13.5" height="13"/>
+        <image name="Delete" width="13" height="13"/>
         <image name="Gear" width="13.5" height="13.5"/>
     </resources>
 </document>

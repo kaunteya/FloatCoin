@@ -104,6 +104,14 @@ class PairView: NSButton {
 //    }
 }
 
+extension Array where Element: PairView {
+    subscript(pair: Pair) -> PairView? {
+        let filtered = self.filter { $0.pair == pair }
+        assert(filtered.count <= 1)
+        return filtered.first
+    }
+}
+
 extension PairView: Comparable {
     static func <(lhs: PairView, rhs: PairView) -> Bool {
         return lhs.pair < rhs.pair

@@ -10,7 +10,7 @@ import AppKit
 
 protocol PairManagerDelegate {
     func pair(added pair: Pair, to exchange: Exchange)
-    func pair(removed pair: Pair, to exchange: Exchange)
+    func pair(removed pair: Pair, from exchange: Exchange)
 }
 
 ///Responsibility: Add Pairs and delete pairs
@@ -32,7 +32,7 @@ class PairsManager: NSObject {
     func onPairDelete(notification: Notification) {
         let exchange = notification.userInfo!["exchange"] as! Exchange
         let pair = notification.userInfo!["pair"] as! Pair
-        delegate?.pair(removed: pair, to: exchange)
+        delegate?.pair(removed: pair, from: exchange)
     }
 
     deinit {

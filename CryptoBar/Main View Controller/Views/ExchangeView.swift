@@ -14,7 +14,16 @@ class ExchangeView: NSView {
 
     private let titleLabel: NSTextField
     private var stackView: NSStackView!
-    var pairStackView: NSStackView!
+    private var pairStackView: NSStackView!
+
+    var selectedPairs: [Pair] {
+        let pairViews = pairStackView.arrangedSubviews as! [PairView]
+        return pairViews.filter { $0.state == NSOnState}.map { $0.pair}
+    }
+
+    var pairViews: [PairView] {
+        return pairStackView.arrangedSubviews as! [PairView]
+    }
 
     init(exchange: Exchange, pairList: [Pair]) {
         self.exchange = exchange
@@ -42,19 +51,31 @@ class ExchangeView: NSView {
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
 
-    func add(newPair: Pair) {
+    func add(_ newPair: Pair) {
         let pairView = PairView(newPair)
         pairStackView.sortedInsertSubView(newView: pairView)
     }
 
+    func remove(_ pair: Pair) {
+        let pairViews = pairStackView.arrangedSubviews as! [PairView]
+        pairViews[pair]!.removeFromSuperview()
+    }
+
     func set(price: Double, of pair: Pair) {
-        if let pairViewList = pairStackView.arrangedSubviews as? [PairView],
-         let pairView = pairViewList.first(where: { $0.pair == pair}) {
-            pairView.price = price
-        }
+        let pairViewList = pairStackView.arrangedSubviews as! [PairView]
+        pairViewList[pair]?.price = price
     }
 
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension Array where Element: ExchangeView {
+    subscript(exchange: Exchange) -> ExchangeView? {
+        let filtered = self.filter { $0.exchange == exchange }
+        assert(filtered.count <= 1)
+        return filtered.first
+    }
+}
+

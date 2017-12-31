@@ -63,10 +63,21 @@ class ViewController: NSViewController {
         self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
     }
 
+    @IBAction func actionDelete(_ sender: NSButton) {
+        log.info("Delete selected pairs..")
+        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
+        exchangeViews.forEach { view in
+            view.selectedPairs.forEach({ pair in
+                log.info("Delete \(view.exchange.description) \(pair.joined(":"))")
+                UserDefaults.remove(exchange: view.exchange, pair: pair)
+            })
+        }
+    }
+
     @IBAction func actionClose(_ sender: NSButton) {
         self.view.window?.orderOut(sender)
     }
-    
+
     @IBAction func actionOptions(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: sender.frame.height)
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
@@ -85,7 +96,7 @@ extension ViewController: PairManagerDelegate {
 
         // If exchange available
         if let selectedExchange = filteredExchange.first {
-            selectedExchange.add(newPair: pair)
+            selectedExchange.add(pair)
         } else {
             // If exchange NOT available
             let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
@@ -93,8 +104,14 @@ extension ViewController: PairManagerDelegate {
         }
     }
 
-    func pair(removed pair: Pair, to exchange: Exchange) {
-        
+    func pair(removed pair: Pair, from exchange: Exchange) {
+        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
+        if let exchangeView = exchangeViews[exchange] {
+            exchangeView.remove(pair)
+            if exchangeView.pairViews.isEmpty {
+                exchangeView.removeFromSuperview()
+            }
+        }
     }
 }
 

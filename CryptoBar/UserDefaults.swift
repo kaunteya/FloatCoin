@@ -32,8 +32,8 @@ extension UserDefaults {
 
     class func remove(exchange: Exchange, pair: Pair) {
         var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as! [String: [String]]
-        var list = dict[exchange.rawValue]!
-        dict[exchange.rawValue] = list.filter{ $0 != pair.joined(":") }
+        let list = dict[exchange.rawValue]!.filter{ $0 != pair.joined(":") }
+        dict[exchange.rawValue] = list.isEmpty ? nil : list
         UserDefaults.standard.set(dict, forKey: keyUserExchange)
 
         NotificationCenter.default.post(name: notificationPairDidRemove, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
