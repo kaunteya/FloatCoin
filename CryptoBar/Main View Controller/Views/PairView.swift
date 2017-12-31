@@ -86,13 +86,11 @@ class PairView: NSButton {
     override func updateTrackingAreas() {
         if let trackingArea = self.trackingArea {
             self.removeTrackingArea(trackingArea)
-            log.debug("Remove tracking \(pair.description)")
         }
 
         let options: NSTrackingAreaOptions = [.mouseEnteredAndExited, .activeAlways]
         trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
         self.addTrackingArea(trackingArea!)
-        log.debug("Add tracking \(pair.description)")
     }
 
     override func mouseEntered(with event: NSEvent) {
