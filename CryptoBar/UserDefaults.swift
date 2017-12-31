@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension UserDefaults {
     private static let keyUserExchange = "userKeys"
 
@@ -37,12 +36,6 @@ extension UserDefaults {
         UserDefaults.standard.set(dict, forKey: keyUserExchange)
 
         NotificationCenter.default.post(name: notificationPairDidRemove, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
-    }
-
-    class var userExchangePairList: [UserExchangePair] {
-        return UserDefaults.standard.stringArray(forKey: keyUserExchange)?.map {
-            return UserExchangePair($0)!
-        } ?? [UserExchangePair]()
     }
 
     class func has(exchange: Exchange, pair: Pair) -> Bool {

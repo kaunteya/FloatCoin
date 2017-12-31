@@ -92,10 +92,9 @@ class ViewController: NSViewController {
 extension ViewController: PairManagerDelegate {
     func pair(added pair: Pair, to exchange: Exchange) {
         let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
-        let filteredExchange = exchangeViews.filter { $0.exchange == exchange }
 
         // If exchange available
-        if let selectedExchange = filteredExchange.first {
+        if let selectedExchange = exchangeViews[exchange] {
             selectedExchange.add(pair)
         } else {
             // If exchange NOT available

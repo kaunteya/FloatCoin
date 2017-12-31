@@ -76,39 +76,38 @@ class PairView: NSButton {
 
     func buttonPressed() {
         log.error("Button \(pair) pressed \(self.state)")
-        self.layer?.borderWidth = state == NSOnState ? 1 : 0
+        self.layer?.backgroundColor = state == NSOnState ? #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) : nil
     }
 
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func updateTrackingAreas() {
-//        if let trackingArea = self.trackingArea {
-//            self.removeTrackingArea(trackingArea)
-//            log.debug("Remove tracking \(pair.description)")
-//        }
-//
-//        let options: NSTrackingAreaOptions = [.mouseEnteredAndExited, .activeAlways]
-//        trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
-//        self.addTrackingArea(trackingArea!)
-//        log.debug("Add tracking \(pair.description)")
-//    }
-//
-//    override func mouseEntered(with event: NSEvent) {
-//        log.debug("Mouse ENTER \(pair.description) \(basePriceLabel.stringValue)")
-//    }
-//
-//    override func mouseExited(with event: NSEvent) {
-//        log.debug("Mouse EXIT \(pair.description)")
-//    }
+    override func updateTrackingAreas() {
+        if let trackingArea = self.trackingArea {
+            self.removeTrackingArea(trackingArea)
+            log.debug("Remove tracking \(pair.description)")
+        }
+
+        let options: NSTrackingAreaOptions = [.mouseEnteredAndExited, .activeAlways]
+        trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+        self.addTrackingArea(trackingArea!)
+        log.debug("Add tracking \(pair.description)")
+    }
+
+    override func mouseEntered(with event: NSEvent) {
+        self.layer?.borderWidth = 1
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        self.layer?.borderWidth = 0
+    }
 }
 
 extension Array where Element: PairView {
     subscript(pair: Pair) -> PairView? {
-        let filtered = self.filter { $0.pair == pair }
-        assert(filtered.count <= 1)
-        return filtered.first
+        assert(self.filter { $0.pair == pair }.count <= 1)
+        return self.filter { $0.pair == pair }.first
     }
 }
 

@@ -32,13 +32,6 @@ class PairVC: NSViewController {
         return Pair(a: selectedBase, b: selectedFIAT)
     }
 
-    var selectedUserExchangePair: UserExchangePair {
-        return UserExchangePair(
-            exchange: selectedExchange,
-            pair: Pair(a: selectedBase, b: selectedFIAT)
-        )
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         Exchange.all.forEach { (ex) in

@@ -17,10 +17,6 @@ class RatesController: NSObject {
     var timer: Timer!
     var delegate: RatesDelegate?
 
-    static var userExchangePairList: [UserExchangePair] {
-        return UserDefaults.userExchangePairList
-    }
-
     func startTimer() {
         log.debug("Timer started")
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
@@ -61,5 +57,3 @@ class RatesController: NSObject {
     }
 
 }
-
-

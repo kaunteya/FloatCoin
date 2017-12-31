@@ -73,9 +73,8 @@ class ExchangeView: NSView {
 
 extension Array where Element: ExchangeView {
     subscript(exchange: Exchange) -> ExchangeView? {
-        let filtered = self.filter { $0.exchange == exchange }
-        assert(filtered.count <= 1)
-        return filtered.first
+        assert(self.filter { $0.exchange == exchange }.count <= 1)
+        return self.filter { $0.exchange == exchange }.first
     }
 }
 

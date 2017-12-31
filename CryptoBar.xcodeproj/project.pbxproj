@@ -16,7 +16,6 @@
 		E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
 		E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC61FF7B32200704CE3 /* PairView.swift */; };
 		E321F5131FF7DD500076AD61 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
-		E3389FF71FF24994002A0511 /* UserExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF61FF24994002A0511 /* UserExchangePair.swift */; };
 		E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FFC1FF2505D002A0511 /* UserDefaults.swift */; };
 		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
@@ -26,7 +25,6 @@
 		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
 		E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
 		E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesController.swift */; };
-		E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3482D2C1FB62AB3009BAA2D /* CrButton.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
@@ -59,7 +57,6 @@
 		E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		E3211CC21FF7855700704CE3 /* PairsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsManager.swift; sourceTree = "<group>"; };
 		E3211CC61FF7B32200704CE3 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
-		E3389FF61FF24994002A0511 /* UserExchangePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExchangePair.swift; sourceTree = "<group>"; };
 		E3389FF81FF24EA9002A0511 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../../../../.Trash/Currency.swift; sourceTree = "<group>"; };
 		E3389FFC1FF2505D002A0511 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
 		E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeDelegate.swift; sourceTree = "<group>"; };
 		E339CC091FF0D873009570AF /* RatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesController.swift; sourceTree = "<group>"; };
-		E3482D2C1FB62AB3009BAA2D /* CrButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrButton.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +131,6 @@
 			children = (
 				E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */,
 				E3211CC61FF7B32200704CE3 /* PairView.swift */,
-				E3482D2C1FB62AB3009BAA2D /* CrButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,7 +202,6 @@
 				E339CBFC1FF0320C009570AF /* Exchange.swift */,
 				E3389FF81FF24EA9002A0511 /* Currency.swift */,
 				E339CBFA1FF0320B009570AF /* Pair.swift */,
-				E3389FF61FF24994002A0511 /* UserExchangePair.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,13 +450,11 @@
 				E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */,
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
 				E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */,
-				E3482D2D1FB62AB3009BAA2D /* CrButton.swift in Sources */,
 				E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */,
 				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
 				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,
 				E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */,
-				E3389FF71FF24994002A0511 /* UserExchangePair.swift in Sources */,
 				E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */,
 				E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
