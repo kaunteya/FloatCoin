@@ -784,7 +784,7 @@
                                 <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="P2S-tb-QLE"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="About" id="AqJ-Jj-mR9">
+                        <menuItem title="About / Help" id="AqJ-Jj-mR9">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="orderFrontStandardAboutPanel:" target="5fK-fP-AMS" id="t7Y-e7-7EX"/>
