@@ -21,19 +21,18 @@ let log: SwiftyBeaver.Type = {
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItemController: StatusController!
-    var window: NSWindow!
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    var windowController: WindowController!
 
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        self.windowController = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "windowController")) as! WindowController
+        
         statusItemController = StatusController(statusImage: #imageLiteral(resourceName: "statusIcon"), isTemplate: true, clickHandler: { statusItem in
-            self.toggleWindowVisibility()
+            self.windowController.toggleAppWindow()
         })
-    }
-    func toggleWindowVisibility() {
-        if window.isVisible {
-            window.orderOut(self)
-        } else {
-            window.orderFront(self)
+
+        //Show window afer some delay. Window cannot be made visible immediately.
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+            self.windowController.show()
         }
     }
 }

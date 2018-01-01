@@ -17,6 +17,7 @@
 		E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC61FF7B32200704CE3 /* PairView.swift */; };
 		E321F5131FF7DD500076AD61 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5141FFA114A0076AD61 /* PairMenuView.swift */; };
+		E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5181FFA5DB20076AD61 /* WindowController.swift */; };
 		E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FFC1FF2505D002A0511 /* UserDefaults.swift */; };
 		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
@@ -59,6 +60,7 @@
 		E3211CC21FF7855700704CE3 /* PairsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsManager.swift; sourceTree = "<group>"; };
 		E3211CC61FF7B32200704CE3 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
 		E321F5141FFA114A0076AD61 /* PairMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairMenuView.swift; sourceTree = "<group>"; };
+		E321F5181FFA5DB20076AD61 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		E3389FF81FF24EA9002A0511 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../../../../.Trash/Currency.swift; sourceTree = "<group>"; };
 		E3389FFC1FF2505D002A0511 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				E39313BB1FB74C18006E915C /* CryptoBar.entitlements */,
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
+				E321F5181FFA5DB20076AD61 /* WindowController.swift */,
 				E3211CC41FF78AA800704CE3 /* Main View Controller */,
 				E3FB7D8E1FF145AC00371D5F /* PairVC.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
@@ -448,6 +451,7 @@
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
 				E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */,
+				E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
 				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
 				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,

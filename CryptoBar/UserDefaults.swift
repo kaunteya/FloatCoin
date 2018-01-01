@@ -9,8 +9,18 @@
 import Foundation
 
 extension UserDefaults {
+    static let keyFloatOnTop = "floatOnTop"
     private static let keyUserExchange = "userKeys"
 
+    static var floatOnTop: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: keyFloatOnTop)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: keyFloatOnTop)
+        }
+    }
+    
     static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
     static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
     

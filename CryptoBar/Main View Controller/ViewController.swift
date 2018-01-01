@@ -45,17 +45,6 @@ class ViewController: NSViewController {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        (NSApp.delegate as! AppDelegate).window = self.view.window
-    }
-
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.view.window!.isMovableByWindowBackground = true
-        self.view.window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
-    }
-
     @IBAction func actionClose(_ sender: NSButton) {
         self.view.window?.orderOut(sender)
     }
