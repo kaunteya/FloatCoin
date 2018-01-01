@@ -794,12 +794,6 @@
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="w9R-vv-P9Z">
                     <items>
-                        <menuItem title="Thin view" id="XBV-hL-j5z">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="actionThinView:" target="kUf-Ni-Gqb" id="fNk-wl-33h"/>
-                            </connections>
-                        </menuItem>
                         <menuItem title="About" id="AqJ-Jj-mR9">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -989,7 +983,7 @@ Gw
                                                 </connections>
                                             </button>
                                             <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="8jc-SD-1Yl">
-                                                <rect key="frame" x="60" y="2" width="62" height="19"/>
+                                                <rect key="frame" x="60" y="2" width="24" height="19"/>
                                                 <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="j44-DP-cHp" id="gwW-Ce-nCc">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="miniSystem"/>
@@ -1003,7 +997,7 @@ Gw
                                                 </popUpButtonCell>
                                             </popUpButton>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="rHm-fR-oGe">
-                                                <rect key="frame" x="130" y="20" width="265" height="1"/>
+                                                <rect key="frame" x="92" y="20" width="303" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="bfQ-Op-hLP"/>
                                                 </constraints>

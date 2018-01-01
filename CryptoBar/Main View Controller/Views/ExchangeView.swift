@@ -18,7 +18,7 @@ class ExchangeView: NSView {
 
     var selectedPairs: [Pair] {
         let pairViews = pairStackView.arrangedSubviews as! [PairView]
-        return pairViews.filter { $0.state == NSControl.StateValue.on}.map { $0.pair}
+        return pairViews.filter { $0.state == .on}.map { $0.pair}
     }
 
     var pairViews: [PairView] {

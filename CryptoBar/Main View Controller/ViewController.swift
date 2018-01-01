@@ -81,11 +81,6 @@ class ViewController: NSViewController {
         let p = NSPoint(x: 0, y: sender.frame.height)
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
     }
-    
-    @IBAction func actionThinView(_ sender: NSMenuItem) {
-        sender.state = sender.state == NSControl.StateValue.on ? NSControl.StateValue.off : NSControl.StateValue.on
-        thinView = sender.state == NSControl.StateValue.on
-    }
 }
 
 extension ViewController: PairManagerDelegate {
