@@ -40,6 +40,7 @@ struct CEX: ExchangeDelegate {
     static func FIATCurriences(crypto: Currency) -> [Currency] {
          return fiat[crypto.stringValue]!.map { Currency($0)! }
     }
+
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
         log.debug("CEX URL \(urlRequest)")
@@ -58,12 +59,11 @@ struct CEX: ExchangeDelegate {
             let result = json["data"] as! [[String: Any]]
             var dict = [Pair: Double]()
             for pair in pairs {
-                let gre = result.filter{ $0["pair"] as! String == "\(pair.a):\(pair.b)" }.first!
+                let gre = result.filter{ $0["pair"] as! String == pair.joined(":") }.first!
                 dict[pair] = Double(gre["last"] as! String)!
             }
             completion(dict)
             }.resume()
 
     }
-
 }
