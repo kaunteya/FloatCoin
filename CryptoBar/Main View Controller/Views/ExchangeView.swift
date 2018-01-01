@@ -14,7 +14,7 @@ class ExchangeView: NSView {
 
     private let titleLabel: NSTextField
     private var stackView: NSStackView!
-    private var pairStackView: NSStackView!
+    private let pairStackView = NSStackView()
 
     var selectedPairs: [Pair] {
         let pairViews = pairStackView.arrangedSubviews as! [PairView]
@@ -36,8 +36,7 @@ class ExchangeView: NSView {
 
         super.init(frame: NSZeroRect)
 
-        pairStackView = NSStackView()
-        pairList.forEach { self.add($0) }
+        pairList.forEach { self.add(pair: $0) }
 
         pairStackView.spacing = 2
         stackView = NSStackView(views: [titleLabel, pairStackView])
@@ -56,8 +55,8 @@ class ExchangeView: NSView {
         self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
 
-    func add(_ newPair: Pair) {
-        let pairView = PairView(pair: newPair, exchange: exchange)
+    func add(pair: Pair) {
+        let pairView = PairView(pair: pair, exchange: exchange)
         pairStackView.sortedInsertSubView(newView: pairView)
         pairView.topAnchor.constraint(equalTo: pairStackView.topAnchor).isActive = true
         pairView.bottomAnchor.constraint(equalTo: pairStackView.bottomAnchor).isActive = true

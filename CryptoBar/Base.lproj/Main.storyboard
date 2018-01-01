@@ -689,20 +689,20 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="135" height="68"/>
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="71"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="135" height="68"/>
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="71"/>
                             </visualEffectView>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                <rect key="frame" x="2" y="2" width="131" height="64"/>
+                                <rect key="frame" x="2" y="5" width="131" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="4OK-tS-mbP"/>
                                 </constraints>
                             </stackView>
                             <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
-                                <rect key="frame" x="1" y="52" width="13" height="15"/>
+                                <rect key="frame" x="1" y="55" width="13" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="eQr-Ei-c0I"/>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
@@ -716,7 +716,7 @@
                                 </connections>
                             </button>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-Xy-lT5">
-                                <rect key="frame" x="105" y="54" width="30" height="14"/>
+                                <rect key="frame" x="105" y="57" width="30" height="14"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
                                         <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
@@ -763,7 +763,7 @@
                             <constraint firstAttribute="trailing" secondItem="amr-hQ-OVf" secondAttribute="trailing" id="1xU-hZ-2eL"/>
                             <constraint firstAttribute="trailing" secondItem="jSC-Xy-lT5" secondAttribute="trailing" id="2M4-9J-nPT"/>
                             <constraint firstItem="amr-hQ-OVf" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="8rK-bG-viB"/>
-                            <constraint firstAttribute="bottom" secondItem="9EW-c1-Jdy" secondAttribute="bottom" constant="2" id="JlS-RY-YN3"/>
+                            <constraint firstAttribute="bottom" secondItem="9EW-c1-Jdy" secondAttribute="bottom" constant="5" id="JlS-RY-YN3"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="1" id="YgU-aO-hX3"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="1" id="ZEx-eR-2ZM"/>
                             <constraint firstItem="jSC-Xy-lT5" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="cnZ-KS-FYq"/>

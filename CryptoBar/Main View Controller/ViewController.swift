@@ -72,7 +72,7 @@ extension ViewController: PairManagerDelegate {
 
         // If exchange view available
         if let selectedExchange = exchangeViews[exchange] {
-            selectedExchange.add(pair)
+            selectedExchange.add(pair: pair)
         } else {
             // If exchange view NOT available, create one
             let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
