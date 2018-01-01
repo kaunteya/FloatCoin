@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import SwiftyAttributes
 
 class PairVC: NSViewController {
 
@@ -14,6 +15,7 @@ class PairVC: NSViewController {
     @IBOutlet weak var basePopupButton: NSPopUpButton!
     @IBOutlet weak var fiatPopUpButton: NSPopUpButton!
 
+    @IBOutlet weak var infoLabel: NSTextField!
     var selectedExchange: Exchange {
         return Exchange.all[exchangePopupButton.indexOfSelectedItem]
     }
@@ -37,8 +39,8 @@ class PairVC: NSViewController {
         Exchange.all.forEach { (ex) in
             exchangePopupButton.addItem(withTitle: ex.description)
         }
-        exchangePopupButton.selectItem(at: 1)
         actionExchangeSelected(nil)
+        infoLabel.isHidden = true
     }
 
     @IBAction func actionExchangeSelected(_ sender: NSPopUpButton?) {
@@ -63,9 +65,16 @@ class PairVC: NSViewController {
         }
     }
 
+    func show(info: String) {
+        infoLabel.attributedStringValue = info.withTextColor(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1))
+        infoLabel.isHidden = false
+        infoLabel.alignment = .center
+    }
+
     @IBAction func add(_ sender: Any) {
         guard !UserDefaults.has(exchange: selectedExchange, pair: selectedPair) else {
             log.warning("Already contains \(selectedExchange.description) \(selectedPair.description)");
+            show(info: "\(selectedPair.description) already added")
             return
         }
 
@@ -73,4 +82,3 @@ class PairVC: NSViewController {
         self.dismiss(sender)
     }
 }
-

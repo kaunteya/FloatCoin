@@ -26,8 +26,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         statusItemController = StatusController(statusImage: #imageLiteral(resourceName: "statusIcon"), isTemplate: true, clickHandler: { statusItem in
-            log.info("click")
-            self.window.orderFront(self)
+            self.toggleWindowVisibility()
         })
+    }
+    func toggleWindowVisibility() {
+        if window.isVisible {
+            window.orderOut(self)
+        } else {
+            window.orderFront(self)
+        }
     }
 }
