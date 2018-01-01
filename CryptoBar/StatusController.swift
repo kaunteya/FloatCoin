@@ -10,8 +10,8 @@ import AppKit
 
 class StatusController: NSObject {
 
-    static let statusBarThickness = NSStatusBar.system().thickness
-    let statusItem = NSStatusBar.system().statusItem(withLength: -1)
+    static let statusBarThickness = NSStatusBar.system.thickness
+    let statusItem = NSStatusBar.system.statusItem(withLength: -1)
     let onClick: (NSStatusItem) -> Void
 
     init(statusImage: NSImage, isTemplate: Bool, clickHandler: @escaping (_ statusItem: NSStatusItem) -> Void) {

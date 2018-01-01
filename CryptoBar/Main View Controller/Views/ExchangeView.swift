@@ -18,7 +18,7 @@ class ExchangeView: NSView {
 
     var selectedPairs: [Pair] {
         let pairViews = pairStackView.arrangedSubviews as! [PairView]
-        return pairViews.filter { $0.state == NSOnState}.map { $0.pair}
+        return pairViews.filter { $0.state == NSControl.StateValue.on}.map { $0.pair}
     }
 
     var pairViews: [PairView] {
@@ -34,7 +34,8 @@ class ExchangeView: NSView {
         )
 
         super.init(frame: NSZeroRect)
-        let pairViewList = pairList.map{ PairView($0) }
+
+        let pairViewList = pairList.map{ PairView(pair: $0, exchange: exchange) }
 
         pairStackView = NSStackView(views:pairViewList)
         pairStackView.spacing = 2
@@ -43,8 +44,8 @@ class ExchangeView: NSView {
         stackView.spacing = 1
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
-        stackView.setHuggingPriority(1000, for: .horizontal)
-        stackView.setHuggingPriority(1000, for: .vertical)
+        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .vertical)
         self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true
         self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
@@ -52,7 +53,7 @@ class ExchangeView: NSView {
     }
 
     func add(_ newPair: Pair) {
-        let pairView = PairView(newPair)
+        let pairView = PairView(pair: newPair, exchange: exchange)
         pairStackView.sortedInsertSubView(newView: pairView)
     }
 

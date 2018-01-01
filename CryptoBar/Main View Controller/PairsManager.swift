@@ -23,13 +23,13 @@ class PairsManager: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(onPairDelete), name: UserDefaults.notificationPairDidRemove, object: nil)
     }
 
-    func onPairAdd(notification: Notification) {
+    @objc func onPairAdd(notification: Notification) {
         let exchange = notification.userInfo!["exchange"] as! Exchange
         let pair = notification.userInfo!["pair"] as! Pair
         delegate?.pair(added: pair, to: exchange)
     }
 
-    func onPairDelete(notification: Notification) {
+    @objc func onPairDelete(notification: Notification) {
         let exchange = notification.userInfo!["exchange"] as! Exchange
         let pair = notification.userInfo!["pair"] as! Pair
         delegate?.pair(removed: pair, from: exchange)

@@ -59,7 +59,7 @@ class ViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         self.view.window!.isMovableByWindowBackground = true
-        self.view.window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+        self.view.window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
     }
 
     @IBAction func actionDelete(_ sender: NSButton) {
@@ -83,8 +83,8 @@ class ViewController: NSViewController {
     }
     
     @IBAction func actionThinView(_ sender: NSMenuItem) {
-        sender.state = sender.state == NSControlStateValueOn ? NSControlStateValueOff : NSControlStateValueOn
-        thinView = sender.state == NSControlStateValueOn
+        sender.state = sender.state == NSControl.StateValue.on ? NSControl.StateValue.off : NSControl.StateValue.on
+        thinView = sender.state == NSControl.StateValue.on
     }
 }
 
