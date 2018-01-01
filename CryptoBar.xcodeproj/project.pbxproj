@@ -34,6 +34,7 @@
 		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
 		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
+		E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DB1FFA915D00E26B81 /* Credits.rtf */; };
 		E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB7D8E1FF145AC00371D5F /* PairVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
+		E3DC35DB1FFA915D00E26B81 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
 		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				E372E7F41F47835500AEB397 /* Info.plist */,
 				E372E80C1F47864E00AEB397 /* LICENSE */,
 				E372E80D1F47864E00AEB397 /* README.md */,
+				E3DC35DB1FFA915D00E26B81 /* Credits.rtf */,
 			);
 			path = CryptoBar;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				E372E80E1F47864E00AEB397 /* LICENSE in Resources */,
 				E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */,
 				E372E7F31F47835500AEB397 /* Main.storyboard in Resources */,
+				E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
