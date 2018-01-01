@@ -30,7 +30,7 @@ class ExchangeView: NSView {
         titleLabel = NSTextField(
             labelWithAttributedString: ("    " + exchange.description)
                 .withTextColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
-                .withFont(.systemFont(ofSize: 12))
+                .withFont(.systemFont(ofSize: 11))
         )
         titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
 
