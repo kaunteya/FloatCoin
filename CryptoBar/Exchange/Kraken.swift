@@ -19,7 +19,7 @@ struct Kraken : ExchangeDelegate {
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
-        log.info("Kraken URL \(urlRequest)")
+//        log.info("Kraken URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 log.error("Error \(error!)")

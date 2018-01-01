@@ -16,21 +16,24 @@ protocol RatesDelegate {
 /// Will fetch rates for all the selected exchange:pairs from UserDefaults
 /// Will also fetch rate for passed exchange:pair, for newly added pair
 class RatesController: NSObject {
-    var timer: Timer!
+    var timer: Timer?
     var delegate: RatesDelegate?
 
     func startTimer() {
         log.debug("Timer started")
+        timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in//#TIMER
+            log.info("Timer trigger............")
             if let all = UserDefaults.pairsForAllExchanges {
                 self.fetchRates(for: all)
             }
         }
-        timer.fire()
+        timer?.fire()
     }
 
     func stopTimer() {
-        timer.invalidate()
+        log.debug("Timer stopped")
+        timer?.invalidate()
     }
 
     /// Fetch rate for list of userExchangePair

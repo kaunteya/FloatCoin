@@ -34,7 +34,7 @@ struct Coinbase: ExchangeDelegate {
 
     static func sendRequest(pair: Pair, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: [pair])
-        log.info("Coinbase URL \(urlRequest)")
+//        log.info("Coinbase URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 log.error("Error \(error!)")

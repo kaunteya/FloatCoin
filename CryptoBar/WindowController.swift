@@ -32,11 +32,13 @@ class WindowController: NSWindowController {
         window!.makeKeyAndOrderFront(self)
         window!.makeMain()
         NSApp.activate(ignoringOtherApps: true)
+        (window!.contentViewController as! ViewController).ratesController.startTimer()
     }
 
     private func hide() {
         log.info("Hide")
         window!.orderOut(self)
+        (window!.contentViewController as! ViewController).ratesController.stopTimer()
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -69,6 +71,7 @@ extension WindowController: NSWindowDelegate {
         /// If window is not pinned(hides on deactivate) it does not close(just hides)
         /// Hence close is expicitly called
         if UserDefaults.floatOnTop == false {
+            (window?.contentViewController as! ViewController).ratesController.stopTimer()
             window?.close()
         }
     }
