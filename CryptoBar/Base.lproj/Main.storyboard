@@ -701,7 +701,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="4OK-tS-mbP"/>
                                 </constraints>
                             </stackView>
-                            <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
+                            <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                 <rect key="frame" x="1" y="55" width="13" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="eQr-Ei-c0I"/>
@@ -718,7 +718,7 @@
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-Xy-lT5">
                                 <rect key="frame" x="105" y="57" width="30" height="14"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
+                                    <button toolTip="Add New Pair" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
                                         <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="Pi4-rS-s1z"/>
@@ -733,7 +733,7 @@
                                             <segue destination="fW2-ng-MkX" kind="sheet" id="Uhq-cy-T9w"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-D8-YHs">
+                                    <button toolTip="Preferences" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-D8-YHs">
                                         <rect key="frame" x="16" y="0.0" width="14" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="IRP-wU-cgD"/>
