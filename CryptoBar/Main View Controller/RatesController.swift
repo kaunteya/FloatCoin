@@ -13,6 +13,8 @@ protocol RatesDelegate {
     func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double)
 }
 
+/// Will fetch rates for all the selected exchange:pairs from UserDefaults
+/// Will also fetch rate for passed exchange:pair, for newly added pair
 class RatesController: NSObject {
     var timer: Timer!
     var delegate: RatesDelegate?

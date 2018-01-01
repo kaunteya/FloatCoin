@@ -13,7 +13,8 @@ protocol PairManagerDelegate {
     func pair(removed pair: Pair, from exchange: Exchange)
 }
 
-///Responsibility: Add Pairs and delete pairs
+///Responsibility: Will listen to adding and deleting of pairs on user defaults
+/// and notifiy ViewControl of that via delegate
 class PairsManager: NSObject {
     var delegate: PairManagerDelegate?
 

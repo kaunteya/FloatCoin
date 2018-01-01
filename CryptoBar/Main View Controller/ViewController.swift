@@ -12,20 +12,10 @@ class ViewController: NSViewController {
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
 
-    var ratesController: RatesController
-
-    // Deals with adding and deleting pairs
+    let ratesController = RatesController()
     let pairsManager = PairsManager()
-    var thinView: Bool = false { //TODO: isThinView
-        didSet {
-//            let buttons = buttonStack.arrangedSubviews as! [CrButton]
-//            buttons.forEach{ $0.set(thinView: thinView) }
-        }
-    }
 
     required init?(coder: NSCoder) {
-        //TODO: Create objects in Storyboard
-        ratesController = RatesController()
         super.init(coder: coder)
         ratesController.delegate = self
         pairsManager.delegate = self
@@ -37,6 +27,8 @@ class ViewController: NSViewController {
         loadExchangePairs()
     }
 
+
+    /// Create ExchangeViews and PairViews from UserDefaults
     private func loadExchangePairs() {
 
         guard let exchangePair = UserDefaults.pairsForAllExchanges else {
@@ -60,17 +52,6 @@ class ViewController: NSViewController {
         super.viewWillAppear()
         self.view.window!.isMovableByWindowBackground = true
         self.view.window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
-    }
-
-    @IBAction func actionDelete(_ sender: NSButton) {
-        log.info("Delete selected pairs..")
-        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
-        exchangeViews.forEach { view in
-            view.selectedPairs.forEach({ pair in
-                log.info("Delete \(view.exchange.description) \(pair.joined(":"))")
-                UserDefaults.remove(exchange: view.exchange, pair: pair)
-            })
-        }
     }
 
     @IBAction func actionClose(_ sender: NSButton) {
