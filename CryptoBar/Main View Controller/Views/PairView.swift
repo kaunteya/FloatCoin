@@ -41,7 +41,8 @@ class PairView: NSButton {
                 .withFont(.systemFont(ofSize: 10))
         )
         basePriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
-        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
+        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .vertical)
+        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
 
         fiatPriceLabel = NSTextField(
             labelWithAttributedString: ""
@@ -49,6 +50,7 @@ class PairView: NSButton {
                 .withFont(.systemFont(ofSize: 10))
         )
         fiatPriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+        fiatPriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .vertical)
         fiatPriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
 
 

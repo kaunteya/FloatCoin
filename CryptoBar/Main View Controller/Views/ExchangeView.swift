@@ -32,15 +32,19 @@ class ExchangeView: NSView {
                 .withTextColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))
                 .withFont(.systemFont(ofSize: 12))
         )
+        titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
 
         super.init(frame: NSZeroRect)
 
-        let pairViewList = pairList.map{ PairView(pair: $0, exchange: exchange) }
+        pairStackView = NSStackView()
+        pairList.forEach { self.add($0) }
 
-        pairStackView = NSStackView(views:pairViewList)
         pairStackView.spacing = 2
         stackView = NSStackView(views: [titleLabel, pairStackView])
+        pairStackView.setContentHuggingPriority(NSLayoutConstraint.Priority(1000), for: .horizontal)
+        pairStackView.setContentHuggingPriority(NSLayoutConstraint.Priority(1000), for: .vertical)
         stackView.orientation = .vertical
+        stackView.alignment = .left
         stackView.spacing = 1
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
@@ -55,6 +59,8 @@ class ExchangeView: NSView {
     func add(_ newPair: Pair) {
         let pairView = PairView(pair: newPair, exchange: exchange)
         pairStackView.sortedInsertSubView(newView: pairView)
+        pairView.topAnchor.constraint(equalTo: pairStackView.topAnchor).isActive = true
+        pairView.bottomAnchor.constraint(equalTo: pairStackView.bottomAnchor).isActive = true
     }
 
     func remove(_ pair: Pair) {

@@ -40,6 +40,8 @@ class ViewController: NSViewController {
             let pairList = exchangePair[exchange].map { Array($0) } ?? [Pair]()
             let exchangeView = ExchangeView(exchange: exchange, pairList: pairList.sorted())
             self.buttonStack.addArrangedSubview(exchangeView)
+            exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
+            exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
         }
     }
     
@@ -72,7 +74,7 @@ extension ViewController: PairManagerDelegate {
         if let selectedExchange = exchangeViews[exchange] {
             selectedExchange.add(pair)
         } else {
-            // If exchange view NOT available
+            // If exchange view NOT available, create one
             let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
             self.buttonStack.addArrangedSubview(exchangeView)
         }
