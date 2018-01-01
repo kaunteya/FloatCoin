@@ -27,10 +27,8 @@ class ViewController: NSViewController {
         loadExchangePairs()
     }
 
-
     /// Create ExchangeViews and PairViews from UserDefaults
     private func loadExchangePairs() {
-
         guard let exchangePair = UserDefaults.pairsForAllExchanges else {
             //TODO: For no pairs show a view to that will have a add button in it.
             return
