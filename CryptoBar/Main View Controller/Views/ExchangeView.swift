@@ -33,6 +33,7 @@ class ExchangeView: NSView {
                 .withFont(.systemFont(ofSize: 11))
         )
         titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
+        titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .vertical)
 
         super.init(frame: NSZeroRect)
 

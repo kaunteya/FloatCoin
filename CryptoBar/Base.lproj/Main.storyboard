@@ -686,20 +686,69 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="135" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="304" height="111"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="135" height="71"/>
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="111"/>
                             </visualEffectView>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                <rect key="frame" x="2" y="5" width="131" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="4OK-tS-mbP"/>
-                                </constraints>
+                                <rect key="frame" x="2" y="5" width="300" height="104"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xJF-iu-CgT" userLabel="Empty State">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="104"/>
+                                        <subviews>
+                                            <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qu3-qV-oc3">
+                                                <rect key="frame" x="27" y="31" width="247" height="42"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eog-B6-QUv">
+                                                        <rect key="frame" x="-2" y="24" width="251" height="18"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="Rg2-9z-OA0">
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                            <color key="textColor" red="0.81735751295336789" green="0.81735751295336789" blue="0.81735751295336789" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="36m-Ku-sbB">
+                                                        <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="O54-Rj-m3R">
+                                                            <font key="font" metaFont="system" size="12"/>
+                                                            <color key="textColor" red="0.65691790803108807" green="0.65691790803108807" blue="0.65691790803108807" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="eog-B6-QUv" secondAttribute="trailing" id="Euc-w8-cP6"/>
+                                                    <constraint firstItem="eog-B6-QUv" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="GTI-0X-Pi3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="36m-Ku-sbB" secondAttribute="trailing" id="qfA-5m-cvB"/>
+                                                    <constraint firstItem="36m-Ku-sbB" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="wDA-gx-TI9"/>
+                                                </constraints>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Qu3-qV-oc3" firstAttribute="centerY" secondItem="xJF-iu-CgT" secondAttribute="centerY" id="Ikp-Q1-9bt"/>
+                                            <constraint firstItem="Qu3-qV-oc3" firstAttribute="centerX" secondItem="xJF-iu-CgT" secondAttribute="centerX" id="zWC-OM-mGa"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
-                                <rect key="frame" x="1" y="55" width="15" height="15"/>
+                                <rect key="frame" x="1" y="95" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="eQr-Ei-c0I"/>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
@@ -713,7 +762,7 @@
                                 </connections>
                             </button>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-Xy-lT5">
-                                <rect key="frame" x="105" y="57" width="30" height="14"/>
+                                <rect key="frame" x="274" y="97" width="30" height="14"/>
                                 <subviews>
                                     <button toolTip="Add New Pair" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
                                         <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
@@ -772,6 +821,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
+                        <outlet property="emptyStateView" destination="xJF-iu-CgT" id="lAe-f2-IdY"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
                 </viewController>
@@ -817,7 +867,7 @@
                 </textField>
                 <userDefaultsController representsSharedInstance="YES" id="dSg-ZW-bdM"/>
             </objects>
-            <point key="canvasLocation" x="142" y="255"/>
+            <point key="canvasLocation" x="142" y="254.5"/>
         </scene>
         <!--PairVC-->
         <scene sceneID="E8O-2z-ZGz">

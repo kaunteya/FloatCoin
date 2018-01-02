@@ -12,6 +12,7 @@ class ViewController: NSViewController {
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var buttonStack: NSStackView!
 
+    @IBOutlet weak var emptyStateView: NSView!
     let ratesController = RatesController()
     let pairsManager = PairsManager()
 
@@ -32,7 +33,7 @@ class ViewController: NSViewController {
             //TODO: For no pairs show a view to that will have a add button in it.
             return
         }
-
+        emptyStateView.removeFromSuperview()
         exchangePair.keys.forEach { (exchange) in
             let pairList = exchangePair[exchange].map { Array($0) } ?? [Pair]()
             let exchangeView = ExchangeView(exchange: exchange, pairList: pairList.sorted())

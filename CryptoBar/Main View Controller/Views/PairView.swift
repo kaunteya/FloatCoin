@@ -21,7 +21,7 @@ class PairView: NSButton {
     var price: Double? {
         didSet {
             guard price != nil else { fatalError() }
-            let priceString = "\(pair.b.symbol) \(price!.format(precision: 4)!) "
+            let priceString = "\(pair.b.symbol)\(price!.format(precision: 4)!) "
             let color: NSColor
             if oldValue != nil {
                 color = price! < oldValue! ? #colorLiteral(red: 1, green: 0.34383979, blue: 0.136546772, alpha: 1) : #colorLiteral(red: 0.1420414355, green: 0.9820115771, blue: 0.1467524558, alpha: 1)
