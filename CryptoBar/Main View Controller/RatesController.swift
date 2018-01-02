@@ -22,7 +22,7 @@ class RatesController: NSObject {
     func startTimer() {
         log.debug("Timer started")
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in//#TIMER
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in//#TIMER
             log.info("Timer trigger............")
             if let all = UserDefaults.pairsForAllExchanges {
                 self.fetchRates(for: all)
