@@ -24,6 +24,31 @@ extension NSStackView {
     }
 }
 
+extension NSView {
+    func addSubViewWithConstraints(_ view: NSView, top: CGFloat? = nil, right: CGFloat? = nil, bottom: CGFloat? = nil, left: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        if let top = top {
+            self.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
+        }
+        if let right = right {
+            self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: right).isActive = true
+        }
+        if let bottom = bottom {
+            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom).isActive = true
+        }
+        if let left = left {
+            self.leftAnchor.constraint(equalTo: view.leftAnchor, constant: left).isActive = true
+        }
+        if let height = height {
+            view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if let width = width  {
+            view.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+    }
+}
+
 extension Double {
     func format(precision: Int) -> String? {
         let formatter = NumberFormatter()

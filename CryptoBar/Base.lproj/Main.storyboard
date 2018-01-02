@@ -694,58 +694,6 @@
                             </visualEffectView>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
                                 <rect key="frame" x="2" y="5" width="300" height="104"/>
-                                <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xJF-iu-CgT" userLabel="Empty State">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="104"/>
-                                        <subviews>
-                                            <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qu3-qV-oc3">
-                                                <rect key="frame" x="27" y="31" width="247" height="42"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eog-B6-QUv">
-                                                        <rect key="frame" x="-2" y="24" width="251" height="18"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="Rg2-9z-OA0">
-                                                            <font key="font" metaFont="system" size="14"/>
-                                                            <color key="textColor" red="0.81735751295336789" green="0.81735751295336789" blue="0.81735751295336789" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="36m-Ku-sbB">
-                                                        <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="O54-Rj-m3R">
-                                                            <font key="font" metaFont="system" size="12"/>
-                                                            <color key="textColor" red="0.65691790803108807" green="0.65691790803108807" blue="0.65691790803108807" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="eog-B6-QUv" secondAttribute="trailing" id="Euc-w8-cP6"/>
-                                                    <constraint firstItem="eog-B6-QUv" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="GTI-0X-Pi3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="36m-Ku-sbB" secondAttribute="trailing" id="qfA-5m-cvB"/>
-                                                    <constraint firstItem="36m-Ku-sbB" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="wDA-gx-TI9"/>
-                                                </constraints>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Qu3-qV-oc3" firstAttribute="centerY" secondItem="xJF-iu-CgT" secondAttribute="centerY" id="Ikp-Q1-9bt"/>
-                                            <constraint firstItem="Qu3-qV-oc3" firstAttribute="centerX" secondItem="xJF-iu-CgT" secondAttribute="centerX" id="zWC-OM-mGa"/>
-                                        </constraints>
-                                    </customView>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                 <rect key="frame" x="1" y="95" width="15" height="15"/>
@@ -775,7 +723,6 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="actionOptions:" target="kUf-Ni-Gqb" id="C1Q-ek-xSm"/>
                                             <segue destination="fW2-ng-MkX" kind="sheet" id="Uhq-cy-T9w"/>
                                         </connections>
                                     </button>
@@ -820,8 +767,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonStack" destination="9EW-c1-Jdy" id="lmL-Qk-46Y"/>
-                        <outlet property="emptyStateView" destination="xJF-iu-CgT" id="lAe-f2-IdY"/>
+                        <outlet property="exchangeViewStack" destination="9EW-c1-Jdy" id="KwT-cZ-LAe"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
                 </viewController>
@@ -1029,6 +975,56 @@ DQ
                 <customObject id="z9j-qh-RGS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="142" y="448"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aVQ-NK-UdX">
+            <objects>
+                <viewController id="ZW9-Tc-Qtm" sceneMemberID="viewController">
+                    <view key="view" id="IZH-Kp-SZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="218" height="109"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qu3-qV-oc3">
+                                <rect key="frame" x="0.0" y="28" width="247" height="42"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eog-B6-QUv">
+                                        <rect key="frame" x="-2" y="24" width="251" height="18"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="Rg2-9z-OA0">
+                                            <font key="font" metaFont="system" size="14"/>
+                                            <color key="textColor" red="0.81735751295336789" green="0.81735751295336789" blue="0.81735751295336789" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="36m-Ku-sbB">
+                                        <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="O54-Rj-m3R">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" red="0.65691790803108807" green="0.65691790803108807" blue="0.65691790803108807" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eog-B6-QUv" secondAttribute="trailing" id="Euc-w8-cP6"/>
+                                    <constraint firstItem="eog-B6-QUv" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="GTI-0X-Pi3"/>
+                                    <constraint firstAttribute="trailing" secondItem="36m-Ku-sbB" secondAttribute="trailing" id="qfA-5m-cvB"/>
+                                    <constraint firstItem="36m-Ku-sbB" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="wDA-gx-TI9"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="Nal-WC-OCP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="282"/>
         </scene>
     </scenes>
     <resources>

@@ -10,12 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet var optionsMenu: NSMenu!
-    @IBOutlet weak var buttonStack: NSStackView!
+    @IBOutlet weak var exchangeViewStack: NSStackView!
 
-    @IBOutlet weak var emptyStateView: NSView!
     let ratesController = RatesController()
     let pairsManager = PairsManager()
-
+    lazy var emptyView = EmptyStateView()
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         ratesController.delegate = self
@@ -29,15 +28,15 @@ class ViewController: NSViewController {
 
     /// Create ExchangeViews and PairViews from UserDefaults
     private func loadExchangePairs() {
-        guard let exchangePair = UserDefaults.pairsForAllExchanges else {
-            //TODO: For no pairs show a view to that will have a add button in it.
+        guard let exchangePairs = UserDefaults.pairsForAllExchanges else {
+            self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
             return
         }
-        emptyStateView.removeFromSuperview()
-        exchangePair.keys.forEach { (exchange) in
-            let pairList = exchangePair[exchange].map { Array($0) } ?? [Pair]()
+
+        exchangePairs.keys.forEach { (exchange) in
+            let pairList = exchangePairs[exchange].map { Array($0) } ?? [Pair]()
             let exchangeView = ExchangeView(exchange: exchange, pairList: pairList.sorted())
-            self.buttonStack.addArrangedSubview(exchangeView)
+            self.exchangeViewStack.addArrangedSubview(exchangeView)
             exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
             exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
         }
@@ -55,7 +54,7 @@ class ViewController: NSViewController {
 
 extension ViewController: PairManagerDelegate {
     func pair(added pair: Pair, to exchange: Exchange) {
-        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
+        let exchangeViews = exchangeViewStack.arrangedSubviews as! [ExchangeView]
 
         // If exchange view available
         if let selectedExchange = exchangeViews[exchange] {
@@ -63,18 +62,22 @@ extension ViewController: PairManagerDelegate {
         } else {
             // If exchange view NOT available, create one
             let exchangeView = ExchangeView(exchange: exchange, pairList: [pair])
-            self.buttonStack.addArrangedSubview(exchangeView)
+            self.exchangeViewStack.addArrangedSubview(exchangeView)
         }
         ratesController.fetchRate(exchange: exchange, pair: pair)
+        emptyView.removeFromSuperview()
     }
 
     func pair(removed pair: Pair, from exchange: Exchange) {
-        let exchangeViews = buttonStack.arrangedSubviews as! [ExchangeView]
+        let exchangeViews = exchangeViewStack.arrangedSubviews as! [ExchangeView]
         if let exchangeView = exchangeViews[exchange] {
             exchangeView.remove(pair)
             if exchangeView.pairViews.isEmpty {
                 exchangeView.removeFromSuperview()
             }
+        }
+        if UserDefaults.isExchangleListEmpty {
+            self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
         }
     }
 }
@@ -82,7 +85,7 @@ extension ViewController: PairManagerDelegate {
 extension ViewController: RatesDelegate {
     func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double) {
         DispatchQueue.main.async {
-            if let list = self.buttonStack.arrangedSubviews as? [ExchangeView] {
+            if let list = self.exchangeViewStack.arrangedSubviews as? [ExchangeView] {
                 if let exchangeView = list.first(where: { $0.exchange == exchange }) {
                     exchangeView.set(price: price, of: pair)
                 }

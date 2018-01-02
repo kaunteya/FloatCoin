@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="EmptyStateView" customModule="FloatCoin" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="c22-O7-iKe" id="AQj-sg-V6b"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView misplaced="YES" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="267" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQt-fg-Aa6">
+                    <rect key="frame" x="20" y="30" width="247" height="42"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-jf-8xd">
+                            <rect key="frame" x="-2" y="24" width="251" height="18"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="4PK-zu-F49">
+                                <font key="font" metaFont="system" size="14"/>
+                                <color key="textColor" red="0.81735751300000004" green="0.81735751300000004" blue="0.81735751300000004" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-kp-rTx">
+                            <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="yVv-72-513">
+                                <font key="font" metaFont="cellTitle"/>
+                                <color key="textColor" red="0.65691790800000005" green="0.65691790800000005" blue="0.65691790800000005" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UbC-kp-rTx" secondAttribute="trailing" id="3MZ-1A-U3B"/>
+                        <constraint firstItem="1q4-jf-8xd" firstAttribute="leading" secondItem="dQt-fg-Aa6" secondAttribute="leading" id="9Ma-Hb-TpO"/>
+                        <constraint firstItem="UbC-kp-rTx" firstAttribute="leading" secondItem="dQt-fg-Aa6" secondAttribute="leading" id="QGg-ms-KDJ"/>
+                        <constraint firstAttribute="trailing" secondItem="1q4-jf-8xd" secondAttribute="trailing" id="mly-eM-h2F"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dQt-fg-Aa6" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="30" id="224-5T-yVC"/>
+                <constraint firstItem="dQt-fg-Aa6" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="3uf-7b-eUj"/>
+                <constraint firstAttribute="bottom" secondItem="dQt-fg-Aa6" secondAttribute="bottom" constant="30" id="Cmb-gp-Ul6"/>
+                <constraint firstAttribute="trailing" secondItem="dQt-fg-Aa6" secondAttribute="trailing" constant="20" id="mjo-Mm-Gdc"/>
+            </constraints>
+            <point key="canvasLocation" x="-193" y="127"/>
+        </customView>
+    </objects>
+</document>

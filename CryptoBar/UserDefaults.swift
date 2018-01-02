@@ -12,6 +12,9 @@ extension UserDefaults {
     static let keyFloatOnTop = "floatOnTop"
     private static let keyUserExchange = "userKeys"
 
+    static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
+    static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
+
     static var floatOnTop: Bool {
         get {
             return UserDefaults.standard.bool(forKey: keyFloatOnTop)
@@ -20,9 +23,7 @@ extension UserDefaults {
             UserDefaults.standard.set(newValue, forKey: keyFloatOnTop)
         }
     }
-    
-    static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
-    static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
+
     
     class func add(exchange: Exchange, pair: Pair) {
         var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]] ?? [String: [String]]()
@@ -39,10 +40,17 @@ extension UserDefaults {
     class func remove(exchange: Exchange, pair: Pair) {
         var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as! [String: [String]]
         let list = dict[exchange.rawValue]!.filter{ $0 != pair.joined(":") }
-        dict[exchange.rawValue] = list.isEmpty ? nil : list
+        dict[exchange.rawValue] = list.isEmpty ? nil : list//Remove key of list is empty
         UserDefaults.standard.set(dict, forKey: keyUserExchange)
 
         NotificationCenter.default.post(name: notificationPairDidRemove, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
+    }
+
+    class var isExchangleListEmpty: Bool {
+        if let dict = UserDefaults.standard.dictionary(forKey: keyUserExchange), dict.count > 0 {
+            return false
+        }
+        return true
     }
 
     class func has(exchange: Exchange, pair: Pair) -> Bool {
@@ -58,6 +66,7 @@ extension UserDefaults {
         guard let dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]]else {
             return nil
         }
+        guard dict.isEmpty == false else { return nil }
         var newDict = [Exchange: Set<Pair>]()
         for (key, value) in dict {
             newDict[Exchange(rawValue: key)!] = Set(value.map { Pair($0)})

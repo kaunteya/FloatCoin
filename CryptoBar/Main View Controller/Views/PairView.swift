@@ -7,7 +7,7 @@
 
 import AppKit
 
-class PairView: NSButton {
+class PairView: NSView {
     let pair: Pair
     let exchange: Exchange
     private let basePriceLabel: NSTextField
@@ -55,10 +55,6 @@ class PairView: NSButton {
 
 
         super.init(frame: NSZeroRect)
-        self.setButtonType(.toggle)
-        self.title = ""
-        self.isBordered = false
-        self.target = self
         self.wantsLayer = true
         self.layer?.cornerRadius = 2.0
         self.layer?.borderColor = #colorLiteral(red: 0.5786551237, green: 0.5786551237, blue: 0.5786551237, alpha: 1)

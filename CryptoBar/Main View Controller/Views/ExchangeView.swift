@@ -16,11 +16,6 @@ class ExchangeView: NSView {
     private var stackView: NSStackView!
     private let pairStackView = NSStackView()
 
-    var selectedPairs: [Pair] {
-        let pairViews = pairStackView.arrangedSubviews as! [PairView]
-        return pairViews.filter { $0.state == .on}.map { $0.pair}
-    }
-
     var pairViews: [PairView] {
         return pairStackView.arrangedSubviews as! [PairView]
     }
