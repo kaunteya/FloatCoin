@@ -692,7 +692,7 @@
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
                                 <rect key="frame" x="0.0" y="0.0" width="135" height="71"/>
                             </visualEffectView>
-                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
                                 <rect key="frame" x="2" y="5" width="131" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="4OK-tS-mbP"/>

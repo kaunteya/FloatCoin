@@ -14,7 +14,7 @@ class PairView: NSButton {
     private var fiatPriceLabel: NSTextField
     private var optionsButton: NSButton!
     var stackView: NSStackView!
-    private let defaultBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.2355028609)
+    private let defaultBackgroundColor = #colorLiteral(red: 0.2482073307, green: 0.2482073307, blue: 0.2482073307, alpha: 1)
     private var trackingArea: NSTrackingArea?
     private let menuItem = PairMenu()
 
@@ -24,7 +24,7 @@ class PairView: NSButton {
             let priceString = "\(pair.b.symbol) \(price!.format(precision: 4)!) "
             let color: NSColor
             if oldValue != nil {
-                color = price! < oldValue! ? #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1) : #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                color = price! < oldValue! ? #colorLiteral(red: 1, green: 0.34383979, blue: 0.136546772, alpha: 1) : #colorLiteral(red: 0.1420414355, green: 0.9820115771, blue: 0.1467524558, alpha: 1)
             } else {
                 color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             }
@@ -61,12 +61,12 @@ class PairView: NSButton {
         self.target = self
         self.wantsLayer = true
         self.layer?.cornerRadius = 2.0
-        self.layer?.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.layer?.borderColor = #colorLiteral(red: 0.5786551237, green: 0.5786551237, blue: 0.5786551237, alpha: 1)
         self.layer?.backgroundColor = defaultBackgroundColor.cgColor
 
         stackView = NSStackView(views: [basePriceLabel, fiatPriceLabel])
         stackView.orientation = .horizontal
-        stackView.spacing = 3
+        stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stackView)
         stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
