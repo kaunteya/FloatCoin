@@ -8,11 +8,12 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+@objc class ViewController: NSViewController {
 
     let ratesController = RatesController()
     let pairsManager = PairsManager()
     lazy var emptyView = EmptyStateView()
+    @objc dynamic var mouseInside = false
 
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var exchangeStackView: NSStackView!
@@ -30,6 +31,21 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExchangePairs()
+        addTracking()
+    }
+
+    func addTracking() {
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+        let trackingArea = NSTrackingArea(rect: self.view.bounds, options: options, owner: self, userInfo: nil)
+        self.view.addTrackingArea(trackingArea)
+    }
+
+    override func mouseEntered(with event: NSEvent) {
+        mouseInside = true
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        mouseInside = false
     }
 
     /// Create ExchangeViews and PairViews from UserDefaults

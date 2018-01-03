@@ -706,6 +706,11 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="actionClose:" target="kUf-Ni-Gqb" id="JB9-Qq-OXt"/>
+                                    <binding destination="kUf-Ni-Gqb" name="hidden" keyPath="self.mouseInside" id="ez4-It-bNj">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-Xy-lT5">
@@ -748,6 +753,13 @@
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
+                                <connections>
+                                    <binding destination="kUf-Ni-Gqb" name="hidden" keyPath="self.mouseInside" id="Yks-QJ-ljI">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </stackView>
                         </subviews>
                         <constraints>
