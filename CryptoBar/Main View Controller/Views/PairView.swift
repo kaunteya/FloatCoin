@@ -15,8 +15,8 @@ class PairView: KSView {
     @IBOutlet weak var fiatPriceLabel: NSTextField!
     @IBOutlet weak var basePriceLabel: NSTextField!
     @IBOutlet weak var optionsButton: NSButton!
-        private var trackingArea: NSTrackingArea?
-        private let menuItem = PairMenu()
+    private var trackingArea: NSTrackingArea?
+    private let menuItem = PairMenu()
 
 
     var price: Double? {
@@ -42,23 +42,23 @@ class PairView: KSView {
         basePriceLabel.stringValue = " " + pair.a.description
     }
 
-        override func updateTrackingAreas() {
-            if let trackingArea = self.trackingArea {
-                self.removeTrackingArea(trackingArea)
-            }
-    
-            let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
-            trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
-            self.addTrackingArea(trackingArea!)
+    override func updateTrackingAreas() {
+        if let trackingArea = self.trackingArea {
+            self.removeTrackingArea(trackingArea)
         }
+
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+        trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+        self.addTrackingArea(trackingArea!)
+    }
     
-        override func mouseEntered(with event: NSEvent) {
-            optionsButton.isHidden = false
-        }
+    override func mouseEntered(with event: NSEvent) {
+        optionsButton.isHidden = false
+    }
     
-        override func mouseExited(with event: NSEvent) {
-            optionsButton.isHidden = true
-        }
+    override func mouseExited(with event: NSEvent) {
+        optionsButton.isHidden = true
+    }
 
     @IBAction func showOptions(_ sender: Any) {
         menuItem.pairMenuDelegate = self
