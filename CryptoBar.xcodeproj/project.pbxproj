@@ -139,8 +139,8 @@
 			children = (
 				E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */,
 				E3DC35E71FFCDB4800E26B81 /* ExchangeView.xib */,
-				E3DC35E11FFCBD3D00E26B81 /* PairView.xib */,
 				E3DC35E31FFCBFA800E26B81 /* PairView.swift */,
+				E3DC35E11FFCBD3D00E26B81 /* PairView.xib */,
 				E321F5141FFA114A0076AD61 /* PairMenuView.swift */,
 			);
 			path = Views;
