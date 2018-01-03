@@ -767,7 +767,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="exchangeViewStack" destination="9EW-c1-Jdy" id="KwT-cZ-LAe"/>
+                        <outlet property="exchangeStackView" destination="9EW-c1-Jdy" id="y0i-26-CoM"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
                 </viewController>

@@ -15,10 +15,10 @@ class ViewController: NSViewController {
     lazy var emptyView = EmptyStateView()
 
     @IBOutlet var optionsMenu: NSMenu!
-    @IBOutlet weak var exchangeViewStack: NSStackView!
+    @IBOutlet weak var exchangeStackView: NSStackView!
 
     var exchangeViews: [ExchangeView] {
-        return exchangeViewStack.arrangedSubviews as! [ExchangeView]
+        return exchangeStackView.arrangedSubviews as! [ExchangeView]
     }
 
     required init?(coder: NSCoder) {
@@ -48,7 +48,7 @@ class ViewController: NSViewController {
 
     func addNew(exchange: Exchange, with pairs: [Pair]) {
         let exchangeView = ExchangeView(exchange: exchange, pairList: pairs.sorted())
-        self.exchangeViewStack.addArrangedSubview(exchangeView)
+        self.exchangeStackView.addArrangedSubview(exchangeView)
         exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
         exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
     }
@@ -90,7 +90,7 @@ extension ViewController: PairManagerDelegate {
 extension ViewController: RatesDelegate {
     func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double) {
         DispatchQueue.main.async {
-            if let list = self.exchangeViewStack.arrangedSubviews as? [ExchangeView] {
+            if let list = self.exchangeStackView.arrangedSubviews as? [ExchangeView] {
                 if let exchangeView = list.first(where: { $0.exchange == exchange }) {
                     exchangeView.set(price: price, of: pair)
                 }
