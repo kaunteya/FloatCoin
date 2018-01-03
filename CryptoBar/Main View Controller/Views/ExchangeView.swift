@@ -17,6 +17,7 @@ class ExchangeView: NSView {
     @IBOutlet var contentView: NSView!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var pairStackView: NSStackView!
+
     var pairViews: [PairView] {
         return pairStackView.arrangedSubviews as! [PairView]
     }

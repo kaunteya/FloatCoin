@@ -142,6 +142,8 @@
 				E3DC35E31FFCBFA800E26B81 /* PairView.swift */,
 				E3DC35E11FFCBD3D00E26B81 /* PairView.xib */,
 				E321F5141FFA114A0076AD61 /* PairMenuView.swift */,
+				E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */,
+				E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +175,7 @@
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E321F5181FFA5DB20076AD61 /* WindowController.swift */,
+				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E3211CC41FF78AA800704CE3 /* Main View Controller */,
 				E3FB7D8E1FF145AC00371D5F /* PairVC.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
@@ -181,9 +184,6 @@
 				E3DC35E51FFCC76200E26B81 /* KSView.swift */,
 				E3389FFC1FF2505D002A0511 /* UserDefaults.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
-				E372E7F11F47835500AEB397 /* Main.storyboard */,
-				E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */,
-				E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
 				E372E80C1F47864E00AEB397 /* LICENSE */,
 				E372E80D1F47864E00AEB397 /* README.md */,
