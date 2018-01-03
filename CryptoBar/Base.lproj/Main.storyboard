@@ -693,7 +693,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="111"/>
                             </visualEffectView>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                <rect key="frame" x="2" y="5" width="300" height="104"/>
+                                <rect key="frame" x="5" y="5" width="294" height="101"/>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9">
                                 <rect key="frame" x="1" y="95" width="15" height="15"/>
@@ -752,7 +752,7 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="2" id="1ht-7N-aZ8"/>
+                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="5" id="1ht-7N-aZ8"/>
                             <constraint firstAttribute="trailing" secondItem="amr-hQ-OVf" secondAttribute="trailing" id="1xU-hZ-2eL"/>
                             <constraint firstAttribute="trailing" secondItem="jSC-Xy-lT5" secondAttribute="trailing" id="2M4-9J-nPT"/>
                             <constraint firstItem="amr-hQ-OVf" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="8rK-bG-viB"/>
@@ -760,8 +760,8 @@
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="1" id="YgU-aO-hX3"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="1" id="ZEx-eR-2ZM"/>
                             <constraint firstItem="jSC-Xy-lT5" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="cnZ-KS-FYq"/>
-                            <constraint firstAttribute="trailing" secondItem="9EW-c1-Jdy" secondAttribute="trailing" constant="2" id="gZZ-Zl-7j6"/>
-                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="2" id="qvz-OP-7S0"/>
+                            <constraint firstAttribute="trailing" secondItem="9EW-c1-Jdy" secondAttribute="trailing" constant="5" id="gZZ-Zl-7j6"/>
+                            <constraint firstItem="9EW-c1-Jdy" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="5" id="qvz-OP-7S0"/>
                             <constraint firstItem="amr-hQ-OVf" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" id="rNv-a7-4gc"/>
                             <constraint firstAttribute="bottom" secondItem="amr-hQ-OVf" secondAttribute="bottom" id="wU5-Hq-4hX"/>
                         </constraints>
@@ -975,56 +975,6 @@ DQ
                 <customObject id="z9j-qh-RGS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="142" y="448"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aVQ-NK-UdX">
-            <objects>
-                <viewController id="ZW9-Tc-Qtm" sceneMemberID="viewController">
-                    <view key="view" id="IZH-Kp-SZ7">
-                        <rect key="frame" x="0.0" y="0.0" width="218" height="109"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qu3-qV-oc3">
-                                <rect key="frame" x="0.0" y="28" width="247" height="42"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eog-B6-QUv">
-                                        <rect key="frame" x="-2" y="24" width="251" height="18"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="Rg2-9z-OA0">
-                                            <font key="font" metaFont="system" size="14"/>
-                                            <color key="textColor" red="0.81735751295336789" green="0.81735751295336789" blue="0.81735751295336789" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="36m-Ku-sbB">
-                                        <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="O54-Rj-m3R">
-                                            <font key="font" metaFont="cellTitle"/>
-                                            <color key="textColor" red="0.65691790803108807" green="0.65691790803108807" blue="0.65691790803108807" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="eog-B6-QUv" secondAttribute="trailing" id="Euc-w8-cP6"/>
-                                    <constraint firstItem="eog-B6-QUv" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="GTI-0X-Pi3"/>
-                                    <constraint firstAttribute="trailing" secondItem="36m-Ku-sbB" secondAttribute="trailing" id="qfA-5m-cvB"/>
-                                    <constraint firstItem="36m-Ku-sbB" firstAttribute="leading" secondItem="Qu3-qV-oc3" secondAttribute="leading" id="wDA-gx-TI9"/>
-                                </constraints>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="Nal-WC-OCP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="549" y="282"/>
         </scene>
     </scenes>
     <resources>
