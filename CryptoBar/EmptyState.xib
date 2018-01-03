@@ -23,7 +23,7 @@
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-jf-8xd">
                             <rect key="frame" x="-2" y="24" width="251" height="18"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs yet." id="4PK-zu-F49">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs added..." id="4PK-zu-F49">
                                 <font key="font" metaFont="system" size="14"/>
                                 <color key="textColor" red="0.81735751300000004" green="0.81735751300000004" blue="0.81735751300000004" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
