@@ -14,7 +14,6 @@
 		E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */; };
 		E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC21FF7855700704CE3 /* PairsManager.swift */; };
 		E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
-		E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC61FF7B32200704CE3 /* PairView.swift */; };
 		E321F5131FF7DD500076AD61 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5141FFA114A0076AD61 /* PairMenuView.swift */; };
 		E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5181FFA5DB20076AD61 /* WindowController.swift */; };
@@ -37,6 +36,9 @@
 		E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DB1FFA915D00E26B81 /* Credits.rtf */; };
 		E3DC35DE1FFBD0F000E26B81 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */; };
 		E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */; };
+		E3DC35E21FFCBD3D00E26B81 /* PairView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35E11FFCBD3D00E26B81 /* PairView.xib */; };
+		E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E31FFCBFA800E26B81 /* PairView.swift */; };
+		E3DC35E61FFCC76200E26B81 /* KSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E51FFCC76200E26B81 /* KSView.swift */; };
 		E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB7D8E1FF145AC00371D5F /* PairVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +63,6 @@
 		E3211CBC1FF3A94200704CE3 /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		E3211CC21FF7855700704CE3 /* PairsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsManager.swift; sourceTree = "<group>"; };
-		E3211CC61FF7B32200704CE3 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
 		E321F5141FFA114A0076AD61 /* PairMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairMenuView.swift; sourceTree = "<group>"; };
 		E321F5181FFA5DB20076AD61 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		E3389FF81FF24EA9002A0511 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../../../../.Trash/Currency.swift; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		E3DC35DB1FFA915D00E26B81 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E3DC35E11FFCBD3D00E26B81 /* PairView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairView.xib; sourceTree = "<group>"; };
+		E3DC35E31FFCBFA800E26B81 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
+		E3DC35E51FFCC76200E26B81 /* KSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSView.swift; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
 		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */,
-				E3211CC61FF7B32200704CE3 /* PairView.swift */,
+				E3DC35E11FFCBD3D00E26B81 /* PairView.xib */,
+				E3DC35E31FFCBFA800E26B81 /* PairView.swift */,
 				E321F5141FFA114A0076AD61 /* PairMenuView.swift */,
 			);
 			path = Views;
@@ -178,6 +183,7 @@
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
 				E3211CBC1FF3A94200704CE3 /* Extras.swift */,
+				E3DC35E51FFCC76200E26B81 /* KSView.swift */,
 				E3389FFC1FF2505D002A0511 /* UserDefaults.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
@@ -337,6 +343,7 @@
 				E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */,
 				E372E7F31F47835500AEB397 /* Main.storyboard in Resources */,
 				E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */,
+				E3DC35E21FFCBD3D00E26B81 /* PairView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,15 +469,16 @@
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
+				E3DC35E61FFCC76200E26B81 /* KSView.swift in Sources */,
 				E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */,
 				E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
 				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
 				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,
+				E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */,
 				E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */,
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
 				E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */,
-				E3211CC71FF7B32200704CE3 /* PairView.swift in Sources */,
 				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
 				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,

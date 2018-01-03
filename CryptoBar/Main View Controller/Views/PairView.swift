@@ -1,22 +1,23 @@
-//  PairView.swift
+//
+//  PrView.swift
 //  FloatCoin
 //
-//  Created by Kaunteya Suryawanshi on 30/12/17.
-//  Copyright © 2017 Kaunteya Suryawanshi. All rights reserved.
+//  Created by Kaunteya Suryawanshi on 03/01/18.
+//  Copyright © 2018 Kaunteya Suryawanshi. All rights reserved.
 //
 
 import AppKit
+class PairView: KSView {
+    var pair: Pair
+    var exchange: Exchange
 
-class PairView: NSView {
-    let pair: Pair
-    let exchange: Exchange
-    private let basePriceLabel: NSTextField
-    private var fiatPriceLabel: NSTextField
-    private var optionsButton: NSButton!
-    var stackView: NSStackView!
-    private let defaultBackgroundColor = #colorLiteral(red: 0.2482073307, green: 0.2482073307, blue: 0.2482073307, alpha: 1)
-    private var trackingArea: NSTrackingArea?
-    private let menuItem = PairMenu()
+    @IBOutlet var contentView: NSView!
+    @IBOutlet weak var fiatPriceLabel: NSTextField!
+    @IBOutlet weak var basePriceLabel: NSTextField!
+    @IBOutlet weak var optionsButton: NSButton!
+        private var trackingArea: NSTrackingArea?
+        private let menuItem = PairMenu()
+
 
     var price: Double? {
         didSet {
@@ -35,55 +36,31 @@ class PairView: NSView {
     init(pair: Pair, exchange: Exchange) {
         self.pair = pair
         self.exchange = exchange
-        basePriceLabel = NSTextField(
-            labelWithAttributedString: (" " + pair.a.description)
-                .withTextColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-                .withFont(.systemFont(ofSize: 10))
-        )
-        basePriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
-        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .vertical)
-        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
-
-        fiatPriceLabel = NSTextField(
-            labelWithAttributedString: ""
-                .withTextColor(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
-                .withFont(.systemFont(ofSize: 10))
-        )
-        fiatPriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
-        fiatPriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .vertical)
-        fiatPriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
-
-
         super.init(frame: NSZeroRect)
-        self.wantsLayer = true
-        self.layer?.cornerRadius = 2.0
-        self.layer?.borderColor = #colorLiteral(red: 0.5786551237, green: 0.5786551237, blue: 0.5786551237, alpha: 1)
-        self.layer?.backgroundColor = defaultBackgroundColor.cgColor
-
-        stackView = NSStackView(views: [basePriceLabel, fiatPriceLabel])
-        stackView.orientation = .horizontal
-        stackView.spacing = 5
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(stackView)
-        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
-        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .vertical)
-        self.leftAnchor.constraint(equalTo: stackView.leftAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: stackView.rightAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
-
-        optionsButton = NSButton(image: #imageLiteral(resourceName: "Options"), target: self, action: #selector(showOptions))
-        optionsButton.bezelStyle = .regularSquare
-        optionsButton.isBordered = false
-        optionsButton.isHidden = true
-        self.addSubview(optionsButton)
-        optionsButton.translatesAutoresizingMaskIntoConstraints = false
-        optionsButton.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        optionsButton.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        optionsButton.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive  = true
+        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PairView"), owner: self, topLevelObjects: nil)
+        self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
+        basePriceLabel.stringValue = " " + pair.a.description
     }
 
-    @objc func showOptions() {
+        override func updateTrackingAreas() {
+            if let trackingArea = self.trackingArea {
+                self.removeTrackingArea(trackingArea)
+            }
+    
+            let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+            trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+            self.addTrackingArea(trackingArea!)
+        }
+    
+        override func mouseEntered(with event: NSEvent) {
+            optionsButton.isHidden = false
+        }
+    
+        override func mouseExited(with event: NSEvent) {
+            optionsButton.isHidden = true
+        }
+
+    @IBAction func showOptions(_ sender: Any) {
         menuItem.pairMenuDelegate = self
 
         let point = NSPoint(x: 0, y: self.frame.height)
@@ -91,26 +68,9 @@ class PairView: NSView {
     }
 
     required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func updateTrackingAreas() {
-        if let trackingArea = self.trackingArea {
-            self.removeTrackingArea(trackingArea)
-        }
-
-        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
-        trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
-        self.addTrackingArea(trackingArea!)
+        fatalError()
     }
 
-    override func mouseEntered(with event: NSEvent) {
-        optionsButton.isHidden = false
-    }
-
-    override func mouseExited(with event: NSEvent) {
-        optionsButton.isHidden = true
-    }
 }
 
 extension PairView: PairMenuDelegate {
