@@ -12,43 +12,24 @@ import SwiftyAttributes
 class ExchangeView: NSView {
     let exchange: Exchange
 
-    private let titleLabel: NSTextField
     private var stackView: NSStackView!
-    private let pairStackView = NSStackView()
 
+    @IBOutlet var contentView: NSView!
+    @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var pairStackView: NSStackView!
     var pairViews: [PairView] {
         return pairStackView.arrangedSubviews as! [PairView]
     }
 
     init(exchange: Exchange, pairList: [Pair]) {
         self.exchange = exchange
-        titleLabel = NSTextField(
-            labelWithAttributedString: ("    " + exchange.description)
-                .withTextColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7165492958))
-                .withFont(.systemFont(ofSize: 11))
-        )
-        titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .horizontal)
-        titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 900), for: .vertical)
 
         super.init(frame: NSZeroRect)
+        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "ExchangeView"), owner: self, topLevelObjects: nil)
+        self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
 
+        titleLabel.stringValue = "    " + exchange.description
         pairList.forEach { self.add(pair: $0) }
-
-        pairStackView.spacing = 2
-        stackView = NSStackView(views: [titleLabel, pairStackView])
-        pairStackView.setContentHuggingPriority(NSLayoutConstraint.Priority(1000), for: .horizontal)
-        pairStackView.setContentHuggingPriority(NSLayoutConstraint.Priority(1000), for: .vertical)
-        stackView.orientation = .vertical
-        stackView.alignment = .left
-        stackView.spacing = 1
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(stackView)
-        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
-        stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .vertical)
-        self.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: -5).isActive = true
-        self.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 5).isActive = true
-        self.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
 
     func add(pair: Pair) {
