@@ -31,22 +31,22 @@ import Cocoa
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExchangePairs()
-//        addTracking()
+        addTracking()
     }
 
-//    func addTracking() {
-//        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
-//        let trackingArea = NSTrackingArea(rect: self.view.bounds, options: options, owner: self, userInfo: nil)
-//        self.view.addTrackingArea(trackingArea)
-//    }
-//
-//    override func mouseEntered(with event: NSEvent) {
-//        mouseInside = true
-//    }
-//
-//    override func mouseExited(with event: NSEvent) {
-//        mouseInside = false
-//    }
+    func addTracking() {
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways, .inVisibleRect]
+        let trackingArea = NSTrackingArea(rect: self.view.bounds, options: options, owner: self, userInfo: nil)
+        self.view.addTrackingArea(trackingArea)
+    }
+
+    override func mouseEntered(with event: NSEvent) {
+        mouseInside = true
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        mouseInside = false
+    }
 
     /// Create ExchangeViews and PairViews from UserDefaults
     private func loadExchangePairs() {
