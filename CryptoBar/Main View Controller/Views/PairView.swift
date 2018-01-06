@@ -23,13 +23,14 @@ class PairView: KSView {
         didSet {
             guard price != nil else { fatalError() }
             let priceString = "\(pair.b.symbol)\(price!.fixedWidth) "
-            let color: NSColor
+            let textColor: NSColor
             if oldValue != nil {
-                color = price! < oldValue! ? #colorLiteral(red: 1, green: 0.34383979, blue: 0.136546772, alpha: 1) : #colorLiteral(red: 0.1420414355, green: 0.9820115771, blue: 0.1467524558, alpha: 1)
+                textColor = price! < oldValue! ? #colorLiteral(red: 1, green: 0.34383979, blue: 0.136546772, alpha: 1) : #colorLiteral(red: 0.1420414355, green: 0.9820115771, blue: 0.1467524558, alpha: 1)
             } else {
-                color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             }
-            fiatPriceLabel.attributedStringValue = priceString.withTextColor(color).withFont(.systemFont(ofSize: 10))
+            fiatPriceLabel.stringValue = priceString
+            fiatPriceLabel.textColor = textColor
         }
     }
 
