@@ -1013,7 +1013,7 @@ Gw
                 </viewController>
                 <customObject id="r6o-P4-rkn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="77.5"/>
+            <point key="canvasLocation" x="895" y="78"/>
         </scene>
         <!--PairVC-->
         <scene sceneID="E8O-2z-ZGz">
@@ -1312,14 +1312,14 @@ Gw
             <objects>
                 <viewController title="XRP" id="gTB-FU-dug" sceneMemberID="viewController">
                     <view key="view" id="2kJ-CX-f8G">
-                        <rect key="frame" x="0.0" y="0.0" width="305" height="310"/>
+                        <rect key="frame" x="0.0" y="0.0" width="305" height="374"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fy-cO-Yz9">
-                                <rect key="frame" x="5" y="5" width="295" height="300"/>
+                                <rect key="frame" x="5" y="5" width="295" height="364"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="900" horizontalCompressionResistancePriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RhW-qe-V47">
-                                        <rect key="frame" x="0.0" y="267" width="295" height="33"/>
+                                        <rect key="frame" x="0.0" y="331" width="295" height="33"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0uh-St-sLN">
                                                 <rect key="frame" x="-2" y="19" width="72" height="14"/>
@@ -1352,10 +1352,10 @@ Gw
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="900" horizontalCompressionResistancePriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jIi-Hc-A61">
-                                        <rect key="frame" x="0.0" y="226" width="295" height="33"/>
+                                        <rect key="frame" x="0.0" y="274" width="295" height="49"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-sk-5dP">
-                                                <rect key="frame" x="-2" y="19" width="86" height="14"/>
+                                                <rect key="frame" x="-2" y="35" width="86" height="14"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Destination Tag" id="V5Z-wA-f8g">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -1363,25 +1363,35 @@ Gw
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zZd-nW-XKA">
-                                                <rect key="frame" x="-2" y="0.0" width="56" height="19"/>
+                                                <rect key="frame" x="-2" y="16" width="56" height="19"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title=" 31432 " id="EfY-MD-IW9">
                                                     <font key="font" metaFont="system" size="15"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="msH-o4-lop">
+                                                <rect key="frame" x="-2" y="0.0" width="243" height="16"/>
+                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Use both, address and the destination tag." id="JUK-9L-8aQ">
+                                                    <font key="font" metaFont="systemLight" size="12"/>
+                                                    <color key="textColor" red="0.7725490196" green="0.29803921570000003" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                         </subviews>
                                         <visibilityPriorities>
+                                            <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-xd-thI">
-                                        <rect key="frame" x="73" y="50" width="150" height="168"/>
+                                        <rect key="frame" x="73" y="98" width="150" height="168"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BbY-9v-ScD">
                                                 <rect key="frame" x="-2" y="154" width="78" height="14"/>
@@ -1414,9 +1424,10 @@ Gw
                                         </customSpacing>
                                     </stackView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ld1-Fi-8rJ">
-                                        <rect key="frame" x="48" y="26" width="199" height="16"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minimum deposit amount is 0.0001" id="9Zd-Go-0hj">
+                                        <rect key="frame" x="-2" y="26" width="299" height="64"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9Zd-Go-0hj">
                                             <font key="font" metaFont="systemLight" size="12"/>
+                                            <string key="title">Use of the destination tag is REQUIRED. If you do not use the tag or provide an incorrect one, your XRP funds will be lost forever with no possibility to reclaim it.</string>
                                             <color key="textColor" red="0.7725490196" green="0.29803921570000003" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
