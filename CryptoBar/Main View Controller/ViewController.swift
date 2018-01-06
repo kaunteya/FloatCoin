@@ -64,7 +64,7 @@ import Cocoa
 
     func addNew(exchange: Exchange, with pairs: [Pair]) {
         let exchangeView = ExchangeView(exchange: exchange, pairList: pairs.sorted())
-        self.exchangeStackView.addArrangedSubview(exchangeView)
+        self.exchangeStackView.addSortedArrangedSubView(exchangeView)
         exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
         exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
     }

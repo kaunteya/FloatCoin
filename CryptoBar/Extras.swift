@@ -18,7 +18,7 @@ extension Array where Element: Comparable {
 }
 
 extension NSStackView {
-    func sortedInsertSubView<View: NSView>(newView: View) where View: Comparable {
+    func addSortedArrangedSubView<View: NSView>(_ newView: View) where View: Comparable {
         let index = (self.arrangedSubviews as! [View]).sortedInsertionIndex(newObj: newView)
         self.insertArrangedSubview(newView, at: index)
     }

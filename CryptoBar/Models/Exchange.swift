@@ -32,3 +32,9 @@ enum Exchange: String {
         }
     }
 }
+
+extension Exchange: Comparable {
+    static func <(lhs: Exchange, rhs: Exchange) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}

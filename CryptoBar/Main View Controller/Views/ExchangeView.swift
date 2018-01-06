@@ -35,7 +35,7 @@ class ExchangeView: NSView {
 
     func add(pair: Pair) {
         let pairView = PairView(pair: pair, exchange: exchange)
-        pairStackView.sortedInsertSubView(newView: pairView)
+        pairStackView.addSortedArrangedSubView(pairView)
         pairView.topAnchor.constraint(equalTo: pairStackView.topAnchor).isActive = true
         pairView.bottomAnchor.constraint(equalTo: pairStackView.bottomAnchor).isActive = true
     }
@@ -52,6 +52,12 @@ class ExchangeView: NSView {
 
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ExchangeView: Comparable {
+    static func <(lhs: ExchangeView, rhs: ExchangeView) -> Bool {
+        return lhs.exchange < rhs.exchange
     }
 }
 
