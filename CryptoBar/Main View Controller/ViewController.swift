@@ -67,6 +67,11 @@ import Cocoa
         self.exchangeStackView.addSortedArrangedSubView(exchangeView)
         exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
         exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
+
+        exchangeViews.filter { $0.exchange != exchange }.forEach { ex in
+            exchangeView.titleLabel.widthAnchor.constraint(equalTo: ex.titleLabel.widthAnchor, multiplier: 1).isActive = true
+        }
+
     }
 
     @IBAction func actionClose(_ sender: NSButton) {

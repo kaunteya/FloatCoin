@@ -29,7 +29,7 @@ class ExchangeView: NSView {
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "ExchangeView"), owner: self, topLevelObjects: nil)
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
 
-        titleLabel.stringValue = "    " + exchange.description
+        titleLabel.stringValue = exchange.description
         pairList.forEach { self.add(pair: $0) }
     }
 
