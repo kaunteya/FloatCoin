@@ -68,7 +68,7 @@ import Cocoa
         exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
         exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true
     }
-    
+
     @IBAction func actionClose(_ sender: NSButton) {
         self.view.window?.orderOut(sender)
     }
