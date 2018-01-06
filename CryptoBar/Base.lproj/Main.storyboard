@@ -1179,7 +1179,7 @@ DQ
         <!--ETH-->
         <scene sceneID="AcY-EU-fNY">
             <objects>
-                <viewController title="ETH" id="Yas-Wp-9S5" sceneMemberID="viewController">
+                <viewController title="ETH" id="Yas-Wp-9S5" customClass="DonateVC" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="nRP-FR-6RD">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1272,7 +1272,7 @@ Gw
 </string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="dismissController:" target="ri7-hK-UeY" id="GMx-bD-KBD"/>
+                                            <action selector="dismissController:" target="Yas-Wp-9S5" id="ky7-jj-o0P"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1310,7 +1310,7 @@ Gw
         <!--XRP-->
         <scene sceneID="viA-vG-P5b">
             <objects>
-                <viewController title="XRP" id="gTB-FU-dug" sceneMemberID="viewController">
+                <viewController title="XRP" id="gTB-FU-dug" customClass="DonateVC" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2kJ-CX-f8G">
                         <rect key="frame" x="0.0" y="0.0" width="305" height="374"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1442,7 +1442,7 @@ Gw
 </string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="dismissController:" target="ri7-hK-UeY" id="Bd4-3F-uWk"/>
+                                            <action selector="dismissController:" target="gTB-FU-dug" id="yYb-SR-Hnj"/>
                                         </connections>
                                     </button>
                                 </subviews>
