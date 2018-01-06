@@ -16,6 +16,7 @@
 		E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5141FFA114A0076AD61 /* PairMenuView.swift */; };
 		E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5181FFA5DB20076AD61 /* WindowController.swift */; };
 		E322E25A200142300098840C /* DonateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E322E259200142300098840C /* DonateVC.swift */; };
+		E337D3AC20014CA500859CE2 /* Donate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337D3AB20014CA500859CE2 /* Donate.storyboard */; };
 		E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FFC1FF2505D002A0511 /* UserDefaults.swift */; };
 		E339CC011FF0320D009570AF /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
@@ -64,6 +65,7 @@
 		E321F5141FFA114A0076AD61 /* PairMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairMenuView.swift; sourceTree = "<group>"; };
 		E321F5181FFA5DB20076AD61 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		E322E259200142300098840C /* DonateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateVC.swift; sourceTree = "<group>"; };
+		E337D3AB20014CA500859CE2 /* Donate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Donate.storyboard; sourceTree = "<group>"; };
 		E3389FF81FF24EA9002A0511 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = ../../../../../.Trash/Currency.swift; sourceTree = "<group>"; };
 		E3389FFC1FF2505D002A0511 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E339CBFA1FF0320B009570AF /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		E3211CC41FF78AA800704CE3 /* Main View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7ED1F47835400AEB397 /* ViewController.swift */,
 				E339CC091FF0D873009570AF /* RatesController.swift */,
 				E3211CC21FF7855700704CE3 /* PairsManager.swift */,
@@ -148,6 +151,15 @@
 				E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E337D3AD20014DC000859CE2 /* Donate */ = {
+			isa = PBXGroup;
+			children = (
+				E337D3AB20014CA500859CE2 /* Donate.storyboard */,
+				E322E259200142300098840C /* DonateVC.swift */,
+			);
+			path = Donate;
 			sourceTree = "<group>";
 		};
 		E372E7DF1F47835400AEB397 = {
@@ -177,10 +189,9 @@
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E321F5181FFA5DB20076AD61 /* WindowController.swift */,
-				E372E7F11F47835500AEB397 /* Main.storyboard */,
+				E337D3AD20014DC000859CE2 /* Donate */,
 				E3211CC41FF78AA800704CE3 /* Main View Controller */,
 				E3FB7D8E1FF145AC00371D5F /* PairVC.swift */,
-				E322E259200142300098840C /* DonateVC.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
 				E3211CBC1FF3A94200704CE3 /* Extras.swift */,
@@ -339,6 +350,7 @@
 				E372E80E1F47864E00AEB397 /* LICENSE in Resources */,
 				E3DC35DE1FFBD0F000E26B81 /* EmptyState.xib in Resources */,
 				E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */,
+				E337D3AC20014CA500859CE2 /* Donate.storyboard in Resources */,
 				E372E7F31F47835500AEB397 /* Main.storyboard in Resources */,
 				E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */,
 				E3DC35E81FFCDB4800E26B81 /* ExchangeView.xib in Resources */,
