@@ -889,7 +889,7 @@
         <scene sceneID="wnH-ea-57V">
             <objects>
                 <viewController title="BTC" showSeguePresentationStyle="single" id="ri7-hK-UeY" customClass="DonateVC" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="qn0-Y3-OWf">
+                    <view key="view" id="qn0-Y3-OWf">
                         <rect key="frame" x="0.0" y="0.0" width="336" height="269"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -1180,8 +1180,8 @@ DQ
         <scene sceneID="AcY-EU-fNY">
             <objects>
                 <viewController title="ETH" id="Yas-Wp-9S5" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="nRP-FR-6RD">
-                        <rect key="frame" x="0.0" y="0.0" width="370" height="285"/>
+                    <view key="view" id="nRP-FR-6RD">
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhj-lQ-0gs">
@@ -1426,8 +1426,8 @@ Gw
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ld1-Fi-8rJ">
                                         <rect key="frame" x="-2" y="26" width="299" height="64"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9Zd-Go-0hj">
-                                            <font key="font" metaFont="systemLight" size="12"/>
-                                            <string key="title">Use of the destination tag is REQUIRED. If you do not use the tag or provide an incorrect one, your XRP funds will be lost forever with no possibility to reclaim it.</string>
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <string key="title">⚠️ Use of the destination tag is REQUIRED. If you do not use the tag or provide an incorrect one, your XRP funds will be lost forever with no possibility to reclaim it.</string>
                                             <color key="textColor" red="0.7725490196" green="0.29803921570000003" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
