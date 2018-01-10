@@ -1,15 +1,12 @@
 PODS:
-  - SwiftyAttributes (4.1.0)
   - SwiftyBeaver (1.5.0)
 
 DEPENDENCIES:
-  - SwiftyAttributes
   - SwiftyBeaver
 
 SPEC CHECKSUMS:
-  SwiftyAttributes: cef9463f6e7da1ab393896ca036c9ac37d8a406b
   SwiftyBeaver: 384235c59d9c67b4a5e1810cffa713babba34efd
 
-PODFILE CHECKSUM: bcad64b43f23ca7547cb132082838b6a7148b07f
+PODFILE CHECKSUM: bdb5a937dea09fc84cb77822a8275de284df3156
 
 COCOAPODS: 1.3.1

@@ -7,7 +7,6 @@
 //
 
 import AppKit
-import SwiftyAttributes
 
 class ExchangeView: NSView {
     let exchange: Exchange

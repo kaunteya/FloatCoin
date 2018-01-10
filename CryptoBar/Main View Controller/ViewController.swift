@@ -40,11 +40,14 @@ import Cocoa
         self.view.addTrackingArea(trackingArea)
     }
 
+    // If Exchange list is empty then dont track mouse movements
     override func mouseEntered(with event: NSEvent) {
+        guard !UserDefaults.isExchangleListEmpty else { return; }
         mouseInside = true
     }
 
     override func mouseExited(with event: NSEvent) {
+        guard !UserDefaults.isExchangleListEmpty else { return; }
         mouseInside = false
     }
 
@@ -52,6 +55,7 @@ import Cocoa
     private func loadExchangePairs() {
         guard let exchangePairs = UserDefaults.pairsForAllExchanges else {
             self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
+            mouseInside = true
             return
         }
 

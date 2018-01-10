@@ -7,7 +7,6 @@
 //
 
 import AppKit
-import SwiftyAttributes
 
 class PairVC: NSViewController {
 
@@ -66,7 +65,8 @@ class PairVC: NSViewController {
     }
 
     func show(info: String) {
-        infoLabel.attributedStringValue = info.withTextColor(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1))
+        infoLabel.stringValue = info
+        infoLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         infoLabel.isHidden = false
         infoLabel.alignment = .center
     }

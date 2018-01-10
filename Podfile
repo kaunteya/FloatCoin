@@ -4,8 +4,8 @@
 target 'FloatCoin' do
     use_frameworks!
 #    pod 'DateToolsSwift'
-    pod 'SwiftyAttributes'
-    pod 'SwiftyBeaver'    
+#    pod 'SwiftyAttributes'
+    pod 'SwiftyBeaver'
 
 
   target 'CryptoBarTests' do
