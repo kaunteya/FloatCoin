@@ -29,7 +29,8 @@ struct Kraken : ExchangeDelegate {
                 log.error("Data is nil"); return;
             }
             guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any] else {
-                log.error("JSON parsing error")
+                let str = String(data: data!, encoding: .utf8)!
+                log.error("JSON parsing error \(str)")
                 return;
             }
             guard let result = json["result"] as? [String: Any] else {
