@@ -13,7 +13,7 @@ import Cocoa
     let ratesController = RatesController()
     let pairsManager = PairsManager()
     lazy var emptyView = EmptyStateView()
-    @objc dynamic var mouseInside = true
+    @objc dynamic var mouseInside = false
 
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var exchangeStackView: NSStackView!
