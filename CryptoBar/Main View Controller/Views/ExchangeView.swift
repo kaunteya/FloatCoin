@@ -12,7 +12,7 @@ class ExchangeView: NSView {
     let exchange: Exchange
 
     private var stackView: NSStackView!
-
+    private var fontSize: CGFloat
     @IBOutlet var contentView: NSView!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var pairStackView: NSStackView!
@@ -21,19 +21,20 @@ class ExchangeView: NSView {
         return pairStackView.arrangedSubviews as! [PairView]
     }
 
-    init(exchange: Exchange, pairList: [Pair]) {
+    init(exchange: Exchange, pairList: [Pair], fontSize: CGFloat) {
         self.exchange = exchange
-
+        self.fontSize = fontSize
         super.init(frame: NSZeroRect)
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "ExchangeView"), owner: self, topLevelObjects: nil)
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
 
         titleLabel.stringValue = exchange.description
+        titleLabel.font = NSFont.systemFont(ofSize: fontSize)
         pairList.forEach { self.add(pair: $0) }
     }
 
     func add(pair: Pair) {
-        let pairView = PairView(pair: pair, exchange: exchange)
+        let pairView = PairView(pair: pair, exchange: exchange, fontSize: fontSize)
         pairStackView.addSortedArrangedSubView(pairView)
         pairView.topAnchor.constraint(equalTo: pairStackView.topAnchor).isActive = true
         pairView.bottomAnchor.constraint(equalTo: pairStackView.bottomAnchor).isActive = true

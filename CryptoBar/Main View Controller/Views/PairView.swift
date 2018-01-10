@@ -34,13 +34,15 @@ class PairView: KSView {
         }
     }
 
-    init(pair: Pair, exchange: Exchange) {
+    init(pair: Pair, exchange: Exchange, fontSize: CGFloat) {
         self.pair = pair
         self.exchange = exchange
         super.init(frame: NSZeroRect)
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PairView"), owner: self, topLevelObjects: nil)
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
         basePriceLabel.stringValue = " " + pair.a.description
+        basePriceLabel.font = NSFont.systemFont(ofSize: fontSize)
+        fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
     }
 
     override func updateTrackingAreas() {
