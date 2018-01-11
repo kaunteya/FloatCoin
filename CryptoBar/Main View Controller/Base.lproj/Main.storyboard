@@ -704,10 +704,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="14"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="14"/>
                                             </customView>
-                                            <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
-                                                <rect key="frame" x="252" y="1" width="13" height="13"/>
+                                            <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
+                                                <rect key="frame" x="253" y="1" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -716,8 +716,8 @@
                                                     <segue destination="fW2-ng-MkX" kind="sheet" id="1ij-V2-kae"/>
                                                 </connections>
                                             </button>
-                                            <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1">
-                                                <rect key="frame" x="270" y="0.0" width="14" height="14"/>
+                                            <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1" userLabel="Preferences">
+                                                <rect key="frame" x="271" y="0.0" width="13" height="14"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f8p-KP-qt3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -765,7 +765,7 @@
                                 </customSpacing>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close">
-                                <rect key="frame" x="1" y="130" width="14" height="15"/>
+                                <rect key="frame" x="1" y="130" width="13" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
                                 </constraints>
