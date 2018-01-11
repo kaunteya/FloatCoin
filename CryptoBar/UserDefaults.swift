@@ -9,6 +9,7 @@
 import Foundation
 
 extension UserDefaults {
+    static let keyFontSize = "fontSize"
     static let keyFloatOnTop = "floatOnTop"
     private static let keyUserExchange = "userKeys"
 

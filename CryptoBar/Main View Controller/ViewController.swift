@@ -32,6 +32,16 @@ import Cocoa
         super.viewDidLoad()
         loadExchangePairs()
         addTracking()
+
+        // addFontChangeListener
+        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == UserDefaults.keyFontSize {
+            let size = CGFloat(change![.newKey] as! Int)
+            exchangeViews.forEach { $0.update(fontSize: size) }
+        }
     }
 
     func addTracking() {
@@ -67,7 +77,8 @@ import Cocoa
     }
 
     func addNew(exchange: Exchange, with pairs: [Pair]) {
-        let exchangeView = ExchangeView(exchange: exchange, pairList: pairs.sorted(), fontSize: 14)
+        let fontSize = UserDefaults.standard.integer(forKey: UserDefaults.keyFontSize)
+        let exchangeView = ExchangeView(exchange: exchange, pairList: pairs.sorted(), fontSize: CGFloat(fontSize))
         self.exchangeStackView.addSortedArrangedSubView(exchangeView)
         exchangeView.leftAnchor.constraint(equalTo: exchangeView.superview!.leftAnchor).isActive = true
         exchangeView.rightAnchor.constraint(equalTo: exchangeView.superview!.rightAnchor).isActive = true

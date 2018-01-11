@@ -698,16 +698,16 @@
                                 <rect key="frame" x="5" y="5" width="284" height="136"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                        <rect key="frame" x="0.0" y="28" width="284" height="108"/>
+                                        <rect key="frame" x="0.0" y="16" width="284" height="120"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-JC-UxN">
-                                        <rect key="frame" x="0.0" y="0.0" width="284" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="14"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="247" height="14"/>
                                             </customView>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC">
-                                                <rect key="frame" x="259" y="7" width="13" height="13"/>
+                                                <rect key="frame" x="252" y="1" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -717,7 +717,7 @@
                                                 </connections>
                                             </button>
                                             <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1">
-                                                <rect key="frame" x="277" y="0.0" width="7" height="26"/>
+                                                <rect key="frame" x="270" y="0.0" width="14" height="14"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f8p-KP-qt3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -765,7 +765,7 @@
                                 </customSpacing>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close">
-                                <rect key="frame" x="1" y="130" width="13" height="15"/>
+                                <rect key="frame" x="1" y="130" width="14" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
                                 </constraints>
@@ -783,10 +783,20 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-05-szl">
-                                <rect key="frame" x="240" y="131" width="54" height="15"/>
+                                <rect key="frame" x="174" y="131" width="120" height="15"/>
                                 <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F19-Oh-S30">
+                                        <rect key="frame" x="-1" y="-1" width="65" height="16"/>
+                                        <buttonCell key="cell" type="push" title="Font Size" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dmd-vW-FYh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <segue destination="dQ2-hY-Oh6" kind="modal" id="Gcg-tU-ueZ"/>
+                                        </connections>
+                                    </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-hm-Y1x">
-                                        <rect key="frame" x="-1" y="-1" width="56" height="16"/>
+                                        <rect key="frame" x="65" y="-1" width="56" height="16"/>
                                         <buttonCell key="cell" type="push" title="Donate" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z1T-Ht-9Mz">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="miniSystem"/>
@@ -798,8 +808,10 @@
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -833,16 +845,23 @@
                                 <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="P2S-tb-QLE"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="About / Help" id="AqJ-Jj-mR9">
+                        <menuItem title="Font Size" id="XWX-z2-WbX">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="orderFrontStandardAboutPanel:" target="5fK-fP-AMS" id="t7Y-e7-7EX"/>
+                                <action selector="performClick:" target="F19-Oh-S30" id="DxU-ba-dJD"/>
                             </connections>
                         </menuItem>
+                        <menuItem isSeparatorItem="YES" id="9ni-Qy-3zL"/>
                         <menuItem title="Donate" id="agg-j1-lMl">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="performClick:" target="Whi-hm-Y1x" id="XMM-zT-kjR"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="About / Help" id="AqJ-Jj-mR9">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="orderFrontStandardAboutPanel:" target="5fK-fP-AMS" id="t7Y-e7-7EX"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" id="ce0-Hi-FKh">
@@ -880,7 +899,31 @@
                 <controllerPlaceholder storyboardName="Donate" id="8m2-qB-Xbb" sceneMemberID="viewController"/>
                 <customObject id="oXn-ZK-8qr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="556"/>
+            <point key="canvasLocation" x="418" y="303"/>
+        </scene>
+        <!--Font Size-->
+        <scene sceneID="Lbw-RQ-UhD">
+            <objects>
+                <viewController title="Font Size" showSeguePresentationStyle="single" id="dQ2-hY-Oh6" sceneMemberID="viewController">
+                    <view key="view" id="WUy-aJ-EkE">
+                        <rect key="frame" x="0.0" y="0.0" width="224" height="31"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-vs-grb">
+                                <rect key="frame" x="8" y="7" width="208" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="8" maxValue="24" doubleValue="12" tickMarkPosition="below" numberOfTickMarks="9" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Nbq-rD-g3e"/>
+                                <connections>
+                                    <binding destination="lWr-yd-ud3" name="value" keyPath="values.fontSize" id="u8u-fZ-pbZ"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="aGD-pQ-zRl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="lWr-yd-ud3"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="529.5"/>
         </scene>
         <!--PairVC-->
         <scene sceneID="E8O-2z-ZGz">

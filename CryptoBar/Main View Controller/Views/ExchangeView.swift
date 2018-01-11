@@ -41,13 +41,16 @@ class ExchangeView: NSView {
     }
 
     func remove(_ pair: Pair) {
-        let pairViews = pairStackView.arrangedSubviews as! [PairView]
         pairViews[pair]!.removeFromSuperview()
     }
 
     func set(price: Double, of pair: Pair) {
-        let pairViewList = pairStackView.arrangedSubviews as! [PairView]
-        pairViewList[pair]?.price = price
+        pairViews[pair]?.price = price
+    }
+
+    func update(fontSize: CGFloat) {
+        titleLabel.font = NSFont.systemFont(ofSize: fontSize)
+        pairViews.forEach { $0.update(fontSize: fontSize)}
     }
 
     required init?(coder decoder: NSCoder) {

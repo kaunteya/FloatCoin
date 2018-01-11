@@ -12,7 +12,7 @@ import SwiftyBeaver
 let log: SwiftyBeaver.Type = {
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
-    console.minLevel = SwiftyBeaver.Level.error
+    console.minLevel = SwiftyBeaver.Level.debug
     log.addDestination(console)
     return log
 }()

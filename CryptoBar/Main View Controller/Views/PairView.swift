@@ -45,6 +45,11 @@ class PairView: KSView {
         fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
     }
 
+    func update(fontSize: CGFloat) {
+        basePriceLabel.font = NSFont.systemFont(ofSize: fontSize)
+        fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
+    }
+
     override func updateTrackingAreas() {
         if let trackingArea = self.trackingArea {
             self.removeTrackingArea(trackingArea)
