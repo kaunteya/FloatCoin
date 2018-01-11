@@ -685,29 +685,29 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="ViewController" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="294" height="155"/>
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="155"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="amr-hQ-OVf">
-                                <rect key="frame" x="0.0" y="0.0" width="294" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FWK-nF-acW"/>
                                 </constraints>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-oO-IDg">
-                                <rect key="frame" x="5" y="5" width="284" height="145"/>
+                                <rect key="frame" x="2" y="2" width="284" height="151"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                        <rect key="frame" x="0.0" y="17" width="284" height="128"/>
+                                        <rect key="frame" x="0.0" y="17" width="284" height="134"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-JC-UxN">
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="15"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="226" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="225" height="15"/>
                                             </customView>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
-                                                <rect key="frame" x="231" y="0.0" width="13" height="15"/>
+                                                <rect key="frame" x="230" y="0.0" width="13" height="15"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -717,7 +717,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="44e-3J-Pcv" userLabel="Font Size">
-                                                <rect key="frame" x="249" y="0.0" width="17" height="15"/>
+                                                <rect key="frame" x="248" y="0.0" width="18" height="15"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="FontSize" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Aj6-ZR-HSn">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -799,7 +799,7 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-05-szl">
-                                <rect key="frame" x="240" y="140" width="54" height="15"/>
+                                <rect key="frame" x="234" y="140" width="54" height="15"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-hm-Y1x">
                                         <rect key="frame" x="-1" y="-1" width="56" height="16"/>
@@ -823,13 +823,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="amr-hQ-OVf" secondAttribute="trailing" id="1xU-hZ-2eL"/>
                             <constraint firstItem="amr-hQ-OVf" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="8rK-bG-viB"/>
-                            <constraint firstAttribute="trailing" secondItem="Njt-oO-IDg" secondAttribute="trailing" constant="5" id="FGY-aP-2Ll"/>
-                            <constraint firstItem="Njt-oO-IDg" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="5" id="Ruq-RM-nDG"/>
+                            <constraint firstAttribute="trailing" secondItem="Njt-oO-IDg" secondAttribute="trailing" constant="2" id="FGY-aP-2Ll"/>
+                            <constraint firstItem="Njt-oO-IDg" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="2" id="Ruq-RM-nDG"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="1" id="YgU-aO-hX3"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="1" id="ZEx-eR-2ZM"/>
-                            <constraint firstItem="Njt-oO-IDg" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="5" id="ifA-4I-fuB"/>
+                            <constraint firstItem="Njt-oO-IDg" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="2" id="ifA-4I-fuB"/>
                             <constraint firstItem="iB0-05-szl" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="oGl-IC-54V"/>
-                            <constraint firstAttribute="bottom" secondItem="Njt-oO-IDg" secondAttribute="bottom" constant="5" id="oON-dt-VhX"/>
+                            <constraint firstAttribute="bottom" secondItem="Njt-oO-IDg" secondAttribute="bottom" constant="2" id="oON-dt-VhX"/>
                             <constraint firstItem="amr-hQ-OVf" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" id="rNv-a7-4gc"/>
                             <constraint firstAttribute="trailing" secondItem="iB0-05-szl" secondAttribute="trailing" id="riS-Ze-gap"/>
                             <constraint firstAttribute="bottom" secondItem="amr-hQ-OVf" secondAttribute="bottom" id="wU5-Hq-4hX"/>
@@ -1091,7 +1091,7 @@ DQ
     <resources>
         <image name="Add" width="13" height="13"/>
         <image name="Close" width="13.5" height="13"/>
-        <image name="FontSize" width="17" height="13"/>
+        <image name="FontSize" width="18" height="13"/>
         <image name="Gear" width="13.5" height="13.5"/>
     </resources>
 </document>
