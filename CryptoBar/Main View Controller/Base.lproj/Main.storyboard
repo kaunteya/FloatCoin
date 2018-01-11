@@ -704,8 +704,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="15"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="225" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="15"/>
                                             </customView>
+                                            <button toolTip="Float On Top" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-OV-Tfi" userLabel="Float On Top">
+                                                <rect key="frame" x="212" y="0.0" width="13" height="15"/>
+                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="PinOn" imagePosition="overlaps" alignment="center" alternateImage="PinOff" controlSize="small" imageScaling="proportionallyDown" inset="2" id="2Q1-Ce-jnJ">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="smallSystem"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="OXW-ZE-B6M">
+                                                        <dictionary key="options">
+                                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
+                                            </button>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
                                                 <rect key="frame" x="230" y="0.0" width="13" height="15"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
@@ -750,8 +764,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -843,16 +859,6 @@
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="w9R-vv-P9Z">
                     <items>
-                        <menuItem title="Float on Top" id="pLr-4f-u5L">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="P2S-tb-QLE"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Font Size" id="XWX-z2-WbX">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="9ni-Qy-3zL"/>
                         <menuItem title="Donate" id="agg-j1-lMl">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -1093,5 +1099,7 @@ DQ
         <image name="Close" width="13.5" height="13"/>
         <image name="FontSize" width="18" height="13"/>
         <image name="Gear" width="13.5" height="13.5"/>
+        <image name="PinOff" width="13" height="13"/>
+        <image name="PinOn" width="13.5" height="13"/>
     </resources>
 </document>
