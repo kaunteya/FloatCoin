@@ -27,6 +27,7 @@
 		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
 		E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
 		E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesController.swift */; };
+		E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
 		E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeDelegate.swift; sourceTree = "<group>"; };
 		E339CC091FF0D873009570AF /* RatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesController.swift; sourceTree = "<group>"; };
+		E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeVC.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				E3211CC41FF78AA800704CE3 /* Main View Controller */,
 				E337D3AD20014DC000859CE2 /* Donate */,
 				E3FB7D8E1FF145AC00371D5F /* PairVC.swift */,
+				E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */,
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
 				E3211CBC1FF3A94200704CE3 /* Extras.swift */,
@@ -496,6 +499,7 @@
 				E322E25A200142300098840C /* DonateVC.swift in Sources */,
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
 				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,
+				E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */,
 				E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */,
 				E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */,
 				E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */,

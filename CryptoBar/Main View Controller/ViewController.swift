@@ -18,9 +18,9 @@ import Cocoa
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var exchangeStackView: NSStackView!
 
-    var exchangeViews: [ExchangeView] {
-        return exchangeStackView.arrangedSubviews as! [ExchangeView]
-    }
+        var exchangeViews: [ExchangeView] {
+            return exchangeStackView.arrangedSubviews as! [ExchangeView]
+        }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -69,7 +69,7 @@ import Cocoa
             return
         }
 
-        exchangePairs.keys.forEach { (exchange) in
+        exchangePairs.keys.forEach { exchange in
             if let pairs:Set<Pair> = exchangePairs[exchange] {
                 self.addNew(exchange: exchange, with: pairs.sorted())
             }
