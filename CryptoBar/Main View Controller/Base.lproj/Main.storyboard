@@ -859,7 +859,7 @@
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="w9R-vv-P9Z">
                     <items>
-                        <menuItem title="Donate" id="agg-j1-lMl">
+                        <menuItem title="Donate" hidden="YES" id="agg-j1-lMl">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="performClick:" target="Whi-hm-Y1x" id="XMM-zT-kjR"/>
