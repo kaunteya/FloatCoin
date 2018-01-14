@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var windowController: WindowController!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        UserDefaults.registerDefaults()
         self.windowController = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "windowController")) as! WindowController
         
         statusItemController = StatusController(statusImage: #imageLiteral(resourceName: "statusIcon"), isTemplate: true, clickHandler: { statusItem in

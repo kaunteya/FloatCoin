@@ -25,6 +25,12 @@ extension UserDefaults {
         }
     }
 
+    static func registerDefaults() {
+        UserDefaults.standard.register(defaults: [
+            keyFontSize: 12,
+            keyFloatOnTop: true
+            ])
+    }
     
     class func add(exchange: Exchange, pair: Pair) {
         var dict = UserDefaults.standard.dictionary(forKey: keyUserExchange) as? [String: [String]] ?? [String: [String]]()
