@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQt-fg-Aa6">
-                    <rect key="frame" x="20" y="30" width="247" height="42"/>
+                    <rect key="frame" x="20" y="30" width="227" height="42"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-jf-8xd">
-                            <rect key="frame" x="-2" y="24" width="251" height="18"/>
+                            <rect key="frame" x="-2" y="24" width="231" height="18"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No currency pairs added..." id="4PK-zu-F49">
                                 <font key="font" metaFont="system" size="14"/>
                                 <color key="textColor" red="0.81735751300000004" green="0.81735751300000004" blue="0.81735751300000004" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,8 +30,8 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-kp-rTx">
-                            <rect key="frame" x="-2" y="0.0" width="251" height="16"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button above to add a new pair" id="yVv-72-513">
+                            <rect key="frame" x="-2" y="0.0" width="231" height="16"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tap the &quot;+&quot; button to add a new pair" id="yVv-72-513">
                                 <font key="font" metaFont="cellTitle"/>
                                 <color key="textColor" red="0.65691790800000005" green="0.65691790800000005" blue="0.65691790800000005" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
