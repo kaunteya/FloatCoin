@@ -27,7 +27,7 @@
 		E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */; };
 		E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F610200E24A0003C0106 /* FloatCoinTests.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
-		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
+		E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* MainViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
 		E372E7F31F47835500AEB397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E372E7F11F47835500AEB397 /* Main.storyboard */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
@@ -81,7 +81,7 @@
 		E363F612200E24A0003C0106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E372E7ED1F47835400AEB397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E372E7EF1F47835400AEB397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E372E7F21F47835500AEB397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E372E7F41F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
-				E372E7ED1F47835400AEB397 /* ViewController.swift */,
+				E372E7ED1F47835400AEB397 /* MainViewController.swift */,
 				E339CC091FF0D873009570AF /* RatesController.swift */,
 				E3211CC21FF7855700704CE3 /* PairsManager.swift */,
 				E3211CC81FF7B35A00704CE3 /* Views */,
@@ -440,7 +440,7 @@
 				E3DC35E61FFCC76200E26B81 /* KSView.swift in Sources */,
 				E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */,
 				E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */,
-				E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */,
+				E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */,
 				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
 				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,
 				E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */,

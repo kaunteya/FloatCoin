@@ -8,7 +8,7 @@
 
 import Cocoa
 
-@objc class ViewController: NSViewController {
+@objc class MainViewController: NSViewController {
 
     let ratesController = RatesController()
     let pairsManager = PairsManager()
@@ -99,7 +99,7 @@ import Cocoa
     }
 }
 
-extension ViewController: PairManagerDelegate {
+extension MainViewController: PairManagerDelegate {
     func pair(added pair: Pair, to exchange: Exchange) {
         if let selectedExchange = exchangeViews[exchange] {
             selectedExchange.add(pair: pair)
@@ -123,7 +123,7 @@ extension ViewController: PairManagerDelegate {
     }
 }
 
-extension ViewController: RatesDelegate {
+extension MainViewController: RatesDelegate {
     func ratesUpdated(for exchange: Exchange, pair: Pair, price: Double) {
         DispatchQueue.main.async {
             if let list = self.exchangeStackView.arrangedSubviews as? [ExchangeView] {
