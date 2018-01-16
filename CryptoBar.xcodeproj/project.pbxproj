@@ -323,7 +323,6 @@
 					};
 					E372E7F81F47835500AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = KQQ77ZBE5E;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E372E7E71F47835400AEB397;
@@ -690,7 +689,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CryptoBarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBarTests;
@@ -710,7 +709,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CryptoBarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBarTests;
