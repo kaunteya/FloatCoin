@@ -88,7 +88,7 @@
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
-		E39313BB1FB74C18006E915C /* CryptoBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoBar.entitlements; sourceTree = "<group>"; };
+		E39313BB1FB74C18006E915C /* FloatCoin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FloatCoin.entitlements; sourceTree = "<group>"; };
 		E3DC35DB1FFA915D00E26B81 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		E372E7DF1F47835400AEB397 = {
 			isa = PBXGroup;
 			children = (
-				E372E7EA1F47835400AEB397 /* CryptoBar */,
+				E372E7EA1F47835400AEB397 /* FloatCoin */,
 				E363F60F200E24A0003C0106 /* FloatCoinTests */,
 				E372E7E91F47835400AEB397 /* Products */,
 				ED25DB62DC89DEB20A3C9F9E /* Pods */,
@@ -193,10 +193,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E372E7EA1F47835400AEB397 /* CryptoBar */ = {
+		E372E7EA1F47835400AEB397 /* FloatCoin */ = {
 			isa = PBXGroup;
 			children = (
-				E39313BB1FB74C18006E915C /* CryptoBar.entitlements */,
+				E39313BB1FB74C18006E915C /* FloatCoin.entitlements */,
 				E372E7EB1F47835400AEB397 /* AppDelegate.swift */,
 				E39313B91FB73E01006E915C /* StatusController.swift */,
 				E321F5181FFA5DB20076AD61 /* WindowController.swift */,
@@ -215,7 +215,7 @@
 				E372E80D1F47864E00AEB397 /* README.md */,
 				E3DC35DB1FFA915D00E26B81 /* Credits.rtf */,
 			);
-			path = CryptoBar;
+			path = FloatCoin;
 			sourceTree = "<group>";
 		};
 		E3FB7D8B1FF1165400371D5F /* Exchange */ = {
@@ -322,7 +322,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E372E7E31F47835400AEB397 /* Build configuration list for PBXProject "CryptoBar" */;
+			buildConfigurationList = E372E7E31F47835400AEB397 /* Build configuration list for PBXProject "FloatCoin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -632,12 +632,12 @@
 			baseConfigurationReference = F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FloatCoin/FloatCoin.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
-				INFOPLIST_FILE = CryptoBar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FloatCoin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -651,12 +651,12 @@
 			baseConfigurationReference = 7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CryptoBar/CryptoBar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FloatCoin/FloatCoin.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
-				INFOPLIST_FILE = CryptoBar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FloatCoin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -677,7 +677,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E372E7E31F47835400AEB397 /* Build configuration list for PBXProject "CryptoBar" */ = {
+		E372E7E31F47835400AEB397 /* Build configuration list for PBXProject "FloatCoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E372E8001F47835500AEB397 /* Debug */,

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CryptoBar.xcodeproj">
+      location = "group:/Users/kaunteya/work/mac/FloatCoin/FloatCoin.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
