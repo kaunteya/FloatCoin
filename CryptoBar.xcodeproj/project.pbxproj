@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */; };
-		E2322D77B4AF57B551D43110 /* Pods_CryptoBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFF6424F6CF014CAC627804 /* Pods_CryptoBarTests.framework */; };
 		E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
 		E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */; };
 		E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC21FF7855700704CE3 /* PairsManager.swift */; };
-		E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
-		E321F5131FF7DD500076AD61 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
 		E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5141FFA114A0076AD61 /* PairMenuView.swift */; };
 		E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F5181FFA5DB20076AD61 /* WindowController.swift */; };
 		E322E25A200142300098840C /* DonateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E322E259200142300098840C /* DonateVC.swift */; };
@@ -28,11 +25,11 @@
 		E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
 		E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesController.swift */; };
 		E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */; };
+		E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F610200E24A0003C0106 /* FloatCoinTests.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* ViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
 		E372E7F31F47835500AEB397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E372E7F11F47835500AEB397 /* Main.storyboard */; };
-		E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */; };
 		E372E80E1F47864E00AEB397 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E372E80C1F47864E00AEB397 /* LICENSE */; };
 		E39313BA1FB73E01006E915C /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39313B91FB73E01006E915C /* StatusController.swift */; };
 		E3DC35DC1FFA915D00E26B81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DB1FFA915D00E26B81 /* Credits.rtf */; };
@@ -46,12 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E372E7FA1F47835500AEB397 /* PBXContainerItemProxy */ = {
+		E363F613200E24A0003C0106 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E372E7E01F47835400AEB397 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E372E7E71F47835400AEB397;
-			remoteInfo = CryptoBar;
+			remoteInfo = FloatCoin;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,15 +76,15 @@
 		E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeDelegate.swift; sourceTree = "<group>"; };
 		E339CC091FF0D873009570AF /* RatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesController.swift; sourceTree = "<group>"; };
 		E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeVC.swift; sourceTree = "<group>"; };
+		E363F60E200E24A0003C0106 /* FloatCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E363F610200E24A0003C0106 /* FloatCoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCoinTests.swift; sourceTree = "<group>"; };
+		E363F612200E24A0003C0106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E372E7EF1F47835400AEB397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E372E7F21F47835500AEB397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E372E7F41F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E372E7F91F47835500AEB397 /* CryptoBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBarTests.swift; sourceTree = "<group>"; };
-		E372E7FF1F47835500AEB397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E372E80C1F47864E00AEB397 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E372E80D1F47864E00AEB397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39313B91FB73E01006E915C /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
@@ -105,19 +102,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E363F60B200E24A0003C0106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E372E7E51F47835400AEB397 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E372E7F61F47835500AEB397 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2322D77B4AF57B551D43110 /* Pods_CryptoBarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,11 +164,20 @@
 			path = Donate;
 			sourceTree = "<group>";
 		};
+		E363F60F200E24A0003C0106 /* FloatCoinTests */ = {
+			isa = PBXGroup;
+			children = (
+				E363F610200E24A0003C0106 /* FloatCoinTests.swift */,
+				E363F612200E24A0003C0106 /* Info.plist */,
+			);
+			path = FloatCoinTests;
+			sourceTree = "<group>";
+		};
 		E372E7DF1F47835400AEB397 = {
 			isa = PBXGroup;
 			children = (
 				E372E7EA1F47835400AEB397 /* CryptoBar */,
-				E372E7FC1F47835500AEB397 /* CryptoBarTests */,
+				E363F60F200E24A0003C0106 /* FloatCoinTests */,
 				E372E7E91F47835400AEB397 /* Products */,
 				ED25DB62DC89DEB20A3C9F9E /* Pods */,
 				C1EE9DD7351F6D8439D9BCEB /* Frameworks */,
@@ -183,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				E372E7E81F47835400AEB397 /* FloatCoin.app */,
-				E372E7F91F47835500AEB397 /* CryptoBarTests.xctest */,
+				E363F60E200E24A0003C0106 /* FloatCoinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,15 +216,6 @@
 				E3DC35DB1FFA915D00E26B81 /* Credits.rtf */,
 			);
 			path = CryptoBar;
-			sourceTree = "<group>";
-		};
-		E372E7FC1F47835500AEB397 /* CryptoBarTests */ = {
-			isa = PBXGroup;
-			children = (
-				E372E7FD1F47835500AEB397 /* CryptoBarTests.swift */,
-				E372E7FF1F47835500AEB397 /* Info.plist */,
-			);
-			path = CryptoBarTests;
 			sourceTree = "<group>";
 		};
 		E3FB7D8B1FF1165400371D5F /* Exchange */ = {
@@ -259,6 +255,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E363F60D200E24A0003C0106 /* FloatCoinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E363F615200E24A0003C0106 /* Build configuration list for PBXNativeTarget "FloatCoinTests" */;
+			buildPhases = (
+				E363F60A200E24A0003C0106 /* Sources */,
+				E363F60B200E24A0003C0106 /* Frameworks */,
+				E363F60C200E24A0003C0106 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E363F614200E24A0003C0106 /* PBXTargetDependency */,
+			);
+			name = FloatCoinTests;
+			productName = FloatCoinTests;
+			productReference = E363F60E200E24A0003C0106 /* FloatCoinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E372E7E71F47835400AEB397 /* FloatCoin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E372E8021F47835500AEB397 /* Build configuration list for PBXNativeTarget "FloatCoin" */;
@@ -279,37 +293,22 @@
 			productReference = E372E7E81F47835400AEB397 /* FloatCoin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E372E7F81F47835500AEB397 /* CryptoBarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E372E8051F47835500AEB397 /* Build configuration list for PBXNativeTarget "CryptoBarTests" */;
-			buildPhases = (
-				4EC70E48E7AF06372C4D12EB /* [CP] Check Pods Manifest.lock */,
-				E372E7F51F47835500AEB397 /* Sources */,
-				E372E7F61F47835500AEB397 /* Frameworks */,
-				E372E7F71F47835500AEB397 /* Resources */,
-				3D49CC5022A170C9FD59A9B7 /* [CP] Embed Pods Frameworks */,
-				D4E50683261A77B2A3AB44ED /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E372E7FB1F47835500AEB397 /* PBXTargetDependency */,
-			);
-			name = CryptoBarTests;
-			productName = CryptoBarTests;
-			productReference = E372E7F91F47835500AEB397 /* CryptoBarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E372E7E01F47835400AEB397 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Kaunteya Suryawanshi";
 				TargetAttributes = {
+					E363F60D200E24A0003C0106 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = KQQ77ZBE5E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E372E7E71F47835400AEB397;
+					};
 					E372E7E71F47835400AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KQQ77ZBE5E;
@@ -320,12 +319,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					E372E7F81F47835500AEB397 = {
-						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E372E7E71F47835400AEB397;
 					};
 				};
 			};
@@ -343,12 +336,19 @@
 			projectRoot = "";
 			targets = (
 				E372E7E71F47835400AEB397 /* FloatCoin */,
-				E372E7F81F47835500AEB397 /* CryptoBarTests */,
+				E363F60D200E24A0003C0106 /* FloatCoinTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E363F60C200E24A0003C0106 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E372E7E61F47835400AEB397 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,49 +364,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E372E7F71F47835500AEB397 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D49CC5022A170C9FD59A9B7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4EC70E48E7AF06372C4D12EB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CryptoBarTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A73C8D70B8C96162B47A9186 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,21 +400,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4E50683261A77B2A3AB44ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F71AAE730AD700F8C6239A16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +421,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E363F60A200E24A0003C0106 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E372E7E41F47835400AEB397 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,23 +459,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E372E7F51F47835500AEB397 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E321F5131FF7DD500076AD61 /* Currency.swift in Sources */,
-				E3211CC51FF7B08900704CE3 /* Extras.swift in Sources */,
-				E372E7FE1F47835500AEB397 /* CryptoBarTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E372E7FB1F47835500AEB397 /* PBXTargetDependency */ = {
+		E363F614200E24A0003C0106 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E372E7E71F47835400AEB397 /* FloatCoin */;
-			targetProxy = E372E7FA1F47835500AEB397 /* PBXContainerItemProxy */;
+			targetProxy = E363F613200E24A0003C0106 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -538,6 +481,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E363F616200E24A0003C0106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FloatCoinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.FloatCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
+			};
+			name = Debug;
+		};
+		E363F617200E24A0003C0106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FloatCoinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.FloatCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
+			};
+			name = Release;
+		};
 		E372E8001F47835500AEB397 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -680,49 +665,18 @@
 			};
 			name = Release;
 		};
-		E372E8061F47835500AEB397 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BBAAD2C59CD5CACE5B32BE9 /* Pods-CryptoBarTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CryptoBarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
-			};
-			name = Debug;
-		};
-		E372E8071F47835500AEB397 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CryptoBarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E363F615200E24A0003C0106 /* Build configuration list for PBXNativeTarget "FloatCoinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E363F616200E24A0003C0106 /* Debug */,
+				E363F617200E24A0003C0106 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E372E7E31F47835400AEB397 /* Build configuration list for PBXProject "CryptoBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -737,15 +691,6 @@
 			buildConfigurations = (
 				E372E8031F47835500AEB397 /* Debug */,
 				E372E8041F47835500AEB397 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E372E8051F47835500AEB397 /* Build configuration list for PBXNativeTarget "CryptoBarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E372E8061F47835500AEB397 /* Debug */,
-				E372E8071F47835500AEB397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
