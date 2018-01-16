@@ -17,7 +17,7 @@ class WindowController: NSWindowController {
 
     func initialiseWindow() {
         window!.isMovableByWindowBackground = true
-        window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.floatingWindow)))
+        window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         window!.makeMain()
         window!.hidesOnDeactivate = !UserDefaults.floatOnTop
         window!.delegate = self

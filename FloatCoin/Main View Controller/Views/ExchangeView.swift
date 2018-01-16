@@ -12,7 +12,12 @@ class ExchangeView: NSView {
     let exchange: Exchange
 
     private var stackView: NSStackView!
-    private var fontSize: CGFloat
+    var fontSize: CGFloat {
+        didSet {
+            titleLabel.font = NSFont.systemFont(ofSize: fontSize)
+            pairViews.forEach { $0.update(fontSize: fontSize)}
+        }
+    }
     @IBOutlet var contentView: NSView!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var pairStackView: NSStackView!
@@ -46,11 +51,6 @@ class ExchangeView: NSView {
 
     func set(price: Double, of pair: Pair) {
         pairViews[pair]?.price = price
-    }
-
-    func update(fontSize: CGFloat) {
-        titleLabel.font = NSFont.systemFont(ofSize: fontSize)
-        pairViews.forEach { $0.update(fontSize: fontSize)}
     }
 
     required init?(coder decoder: NSCoder) {

@@ -40,7 +40,7 @@ import Cocoa
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == UserDefaults.keyFontSize {
             let size = CGFloat(change![.newKey] as! Int)
-            exchangeViews.forEach { $0.update(fontSize: size) }
+            exchangeViews.forEach { $0.fontSize = size }
         }
     }
 
@@ -86,7 +86,6 @@ import Cocoa
         exchangeViews.filter { $0.exchange != exchange }.forEach { ex in
             exchangeView.titleLabel.widthAnchor.constraint(equalTo: ex.titleLabel.widthAnchor, multiplier: 1).isActive = true
         }
-
     }
 
     @IBAction func actionClose(_ sender: NSButton) {
