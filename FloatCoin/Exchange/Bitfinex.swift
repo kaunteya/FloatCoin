@@ -68,6 +68,41 @@ struct Bitfinex: ExchangeDelegate {
     }
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
+        let urlRequest = self.urlRequest(for: pairs)
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                Log.error("Error \(error!)")
+                return;
+            }
+            guard data != nil else {
+                Log.error("Data is nil"); return;
+            }
+            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [[Any]] else {
+                let str = String(data: data!, encoding: .utf8)!
+                Log.error("JSON parsing error \(str)")
+                return;
+            }
 
+            var dict = [Pair: Double]()
+            for a in json {
+                if let pairStr = a[0] as? String,
+                    let pair = convertToPair(pairStr),
+                    let price = a[1] as? Double {
+                    dict[pair] = price
+                }
+            }
+            completion(dict)
+            }.resume()
+    }
+
+    static func convertToPair(_ str: String ) -> Pair? {
+        var pair = str
+        guard pair.starts(with: "t") else {
+            return nil
+        }
+        pair = String(pair.dropFirst())
+        pair.insert(":", at: pair.index(pair.startIndex, offsetBy: 3))
+        return Pair(pair)
     }
 }
+
