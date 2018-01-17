@@ -8,27 +8,26 @@
 
 import XCTest
 
-class BitfinexTests : XCTestCase {
+class BitfinexTests : XCTestCase, ExchangeTests {
+    var testPairs: [Pair] {
+        return [Pair("BTC:USD"), Pair("LTC:USD")]
+    }
 
-    func testURLGenrationForOnePair() {
+    func testURLGenerationForOnePair() {
         let testPairs = [Pair("xrp:btc")]
-        let urlRequest = Bitfinex.urlRequest(for: Set(testPairs))
+        let urlRequest = Bitfinex.urlRequest(for: Set([testPairs.first!]))
         XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tXRPBTC")
     }
 
     func testURLGenerationForMultiplePairs() {
-        let testPairs = [Pair("xrp:btc"), Pair("eth:btc"), Pair("iot:eth")]
         let urlRequest = Bitfinex.urlRequest(for: Set(testPairs))
-        XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tIOTETH,tXRPBTC")
-
+        XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tLTCUSD,tBTCUSD")
     }
 
-    func testRequest() {
+    func testPriceRequest() {
         let expectation = XCTestExpectation(description: "fetchpairs")
-
-        let pairs = [Pair("BTC:USD"), Pair("LTC:USD")]
-        Bitfinex.fetchRate(Set(pairs)) { (pairDict) in
-            XCTAssertEqual(Set(pairDict.keys), Set(pairs))
+        Bitfinex.fetchRate(Set(testPairs)) { (pairDict) in
+            XCTAssertEqual(Set(pairDict.keys), Set(self.testPairs))
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10.0)

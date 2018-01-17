@@ -8,6 +8,12 @@
 
 import XCTest
 
+protocol ExchangeTests {
+    var testPairs: [Pair] {get}
+    func testURLGenerationForOnePair()
+    func testURLGenerationForMultiplePairs()
+    func testPriceRequest()
+}
 
 class FloatCoinTests: XCTestCase {
     let defaults = UserDefaults.standard
