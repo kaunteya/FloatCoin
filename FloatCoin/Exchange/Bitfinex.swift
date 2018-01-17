@@ -12,9 +12,8 @@ struct Bitfinex: ExchangeDelegate {
     static var name: Exchange { return .bitfinex }
 
     static func urlRequest(for pairs: Set<Pair>) -> URLRequest {
-        // https://api.bitfinex.com/v2/tickers?symbols=tBTCUSD,tLTCUSD,fUSD
         var tickerURLComponent = URLComponents(string: "https://api.bitfinex.com/v2/tickers")!
-        let pairList = pairs.map { "t" + $0.joined() }.joined(separator: ",")
+        let pairList = pairs.map { "t" + $0.joined().uppercased() }.joined(separator: ",")
         tickerURLComponent.queryItems = [URLQueryItem(name: "symbols", value: pairList)]
         return URLRequest(url: tickerURLComponent.url!)
     }

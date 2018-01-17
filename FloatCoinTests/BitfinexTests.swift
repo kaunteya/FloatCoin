@@ -24,10 +24,17 @@ class BitfinexTests : XCTestCase {
         "mnabtc", "mnaeth", "funusd", "funbtc", "funeth", "zrxusd", "zrxbtc",
         "zrxeth", "tnbusd", "tnbbtc", "tnbeth", "spkusd", "spkbtc", "spketh"]
 
-    func testURLGenration() {
+    func testURLGenrationForOnePair() {
         let testPairs = [Pair("xrp:btc")]
         let urlRequest = Bitfinex.urlRequest(for: Set(testPairs))
-        XCTAssertEqual(urlRequest.url!.absoluteString, "")
+        XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tXRPBTC")
+    }
+
+    func testURLGenerationForMultiplePairs() {
+        let testPairs = [Pair("xrp:btc"), Pair("eth:btc"), Pair("iot:eth")]
+        let urlRequest = Bitfinex.urlRequest(for: Set(testPairs))
+        XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tIOTETH,tXRPBTC")
+
     }
 
     func testBifinexSymbolRequest() {
