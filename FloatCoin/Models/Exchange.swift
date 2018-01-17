@@ -13,7 +13,9 @@ enum Exchange: String {
     // Whenever new exchange is added to the enum, add it to `all`.
     // In all make sure that it always stays sorted
     static var all: [Exchange] {
-        return [.bitfinex, .cex, .coinbase, .kraken]
+        let all:[Exchange] = [.bitfinex, .cex, .coinbase, .kraken]
+        assert(all == all.sorted(), "List must be sorted")
+        return all
     }
 
     var description: String {
