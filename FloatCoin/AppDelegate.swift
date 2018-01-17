@@ -7,15 +7,6 @@
 //
 
 import AppKit
-import SwiftyBeaver
-
-let log: SwiftyBeaver.Type = {
-    let log = SwiftyBeaver.self
-    let console = ConsoleDestination()
-    console.minLevel = SwiftyBeaver.Level.error
-    log.addDestination(console)
-    return log
-}()
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

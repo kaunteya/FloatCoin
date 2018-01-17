@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */; };
+		642966C3C69A827A777ECC45 /* Pods_FloatCoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */; };
 		E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
 		E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */; };
 		E3211CC31FF7855700704CE3 /* PairsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CC21FF7855700704CE3 /* PairsManager.swift */; };
@@ -26,6 +27,19 @@
 		E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesController.swift */; };
 		E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */; };
 		E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F610200E24A0003C0106 /* FloatCoinTests.swift */; };
+		E363F619200E3C65003C0106 /* Bitfinex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F618200E3C65003C0106 /* Bitfinex.swift */; };
+		E363F61A200E6C02003C0106 /* Bitfinex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F618200E3C65003C0106 /* Bitfinex.swift */; };
+		E363F61C200E6C18003C0106 /* BitfinexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F61B200E6C18003C0106 /* BitfinexTests.swift */; };
+		E363F61D200E6CB6003C0106 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* Exchange.swift */; };
+		E363F61E200E6CBA003C0106 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3389FF81FF24EA9002A0511 /* Currency.swift */; };
+		E363F61F200E6CBA003C0106 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
+		E363F620200E6DC5003C0106 /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
+		E363F621200E6DE8003C0106 /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
+		E363F622200E6DE8003C0106 /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFB1FF0320B009570AF /* Coinbase.swift */; };
+		E363F623200E6DE8003C0106 /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
+		E363F624200E6E15003C0106 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
+		E363F626200E6F74003C0106 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F625200E6F74003C0106 /* Logger.swift */; };
+		E363F627200F0A0E003C0106 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F625200E6F74003C0106 /* Logger.swift */; };
 		E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7EB1F47835400AEB397 /* AppDelegate.swift */; };
 		E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E7ED1F47835400AEB397 /* MainViewController.swift */; };
 		E372E7F01F47835400AEB397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E372E7EF1F47835400AEB397 /* Assets.xcassets */; };
@@ -55,8 +69,10 @@
 /* Begin PBXFileReference section */
 		3BBAAD2C59CD5CACE5B32BE9 /* Pods-CryptoBarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C9033F6BE9660D568A796DD /* Pods-CryptoBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.debug.xcconfig"; sourceTree = "<group>"; };
+		582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests.release.xcconfig"; sourceTree = "<group>"; };
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
 		7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.release.xcconfig"; sourceTree = "<group>"; };
+		80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFF6424F6CF014CAC627804 /* Pods_CryptoBarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3211CBC1FF3A94200704CE3 /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
@@ -79,6 +95,9 @@
 		E363F60E200E24A0003C0106 /* FloatCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E363F610200E24A0003C0106 /* FloatCoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCoinTests.swift; sourceTree = "<group>"; };
 		E363F612200E24A0003C0106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E363F618200E3C65003C0106 /* Bitfinex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitfinex.swift; sourceTree = "<group>"; };
+		E363F61B200E6C18003C0106 /* BitfinexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexTests.swift; sourceTree = "<group>"; };
+		E363F625200E6F74003C0106 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E372E7E81F47835400AEB397 /* FloatCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E372E7EB1F47835400AEB397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E372E7ED1F47835400AEB397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +116,7 @@
 		E3DC35E51FFCC76200E26B81 /* KSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSView.swift; sourceTree = "<group>"; };
 		E3DC35E71FFCDB4800E26B81 /* ExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeView.xib; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
+		E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642966C3C69A827A777ECC45 /* Pods_FloatCoinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +146,7 @@
 			children = (
 				E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */,
 				9CFF6424F6CF014CAC627804 /* Pods_CryptoBarTests.framework */,
+				80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E363F610200E24A0003C0106 /* FloatCoinTests.swift */,
+				E363F61B200E6C18003C0106 /* BitfinexTests.swift */,
 				E363F612200E24A0003C0106 /* Info.plist */,
 			);
 			path = FloatCoinTests;
@@ -207,6 +230,7 @@
 				E3FB7D8C1FF1167600371D5F /* Models */,
 				E3FB7D8B1FF1165400371D5F /* Exchange */,
 				E3211CBC1FF3A94200704CE3 /* Extras.swift */,
+				E363F625200E6F74003C0106 /* Logger.swift */,
 				E3DC35E51FFCC76200E26B81 /* KSView.swift */,
 				E3389FFC1FF2505D002A0511 /* UserDefaults.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
@@ -225,6 +249,7 @@
 				E339CBFE1FF0320C009570AF /* CEX.swift */,
 				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
 				E339CBFD1FF0320C009570AF /* Kraken.swift */,
+				E363F618200E3C65003C0106 /* Bitfinex.swift */,
 			);
 			path = Exchange;
 			sourceTree = "<group>";
@@ -248,6 +273,8 @@
 				DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */,
 				F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */,
 				7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */,
+				E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */,
+				582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,9 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E363F615200E24A0003C0106 /* Build configuration list for PBXNativeTarget "FloatCoinTests" */;
 			buildPhases = (
+				B3EB148D57424ACE4DF6812A /* [CP] Check Pods Manifest.lock */,
 				E363F60A200E24A0003C0106 /* Sources */,
 				E363F60B200E24A0003C0106 /* Frameworks */,
 				E363F60C200E24A0003C0106 /* Resources */,
+				ECD24F77FFE60DDC60510593 /* [CP] Embed Pods Frameworks */,
+				4A5ADD7300A7A68F5A0FA7B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,6 +397,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A5ADD7300A7A68F5A0FA7B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A73C8D70B8C96162B47A9186 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +430,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3EB148D57424ACE4DF6812A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FloatCoinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D3573D6FA8A69BD784D8365F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +461,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECD24F77FFE60DDC60510593 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71AAE730AD700F8C6239A16 /* [CP] Check Pods Manifest.lock */ = {
@@ -425,7 +506,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E363F622200E6DE8003C0106 /* Coinbase.swift in Sources */,
+				E363F61D200E6CB6003C0106 /* Exchange.swift in Sources */,
+				E363F61E200E6CBA003C0106 /* Currency.swift in Sources */,
+				E363F620200E6DC5003C0106 /* ExchangeDelegate.swift in Sources */,
+				E363F61A200E6C02003C0106 /* Bitfinex.swift in Sources */,
+				E363F624200E6E15003C0106 /* Extras.swift in Sources */,
+				E363F621200E6DE8003C0106 /* CEX.swift in Sources */,
+				E363F627200F0A0E003C0106 /* Logger.swift in Sources */,
+				E363F61C200E6C18003C0106 /* BitfinexTests.swift in Sources */,
+				E363F623200E6DE8003C0106 /* Kraken.swift in Sources */,
 				E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */,
+				E363F61F200E6CBA003C0106 /* Pair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +535,7 @@
 				E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */,
 				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
 				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,
+				E363F619200E3C65003C0106 /* Bitfinex.swift in Sources */,
 				E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */,
 				E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */,
 				E339CC041FF0320D009570AF /* Kraken.swift in Sources */,
@@ -452,6 +545,7 @@
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
 				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,
 				E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */,
+				E363F626200E6F74003C0106 /* Logger.swift in Sources */,
 				E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */,
 				E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */,
 				E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */,
@@ -483,6 +577,7 @@
 /* Begin XCBuildConfiguration section */
 		E363F616200E24A0003C0106 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -504,6 +599,7 @@
 		};
 		E363F617200E24A0003C0106 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

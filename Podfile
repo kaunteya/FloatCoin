@@ -5,10 +5,9 @@ target 'FloatCoin' do
     use_frameworks!
 #    pod 'DateToolsSwift'
 #    pod 'SwiftyAttributes'
-    pod 'SwiftyBeaver'
+    
 
-
-  target 'CryptoBarTests' do
+  target 'FloatCoinTests' do
     inherit! :search_paths
   end
 

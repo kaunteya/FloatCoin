@@ -8,27 +8,29 @@
 
 import Foundation
 enum Exchange: String {
-    case kraken, coinbase, cex
+    case bitfinex, cex, coinbase, kraken
 
     // Whenever new exchange is added to the enum, add it to `all`.
     // In all make sure that it always stays sorted
     static var all: [Exchange] {
-        return [Exchange.cex, Exchange.coinbase, Exchange.kraken]
+        return [.bitfinex, .cex, .coinbase, .kraken]
     }
 
     var description: String {
         switch self {
-        case .kraken: return "Kraken"
+        case .bitfinex: return "Bitfinex"
         case .cex: return "CEX"
         case .coinbase: return "Coinbase"
+        case .kraken: return "Kraken"
         }
     }
 
     var type: ExchangeDelegate.Type {
         switch self {
-        case .kraken: return Kraken.self
+        case .bitfinex: return Bitfinex.self
         case .cex: return CEX.self
         case .coinbase: return Coinbase.self
+        case .kraken: return Kraken.self
         }
     }
 }

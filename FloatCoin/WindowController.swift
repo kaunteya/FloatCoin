@@ -11,7 +11,7 @@ import AppKit
 class WindowController: NSWindowController {
 
     override func awakeFromNib() {
-        log.info("awakeFromNib")
+        Log.info("awakeFromNib")
         initialiseWindow()
     }
 
@@ -28,7 +28,7 @@ class WindowController: NSWindowController {
     }
 
     func show() {
-        log.info("Show")
+        Log.info("Show")
         window!.makeKeyAndOrderFront(self)
         window!.makeMain()
         NSApp.activate(ignoringOtherApps: true)
@@ -36,14 +36,14 @@ class WindowController: NSWindowController {
     }
 
     private func hide() {
-        log.info("Hide")
+        Log.info("Hide")
         window!.orderOut(self)
         (window!.contentViewController as! MainViewController).ratesController.stopTimer()
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == UserDefaults.keyFloatOnTop {
-            log.info("\(keyPath!) CHANGED \(UserDefaults.floatOnTop)")
+            Log.info("\(keyPath!) CHANGED \(UserDefaults.floatOnTop)")
             self.window!.hidesOnDeactivate = !UserDefaults.floatOnTop
         }
     }
@@ -51,21 +51,21 @@ class WindowController: NSWindowController {
 
 extension WindowController: NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
-        log.info("windowDidBecomeKey")
+        Log.info("windowDidBecomeKey")
     }
 
     func windowDidResignKey(_ notification: Notification) {
-        log.info("windowDidResignKey")
+        Log.info("windowDidResignKey")
     }
 
     func windowDidBecomeMain(_ notification: Notification) {
-        log.info("windowDidBecomeMain")
+        Log.info("windowDidBecomeMain")
 
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFloatOnTop, options: .new, context: nil)
     }
 
     func windowDidResignMain(_ notification: Notification) {
-        log.info("windowDidResignMain")
+        Log.info("windowDidResignMain")
         UserDefaults.standard.removeObserver(self, forKeyPath: UserDefaults.keyFloatOnTop)
 
         /// If window is not pinned(hides on deactivate) it does not close(just hides)
@@ -77,7 +77,7 @@ extension WindowController: NSWindowDelegate {
     }
 
     func windowWillClose(_ notification: Notification) {
-        log.info("windowDidResignMain")
+        Log.info("windowDidResignMain")
     }
 }
 

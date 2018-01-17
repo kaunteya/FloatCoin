@@ -19,22 +19,22 @@ struct Kraken : ExchangeDelegate {
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
         let urlRequest = self.urlRequest(for: pairs)
-//        log.info("Kraken URL \(urlRequest)")
+//        Log.info("Kraken URL \(urlRequest)")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                log.error("Error \(error!)")
+                Log.error("Error \(error!)")
                 return;
             }
             guard data != nil else {
-                log.error("Data is nil"); return;
+                Log.error("Data is nil"); return;
             }
             guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any] else {
                 let str = String(data: data!, encoding: .utf8)!
-                log.error("JSON parsing error \(str)")
+                Log.error("JSON parsing error \(str)")
                 return;
             }
             guard let result = json["result"] as? [String: Any] else {
-                log.error("Result key not found in json \(json)")
+                Log.error("Result key not found in json \(json)")
                 return;
             }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 protocol ExchangeDelegate {
     static var name: Exchange {get}
     static func urlRequest(for: Set<Pair>) -> URLRequest

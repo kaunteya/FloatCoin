@@ -22,7 +22,8 @@ extension Pair {
         self.a = Currency("\(split[0])")!
         self.b = Currency("\(split[1])")!
     }
-    func joined(_ seperator: String) -> String {
+    
+    func joined(_ seperator: String = "") -> String {
         return "\(a)\(seperator)\(b)"
     }
 }

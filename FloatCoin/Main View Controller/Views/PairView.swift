@@ -83,7 +83,7 @@ class PairView: KSView {
 
 extension PairView: PairMenuDelegate {
     func pairActionDelete() {
-        log.info("Delete \(pair)")
+        Log.info("Delete \(pair)")
         UserDefaults.remove(exchange: exchange, pair: pair)
     }
 }
