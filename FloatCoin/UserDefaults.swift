@@ -12,7 +12,7 @@ extension UserDefaults {
     static let keyFontSize = "fontSize"
     static let keyFloatOnTop = "floatOnTop"
     private static let keyUserExchange = "userKeys"
-    private static let keyInstallDate = "installDate"
+    static let keyInstallDate = "installDate"
 
     static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
     static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
@@ -24,6 +24,10 @@ extension UserDefaults {
         set {
             UserDefaults.standard.set(newValue, forKey: keyFloatOnTop)
         }
+    }
+
+    static var installDate: Date {
+        return UserDefaults.standard.object(forKey: keyInstallDate) as! Date
     }
 
     static func registerDefaults() {

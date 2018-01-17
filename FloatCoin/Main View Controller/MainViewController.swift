@@ -18,9 +18,9 @@ import Cocoa
     @IBOutlet var optionsMenu: NSMenu!
     @IBOutlet weak var exchangeStackView: NSStackView!
 
-        var exchangeViews: [ExchangeView] {
-            return exchangeStackView.arrangedSubviews as! [ExchangeView]
-        }
+    var exchangeViews: [ExchangeView] {
+        return exchangeStackView.arrangedSubviews as! [ExchangeView]
+    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -32,7 +32,6 @@ import Cocoa
         super.viewDidLoad()
         loadExchangePairs()
         addTracking()
-
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
     }
@@ -94,8 +93,20 @@ import Cocoa
 
     @IBAction func actionOptions(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: sender.frame.height)
+        updateDonateButton()
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
     }
+
+    private func updateDonateButton() {
+        let days5 = 60 * 60 * 24 * 5.0
+        let installDate = UserDefaults.installDate
+        let after5Days = installDate.addingTimeInterval(Double(days5))
+        let today = Date()
+        if today >= after5Days {
+            optionsMenu.item(withTitle: "Donate")?.isHidden = false
+        }
+    }
+
 }
 
 extension MainViewController: PairManagerDelegate {
