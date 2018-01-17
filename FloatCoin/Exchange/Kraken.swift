@@ -47,7 +47,7 @@ struct Kraken : ExchangeDelegate {
         }.resume()
     }
 
-    static func baseCryptoCurriencies() -> [Currency] {
+    static var baseCurrencies: [Currency] {
         return ["BTC", "BCH", "DASH", "EOS", "ETC", "ETH", "GNO", "ICN", "LTC", "MLN", "REP", "USDT", "XDG", "XLM", "XMR", "XRP", "ZEC"].map{ Currency($0)! }
     }
 

@@ -21,7 +21,7 @@ class PairVC: NSViewController {
 
     var selectedBase: Currency {
         assert( basePopupButton.indexOfSelectedItem >= 0)
-        return selectedExchange.type.baseCryptoCurriencies()[basePopupButton.indexOfSelectedItem]
+        return selectedExchange.type.baseCurrencies[basePopupButton.indexOfSelectedItem]
     }
 
     var selectedFIAT: Currency {
@@ -43,7 +43,7 @@ class PairVC: NSViewController {
     }
 
     @IBAction func actionExchangeSelected(_ sender: NSPopUpButton?) {
-        let baseCurriencies = selectedExchange.type.baseCryptoCurriencies()
+        let baseCurriencies = selectedExchange.type.baseCurrencies
         basePopupButton.removeAllItems()
         baseCurriencies.forEach {
             basePopupButton.addItem(withTitle: $0.stringValue)

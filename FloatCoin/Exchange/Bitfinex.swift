@@ -18,7 +18,7 @@ struct Bitfinex: ExchangeDelegate {
         return URLRequest(url: tickerURLComponent.url!)
     }
 
-    static func baseCryptoCurriencies() -> [Currency] {
+    static var baseCurrencies: [Currency] {
         return ["AVT", "BAT", "BCH", "BTC", "BTG",
                 "DAT", "DSH", "EDO", "EOS", "ETC",
                 "ETH", "ETP", "FUN", "GNT", "IOT",

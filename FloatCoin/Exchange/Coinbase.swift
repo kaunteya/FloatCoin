@@ -18,7 +18,7 @@ struct Coinbase: ExchangeDelegate {
         return request
     }
 
-    static func baseCryptoCurriencies() -> [Currency] {
+    static var baseCurrencies: [Currency] {
         return ["BTC", "ETH", "BCH", "LTC"].map{ Currency($0)! }
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 struct CEX: ExchangeDelegate {
+
     static var name: Exchange = .cex
 
     static func urlRequest(for pairs: Set<Pair>) -> URLRequest {
@@ -22,7 +23,7 @@ struct CEX: ExchangeDelegate {
         return URLRequest(url: url!)
     }
 
-    static func baseCryptoCurriencies() -> [Currency] {
+    static var baseCurrencies: [Currency] {
         return ["BTC", "ETH", "BCH", "BTG", "DASH", "XRP", "ZEC", "GHS"].map { Currency($0)! }
     }
 

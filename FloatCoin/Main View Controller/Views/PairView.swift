@@ -7,7 +7,7 @@
 //
 
 import AppKit
-class PairView: KSView {
+class PairView: NSView {
     var pair: Pair
     var exchange: Exchange
 
