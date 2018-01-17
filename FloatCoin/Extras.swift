@@ -49,6 +49,15 @@ extension NSView {
     }
 }
 
+extension UserDefaults {
+    func setOnce(_ value: Any?, forKey defaultName: String) {
+        guard UserDefaults.standard.object(forKey: defaultName) == nil else {
+            return
+        }
+        UserDefaults.standard.set(value, forKey: defaultName)
+    }
+}
+
 extension Double {
     var fixedWidth: String {
         let formatter = NumberFormatter()
