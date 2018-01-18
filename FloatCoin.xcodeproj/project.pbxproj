@@ -57,6 +57,8 @@
 		E3FDADE2200F8F3E00CFC7C6 /* BitfinexAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADE1200F8F3E00CFC7C6 /* BitfinexAPITests.swift */; };
 		E3FDADE5200F914800CFC7C6 /* CEXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADE4200F914800CFC7C6 /* CEXTests.swift */; };
 		E3FDADE7200F93E200CFC7C6 /* CoinbaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADE6200F93E200CFC7C6 /* CoinbaseTests.swift */; };
+		E3FDAE00200FB7E500CFC7C6 /* Binance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADFF200FB7E500CFC7C6 /* Binance.swift */; };
+		E3FDAE01200FB7E500CFC7C6 /* Binance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADFF200FB7E500CFC7C6 /* Binance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,7 @@
 		E3FDADE1200F8F3E00CFC7C6 /* BitfinexAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPITests.swift; sourceTree = "<group>"; };
 		E3FDADE4200F914800CFC7C6 /* CEXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEXTests.swift; sourceTree = "<group>"; };
 		E3FDADE6200F93E200CFC7C6 /* CoinbaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseTests.swift; sourceTree = "<group>"; };
+		E3FDADFF200FB7E500CFC7C6 /* Binance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binance.swift; sourceTree = "<group>"; };
 		E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
 				E339CBFD1FF0320C009570AF /* Kraken.swift */,
 				E363F618200E3C65003C0106 /* Bitfinex.swift */,
+				E3FDADFF200FB7E500CFC7C6 /* Binance.swift */,
 			);
 			path = Exchange;
 			sourceTree = "<group>";
@@ -531,6 +535,7 @@
 				E363F620200E6DC5003C0106 /* ExchangeDelegate.swift in Sources */,
 				E363F61A200E6C02003C0106 /* Bitfinex.swift in Sources */,
 				E363F624200E6E15003C0106 /* Extras.swift in Sources */,
+				E3FDAE01200FB7E500CFC7C6 /* Binance.swift in Sources */,
 				E363F621200E6DE8003C0106 /* CEX.swift in Sources */,
 				E363F627200F0A0E003C0106 /* Logger.swift in Sources */,
 				E363F61C200E6C18003C0106 /* BitfinexTests.swift in Sources */,
@@ -567,6 +572,7 @@
 				E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */,
 				E363F626200E6F74003C0106 /* Logger.swift in Sources */,
 				E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */,
+				E3FDAE00200FB7E500CFC7C6 /* Binance.swift in Sources */,
 				E3389FF91FF24EAA002A0511 /* Currency.swift in Sources */,
 				E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */,
 				E372E7EC1F47835400AEB397 /* AppDelegate.swift in Sources */,
