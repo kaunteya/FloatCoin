@@ -10,6 +10,7 @@ import AppKit
 
 class CloseButton: NSButton {
     private var trackingArea: NSTrackingArea?
+
     override func updateTrackingAreas() {
         if let trackingArea = self.trackingArea {
             self.removeTrackingArea(trackingArea)
