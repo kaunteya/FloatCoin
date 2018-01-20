@@ -78,7 +78,7 @@ class ExchangeView: NSView {
     }
 
     override func mouseEntered(with event: NSEvent) {
-        titleLabel.textColor = #colorLiteral(red: 0.9098039216, green: 0.7019607843, blue: 0.2588235294, alpha: 1)
+        titleLabel.textColor = Color.Exchange.titleHightlight
         self.layer?.backgroundColor = Color.Exchange.backgroundHighlight.cgColor
     }
 
