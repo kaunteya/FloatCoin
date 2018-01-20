@@ -803,7 +803,7 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close">
+                            <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close" customClass="CloseButton" customModule="FloatCoin" customModuleProvider="target">
                                 <rect key="frame" x="1" y="143" width="13" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
