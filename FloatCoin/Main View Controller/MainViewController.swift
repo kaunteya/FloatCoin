@@ -137,6 +137,7 @@ extension MainViewController: PairManagerDelegate {
 
 extension MainViewController: ColorResponder {
     func updateColors() {
+        boxView.borderColor = Color.Main.borderColor
         boxView.fillColor = Color.Main.background
     }
 }

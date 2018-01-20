@@ -689,10 +689,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" borderWidth="2" cornerRadius="3" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qXv-7E-yhn">
+                            <box boxType="custom" borderType="line" cornerRadius="3" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qXv-7E-yhn">
                                 <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
                                 <view key="contentView" id="VuL-M0-Oyx">
-                                    <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
+                                    <rect key="frame" x="1" y="1" width="290" height="157"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <constraints>

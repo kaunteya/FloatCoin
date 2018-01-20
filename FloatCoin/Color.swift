@@ -14,6 +14,9 @@ protocol ColorResponder {
 let isDarkMode = false
 struct Color {
     struct Main {
+        static var borderColor: NSColor {
+            return isDarkMode ? #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1) : #colorLiteral(red: 0.08235294118, green: 0.1019607843, blue: 0.1176470588, alpha: 1)
+        }
         static var background: NSColor {
             return isDarkMode ? #colorLiteral(red: 0.08235294118, green: 0.1019607843, blue: 0.1176470588, alpha: 1) : #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1)
         }
