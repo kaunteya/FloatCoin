@@ -36,6 +36,7 @@ class ExchangeView: NSView {
         titleLabel.stringValue = exchange.description
         titleLabel.font = NSFont.systemFont(ofSize: fontSize)
         pairList.forEach { self.add(pair: $0) }
+        updateColors()
     }
 
     func add(pair: Pair) {
@@ -51,6 +52,13 @@ class ExchangeView: NSView {
 
     func set(price: Double, of pair: Pair) {
         pairViews[pair]?.price = price
+    }
+
+    func updateColors() {
+        titleLabel.textColor = Color.Exchange.title
+        pairViews.forEach { pair in
+            pair.updateColors()
+        }
     }
 
     required init?(coder decoder: NSCoder) {

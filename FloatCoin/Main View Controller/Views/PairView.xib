@@ -9,11 +9,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PairView" customModule="FloatCoin" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                    <color key="value" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                    <real key="value" value="2"/>
+                    <integer key="value" value="1"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
@@ -59,7 +56,7 @@
                     </customSpacing>
                 </stackView>
                 <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OgS-JX-QGy">
-                    <rect key="frame" x="65" y="0.0" width="11" height="15"/>
+                    <rect key="frame" x="64" y="0.0" width="12" height="15"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Options" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ADD-q6-REP">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>

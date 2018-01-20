@@ -25,9 +25,9 @@ class PairView: NSView {
             let priceString = "\(pair.b.symbol)\(price!.fixedWidth) "
             let textColor: NSColor
             if oldValue != nil {
-                textColor = price! < oldValue! ? #colorLiteral(red: 1, green: 0.34383979, blue: 0.136546772, alpha: 1) : #colorLiteral(red: 0.1420414355, green: 0.9820115771, blue: 0.1467524558, alpha: 1)
+                textColor = price! < oldValue! ? Color.Pair.Price.down : Color.Pair.Price.up
             } else {
-                textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                textColor = Color.Pair.Price.default
             }
             fiatPriceLabel.stringValue = priceString
             fiatPriceLabel.textColor = textColor
@@ -38,6 +38,7 @@ class PairView: NSView {
         self.pair = pair
         self.exchange = exchange
         super.init(frame: NSZeroRect)
+        self.wantsLayer = true
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PairView"), owner: self, topLevelObjects: nil)
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
         basePriceLabel.stringValue = " " + pair.a.description
@@ -63,7 +64,7 @@ class PairView: NSView {
     override func mouseEntered(with event: NSEvent) {
         optionsButton.isHidden = false
     }
-    
+
     override func mouseExited(with event: NSEvent) {
         optionsButton.isHidden = true
     }
@@ -79,6 +80,13 @@ class PairView: NSView {
         fatalError()
     }
 
+}
+
+extension PairView: ColorResponder {
+    func updateColors() {
+        basePriceLabel.textColor = Color.Pair.baseLabel
+        self.layer!.backgroundColor = Color.Pair.background.cgColor
+    }
 }
 
 extension PairView: PairMenuDelegate {

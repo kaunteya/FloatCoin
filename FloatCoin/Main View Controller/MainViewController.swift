@@ -10,6 +10,7 @@ import Cocoa
 
 @objc class MainViewController: NSViewController {
 
+    @IBOutlet weak var boxView: NSBox!
     let ratesController = RatesController()
     let pairsManager = PairsManager()
     lazy var emptyView = EmptyStateView()
@@ -32,6 +33,7 @@ import Cocoa
         super.viewDidLoad()
         loadExchangePairs()
         addTracking()
+        updateColors()
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
     }
@@ -130,6 +132,12 @@ extension MainViewController: PairManagerDelegate {
         if UserDefaults.isExchangleListEmpty {
             self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
         }
+    }
+}
+
+extension MainViewController: ColorResponder {
+    func updateColors() {
+        boxView.fillColor = Color.Main.background
     }
 }
 
