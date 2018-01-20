@@ -138,10 +138,35 @@ struct Binance: ExchangeDelegate {
     }
 
     static func urlRequest(for: Set<Pair>) -> URLRequest {
-        return URLRequest(url: URL(string: "")!)
+        return URLRequest(url: URL(string: "https://api.binance.com/api/v1/ticker/allPrices")!)
     }
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
+        URLSession.shared.dataTask(with: urlRequest(for: pairs)) { (data, response, error) in
+            guard error == nil else {
+                Log.error("Error \(error!)")
+                return;
+            }
+            guard data != nil else {
+                Log.error("Data is nil"); return;
+            }
+            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [[String : Any]] else {
+                let str = String(data: data!, encoding: .utf8)!
+                Log.error("JSON parsing error \(str)")
+                return;
+            }
 
+            var aDict = [String : Double]()
+            for a in json {
+                let symbol = a["symbol"] as! String
+                let price = a["price"] as! String
+                    aDict[symbol] = Double(price)
+            }
+            var dict = [Pair : Double]()
+            for pair in pairs {
+                dict[pair] = aDict[pair.joined()]
+            }
+            completion(dict)
+        }.resume()
     }
 }
