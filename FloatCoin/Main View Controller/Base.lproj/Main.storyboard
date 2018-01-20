@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -689,18 +688,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="line" cornerRadius="3" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qXv-7E-yhn">
-                                <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
-                                <view key="contentView" id="VuL-M0-Oyx">
-                                    <rect key="frame" x="1" y="1" width="290" height="157"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="nnU-OY-Ghx"/>
-                                </constraints>
-                                <color key="borderColor" red="0.0" green="0.63137257099999999" blue="0.93725490570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.035294117649999998" green="0.047058823530000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </box>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-oO-IDg">
                                 <rect key="frame" x="4" y="4" width="284" height="151"/>
                                 <subviews>
@@ -844,22 +831,22 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="qXv-7E-yhn" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" id="5uC-xA-W5K"/>
                             <constraint firstAttribute="trailing" secondItem="Njt-oO-IDg" secondAttribute="trailing" constant="4" id="FGY-aP-2Ll"/>
-                            <constraint firstItem="qXv-7E-yhn" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="Paf-nV-ODu"/>
                             <constraint firstItem="Njt-oO-IDg" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="4" id="Ruq-RM-nDG"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="leading" secondItem="GJj-rc-58U" secondAttribute="leading" constant="1" id="YgU-aO-hX3"/>
                             <constraint firstItem="gzd-9w-Ni9" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="1" id="ZEx-eR-2ZM"/>
-                            <constraint firstAttribute="bottom" secondItem="qXv-7E-yhn" secondAttribute="bottom" id="ZOV-gW-sOX"/>
-                            <constraint firstAttribute="trailing" secondItem="qXv-7E-yhn" secondAttribute="trailing" id="iaG-7W-H7p"/>
                             <constraint firstItem="Njt-oO-IDg" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" constant="4" id="ifA-4I-fuB"/>
                             <constraint firstItem="iB0-05-szl" firstAttribute="top" secondItem="GJj-rc-58U" secondAttribute="top" id="oGl-IC-54V"/>
                             <constraint firstAttribute="bottom" secondItem="Njt-oO-IDg" secondAttribute="bottom" constant="4" id="oON-dt-VhX"/>
                             <constraint firstAttribute="trailing" secondItem="iB0-05-szl" secondAttribute="trailing" id="riS-Ze-gap"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="boxView" destination="qXv-7E-yhn" id="aId-y5-MAq"/>
                         <outlet property="exchangeStackView" destination="9EW-c1-Jdy" id="y0i-26-CoM"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>

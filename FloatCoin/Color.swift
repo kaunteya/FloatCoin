@@ -11,11 +11,11 @@ import AppKit
 protocol ColorResponder {
     func updateColors()
 }
-let isDarkMode = false
+let isDarkMode = true
 struct Color {
     struct Main {
         static var borderColor: NSColor {
-            return isDarkMode ? #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1) : #colorLiteral(red: 0.08235294118, green: 0.1019607843, blue: 0.1176470588, alpha: 1)
+            return isDarkMode ? #colorLiteral(red: 0.8100375533, green: 0.8100375533, blue: 0.8100375533, alpha: 1) : #colorLiteral(red: 0.6840139627, green: 0.6840139627, blue: 0.6840139627, alpha: 1)
         }
         static var background: NSColor {
             return isDarkMode ? #colorLiteral(red: 0.08235294118, green: 0.1019607843, blue: 0.1176470588, alpha: 1) : #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1)

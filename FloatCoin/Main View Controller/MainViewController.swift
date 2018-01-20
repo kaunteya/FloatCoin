@@ -10,7 +10,6 @@ import Cocoa
 
 @objc class MainViewController: NSViewController {
 
-    @IBOutlet weak var boxView: NSBox!
     let ratesController = RatesController()
     let pairsManager = PairsManager()
     lazy var emptyView = EmptyStateView()
@@ -137,8 +136,10 @@ extension MainViewController: PairManagerDelegate {
 
 extension MainViewController: ColorResponder {
     func updateColors() {
-        boxView.borderColor = Color.Main.borderColor
-        boxView.fillColor = Color.Main.background
+        self.view.layer?.borderWidth = 1
+        self.view.layer?.cornerRadius = 2
+        self.view.layer?.borderColor = Color.Main.borderColor.cgColor
+        self.view.layer?.backgroundColor = Color.Main.background.cgColor
     }
 }
 
