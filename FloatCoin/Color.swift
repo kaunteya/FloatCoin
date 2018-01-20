@@ -19,6 +19,7 @@ struct Color {
     }
     struct Exchange {
         static var title: NSColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        static var backgroundHighlight = #colorLiteral(red: 0.1366302849, green: 0.1691613051, blue: 0.1951861213, alpha: 1)
     }
     struct Pair {
         static var baseLabel: NSColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)

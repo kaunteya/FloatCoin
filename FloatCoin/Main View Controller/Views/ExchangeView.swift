@@ -31,6 +31,7 @@ class ExchangeView: NSView {
         self.fontSize = fontSize
         super.init(frame: NSZeroRect)
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "ExchangeView"), owner: self, topLevelObjects: nil)
+        self.wantsLayer = true
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
 
         titleLabel.stringValue = exchange.description
@@ -64,6 +65,29 @@ class ExchangeView: NSView {
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    private var trackingArea: NSTrackingArea?
+    override func updateTrackingAreas() {
+        if let trackingArea = self.trackingArea {
+            self.removeTrackingArea(trackingArea)
+        }
+
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+        trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+        self.addTrackingArea(trackingArea!)
+    }
+
+    override func mouseEntered(with event: NSEvent) {
+        titleLabel.textColor = #colorLiteral(red: 0.9098039216, green: 0.7019607843, blue: 0.2588235294, alpha: 1)
+        self.layer?.backgroundColor = Color.Exchange.backgroundHighlight.cgColor
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        titleLabel.textColor = Color.Exchange.title
+        self.layer?.backgroundColor = nil
+        self.layer?.borderWidth = 0
+    }
+
 }
 
 extension ExchangeView: Comparable {
