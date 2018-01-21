@@ -692,44 +692,16 @@
                                 <rect key="frame" x="4" y="4" width="284" height="151"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                        <rect key="frame" x="0.0" y="17" width="284" height="134"/>
+                                        <rect key="frame" x="0.0" y="15" width="284" height="136"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-JC-UxN" userLabel="Action Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="284" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="13"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="13"/>
                                             </customView>
-                                            <button toolTip="Float On Top" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-OV-Tfi" userLabel="Float On Top">
-                                                <rect key="frame" x="194" y="0.0" width="13" height="15"/>
-                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="PinOn" imagePosition="overlaps" alignment="center" alternateImage="PinOff" controlSize="small" imageScaling="proportionallyDown" inset="2" id="2Q1-Ce-jnJ">
-                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="smallSystem"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="OXW-ZE-B6M">
-                                                        <dictionary key="options">
-                                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                                        </dictionary>
-                                                    </binding>
-                                                </connections>
-                                            </button>
-                                            <button toolTip="Light / Dark Mode" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uOq-wy-KOV" userLabel="Light Dark">
-                                                <rect key="frame" x="212" y="0.0" width="13" height="15"/>
-                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="LightDark" imagePosition="overlaps" alignment="center" controlSize="small" imageScaling="proportionallyDown" inset="2" id="y5w-zC-hmO">
-                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="smallSystem"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="c4s-eI-Qlm">
-                                                        <dictionary key="options">
-                                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                                        </dictionary>
-                                                    </binding>
-                                                </connections>
-                                            </button>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
-                                                <rect key="frame" x="230" y="0.0" width="13" height="15"/>
+                                                <rect key="frame" x="253" y="0.0" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -738,18 +710,8 @@
                                                     <segue destination="fW2-ng-MkX" kind="sheet" id="1ij-V2-kae"/>
                                                 </connections>
                                             </button>
-                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="44e-3J-Pcv" userLabel="Font Size">
-                                                <rect key="frame" x="248" y="0.0" width="18" height="15"/>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="FontSize" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Aj6-ZR-HSn">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <segue destination="dQ2-hY-Oh6" kind="modal" id="shL-Rm-DkJ"/>
-                                                </connections>
-                                            </button>
                                             <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1" userLabel="Preferences">
-                                                <rect key="frame" x="271" y="0.0" width="13" height="15"/>
+                                                <rect key="frame" x="271" y="0.0" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f8p-KP-qt3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -760,25 +722,17 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="44e-3J-Pcv" firstAttribute="top" secondItem="byv-JC-UxN" secondAttribute="top" id="Hc8-cp-aoN"/>
                                             <constraint firstItem="TyT-Cv-og1" firstAttribute="top" secondItem="byv-JC-UxN" secondAttribute="top" id="e90-6d-9zW"/>
                                             <constraint firstAttribute="bottom" secondItem="U9d-5D-JBC" secondAttribute="bottom" id="ePr-Vx-GJZ"/>
                                             <constraint firstItem="U9d-5D-JBC" firstAttribute="top" secondItem="byv-JC-UxN" secondAttribute="top" id="u3V-H4-Pfd"/>
-                                            <constraint firstAttribute="bottom" secondItem="44e-3J-Pcv" secondAttribute="bottom" id="uye-to-01a"/>
                                             <constraint firstAttribute="bottom" secondItem="TyT-Cv-og1" secondAttribute="bottom" id="zXY-8x-eA2"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -825,10 +779,20 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-05-szl">
-                                <rect key="frame" x="238" y="144" width="54" height="15"/>
+                                <rect key="frame" x="174" y="144" width="118" height="15"/>
                                 <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uIc-ZD-flE" userLabel="FontSize">
+                                        <rect key="frame" x="-1" y="-1" width="63" height="16"/>
+                                        <buttonCell key="cell" type="push" title="FontSize" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D5z-Vq-LFx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <segue destination="dQ2-hY-Oh6" kind="modal" id="fdh-Tm-jQF"/>
+                                        </connections>
+                                    </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-hm-Y1x">
-                                        <rect key="frame" x="-1" y="-1" width="56" height="16"/>
+                                        <rect key="frame" x="63" y="-1" width="56" height="16"/>
                                         <buttonCell key="cell" type="push" title="Donate" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z1T-Ht-9Mz">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="miniSystem"/>
@@ -840,8 +804,10 @@
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -876,6 +842,29 @@
                                 <action selector="performClick:" target="Whi-hm-Y1x" id="XMM-zT-kjR"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Dark Mode" id="aBZ-Q3-b3b">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="hfD-1O-vTq"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Float On Top" id="WL3-wB-RT3">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="jB8-ra-3Hz">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Font Size" id="YbB-cG-zNh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="performClick:" target="uIc-ZD-flE" id="r3H-QT-fdg"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="ZFI-fh-Xrw"/>
                         <menuItem title="About / Help" id="AqJ-Jj-mR9">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -1108,10 +1097,6 @@ DQ
     <resources>
         <image name="Add" width="13" height="13"/>
         <image name="Close" width="13.5" height="13"/>
-        <image name="FontSize" width="18" height="13"/>
         <image name="Gear" width="13.5" height="13.5"/>
-        <image name="LightDark" width="13" height="13"/>
-        <image name="PinOff" width="13" height="13"/>
-        <image name="PinOn" width="13.5" height="13"/>
     </resources>
 </document>
