@@ -10,6 +10,7 @@ import Cocoa
 
 @objc class MainViewController: NSViewController {
 
+    @IBOutlet weak var actionButtonStack: NSStackView!
     let ratesController = RatesController()
     let pairsManager = PairsManager()
     lazy var emptyView = EmptyStateView()
@@ -33,6 +34,9 @@ import Cocoa
         loadExchangePairs()
         addTracking()
         updateColors()
+        self.view.layer?.borderWidth = 1
+        self.view.layer?.cornerRadius = 2
+
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyIsDark, options: .new, context: nil)
@@ -140,11 +144,14 @@ extension MainViewController: PairManagerDelegate {
 
 extension MainViewController: ColorResponder {
     func updateColors() {
-        self.view.layer?.borderWidth = 1
-        self.view.layer?.cornerRadius = 2
         self.view.layer?.borderColor = Color.Main.borderColor.cgColor
         self.view.layer?.backgroundColor = Color.Main.background.cgColor
         exchangeViews.forEach { $0.updateColors() }
+        actionButtonStack.arrangedSubviews.forEach { view in
+            if let button = view as? NSButton {
+                button.setTint(Color.App.buttonTint)
+            }
+        }
     }
 }
 

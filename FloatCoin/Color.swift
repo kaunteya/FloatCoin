@@ -13,6 +13,11 @@ protocol ColorResponder {
 }
 
 struct Color {
+    struct App {
+        static var buttonTint: NSColor {
+            return UserDefaults.isDarkMode ? #colorLiteral(red: 0.949780643, green: 0.949780643, blue: 0.949780643, alpha: 1) : #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        }
+    }
     struct Main {
         static var borderColor: NSColor {
             return UserDefaults.isDarkMode ? #colorLiteral(red: 0.8100375533, green: 0.8100375533, blue: 0.8100375533, alpha: 1) : #colorLiteral(red: 0.6840139627, green: 0.6840139627, blue: 0.6840139627, alpha: 1)

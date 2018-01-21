@@ -829,6 +829,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="actionButtonStack" destination="byv-JC-UxN" id="6b8-8n-r4I"/>
                         <outlet property="exchangeStackView" destination="9EW-c1-Jdy" id="y0i-26-CoM"/>
                         <outlet property="optionsMenu" destination="w9R-vv-P9Z" id="w3k-2Z-ktt"/>
                     </connections>
