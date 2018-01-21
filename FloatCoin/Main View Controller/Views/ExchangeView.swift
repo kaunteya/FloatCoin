@@ -55,13 +55,6 @@ class ExchangeView: NSView {
         pairViews[pair]?.price = price
     }
 
-    func updateColors() {
-        titleLabel.textColor = Color.Exchange.title
-        pairViews.forEach { pair in
-            pair.updateColors()
-        }
-    }
-
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -88,6 +81,15 @@ class ExchangeView: NSView {
         self.layer?.borderWidth = 0
     }
 
+}
+
+extension ExchangeView: ColorResponder {
+    func updateColors() {
+        titleLabel.textColor = Color.Exchange.title
+        pairViews.forEach { pair in
+            pair.updateColors()
+        }
+    }
 }
 
 extension ExchangeView: Comparable {

@@ -13,6 +13,7 @@ extension UserDefaults {
     static let keyFloatOnTop = "floatOnTop"
     private static let keyUserExchange = "userKeys"
     static let keyInstallDate = "installDate"
+    static let keyIsDark = "isDarkMode"
 
     static let notificationPairDidAdd = NSNotification.Name(rawValue: "notificationPairDidAdd")
     static let notificationPairDidRemove = NSNotification.Name(rawValue: "notificationPairDidRemove")
@@ -26,6 +27,10 @@ extension UserDefaults {
         }
     }
 
+    static var isDarkMode: Bool {
+        return UserDefaults.standard.bool(forKey: keyIsDark)
+    }
+
     static var installDate: Date {
         return UserDefaults.standard.object(forKey: keyInstallDate) as! Date
     }
@@ -33,7 +38,8 @@ extension UserDefaults {
     static func registerDefaults() {
         UserDefaults.standard.register(defaults: [
             keyFontSize: 12,
-            keyFloatOnTop: true
+            keyFloatOnTop: true,
+            keyIsDark: true
             ])
         UserDefaults.standard.setOnce(Date(), forKey: keyInstallDate)
     }

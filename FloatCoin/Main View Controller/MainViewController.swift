@@ -35,12 +35,16 @@ import Cocoa
         updateColors()
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
+        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyIsDark, options: .new, context: nil)
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == UserDefaults.keyFontSize {
             let size = CGFloat(change![.newKey] as! Int)
             exchangeViews.forEach { $0.fontSize = size }
+        } else if keyPath == UserDefaults.keyIsDark {
+            Log.info("Light dark mode changed")
+            updateColors()
         }
     }
 
@@ -140,6 +144,7 @@ extension MainViewController: ColorResponder {
         self.view.layer?.cornerRadius = 2
         self.view.layer?.borderColor = Color.Main.borderColor.cgColor
         self.view.layer?.backgroundColor = Color.Main.background.cgColor
+        exchangeViews.forEach { $0.updateColors() }
     }
 }
 
