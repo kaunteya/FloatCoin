@@ -26,12 +26,8 @@ struct Color {
             return UserDefaults.isDarkMode ? #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1) : #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         }
 
-        static var titleHightlight: NSColor {
-            return UserDefaults.isDarkMode ? #colorLiteral(red: 0.9098039216, green: 0.7019607843, blue: 0.2588235294, alpha: 1) : #colorLiteral(red: 0.7921568627, green: 0.6078431373, blue: 0.231372549, alpha: 1)
-        }
-
         static var backgroundHighlight: NSColor {
-            return UserDefaults.isDarkMode ? #colorLiteral(red: 0.1366302849, green: 0.1691613051, blue: 0.1951861213, alpha: 1) : #colorLiteral(red: 0.8695742712, green: 0.8697230867, blue: 0.8695647981, alpha: 1)
+            return UserDefaults.isDarkMode ? #colorLiteral(red: 0.1366302849, green: 0.1691613051, blue: 0.1951861213, alpha: 1) : #colorLiteral(red: 0.9008859396, green: 0.9008859396, blue: 0.9008859396, alpha: 1)
         }
     }
     struct Pair {
