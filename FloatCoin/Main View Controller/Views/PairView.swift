@@ -44,6 +44,7 @@ class PairView: NSView {
         basePriceLabel.stringValue = " " + pair.a.description
         basePriceLabel.font = NSFont.systemFont(ofSize: fontSize)
         fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
+        updateColors()
     }
 
     func update(fontSize: CGFloat) {

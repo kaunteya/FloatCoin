@@ -35,7 +35,7 @@ class ExchangeView: NSView {
         self.addSubViewWithConstraints(contentView, top: 0, right: 0, bottom: 0, left: 0)
 
         titleLabel.stringValue = exchange.description
-        titleLabel.font = NSFont.systemFont(ofSize: fontSize)
+        titleLabel.font = NSFont.systemFont(ofSize: fontSize, weight: .medium)
         pairList.forEach { self.add(pair: $0) }
         updateColors()
     }

@@ -49,7 +49,7 @@ struct Color {
                 return UserDefaults.isDarkMode ? #colorLiteral(red: 1, green: 0, blue: 0.4784313725, alpha: 1) : #colorLiteral(red: 1, green: 0.137254902, blue: 0.4392156863, alpha: 1)
             }
             static var up: NSColor {
-                return UserDefaults.isDarkMode ? #colorLiteral(red: 0.5568627451, green: 0.7882352941, blue: 0.09803921569, alpha: 1) : #colorLiteral(red: 0, green: 0.4392156863, blue: 0.1529411765, alpha: 1)
+                return UserDefaults.isDarkMode ? #colorLiteral(red: 0, green: 0.7882352941, blue: 0.05098039216, alpha: 1) : #colorLiteral(red: 0, green: 0.4392156863, blue: 0.1529411765, alpha: 1)
             }
             static var `default`: NSColor {
                 return UserDefaults.isDarkMode ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
