@@ -852,11 +852,7 @@
                         <menuItem title="Float On Top" id="WL3-wB-RT3">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="jB8-ra-3Hz">
-                                    <dictionary key="options">
-                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                    </dictionary>
-                                </binding>
+                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="yd3-kn-Gh9"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Font Size" id="YbB-cG-zNh">
