@@ -38,29 +38,4 @@ class BitfinexAPITests : XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testPairsFetchRequest() {
-        let expectation = XCTestExpectation(description: "fetchpairs")
-        let url = URL(string: "https://api.bitfinex.com/v2/tickers?symbols=tBTCUSD,tLTCUSD")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            XCTAssertNotNil(data, "No data was downloaded.")
-            XCTAssertNil(error)
-            let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [Any]
-            XCTAssertEqual(json.count, 2)
-
-            let btcusd = json[0] as! [Any]
-            XCTAssertEqual(btcusd.count, 11)
-            XCTAssertNotNil(btcusd.first as? String)
-            let nameStr = btcusd.first as! String
-            XCTAssertEqual(nameStr, "tBTCUSD")
-
-            let ltcusd = json[1] as! [Any]
-            XCTAssertEqual(ltcusd.count, 11)
-            XCTAssertNotNil(ltcusd.first as? String)
-            let nameStr1 = ltcusd.first as! String
-            XCTAssertEqual(nameStr1, "tLTCUSD")
-
-            expectation.fulfill()
-            }.resume()
-        wait(for: [expectation], timeout: 10.0)
-    }
 }

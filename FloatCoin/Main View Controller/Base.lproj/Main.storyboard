@@ -779,7 +779,7 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-05-szl">
-                                <rect key="frame" x="174" y="144" width="118" height="15"/>
+                                <rect key="frame" x="231" y="144" width="61" height="15"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uIc-ZD-flE" userLabel="FontSize">
                                         <rect key="frame" x="-1" y="-1" width="63" height="16"/>
@@ -791,23 +791,11 @@
                                             <segue destination="dQ2-hY-Oh6" kind="modal" id="fdh-Tm-jQF"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-hm-Y1x">
-                                        <rect key="frame" x="63" y="-1" width="56" height="16"/>
-                                        <buttonCell key="cell" type="push" title="Donate" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z1T-Ht-9Mz">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="miniSystem"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <segue destination="8m2-qB-Xbb" kind="sheet" id="2ic-Zu-RBY"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -837,12 +825,6 @@
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="w9R-vv-P9Z">
                     <items>
-                        <menuItem title="Donate" hidden="YES" id="agg-j1-lMl">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="performClick:" target="Whi-hm-Y1x" id="XMM-zT-kjR"/>
-                            </connections>
-                        </menuItem>
                         <menuItem title="Dark Mode" id="aBZ-Q3-b3b">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -896,14 +878,6 @@
                 <userDefaultsController representsSharedInstance="YES" id="dSg-ZW-bdM"/>
             </objects>
             <point key="canvasLocation" x="141" y="303"/>
-        </scene>
-        <!--Donate-->
-        <scene sceneID="Uf2-fA-Lvu">
-            <objects>
-                <controllerPlaceholder storyboardName="Donate" id="8m2-qB-Xbb" sceneMemberID="viewController"/>
-                <customObject id="oXn-ZK-8qr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="418" y="303"/>
         </scene>
         <!--Font Size-->
         <scene sceneID="Lbw-RQ-UhD">
