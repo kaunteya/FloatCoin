@@ -35,7 +35,7 @@ import Cocoa
         addTracking()
         updateColors()
         self.view.layer?.borderWidth = 1
-        self.view.layer?.cornerRadius = 2
+        self.view.layer?.cornerRadius = 4
 
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)

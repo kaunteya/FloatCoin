@@ -21,6 +21,7 @@ class WindowController: NSWindowController {
         window!.makeMain()
         window!.hidesOnDeactivate = !UserDefaults.floatOnTop
         window!.delegate = self
+        window?.backgroundColor = .clear
     }
 
     func toggleAppWindow() {
