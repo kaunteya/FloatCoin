@@ -47,8 +47,12 @@ struct Coinbase: ExchangeDelegate {
                 Log.error("JSON parsing error ")
                 return;
             }
-            let amount = Double((json["data"] as! [String: String])["amount"]!)!
-            completion([pair:amount])
+            guard let val = (json["data"] as? [String: String])?["amount"] else {
+                return
+            }
+            if let amount = Double(val) {
+                completion([pair:amount])
+            }
             }.resume()
     }
 

@@ -57,7 +57,9 @@ struct CEX: ExchangeDelegate {
                 Log.error("JSON parsing error")
                 return;
             }
-            let result = json["data"] as! [[String: Any]]
+            guard let result = json["data"] as? [[String: Any]] else {
+                return
+            }
             var dict = [Pair: Double]()
             for pair in pairs {
                 let gre = result.filter{ $0["pair"] as! String == pair.joined(":") }.first!
