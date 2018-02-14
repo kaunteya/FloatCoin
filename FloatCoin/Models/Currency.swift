@@ -22,6 +22,7 @@ struct Currency {
         case "JPY" : return "¥"
         case "ZWD" : return "Z$"
         case "VND":  return "₫"
+        case "INR" : return "₹"
         default: return stringValue
         }
     }
