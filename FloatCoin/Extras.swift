@@ -98,10 +98,4 @@ extension Double {
         }
         return formatter.string(from: NSNumber(value: self))!
     }
-    func format(precision: Int) -> String? {
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = precision
-        return formatter.string(from: NSNumber(value: self))
-    }
 }
