@@ -76,26 +76,3 @@ extension NSImage {
         return image
     }
 }
-
-extension Double {
-    var fixedWidth: String {
-        let formatter = NumberFormatter()
-        if self >= 1000 {
-            formatter.minimumFractionDigits = 0
-            formatter.maximumFractionDigits = 0
-        } else if self >= 100 { // 100-999
-            formatter.minimumFractionDigits = 1
-            formatter.maximumFractionDigits = 1
-        } else if self >= 10 { // 10-99
-            formatter.minimumFractionDigits = 2
-            formatter.maximumFractionDigits = 2
-        } else if self >= 1 { // 1-9
-            formatter.minimumFractionDigits = 3
-            formatter.maximumFractionDigits = 3
-        } else if self >= 0.0001 {
-            formatter.minimumFractionDigits = 5
-            formatter.maximumFractionDigits = 5
-        }
-        return formatter.string(from: NSNumber(value: self))!
-    }
-}
