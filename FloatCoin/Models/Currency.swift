@@ -14,19 +14,6 @@ struct Currency {
         stringValue = cur.uppercased()
     }
 
-    var symbol: String {
-        switch stringValue {
-        case "USD" : return "$"
-        case "GBP" : return "£"
-        case "EUR:" : return "€"
-        case "JPY" : return "¥"
-        case "ZWD" : return "Z$"
-        case "VND":  return "₫"
-        case "INR" : return "₹"
-        default: return stringValue
-        }
-    }
-
     private func adjustedPrecision(_ num: Double) -> Int {
         // Trailing zeros are taken to keep the window size uniform
         if num >= 1000 {
@@ -37,25 +24,24 @@ struct Currency {
             return 2
         } else if num >= 1 { // 1-9
             return 3
-        } else if num >= 0.0001 {
-            return 5
         }
-        return 6
+        return 5
     }
 
     func formatted(price: Double) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.maximumFractionDigits = self.adjustedPrecision(price)
         currencyFormatter.minimumFractionDigits = self.adjustedPrecision(price)
-        guard let locale = Locale(stringValue) else {
-            currencyFormatter.numberStyle = .decimal
 
-            let formattedPrice = currencyFormatter.string(from: NSNumber(value: price))!
-            return "\(stringValue) \(formattedPrice)"
+
+        if let locale = Locale(stringValue) {
+            currencyFormatter.numberStyle = .currency
+            currencyFormatter.locale = locale
+            return currencyFormatter.string(from: NSNumber(value: price))!
         }
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = locale
-        return currencyFormatter.string(from: NSNumber(value: price))!
+        currencyFormatter.numberStyle = .decimal
+        let formattedPrice = currencyFormatter.string(from: NSNumber(value: price))!
+        return "\(stringValue) \(formattedPrice)"
     }
 }
 

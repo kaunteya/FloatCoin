@@ -1,5 +1,5 @@
 //
-//  PriceFormat.swift
+//  ModelTests.swift
 //  FloatCoinTests
 //
 //  Created by Kaunteya Suryawanshi on 16/02/18.
@@ -8,6 +8,5 @@
 
 import XCTest
 
-class PriceFormat: XCTestCase {
-
+class ModelTests: XCTestCase {
 }
