@@ -54,7 +54,6 @@
 		E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */; };
 		E3DC35E21FFCBD3D00E26B81 /* PairView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35E11FFCBD3D00E26B81 /* PairView.xib */; };
 		E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E31FFCBFA800E26B81 /* PairView.swift */; };
-		E3DC35E61FFCC76200E26B81 /* KSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E51FFCC76200E26B81 /* KSView.swift */; };
 		E3DC35E81FFCDB4800E26B81 /* ExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35E71FFCDB4800E26B81 /* ExchangeView.xib */; };
 		E3F2F92C20372B74004847A2 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2F92B20372B74004847A2 /* ModelTests.swift */; };
 		E3F2F92E20372C01004847A2 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2F92D20372C01004847A2 /* CurrencyTests.swift */; };
@@ -125,7 +124,6 @@
 		E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E3DC35E11FFCBD3D00E26B81 /* PairView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairView.xib; sourceTree = "<group>"; };
 		E3DC35E31FFCBFA800E26B81 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
-		E3DC35E51FFCC76200E26B81 /* KSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSView.swift; sourceTree = "<group>"; };
 		E3DC35E71FFCDB4800E26B81 /* ExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeView.xib; sourceTree = "<group>"; };
 		E3F2F92B20372B74004847A2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		E3F2F92D20372C01004847A2 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				E37E49BD20360AC300621025 /* Locale.swift */,
 				E3A04E752013997500CE62E1 /* Color.swift */,
 				E363F625200E6F74003C0106 /* Logger.swift */,
-				E3DC35E51FFCC76200E26B81 /* KSView.swift */,
 				E3389FFC1FF2505D002A0511 /* UserDefaults.swift */,
 				E372E7EF1F47835400AEB397 /* Assets.xcassets */,
 				E372E7F41F47835500AEB397 /* Info.plist */,
@@ -562,7 +559,6 @@
 				E339CC011FF0320D009570AF /* Pair.swift in Sources */,
 				E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */,
 				E39313BA1FB73E01006E915C /* StatusController.swift in Sources */,
-				E3DC35E61FFCC76200E26B81 /* KSView.swift in Sources */,
 				E321F5151FFA114A0076AD61 /* PairMenuView.swift in Sources */,
 				E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */,
