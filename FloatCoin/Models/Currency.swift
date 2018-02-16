@@ -26,6 +26,37 @@ struct Currency {
         default: return stringValue
         }
     }
+
+    private func adjustedPrecision(_ num: Double) -> Int {
+        // Trailing zeros are taken to keep the window size uniform
+        if num >= 1000 {
+            return 0
+        } else if num >= 100 { // 100-999
+            return 1
+        } else if num >= 10 { // 10-99
+            return 2
+        } else if num >= 1 { // 1-9
+            return 3
+        } else if num >= 0.0001 {
+            return 5
+        }
+        return 6
+    }
+
+    func formatted(price: Double) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.maximumFractionDigits = self.adjustedPrecision(price)
+        currencyFormatter.minimumFractionDigits = self.adjustedPrecision(price)
+        guard let locale = Locale(stringValue) else {
+            currencyFormatter.numberStyle = .decimal
+
+            let formattedPrice = currencyFormatter.string(from: NSNumber(value: price))!
+            return "\(stringValue) \(formattedPrice)"
+        }
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = locale
+        return currencyFormatter.string(from: NSNumber(value: price))!
+    }
 }
 
 extension Currency: CustomStringConvertible {
@@ -44,3 +75,4 @@ extension Currency: Hashable {
         return lhs.stringValue == rhs.stringValue
     }
 }
+

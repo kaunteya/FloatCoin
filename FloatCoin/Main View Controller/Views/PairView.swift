@@ -22,7 +22,7 @@ class PairView: NSView {
     var price: Double? {
         didSet {
             guard price != nil else { fatalError() }
-            let priceString = "\(pair.b.symbol)\(price!.fixedWidth) "
+            let priceString = pair.b.formatted(price: price!)
             let textColor: NSColor
             if oldValue != nil {
                 textColor = price! < oldValue! ? Color.Pair.Price.down : Color.Pair.Price.up
