@@ -10,7 +10,7 @@ import XCTest
 
 class PriceFormat: XCTestCase {
 
-    let inr = Currency("INR")!
+    let inr = Currency("INR")
 
     func testLocale() {
         XCTAssertEqual(Locale("INR")!.identifier, "en_IN")
@@ -19,16 +19,16 @@ class PriceFormat: XCTestCase {
     }
 
     func testCurrencySymbols() {
-        XCTAssertEqual(Currency("INR")!.formatted(price: 1234), "₹ 1,234")
-        XCTAssertEqual(Currency("USD")!.formatted(price: 1234), "$1,234")
-        XCTAssertEqual(Currency("EUR")!.formatted(price: 1234), "€1 234")
-        XCTAssertEqual(Currency("GBP")!.formatted(price: 1234), "£1,234")
+        XCTAssertEqual(Currency("INR").formatted(price: 1234), "₹ 1,234")
+        XCTAssertEqual(Currency("USD").formatted(price: 1234), "$1,234")
+        XCTAssertEqual(Currency("EUR").formatted(price: 1234), "€1 234")
+        XCTAssertEqual(Currency("GBP").formatted(price: 1234), "£1,234")
     }
 
     func testInvalidCurrency() {
-        XCTAssertEqual(Currency("BTC")!.formatted(price: 1234), "BTC 1,234")
-        XCTAssertEqual(Currency("BTC")!.formatted(price: 0.1), "BTC 0.10000")
-        XCTAssertEqual(Currency("BTC")!.formatted(price: 0.12), "BTC 0.12000")
+        XCTAssertEqual(Currency("BTC").formatted(price: 1234), "BTC 1,234")
+        XCTAssertEqual(Currency("BTC").formatted(price: 0.1), "BTC 0.10000")
+        XCTAssertEqual(Currency("BTC").formatted(price: 0.12), "BTC 0.12000")
     }
 
     func testDigit0() {

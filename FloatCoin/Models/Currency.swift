@@ -10,7 +10,7 @@ import Foundation
 struct Currency {
     let stringValue: String
 
-    init?(_ cur: String) {
+    init(_ cur: String) {
         stringValue = cur.uppercased()
     }
 

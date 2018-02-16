@@ -30,7 +30,7 @@ class PairVC: NSViewController {
     }
 
     var selectedPair: Pair {
-        return Pair(a: selectedBase, b: selectedFIAT)
+        return Pair(selectedBase, selectedFIAT)
     }
 
     override func viewDidLoad() {
@@ -78,7 +78,7 @@ class PairVC: NSViewController {
             return
         }
 
-        UserDefaults.add(exchange: selectedExchange, pair: Pair(a: selectedBase, b: selectedFIAT))
+        UserDefaults.add(exchange: selectedExchange, pair: Pair(selectedBase, selectedFIAT))
         self.dismiss(sender)
     }
 }

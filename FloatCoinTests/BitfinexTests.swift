@@ -10,11 +10,11 @@ import XCTest
 
 class BitfinexTests : XCTestCase, ExchangeTests {
     var testPairs: [Pair] {
-        return [Pair("BTC:USD")!, Pair("LTC:USD")!]
+        return [Pair("BTC", "USD"), Pair("LTC", "USD")]
     }
 
     func testURLGenerationForOnePair() {
-        let testPairs = [Pair("xrp:btc")!]
+        let testPairs = [Pair("xrp", "btc")]
         let urlRequest = Bitfinex.urlRequest(for: Set([testPairs.first!]))
         XCTAssertEqual(urlRequest.url!.absoluteString, "https://api.bitfinex.com/v2/tickers?symbols=tXRPBTC")
     }
@@ -39,7 +39,7 @@ class BitfinexTests : XCTestCase, ExchangeTests {
 
         let pair = Bitfinex.convertToPair("tbtcusd")
         XCTAssertNotNil(pair)
-        XCTAssertEqual(pair!, Pair("BTC:USD"))
+        XCTAssertEqual(pair!, Pair(colonString: "BTC:USD"))
     }
 
 }

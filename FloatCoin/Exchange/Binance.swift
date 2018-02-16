@@ -24,7 +24,7 @@ struct Binance: ExchangeDelegate {
                 "RCN", "RDN", "REQ", "RLC", "SALT", "SNGLS", "SNM", "SNT",
                 "STORJ", "STRAT", "SUB", "TNB", "TNT", "TRIG", "TRX", "VEN",
                 "VIB", "VIBE", "WABI", "WAVES", "WINGS", "WTC", "XLM", "XMR",
-                "XRP", "XVG", "XZC", "YOYO", "ZEC", "ZRX"].map{ Currency($0)! }
+                "XRP", "XVG", "XZC", "YOYO", "ZEC", "ZRX"].map{ Currency($0) }
     }
 
     private static let fiat: [String : [String]] = [
@@ -134,7 +134,7 @@ struct Binance: ExchangeDelegate {
 
     static func FIATCurriences(crypto: Currency) -> [Currency] {
         let selected = fiat[crypto.stringValue]!
-        return selected.map { Currency($0)! }
+        return selected.map { Currency($0) }
     }
 
     static func urlRequest(for: Set<Pair>) -> URLRequest {

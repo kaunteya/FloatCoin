@@ -19,7 +19,7 @@ struct Bitfinex: ExchangeDelegate {
     }
 
     static var baseCurrencies: [Currency] {
-        return ["AID", "AVT", "BAT", "BCH", "BTC", "BTG", "DAT", "DSH", "EDO", "ELF", "EOS", "ETC", "ETH", "ETP", "FUN", "GNT", "IOT", "LTC", "MNA", "NEO", "OMG", "QSH", "QTM", "RCN", "REP", "RLC", "RRT", "SAN", "SNG", "SNT", "SPK", "TNB", "TRX", "XMR", "XRP", "YYW", "ZEC", "ZRX"].map{ Currency($0)! }
+        return ["AID", "AVT", "BAT", "BCH", "BTC", "BTG", "DAT", "DSH", "EDO", "ELF", "EOS", "ETC", "ETH", "ETP", "FUN", "GNT", "IOT", "LTC", "MNA", "NEO", "OMG", "QSH", "QTM", "RCN", "REP", "RLC", "RRT", "SAN", "SNG", "SNT", "SPK", "TNB", "TRX", "XMR", "XRP", "YYW", "ZEC", "ZRX"].map{ Currency($0) }
     }
 
     private static let fiat: [String : [String]] = [
@@ -65,7 +65,7 @@ struct Bitfinex: ExchangeDelegate {
 
     static func FIATCurriences(crypto: Currency) -> [Currency] {
         let selected = fiat[crypto.stringValue]!
-        return selected.map { Currency($0)! }
+        return selected.map { Currency($0) }
     }
 
     static func fetchRate(_ pairs: Set<Pair>, completion: @escaping ([Pair : Double]) -> Void) {
@@ -103,7 +103,7 @@ struct Bitfinex: ExchangeDelegate {
         }
         pair = String(pair.dropFirst())
         pair.insert(":", at: pair.index(pair.startIndex, offsetBy: 3))
-        return Pair(pair)
+        return Pair(colonString: pair)
     }
 }
 

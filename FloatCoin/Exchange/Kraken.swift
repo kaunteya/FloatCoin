@@ -48,7 +48,7 @@ struct Kraken : ExchangeDelegate {
     }
 
     static var baseCurrencies: [Currency] {
-        return ["BTC", "BCH", "DASH", "EOS", "ETC", "ETH", "GNO", "ICN", "LTC", "MLN", "REP", "USDT", "XDG", "XLM", "XMR", "XRP", "ZEC"].map{ Currency($0)! }
+        return ["BTC", "BCH", "DASH", "EOS", "ETC", "ETH", "GNO", "ICN", "LTC", "MLN", "REP", "USDT", "XDG", "XLM", "XMR", "XRP", "ZEC"].map{ Currency($0) }
     }
 
     private static let fiat: [String : [String]] = [
@@ -73,7 +73,7 @@ struct Kraken : ExchangeDelegate {
 
     static func FIATCurriences(crypto: Currency) -> [Currency] {
         let selected = fiat[crypto.stringValue]!
-        return selected.map { Currency($0)! }
+        return selected.map { Currency($0) }
     }
 }
 
@@ -81,53 +81,53 @@ fileprivate extension Pair {
 ///Create Pair from Kraken style pair
     init?(krakenPair: String) {
         switch krakenPair {
-        case "BCHEUR": self.init("BCH:EUR")
-        case "BCHUSD": self.init("BCH:USD")
-        case "BCHXBT": self.init("BCH:BTC")
-        case "DASHEUR": self.init("DASH:EUR")
-        case "DASHUSD": self.init("DASH:USD")
-        case "DASHXBT": self.init("DASH:BTC")
-        case "EOSETH": self.init("EOS:ETH")
-        case "EOSXBT": self.init("EOS:BTC")
-        case "GNOETH": self.init("GNO:ETH")
-        case "GNOXBT": self.init("GNO:BTC")
-        case "USDTZUSD": self.init("USDT:USD")
-        case "XETCXETH": self.init("ETC:ETH")
-        case "XETCXXBT": self.init("ETC:BTC")
-        case "XETCZEUR": self.init("ETC:EUR")
-        case "XETCZUSD": self.init("ETC:USD")
-        case "XETHXXBT": self.init("ETH:BTC")
-        case "XETHZCAD": self.init("ETH:CAD")
-        case "XETHZEUR": self.init("ETH:EUR")
-        case "XETHZGBP": self.init("ETH:GBP")
-        case "XETHZJPY": self.init("ETH:JPY")
-        case "XETHZUSD": self.init("ETH:USD")
-        case "XICNXETH": self.init("ICN:ETH")
-        case "XICNXXBT": self.init("ICN:BTC")
-        case "XLTCXXBT": self.init("LTC:BTC")
-        case "XLTCZEUR": self.init("LTC:EUR")
-        case "XLTCZUSD": self.init("LTC:USD")
-        case "XMLNXETH": self.init("MLN:ETH")
-        case "XMLNXXBT": self.init("MLN:BTC")
-        case "XREPXETH": self.init("REP:ETH")
-        case "XREPXXBT": self.init("REP:BTC")
-        case "XREPZEUR": self.init("REP:EUR")
-        case "XXBTZCAD": self.init("BTC:CAD")
-        case "XXBTZEUR": self.init("BTC:EUR")
-        case "XXBTZGBP": self.init("BTC:GBP")
-        case "XXBTZJPY": self.init("BTC:JPY")
-        case "XXBTZUSD": self.init("BTC:USD")
-        case "XXDGXXBT": self.init("XDG:BTC")
-        case "XXLMXXBT": self.init("XLM:BTC")
-        case "XXMRXXBT": self.init("XMR:BTC")
-        case "XXMRZEUR": self.init("XMR:EUR")
-        case "XXMRZUSD": self.init("XMR:USD")
-        case "XXRPXXBT": self.init("XRP:BTC")
-        case "XXRPZEUR": self.init("XRP:EUR")
-        case "XXRPZUSD": self.init("XRP:USD")
-        case "XZECXXBT": self.init("ZEC:BTC")
-        case "XZECZEUR": self.init("ZEC:EUR")
-        case "XZECZUSD": self.init("ZEC:USD")
+        case "BCHEUR": self.init("BCH", "EUR")
+        case "BCHUSD": self.init("BCH", "USD")
+        case "BCHXBT": self.init("BCH", "BTC")
+        case "DASHEUR": self.init("DASH", "EUR")
+        case "DASHUSD": self.init("DASH", "USD")
+        case "DASHXBT": self.init("DASH", "BTC")
+        case "EOSETH": self.init("EOS", "ETH")
+        case "EOSXBT": self.init("EOS", "BTC")
+        case "GNOETH": self.init("GNO", "ETH")
+        case "GNOXBT": self.init("GNO", "BTC")
+        case "USDTZUSD": self.init("USDT", "USD")
+        case "XETCXETH": self.init("ETC", "ETH")
+        case "XETCXXBT": self.init("ETC", "BTC")
+        case "XETCZEUR": self.init("ETC", "EUR")
+        case "XETCZUSD": self.init("ETC", "USD")
+        case "XETHXXBT": self.init("ETH", "BTC")
+        case "XETHZCAD": self.init("ETH", "CAD")
+        case "XETHZEUR": self.init("ETH", "EUR")
+        case "XETHZGBP": self.init("ETH", "GBP")
+        case "XETHZJPY": self.init("ETH", "JPY")
+        case "XETHZUSD": self.init("ETH", "USD")
+        case "XICNXETH": self.init("ICN", "ETH")
+        case "XICNXXBT": self.init("ICN", "BTC")
+        case "XLTCXXBT": self.init("LTC", "BTC")
+        case "XLTCZEUR": self.init("LTC", "EUR")
+        case "XLTCZUSD": self.init("LTC", "USD")
+        case "XMLNXETH": self.init("MLN", "ETH")
+        case "XMLNXXBT": self.init("MLN", "BTC")
+        case "XREPXETH": self.init("REP", "ETH")
+        case "XREPXXBT": self.init("REP", "BTC")
+        case "XREPZEUR": self.init("REP", "EUR")
+        case "XXBTZCAD": self.init("BTC", "CAD")
+        case "XXBTZEUR": self.init("BTC", "EUR")
+        case "XXBTZGBP": self.init("BTC", "GBP")
+        case "XXBTZJPY": self.init("BTC", "JPY")
+        case "XXBTZUSD": self.init("BTC", "USD")
+        case "XXDGXXBT": self.init("XDG", "BTC")
+        case "XXLMXXBT": self.init("XLM", "BTC")
+        case "XXMRXXBT": self.init("XMR", "BTC")
+        case "XXMRZEUR": self.init("XMR", "EUR")
+        case "XXMRZUSD": self.init("XMR", "USD")
+        case "XXRPXXBT": self.init("XRP", "BTC")
+        case "XXRPZEUR": self.init("XRP", "EUR")
+        case "XXRPZUSD": self.init("XRP", "USD")
+        case "XZECXXBT": self.init("ZEC", "BTC")
+        case "XZECZEUR": self.init("ZEC", "EUR")
+        case "XZECZUSD": self.init("ZEC", "USD")
         default: fatalError("Invalid key \(krakenPair)")
         }
     }

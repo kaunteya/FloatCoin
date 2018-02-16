@@ -87,8 +87,16 @@ extension UserDefaults {
         }
         guard dict.isEmpty == false else { return nil }
         var newDict = [Exchange: Set<Pair>]()
-        for (key, value) in dict {
-            newDict[Exchange(rawValue: key)!] = Set(value.flatMap {Pair($0)})
+        for (key, pairStringList) in dict {
+            let exchange: Exchange = Exchange(rawValue: key)!
+            let pairs:[Pair] = pairStringList.flatMap {
+                let split = $0.split(separator: ":")
+                if split.count != 2 { return nil }
+                let a = Currency("\(split[0])")
+                let b = Currency("\(split[1])")
+                return Pair(a, b)
+            }
+            newDict[exchange] = Set(pairs)
         }
         return newDict
     }

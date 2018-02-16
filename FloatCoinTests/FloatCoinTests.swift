@@ -32,6 +32,6 @@ class FloatCoinTests: XCTestCase {
     }
 
     func testAsd() {
-        XCTAssertNil(Pair("ABC:USD:ASD"))
+        XCTAssertNil(Pair(colonString: "ABC:USD:ASD"))
     }
 }
