@@ -88,7 +88,7 @@ extension UserDefaults {
         guard dict.isEmpty == false else { return nil }
         var newDict = [Exchange: Set<Pair>]()
         for (key, value) in dict {
-            newDict[Exchange(rawValue: key)!] = Set(value.map { Pair($0)})
+            newDict[Exchange(rawValue: key)!] = Set(value.flatMap {Pair($0)})
         }
         return newDict
     }

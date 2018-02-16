@@ -14,10 +14,10 @@ struct Pair {
 
 extension Pair {
     /// Supply ABC:XYZ
-    init(_ aColonB: String) {
+    init?(_ aColonB: String) {
         let split = aColonB.split(separator: ":")
         guard split.count == 2 else {
-            fatalError()
+            return nil
         }
         self.a = Currency("\(split[0])")!
         self.b = Currency("\(split[1])")!

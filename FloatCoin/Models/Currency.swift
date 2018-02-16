@@ -11,7 +11,7 @@ struct Currency {
     let stringValue: String
 
     init?(_ cur: String) {
-        stringValue = cur
+        stringValue = cur.uppercased()
     }
 
     var symbol: String {

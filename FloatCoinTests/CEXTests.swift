@@ -10,7 +10,7 @@ import XCTest
 
 class CEXTests: XCTestCase, ExchangeTests {
     var testPairs: [Pair] {
-        return [Pair("xrp:btc"), Pair("eth:btc"), Pair("zec:gbp")]
+        return [Pair("xrp:btc")!, Pair("eth:btc")!, Pair("zec:gbp")!]
     }
 
     func testURLGenerationForOnePair() {

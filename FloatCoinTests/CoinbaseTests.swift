@@ -11,7 +11,7 @@ import XCTest
 class CoinbaseTests: XCTestCase, ExchangeTests {
 
     var testPairs: [Pair] {
-        return [Pair("btc:USD")]//, Pair("eth:eur"), Pair("bch:inr")]
+        return [Pair("btc:USD")!]//, Pair("eth:eur"), Pair("bch:inr")]
     }
 
     func testURLGenerationForOnePair() {

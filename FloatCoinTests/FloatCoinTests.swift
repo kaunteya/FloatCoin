@@ -30,4 +30,8 @@ class FloatCoinTests: XCTestCase {
         defaults.setOnce(10, forKey: testKey)
         XCTAssertEqual(defaults.integer(forKey: testKey), 1)
     }
+
+    func testAsd() {
+        XCTAssertNil(Pair("ABC:USD:ASD"))
+    }
 }
