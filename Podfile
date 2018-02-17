@@ -3,9 +3,6 @@
 
 target 'FloatCoin' do
     use_frameworks!
-#    pod 'DateToolsSwift'
-#    pod 'SwiftyAttributes'
-    
 
   target 'FloatCoinTests' do
     inherit! :search_paths
