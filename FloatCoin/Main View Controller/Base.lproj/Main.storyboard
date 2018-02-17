@@ -685,7 +685,7 @@
             <objects>
                 <viewController id="kUf-Ni-Gqb" customClass="MainViewController" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="GJj-rc-58U">
-                        <rect key="frame" x="0.0" y="0.0" width="292" height="159"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="159"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-oO-IDg">
@@ -787,9 +787,6 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="miniSystem"/>
                                         </buttonCell>
-                                        <connections>
-                                            <segue destination="dQ2-hY-Oh6" kind="modal" id="fdh-Tm-jQF"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <visibilityPriorities>
@@ -837,10 +834,11 @@
                                 <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="yd3-kn-Gh9"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Font Size" id="YbB-cG-zNh">
+                        <menuItem isSeparatorItem="YES" id="o4J-zo-UTu"/>
+                        <menuItem title="Slider" id="dap-up-hMe">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="performClick:" target="uIc-ZD-flE" id="r3H-QT-fdg"/>
+                                <outlet property="view" destination="lcL-gx-a48" id="v8G-MP-Jy7"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="ZFI-fh-Xrw"/>
@@ -876,32 +874,45 @@
                     </textFieldCell>
                 </textField>
                 <userDefaultsController representsSharedInstance="YES" id="dSg-ZW-bdM"/>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" id="lcL-gx-a48">
+                    <rect key="frame" x="0.0" y="0.0" width="182" height="32"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yeN-pb-BxO">
+                            <rect key="frame" x="19" y="18" width="53" height="14"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font Size" id="IZH-eJ-Di8">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" white="0.34779575892857145" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M2V-fI-nWT">
+                            <rect key="frame" x="21" y="0.0" width="140" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="ZDd-CM-DKW"/>
+                            </constraints>
+                            <sliderCell key="cell" controlSize="small" continuous="YES" state="on" alignment="left" minValue="8" maxValue="24" doubleValue="12" tickMarkPosition="below" numberOfTickMarks="9" allowsTickMarkValuesOnly="YES" sliderType="linear" id="goA-gJ-j0c"/>
+                            <connections>
+                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.fontSize" id="Z4x-7c-Lab"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yeN-pb-BxO" firstAttribute="leading" secondItem="M2V-fI-nWT" secondAttribute="leading" id="7EH-Zb-qdU"/>
+                        <constraint firstAttribute="trailing" secondItem="M2V-fI-nWT" secondAttribute="trailing" constant="21" id="TaY-vm-tIC"/>
+                        <constraint firstItem="M2V-fI-nWT" firstAttribute="leading" secondItem="lcL-gx-a48" secondAttribute="leading" constant="21" id="hb7-BC-JLI"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
             </objects>
-            <point key="canvasLocation" x="141" y="303"/>
-        </scene>
-        <!--Font Size-->
-        <scene sceneID="Lbw-RQ-UhD">
-            <objects>
-                <viewController title="Font Size" showSeguePresentationStyle="single" id="dQ2-hY-Oh6" customClass="FontSizeVC" customModule="FloatCoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="WUy-aJ-EkE">
-                        <rect key="frame" x="0.0" y="0.0" width="224" height="31"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-vs-grb">
-                                <rect key="frame" x="8" y="7" width="208" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="8" maxValue="24" doubleValue="12" tickMarkPosition="below" numberOfTickMarks="9" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Nbq-rD-g3e"/>
-                                <connections>
-                                    <binding destination="lWr-yd-ud3" name="value" keyPath="values.fontSize" id="u8u-fZ-pbZ"/>
-                                </connections>
-                            </slider>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="aGD-pQ-zRl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <userDefaultsController id="lWr-yd-ud3"/>
-            </objects>
-            <point key="canvasLocation" x="258" y="529.5"/>
+            <point key="canvasLocation" x="156.5" y="302.5"/>
         </scene>
         <!--PairVC-->
         <scene sceneID="E8O-2z-ZGz">
