@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Binance: ExchangeDelegate {
+struct Binance: ExchangeProtocol {
 
     static var name: Exchange { return .binance }
 

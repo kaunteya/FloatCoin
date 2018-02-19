@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ExchangeDelegate {
+protocol ExchangeProtocol {
     static var name: Exchange {get}
     static var baseCurrencies: [Currency] { get}
     static func urlRequest(for: Set<Pair>) -> URLRequest

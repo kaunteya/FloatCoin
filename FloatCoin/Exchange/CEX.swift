@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct CEX: ExchangeDelegate {
+struct CEX: ExchangeProtocol {
 
     static var name: Exchange = .cex
 

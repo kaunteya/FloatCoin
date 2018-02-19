@@ -28,7 +28,7 @@ enum Exchange: String {
         }
     }
 
-    var type: ExchangeDelegate.Type {
+    var type: ExchangeProtocol.Type {
         switch self {
         case .binance: return Binance.self
         case .bitfinex: return Bitfinex.self

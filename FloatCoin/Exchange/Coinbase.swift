@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Coinbase: ExchangeDelegate {
+struct Coinbase: ExchangeProtocol {
     static var name: Exchange = .coinbase
 
     static func urlRequest(for pairs: Set<Pair>) -> URLRequest {

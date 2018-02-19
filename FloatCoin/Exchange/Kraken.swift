@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Kraken : ExchangeDelegate {
+struct Kraken : ExchangeProtocol {
     static var name: Exchange = .kraken
 
     static func urlRequest(for pairs: Set<Pair>) -> URLRequest {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Bitfinex: ExchangeDelegate {
+struct Bitfinex: ExchangeProtocol {
     static var name: Exchange { return .bitfinex }
 
     static func urlRequest(for pairs: Set<Pair>) -> URLRequest {

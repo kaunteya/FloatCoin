@@ -21,7 +21,7 @@
 		E339CC031FF0320D009570AF /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* Exchange.swift */; };
 		E339CC041FF0320D009570AF /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
 		E339CC051FF0320D009570AF /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
-		E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
+		E339CC061FF0320D009570AF /* ExchangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeProtocol.swift */; };
 		E339CC0A1FF0D873009570AF /* RatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CC091FF0D873009570AF /* RatesController.swift */; };
 		E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */; };
 		E363F611200E24A0003C0106 /* FloatCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F610200E24A0003C0106 /* FloatCoinTests.swift */; };
@@ -30,7 +30,7 @@
 		E363F61C200E6C18003C0106 /* BitfinexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363F61B200E6C18003C0106 /* BitfinexTests.swift */; };
 		E363F61D200E6CB6003C0106 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFC1FF0320C009570AF /* Exchange.swift */; };
 		E363F61F200E6CBA003C0106 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFA1FF0320B009570AF /* Pair.swift */; };
-		E363F620200E6DC5003C0106 /* ExchangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */; };
+		E363F620200E6DC5003C0106 /* ExchangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFF1FF0320C009570AF /* ExchangeProtocol.swift */; };
 		E363F621200E6DE8003C0106 /* CEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFE1FF0320C009570AF /* CEX.swift */; };
 		E363F622200E6DE8003C0106 /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFB1FF0320B009570AF /* Coinbase.swift */; };
 		E363F623200E6DE8003C0106 /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339CBFD1FF0320C009570AF /* Kraken.swift */; };
@@ -96,7 +96,7 @@
 		E339CBFC1FF0320C009570AF /* Exchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		E339CBFD1FF0320C009570AF /* Kraken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kraken.swift; sourceTree = "<group>"; };
 		E339CBFE1FF0320C009570AF /* CEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEX.swift; sourceTree = "<group>"; };
-		E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeDelegate.swift; sourceTree = "<group>"; };
+		E339CBFF1FF0320C009570AF /* ExchangeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeProtocol.swift; sourceTree = "<group>"; };
 		E339CC091FF0D873009570AF /* RatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesController.swift; sourceTree = "<group>"; };
 		E3470B7A20091F5F0035BEEF /* FontSizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeVC.swift; sourceTree = "<group>"; };
 		E363F60E200E24A0003C0106 /* FloatCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,7 +259,7 @@
 		E3FB7D8B1FF1165400371D5F /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
-				E339CBFF1FF0320C009570AF /* ExchangeDelegate.swift */,
+				E339CBFF1FF0320C009570AF /* ExchangeProtocol.swift */,
 				E339CBFE1FF0320C009570AF /* CEX.swift */,
 				E339CBFB1FF0320B009570AF /* Coinbase.swift */,
 				E339CBFD1FF0320C009570AF /* Kraken.swift */,
@@ -534,7 +534,7 @@
 				E363F61D200E6CB6003C0106 /* Exchange.swift in Sources */,
 				E3FDADE2200F8F3E00CFC7C6 /* BitfinexAPITests.swift in Sources */,
 				E3A1D02F2035A34500EFD3D1 /* Currency.swift in Sources */,
-				E363F620200E6DC5003C0106 /* ExchangeDelegate.swift in Sources */,
+				E363F620200E6DC5003C0106 /* ExchangeProtocol.swift in Sources */,
 				E363F61A200E6C02003C0106 /* Bitfinex.swift in Sources */,
 				E363F624200E6E15003C0106 /* Extras.swift in Sources */,
 				E3FDAE01200FB7E500CFC7C6 /* Binance.swift in Sources */,
@@ -563,7 +563,7 @@
 				E321F5191FFA5DB20076AD61 /* WindowController.swift in Sources */,
 				E372E7EE1F47835400AEB397 /* MainViewController.swift in Sources */,
 				E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */,
-				E339CC061FF0320D009570AF /* ExchangeDelegate.swift in Sources */,
+				E339CC061FF0320D009570AF /* ExchangeProtocol.swift in Sources */,
 				E363F619200E3C65003C0106 /* Bitfinex.swift in Sources */,
 				E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */,
 				E30A546B203199F400BF880A /* Currency.swift in Sources */,
