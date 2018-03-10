@@ -40,15 +40,20 @@ import Cocoa
         // addFontChangeListener
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFontSize, options: .new, context: nil)
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyIsDark, options: .new, context: nil)
+        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyTranslucent, options: .new, context: nil)
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == UserDefaults.keyFontSize {
+        switch keyPath! {
+        case UserDefaults.keyFontSize:
             let size = CGFloat(change![.newKey] as! Int)
             exchangeViews.forEach { $0.fontSize = size }
-        } else if keyPath == UserDefaults.keyIsDark {
-            Log.info("Light dark mode changed")
-            updateColors()
+
+        case UserDefaults.keyIsDark: updateColors()
+        case UserDefaults.keyTranslucent: updateColors()
+
+        default: break
+
         }
     }
 
@@ -133,7 +138,9 @@ extension MainViewController: PairManagerDelegate {
 extension MainViewController: ColorResponder {
     func updateColors() {
         self.view.layer?.borderColor = Color.Main.borderColor.cgColor
-        self.view.layer?.backgroundColor = Color.Main.background.cgColor
+        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.6 : 1.0
+        self.view.layer?.backgroundColor = Color.Main.background.withAlphaComponent(alpha).cgColor
+
         exchangeViews.forEach { $0.updateColors() }
         actionButtonStack.arrangedSubviews.forEach { view in
             if let button = view as? NSButton {

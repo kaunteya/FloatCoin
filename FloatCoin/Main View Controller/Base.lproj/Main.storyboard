@@ -689,19 +689,19 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-oO-IDg">
-                                <rect key="frame" x="4" y="4" width="284" height="151"/>
+                                <rect key="frame" x="4" y="4" width="315" height="151"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                        <rect key="frame" x="0.0" y="15" width="284" height="136"/>
+                                        <rect key="frame" x="0.0" y="16" width="315" height="135"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-JC-UxN" userLabel="Action Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="284" height="13"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="14"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="248" height="13"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="14"/>
                                             </customView>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
-                                                <rect key="frame" x="253" y="0.0" width="13" height="13"/>
+                                                <rect key="frame" x="283" y="0.0" width="13" height="14"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -711,7 +711,7 @@
                                                 </connections>
                                             </button>
                                             <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1" userLabel="Preferences">
-                                                <rect key="frame" x="271" y="0.0" width="13" height="13"/>
+                                                <rect key="frame" x="301" y="0.0" width="14" height="14"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f8p-KP-qt3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -761,7 +761,7 @@
                                 </customSpacing>
                             </stackView>
                             <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close" customClass="CloseButton" customModule="FloatCoin" customModuleProvider="target">
-                                <rect key="frame" x="1" y="143" width="13" height="15"/>
+                                <rect key="frame" x="1" y="143" width="14" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
                                 </constraints>
@@ -779,7 +779,7 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-05-szl">
-                                <rect key="frame" x="231" y="144" width="61" height="15"/>
+                                <rect key="frame" x="262" y="144" width="61" height="15"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uIc-ZD-flE" userLabel="FontSize">
                                         <rect key="frame" x="-1" y="-1" width="63" height="16"/>
@@ -826,6 +826,12 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="hfD-1O-vTq"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Translucent" id="ujn-OQ-y7S">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.translucent" id="y6t-U0-cdf"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Float On Top" id="WL3-wB-RT3">
