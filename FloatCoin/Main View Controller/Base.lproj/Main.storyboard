@@ -692,16 +692,16 @@
                                 <rect key="frame" x="4" y="4" width="315" height="151"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-c1-Jdy">
-                                        <rect key="frame" x="0.0" y="16" width="315" height="135"/>
+                                        <rect key="frame" x="0.0" y="15" width="315" height="136"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byv-JC-UxN" userLabel="Action Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="14"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="13"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w2S-wf-xla">
-                                                <rect key="frame" x="0.0" y="0.0" width="278" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="13"/>
                                             </customView>
                                             <button toolTip="Add New Pair" horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-5D-JBC" userLabel="Add">
-                                                <rect key="frame" x="283" y="0.0" width="13" height="14"/>
+                                                <rect key="frame" x="284" y="0.0" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hiE-CS-TMM">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -711,7 +711,7 @@
                                                 </connections>
                                             </button>
                                             <button toolTip="Preferences" horizontalHuggingPriority="253" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="TyT-Cv-og1" userLabel="Preferences">
-                                                <rect key="frame" x="301" y="0.0" width="14" height="14"/>
+                                                <rect key="frame" x="302" y="0.0" width="13" height="13"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="f8p-KP-qt3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -760,8 +760,8 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close" customClass="CloseButton" customModule="FloatCoin" customModuleProvider="target">
-                                <rect key="frame" x="1" y="143" width="14" height="15"/>
+                            <button toolTip="Close Window" horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-9w-Ni9" userLabel="Close" customClass="CloseButton" customModule="FloatCoin" customModuleProvider="target">
+                                <rect key="frame" x="1" y="143" width="13" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="x9g-WV-lIr"/>
                                 </constraints>
