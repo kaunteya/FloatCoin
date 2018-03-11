@@ -99,7 +99,8 @@ class ExchangeView: NSView {
     }
 
     override func mouseEntered(with event: NSEvent) {
-        self.layer?.backgroundColor = Color.Exchange.backgroundHighlight.cgColor
+        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.4 : 1.0
+        self.layer?.backgroundColor = Color.Exchange.backgroundHighlight.withAlphaComponent(alpha).cgColor
     }
 
     override func mouseExited(with event: NSEvent) {
