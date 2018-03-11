@@ -105,6 +105,11 @@ import Cocoa
         self.view.window?.orderOut(sender)
     }
 
+    @IBAction func actionFeedback(_ sender: NSMenuItem) {
+        let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScvKtF2xv-ZuPn4656nOjGFpoNih6nQ6647QzqshHhdG0Hp6g/viewform")!
+        NSWorkspace.shared.open(url)
+    }
+
     @IBAction func actionOptions(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: sender.frame.height)
         optionsMenu.popUp(positioning: nil, at: p, in: sender)
