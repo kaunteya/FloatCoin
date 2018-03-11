@@ -12,6 +12,7 @@ class ExchangeView: NSView {
     let exchange: Exchange
 
     private var stackView: NSStackView!
+
     var fontSize: CGFloat {
         didSet {
             titleLabel.font = NSFont.systemFont(ofSize: fontSize)
@@ -19,8 +20,21 @@ class ExchangeView: NSView {
         }
     }
 
-    let titleLabel = NSTextField(labelWithString: "")
-    let pairStackView = NSStackView()
+    var titleLabel: NSTextField = {
+        let label = NSTextField(labelWithString: "")
+        label.alignment = .right
+        label.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+        label.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+        return label
+    }()
+
+    var pairStackView: NSStackView = {
+        let stack = NSStackView()
+        stack.spacing = 4
+        stack.alignment = .centerY
+        stack.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+        return stack
+    }()
 
     var pairViews: [PairView] {
         return pairStackView.arrangedSubviews as! [PairView]
@@ -30,8 +44,9 @@ class ExchangeView: NSView {
         self.exchange = exchange
         self.fontSize = fontSize
         super.init(frame: NSZeroRect)
-        createViews()
         self.wantsLayer = true
+
+        createViews()
 
         titleLabel.stringValue = exchange.description
         titleLabel.font = NSFont.systemFont(ofSize: fontSize, weight: .medium)
@@ -40,23 +55,16 @@ class ExchangeView: NSView {
     }
 
     private func createViews() {
-        let placeHolder = NSView()
-        let constraint = placeHolder.widthAnchor.constraint(equalToConstant: 0)
+        let elasticView = NSView()
+        let constraint = elasticView.widthAnchor.constraint(equalToConstant: 0)
         constraint.priority = NSLayoutConstraint.Priority(rawValue: 100)
         constraint.isActive = true
 
-        let mainStackView = NSStackView(views: [titleLabel, pairStackView, placeHolder])
+        let mainStackView = NSStackView(views: [titleLabel, pairStackView, elasticView])
         mainStackView.spacing = 2
         mainStackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .vertical)
         mainStackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
-        self.updateConstraints()
-        pairStackView.spacing = 4
-        pairStackView.alignment = .centerY
-        pairStackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
 
-        titleLabel.alignment = .right
-        titleLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
-        titleLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
         self.addSubViewWithConstraints(mainStackView, top: 0, right: 0, bottom: 0, left: 0)
     }
 
@@ -69,7 +77,6 @@ class ExchangeView: NSView {
 
     func remove(_ pair: Pair) {
         pairViews[pair]!.removeFromSuperview()
-        self.needsUpdateConstraints = true
     }
 
     func set(price: Double, of pair: Pair) {
