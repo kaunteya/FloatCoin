@@ -47,19 +47,28 @@ class PairView: NSView {
     }
 
     func createViews() {
-        let stackView = NSStackView()
+        self.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+        self.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+
+        basePriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+        basePriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+
+        fiatPriceLabel.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
+        fiatPriceLabel.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+
+        let stackView = NSStackView(views: [basePriceLabel, fiatPriceLabel])
         stackView.spacing = 5
         stackView.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
         stackView.setHuggingPriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
         stackView.orientation = .horizontal
         stackView.alignment = .centerY
-        stackView.addArrangedSubview(basePriceLabel)
-        stackView.addArrangedSubview(fiatPriceLabel)
         self.addSubViewWithConstraints(stackView, top: 0, right: 0, bottom: 0, left: 0)
 
         optionsButton = NSButton(image: #imageLiteral(resourceName: "Options"), target: self, action: #selector(showOptions(_:)))
+        optionsButton.isHidden = true
         optionsButton.bezelStyle = .regularSquare
         optionsButton.isTransparent = true
+
         self.addSubViewWithConstraints(optionsButton, right: 0, bottom: 0)
     }
 
