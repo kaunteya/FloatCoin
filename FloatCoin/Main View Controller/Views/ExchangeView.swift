@@ -107,7 +107,6 @@ class ExchangeView: NSView {
         self.layer?.backgroundColor = nil
         self.layer?.borderWidth = 0
     }
-
 }
 
 extension ExchangeView: ColorResponder {
