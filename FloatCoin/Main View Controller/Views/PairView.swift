@@ -121,6 +121,7 @@ extension PairView: ColorResponder {
     func updateColors() {
         basePriceLabel.textColor = Color.Pair.baseLabel
         self.layer!.backgroundColor = Color.Pair.background.cgColor
+        self.layer!.cornerRadius = 2
     }
 }
 
