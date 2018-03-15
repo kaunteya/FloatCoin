@@ -822,32 +822,44 @@
                 <customObject id="5fK-fP-AMS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="w9R-vv-P9Z">
                     <items>
-                        <menuItem title="Dark Mode" id="aBZ-Q3-b3b">
+                        <menuItem title="Appearance" id="Zvb-p9-y1Q">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="Appearance" id="nrD-qI-kLQ">
+                                <items>
+                                    <menuItem title="Dark Mode" id="aBZ-Q3-b3b">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="hfD-1O-vTq"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Translucent" id="ujn-OQ-y7S">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="dSg-ZW-bdM" name="value" keyPath="values.translucent" id="y6t-U0-cdf"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Float On Top" id="WL3-wB-RT3">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="yd3-kn-Gh9"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="o4J-zo-UTu"/>
+                                    <menuItem title="Slider" id="dap-up-hMe">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <outlet property="view" destination="lcL-gx-a48" id="v8G-MP-Jy7"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Rate Floatcoin" id="nXW-HZ-Kug">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="hfD-1O-vTq"/>
+                                <action selector="actionRateApp:" target="kUf-Ni-Gqb" id="Wvj-1D-8HJ"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Translucent" id="ujn-OQ-y7S">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.translucent" id="y6t-U0-cdf"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Float On Top" id="WL3-wB-RT3">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <binding destination="dSg-ZW-bdM" name="value" keyPath="values.floatOnTop" id="yd3-kn-Gh9"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="o4J-zo-UTu"/>
-                        <menuItem title="Slider" id="dap-up-hMe">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <outlet property="view" destination="lcL-gx-a48" id="v8G-MP-Jy7"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="ZFI-fh-Xrw"/>
                         <menuItem title="Feedback" id="jRa-VC-m7t">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>

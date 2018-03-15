@@ -105,6 +105,11 @@ import Cocoa
         self.view.window?.orderOut(sender)
     }
 
+    @IBAction func actionRateApp(_ sender: NSMenuItem) {
+        let url = URL(string: "macappstore://itunes.apple.com/app/id1273560191?mt=12")!
+        NSWorkspace.shared.open(url)
+    }
+
     @IBAction func actionFeedback(_ sender: NSMenuItem) {
         let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScvKtF2xv-ZuPn4656nOjGFpoNih6nQ6647QzqshHhdG0Hp6g/viewform")!
         NSWorkspace.shared.open(url)
