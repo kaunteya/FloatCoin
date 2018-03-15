@@ -45,7 +45,7 @@ class ExchangeView: NSView {
         self.fontSize = fontSize
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
-
+        self.layer!.cornerRadius = 2
         createViews()
 
         titleLabel.stringValue = exchange.description
