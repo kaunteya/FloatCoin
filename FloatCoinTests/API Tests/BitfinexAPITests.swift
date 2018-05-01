@@ -10,7 +10,7 @@ import XCTest
 
 class BitfinexAPITests : XCTestCase {
 
-    func testBifinexSymbolRequest() {
+    func testPairCount() {
         let expectation = XCTestExpectation(description: "symbols")
         let url = URL(string: "https://api.bitfinex.com/v1/symbols")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
