@@ -95,7 +95,7 @@ extension UserDefaults {
         var newDict = [Exchange: Set<Pair>]()
         for (key, pairStringList) in dict {
             let exchange: Exchange = Exchange(rawValue: key)!
-            let pairs:[Pair] = pairStringList.flatMap {
+            let pairs:[Pair] = pairStringList.compactMap {
                 let split = $0.split(separator: ":")
                 if split.count != 2 { return nil }
                 let a = Currency("\(split[0])")
