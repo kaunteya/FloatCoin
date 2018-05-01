@@ -35,6 +35,17 @@ class CurrencyTests: XCTestCase {
         XCTAssertEqual(Currency("BTC").formatted(price: 0.12), "BTC 0.12000")
     }
 
+    func testsVerySmallNumbers() {
+        XCTAssertEqual(inr.formatted(price: 0.0071234), "₹ 0.00712")
+        XCTAssertEqual(inr.formatted(price: 0.00071234), "₹ 0.000712")
+        XCTAssertEqual(inr.formatted(price: 0.000071234), "₹ 0.0000712")
+        XCTAssertEqual(inr.formatted(price: 0.0000071234), "₹ 0.00000712")
+        XCTAssertEqual(inr.formatted(price: 0.00000071234), "₹ 0.000000712")
+        XCTAssertEqual(inr.formatted(price: 0.000000071234), "₹ 0.0000000712")
+        XCTAssertEqual(inr.formatted(price: 0.0000000071234), "₹ 0.00000000712")
+        XCTAssertEqual(inr.formatted(price: 0.000000007), "₹ 0.00000000700")
+    }
+
     func testDigit0() {
         // 5 digits after decimal point
         XCTAssertEqual(inr.formatted(price: 0.1), "₹ 0.10000")

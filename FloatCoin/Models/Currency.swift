@@ -16,23 +16,27 @@ struct Currency {
 
     private func adjustedPrecision(_ num: Double) -> Int {
         // Trailing zeros are taken to keep the window size uniform
-        if num >= 1000 {
-            return 0
-        } else if num >= 100 { // 100-999
-            return 1
-        } else if num >= 10 { // 10-99
-            return 2
-        } else if num >= 1 { // 1-9
-            return 3
+        switch num {
+        case 1000...:          return 0
+        case 100...:           return 1
+        case 10...:            return 2
+        case 1...:             return 3
+        case 0.001...:         return 5
+        case 0.0001...:        return 6
+        case 0.00001...:       return 7
+        case 0.000001...:      return 8
+        case 0.0000001...:     return 9
+        case 0.00000001...:    return 10
+        case 0.000000001...:   return 11
+        case 0.0000000001...:  return 12
+        default: return 13
         }
-        return 5
     }
 
     func formatted(price: Double) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.maximumFractionDigits = self.adjustedPrecision(price)
         currencyFormatter.minimumFractionDigits = self.adjustedPrecision(price)
-
 
         if let locale = Locale(stringValue) {
             currencyFormatter.numberStyle = .currency
