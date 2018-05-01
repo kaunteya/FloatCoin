@@ -42,6 +42,7 @@ class BitfinexAPITests : XCTestCase {
             }.resume()
         wait(for: [expectation], timeout: 10.0)
     }
+
     func printDetails(_ dict: [String: Set<String>]) {
         let sortedKeys = Array(dict.keys).sorted(by: { $0 < $1 })
         print(sortedKeys.map { $0.uppercased()})
@@ -50,7 +51,6 @@ class BitfinexAPITests : XCTestCase {
             print("\"\(a.uppercased())\" : \(vals),")
         }
     }
-
 }
 
 fileprivate extension Set where Element == String {
