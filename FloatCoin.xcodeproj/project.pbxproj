@@ -50,6 +50,7 @@
 		E3DC35DE1FFBD0F000E26B81 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */; };
 		E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */; };
 		E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E31FFCBFA800E26B81 /* PairView.swift */; };
+		E3E6A8102069547B006D96F8 /* CEXAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E6A80F2069547B006D96F8 /* CEXAPITests.swift */; };
 		E3F2F92E20372C01004847A2 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2F92D20372C01004847A2 /* CurrencyTests.swift */; };
 		E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB7D8E1FF145AC00371D5F /* PairVC.swift */; };
 		E3FDADE2200F8F3E00CFC7C6 /* BitfinexAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDADE1200F8F3E00CFC7C6 /* BitfinexAPITests.swift */; };
@@ -114,6 +115,7 @@
 		E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E3DC35E31FFCBFA800E26B81 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
+		E3E6A80F2069547B006D96F8 /* CEXAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEXAPITests.swift; sourceTree = "<group>"; };
 		E3F2F92D20372C01004847A2 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
 		E3FDADE1200F8F3E00CFC7C6 /* BitfinexAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPITests.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				E3FDADE1200F8F3E00CFC7C6 /* BitfinexAPITests.swift */,
+				E3E6A80F2069547B006D96F8 /* CEXAPITests.swift */,
 			);
 			path = "API Tests";
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				E363F61A200E6C02003C0106 /* Bitfinex.swift in Sources */,
 				E363F624200E6E15003C0106 /* Extras.swift in Sources */,
 				E3FDAE01200FB7E500CFC7C6 /* Binance.swift in Sources */,
+				E3E6A8102069547B006D96F8 /* CEXAPITests.swift in Sources */,
 				E363F621200E6DE8003C0106 /* CEX.swift in Sources */,
 				E363F627200F0A0E003C0106 /* Logger.swift in Sources */,
 				E363F61C200E6C18003C0106 /* BitfinexTests.swift in Sources */,
