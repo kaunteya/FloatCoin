@@ -35,6 +35,7 @@ struct CEX: ExchangeProtocol {
         "DASH": ["USD", "EUR", "GBP", "BTC"],
         "XRP": ["USD", "EUR", "BTC"],
         "ZEC": ["USD", "EUR", "GBP", "BTC"],
+        "XLM": ["USD", "EUR", "BTC"],
         "GHS": ["BTC"]
     ]
 
