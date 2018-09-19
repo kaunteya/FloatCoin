@@ -22,7 +22,7 @@ class EmptyStateView: NSView {
     }
 
     func myInit() {
-        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "EmptyState"), owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("EmptyState", owner: self, topLevelObjects: nil)
         self.addSubViewWithConstraints(contentView, top: 2, right: 2, bottom: 2, left: 2)
     }
 }
