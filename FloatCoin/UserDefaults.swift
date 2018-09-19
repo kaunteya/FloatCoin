@@ -71,7 +71,7 @@ extension UserDefaults {
         NotificationCenter.default.post(name: notificationPairDidRemove, object: nil, userInfo: ["exchange" : exchange, "pair":pair])
     }
 
-    class var isExchangleListEmpty: Bool {
+    class var isExchangeListEmpty: Bool {
         if let dict = UserDefaults.standard.dictionary(forKey: keyUserExchange), dict.count > 0 {
             return false
         }

@@ -65,12 +65,12 @@ import Cocoa
 
     // If Exchange list is empty then dont track mouse movements
     override func mouseEntered(with event: NSEvent) {
-        guard !UserDefaults.isExchangleListEmpty else { return; }
+        guard !UserDefaults.isExchangeListEmpty else { return; }
         mouseInside = true
     }
 
     override func mouseExited(with event: NSEvent) {
-        guard !UserDefaults.isExchangleListEmpty else { return; }
+        guard !UserDefaults.isExchangeListEmpty else { return; }
         mouseInside = false
     }
 
@@ -89,7 +89,7 @@ import Cocoa
         }
     }
 
-    func addNew(exchange: Exchange, with pairs: [Pair]) {
+    private func addNew(exchange: Exchange, with pairs: [Pair]) {
         let fontSize = UserDefaults.standard.integer(forKey: UserDefaults.keyFontSize)
         let exchangeView = ExchangeView(exchange: exchange, pairList: pairs.sorted(), fontSize: CGFloat(fontSize))
         self.exchangeStackView.addSortedArrangedSubView(exchangeView)
@@ -139,7 +139,7 @@ extension MainViewController: PairManagerDelegate {
                 exchangeView.removeFromSuperview()
             }
         }
-        if UserDefaults.isExchangleListEmpty {
+        if UserDefaults.isExchangeListEmpty {
             self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
         }
     }
