@@ -16,7 +16,7 @@ class PairVC: NSViewController {
 
     @IBOutlet weak var infoLabel: NSTextField!
     var selectedExchange: Exchange {
-        return Exchange.all[exchangePopupButton.indexOfSelectedItem]
+        return Exchange.allCases[exchangePopupButton.indexOfSelectedItem]
     }
 
     var selectedBase: Currency {
@@ -35,7 +35,7 @@ class PairVC: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Exchange.all.forEach { (ex) in
+        Exchange.allCases.forEach { (ex) in
             exchangePopupButton.addItem(withTitle: ex.description)
         }
         actionExchangeSelected(nil)

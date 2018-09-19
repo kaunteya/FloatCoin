@@ -7,16 +7,8 @@
 //
 
 import Foundation
-enum Exchange: String {
+enum Exchange: String, CaseIterable {
     case binance, bitfinex, cex, coinbase, kraken
-
-    // Whenever new exchange is added to the enum, add it to `all`.
-    // In all make sure that it always stays sorted
-    static var all: [Exchange] {
-        let all:[Exchange] = [.binance, .bitfinex, .cex, .coinbase, .kraken]
-        assert(all == all.sorted(), "List must be sorted")
-        return all
-    }
 
     var description: String {
         switch self {
