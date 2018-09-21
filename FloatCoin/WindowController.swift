@@ -52,21 +52,21 @@ class WindowController: NSWindowController {
 
 extension WindowController: NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
-        Log.info("windowDidBecomeKey")
+//        Log.info("windowDidBecomeKey")
     }
 
     func windowDidResignKey(_ notification: Notification) {
-        Log.info("windowDidResignKey")
+//        Log.info("windowDidResignKey")
     }
 
     func windowDidBecomeMain(_ notification: Notification) {
-        Log.info("windowDidBecomeMain")
+//        Log.info("windowDidBecomeMain")
 
         UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.keyFloatOnTop, options: .new, context: nil)
     }
 
     func windowDidResignMain(_ notification: Notification) {
-        Log.info("windowDidResignMain")
+//        Log.info("windowDidResignMain")
         UserDefaults.standard.removeObserver(self, forKeyPath: UserDefaults.keyFloatOnTop)
 
         /// If window is not pinned(hides on deactivate) it does not close(just hides)
@@ -78,7 +78,7 @@ extension WindowController: NSWindowDelegate {
     }
 
     func windowWillClose(_ notification: Notification) {
-        Log.info("windowDidResignMain")
+//        Log.info("windowDidResignMain")
     }
 }
 

@@ -98,9 +98,13 @@ class ExchangeView: NSView {
         self.addTrackingArea(trackingArea!)
     }
 
+    var highlightColor = NSColor.textBackgroundColor.cgColor
+    override func updateLayer() {
+        highlightColor = NSColor.textBackgroundColor.cgColor
+    }
+
     override func mouseEntered(with event: NSEvent) {
-        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.4 : 1.0
-        self.layer?.backgroundColor = Color.Exchange.backgroundHighlight.withAlphaComponent(alpha).cgColor
+        self.layer?.backgroundColor = highlightColor
     }
 
     override func mouseExited(with event: NSEvent) {
