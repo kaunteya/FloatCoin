@@ -20,10 +20,6 @@ class StatusController: NSObject {
 
         statusItem.button?.action = #selector(StatusController.statusItemClicked(_:))
         statusItem.button?.target = self
-        statusItem.highlightMode = false
-
-        //        defaultIcon.size = NSSize(width: thickness - 3, height: thickness - 3)
-        statusImage.isTemplate = isTemplate
         statusItem.button?.image = statusImage
 
     }
