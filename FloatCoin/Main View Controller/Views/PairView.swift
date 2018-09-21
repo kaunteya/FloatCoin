@@ -66,6 +66,7 @@ class PairView: NSView {
 
         super.init(frame: NSZeroRect)
         self.wantsLayer = true
+        self.layer!.cornerRadius = 2
         self.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
         self.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
 
@@ -78,7 +79,6 @@ class PairView: NSView {
         basePriceLabel.stringValue = " " + pair.a.description
         basePriceLabel.font = NSFont.systemFont(ofSize: fontSize)
         fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
-        updateColors()
     }
     
     override func updateLayer() {
@@ -117,13 +117,6 @@ class PairView: NSView {
 
     required init?(coder decoder: NSCoder) {
         fatalError()
-    }
-}
-
-extension PairView: ColorResponder {
-    func updateColors() {
-        basePriceLabel.textColor = NSColor.secondaryLabelColor
-        self.layer!.cornerRadius = 2
     }
 }
 

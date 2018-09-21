@@ -25,6 +25,7 @@ class ExchangeView: NSView {
         label.alignment = .right
         label.setContentHuggingPriority(NSLayoutConstraint.Priority(rawValue: 999), for: .horizontal)
         label.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(rawValue: 1000), for: .horizontal)
+        label.textColor = NSColor.controlAccentColor
         return label
     }()
 
@@ -51,7 +52,6 @@ class ExchangeView: NSView {
         titleLabel.stringValue = exchange.description
         titleLabel.font = NSFont.systemFont(ofSize: fontSize, weight: .medium)
         pairList.forEach { self.add(pair: $0) }
-        updateColors()
     }
 
     private func createViews() {
@@ -104,18 +104,8 @@ class ExchangeView: NSView {
     }
 
     override func mouseExited(with event: NSEvent) {
-        titleLabel.textColor = Color.Exchange.title
         self.layer?.backgroundColor = nil
         self.layer?.borderWidth = 0
-    }
-}
-
-extension ExchangeView: ColorResponder {
-    func updateColors() {
-        titleLabel.textColor = Color.Exchange.title
-        pairViews.forEach { pair in
-            pair.updateColors()
-        }
     }
 }
 

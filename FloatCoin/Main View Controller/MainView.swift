@@ -13,6 +13,6 @@ class MainView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         self.layer!.backgroundColor = NSColor.windowBackgroundColor.cgColor
-        self.layer!.borderColor = NSColor.labelColor.cgColor
+        self.layer!.borderColor = NSColor.gridColor.cgColor
     }
 }

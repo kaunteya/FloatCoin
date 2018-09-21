@@ -33,7 +33,6 @@ import Cocoa
         super.viewDidLoad()
         loadExchangePairs()
         addTracking()
-        updateColors()
         self.view.layer?.borderWidth = 1
         self.view.layer?.cornerRadius = 4
 
@@ -49,8 +48,8 @@ import Cocoa
             let size = CGFloat(change![.newKey] as! Int)
             exchangeViews.forEach { $0.fontSize = size }
 
-        case UserDefaults.keyIsDark: updateColors()
-        case UserDefaults.keyTranslucent: updateColors()
+//        case UserDefaults.keyIsDark: updateColors()
+//        case UserDefaults.keyTranslucent: updateColors()
 
         default: break
 
@@ -142,16 +141,6 @@ extension MainViewController: PairManagerDelegate {
         if UserDefaults.isExchangeListEmpty {
             self.view.addSubViewWithConstraints(emptyView, top: 0, right: 0, bottom: 0, left: 0)
         }
-    }
-}
-
-extension MainViewController: ColorResponder {
-    func updateColors() {
-//        self.view.layer?.borderColor = Color.Main.borderColor.cgColor
-//        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.6 : 1.0
-        //TODO: How to set alpha?
-
-        exchangeViews.forEach { $0.updateColors() }
     }
 }
 
