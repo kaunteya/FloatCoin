@@ -51,9 +51,9 @@ class PairView: NSView {
             let priceString = pair.b.formatted(price: price!)
             let textColor: NSColor
             if oldValue != nil {
-                textColor = price! < oldValue! ? Color.Pair.Price.down : Color.Pair.Price.up
+                textColor = price! < oldValue! ? .systemRed : .systemGreen
             } else {
-                textColor = Color.Pair.Price.default
+                textColor = .labelColor
             }
             fiatPriceLabel.stringValue = priceString + " "
             fiatPriceLabel.textColor = textColor
@@ -80,7 +80,11 @@ class PairView: NSView {
         fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
         updateColors()
     }
-
+    
+    override func updateLayer() {
+        self.layer!.backgroundColor = NSColor.textBackgroundColor.cgColor
+    }
+    
     func update(fontSize: CGFloat) {
         basePriceLabel.font = NSFont.systemFont(ofSize: fontSize)
         fiatPriceLabel.font = NSFont.systemFont(ofSize: fontSize)
@@ -114,13 +118,11 @@ class PairView: NSView {
     required init?(coder decoder: NSCoder) {
         fatalError()
     }
-
 }
 
 extension PairView: ColorResponder {
     func updateColors() {
-        basePriceLabel.textColor = Color.Pair.baseLabel
-        self.layer!.backgroundColor = Color.Pair.background.cgColor
+        basePriceLabel.textColor = NSColor.secondaryLabelColor
         self.layer!.cornerRadius = 2
     }
 }

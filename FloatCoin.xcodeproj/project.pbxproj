@@ -50,6 +50,7 @@
 		E3DC35DE1FFBD0F000E26B81 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */; };
 		E3DC35E01FFBD21C00E26B81 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */; };
 		E3DC35E41FFCBFA800E26B81 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC35E31FFCBFA800E26B81 /* PairView.swift */; };
+		E3DEB1952154C4410021C8CA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DEB1942154C4410021C8CA /* MainView.swift */; };
 		E3E6A8102069547B006D96F8 /* CEXAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E6A80F2069547B006D96F8 /* CEXAPITests.swift */; };
 		E3F2F92E20372C01004847A2 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2F92D20372C01004847A2 /* CurrencyTests.swift */; };
 		E3FB7D8F1FF145AC00371D5F /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FB7D8E1FF145AC00371D5F /* PairVC.swift */; };
@@ -115,6 +116,7 @@
 		E3DC35DD1FFBD0F000E26B81 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		E3DC35DF1FFBD21C00E26B81 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E3DC35E31FFCBFA800E26B81 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
+		E3DEB1942154C4410021C8CA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E3E6A80F2069547B006D96F8 /* CEXAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEXAPITests.swift; sourceTree = "<group>"; };
 		E3F2F92D20372C01004847A2 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		E3FB7D8E1FF145AC00371D5F /* PairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				E372E7F11F47835500AEB397 /* Main.storyboard */,
 				E372E7ED1F47835400AEB397 /* MainViewController.swift */,
+				E3DEB1942154C4410021C8CA /* MainView.swift */,
 				E339CC091FF0D873009570AF /* RatesController.swift */,
 				E3211CC21FF7855700704CE3 /* PairsManager.swift */,
 				E3211CC81FF7B35A00704CE3 /* Views */,
@@ -298,8 +301,6 @@
 				E363F60A200E24A0003C0106 /* Sources */,
 				E363F60B200E24A0003C0106 /* Frameworks */,
 				E363F60C200E24A0003C0106 /* Resources */,
-				ECD24F77FFE60DDC60510593 /* [CP] Embed Pods Frameworks */,
-				4A5ADD7300A7A68F5A0FA7B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,8 +320,6 @@
 				E372E7E41F47835400AEB397 /* Sources */,
 				E372E7E51F47835400AEB397 /* Frameworks */,
 				E372E7E61F47835400AEB397 /* Resources */,
-				A73C8D70B8C96162B47A9186 /* [CP] Embed Pods Frameworks */,
-				D3573D6FA8A69BD784D8365F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,39 +401,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A5ADD7300A7A68F5A0FA7B6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A73C8D70B8C96162B47A9186 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B3EB148D57424ACE4DF6812A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,39 +417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3573D6FA8A69BD784D8365F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECD24F77FFE60DDC60510593 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71AAE730AD700F8C6239A16 /* [CP] Check Pods Manifest.lock */ = {
@@ -556,6 +489,7 @@
 				E339CC051FF0320D009570AF /* CEX.swift in Sources */,
 				E3A04E762013997500CE62E1 /* Color.swift in Sources */,
 				E339CC031FF0320D009570AF /* Exchange.swift in Sources */,
+				E3DEB1952154C4410021C8CA /* MainView.swift in Sources */,
 				E3389FFD1FF2505D002A0511 /* UserDefaults.swift in Sources */,
 				E3470B7B20091F5F0035BEEF /* FontSizeVC.swift in Sources */,
 				E363F626200E6F74003C0106 /* Logger.swift in Sources */,

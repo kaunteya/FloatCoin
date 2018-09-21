@@ -147,16 +147,11 @@ extension MainViewController: PairManagerDelegate {
 
 extension MainViewController: ColorResponder {
     func updateColors() {
-        self.view.layer?.borderColor = Color.Main.borderColor.cgColor
-        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.6 : 1.0
-        self.view.layer?.backgroundColor = Color.Main.background.withAlphaComponent(alpha).cgColor
+//        self.view.layer?.borderColor = Color.Main.borderColor.cgColor
+//        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.6 : 1.0
+        //TODO: How to set alpha?
 
         exchangeViews.forEach { $0.updateColors() }
-        actionButtonStack.arrangedSubviews.forEach { view in
-            if let button = view as? NSButton {
-                button.setTint(Color.App.buttonTint)
-            }
-        }
     }
 }
 
