@@ -48,11 +48,9 @@ import Cocoa
             let size = CGFloat(change![.newKey] as! Int)
             exchangeViews.forEach { $0.fontSize = size }
 
-//        case UserDefaults.keyIsDark: updateColors()
-//        case UserDefaults.keyTranslucent: updateColors()
+        case UserDefaults.keyTranslucent: view.needsDisplay = true
 
         default: break
-
         }
     }
 

@@ -12,7 +12,8 @@ class MainView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        self.layer!.backgroundColor = NSColor.windowBackgroundColor.cgColor
+        let alpha: CGFloat = UserDefaults.isTranslucent ? 0.6 : 1.0
+        self.layer!.backgroundColor = NSColor.windowBackgroundColor.withAlphaComponent(alpha).cgColor
         self.layer!.borderColor = NSColor.gridColor.cgColor
     }
 }

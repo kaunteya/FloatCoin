@@ -824,12 +824,6 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <menu key="submenu" title="Appearance" id="nrD-qI-kLQ">
                                 <items>
-                                    <menuItem title="Dark Mode" id="aBZ-Q3-b3b">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <binding destination="dSg-ZW-bdM" name="value" keyPath="values.isDarkMode" id="hfD-1O-vTq"/>
-                                        </connections>
-                                    </menuItem>
                                     <menuItem title="Translucent" id="ujn-OQ-y7S">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                         <connections>
