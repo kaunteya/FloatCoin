@@ -29,7 +29,7 @@ class PairView: NSView {
         let button = NSButton(image: #imageLiteral(resourceName: "Options"), target: self, action: #selector(showOptions(_:)))
         button.isHidden = true
         button.bezelStyle = .regularSquare
-        button.isTransparent = true
+
         return button
     }()
 

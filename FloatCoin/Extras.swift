@@ -57,22 +57,3 @@ extension UserDefaults {
         UserDefaults.standard.set(value, forKey: defaultName)
     }
 }
-
-extension NSButton {
-    func setTint(_ color: NSColor) {
-        self.image = self.image!.tinted(color)
-    }
-}
-
-extension NSImage {
-    /// Returns copy of image with tint applied
-    func tinted(_ color: NSColor) -> NSImage {
-        let image = self.copy() as! NSImage
-        image.lockFocus()
-        color.set()
-        let rect = NSRect(origin: .zero, size: image.size)
-        rect.fill(using: .sourceAtop)
-        image.unlockFocus()
-        return image
-    }
-}
