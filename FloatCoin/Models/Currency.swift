@@ -56,9 +56,8 @@ extension Currency: CustomStringConvertible {
 }
 
 extension Currency: Hashable {
-
-    var hashValue: Int {
-       return stringValue.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(stringValue)
     }
 
     static func ==(lhs: Currency, rhs: Currency) -> Bool {

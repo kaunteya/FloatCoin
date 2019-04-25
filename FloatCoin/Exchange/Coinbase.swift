@@ -43,7 +43,7 @@ struct Coinbase: ExchangeProtocol {
             guard data != nil else {
                 Log.error("Data is nil"); return;
             }
-            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any] else {
+            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] else {
                 Log.error("JSON parsing error ")
                 return;
             }

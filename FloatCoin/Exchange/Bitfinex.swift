@@ -137,7 +137,7 @@ struct Bitfinex: ExchangeProtocol {
             guard data != nil else {
                 Log.error("Data is nil"); return;
             }
-            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as! [[Any]] else {
+            guard let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [[Any]] else {
                 let str = String(data: data!, encoding: .utf8)!
                 Log.error("JSON parsing error \(str)")
                 return;

@@ -43,8 +43,9 @@ extension Pair: Hashable {
         return lhs.a == rhs.a && lhs.b == rhs.b
     }
 
-    var hashValue: Int {
-        return (a.stringValue + b.stringValue).hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(a.stringValue)
+        hasher.combine(b.stringValue)
     }
 }
 

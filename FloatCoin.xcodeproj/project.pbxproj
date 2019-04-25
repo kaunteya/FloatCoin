@@ -340,14 +340,14 @@
 					E363F60D200E24A0003C0106 = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = KQQ77ZBE5E;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E372E7E71F47835400AEB397;
 					};
 					E372E7E71F47835400AEB397 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KQQ77ZBE5E;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -362,6 +362,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -535,7 +536,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.FloatCoinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
 			};
 			name = Debug;
@@ -557,7 +558,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.FloatCoinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FloatCoin.app/Contents/MacOS/FloatCoin";
 			};
 			name = Release;
@@ -686,7 +687,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -706,7 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.CryptoBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
