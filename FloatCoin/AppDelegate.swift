@@ -7,6 +7,9 @@
 //
 
 import AppKit
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -26,5 +29,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
             self.windowController.show()
         }
+
+        MSAppCenter.start("ae38a85c-88b1-4c27-ac49-cf28a7897ef6", withServices:[
+            MSAnalytics.self,
+            MSCrashes.self
+            ]
+        )
     }
 }

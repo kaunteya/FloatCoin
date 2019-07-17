@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		48C2B6293B707058447FFFB9 /* Pods_FloatCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */; };
-		642966C3C69A827A777ECC45 /* Pods_FloatCoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */; };
 		E30A546B203199F400BF880A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30A546A203199F400BF880A /* Currency.swift */; };
 		E3211CBD1FF3A94200704CE3 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBC1FF3A94200704CE3 /* Extras.swift */; };
 		E3211CBF1FF63EF600704CE3 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3211CBE1FF63EF600704CE3 /* ExchangeView.swift */; };
@@ -73,10 +72,8 @@
 /* Begin PBXFileReference section */
 		3BBAAD2C59CD5CACE5B32BE9 /* Pods-CryptoBarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C9033F6BE9660D568A796DD /* Pods-CryptoBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.debug.xcconfig"; sourceTree = "<group>"; };
-		582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests.release.xcconfig"; sourceTree = "<group>"; };
 		75E1F1DBF287A0C17A10FD96 /* Pods-CryptoBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBar/Pods-CryptoBar.release.xcconfig"; sourceTree = "<group>"; };
 		7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.release.xcconfig"; sourceTree = "<group>"; };
-		80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFF6424F6CF014CAC627804 /* Pods_CryptoBarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoBarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoBarTests/Pods-CryptoBarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E30A546A203199F400BF880A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -122,7 +119,6 @@
 		E3FDADE4200F914800CFC7C6 /* CEXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEXTests.swift; sourceTree = "<group>"; };
 		E3FDADE6200F93E200CFC7C6 /* CoinbaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseTests.swift; sourceTree = "<group>"; };
 		E3FDADFF200FB7E500CFC7C6 /* Binance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binance.swift; sourceTree = "<group>"; };
-		E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoinTests/Pods-FloatCoinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatCoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloatCoin/Pods-FloatCoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				642966C3C69A827A777ECC45 /* Pods_FloatCoinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +147,6 @@
 			children = (
 				E9189D3CDCBA30B49524E719 /* Pods_FloatCoin.framework */,
 				9CFF6424F6CF014CAC627804 /* Pods_CryptoBarTests.framework */,
-				80B323FFEAF7A9EBAB150C88 /* Pods_FloatCoinTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -281,8 +275,6 @@
 				DF41E950BDC60FEE24B0D4CC /* Pods-CryptoBarTests.release.xcconfig */,
 				F31961C61421365580FBBA0C /* Pods-FloatCoin.debug.xcconfig */,
 				7689009B56590E4D3EF7F41E /* Pods-FloatCoin.release.xcconfig */,
-				E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */,
-				582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -294,7 +286,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E363F615200E24A0003C0106 /* Build configuration list for PBXNativeTarget "FloatCoinTests" */;
 			buildPhases = (
-				B3EB148D57424ACE4DF6812A /* [CP] Check Pods Manifest.lock */,
 				E363F60A200E24A0003C0106 /* Sources */,
 				E363F60B200E24A0003C0106 /* Frameworks */,
 				E363F60C200E24A0003C0106 /* Resources */,
@@ -398,24 +389,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B3EB148D57424ACE4DF6812A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FloatCoinTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F71AAE730AD700F8C6239A16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,7 +493,6 @@
 /* Begin XCBuildConfiguration section */
 		E363F616200E24A0003C0106 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E79802326062FA4A45EB06EA /* Pods-FloatCoinTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -542,7 +514,6 @@
 		};
 		E363F617200E24A0003C0106 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 582453FBC57AAEC49A1770C8 /* Pods-FloatCoinTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

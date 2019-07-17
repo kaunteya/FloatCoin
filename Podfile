@@ -3,9 +3,5 @@
 
 target 'FloatCoin' do
     use_frameworks!
-
-  target 'FloatCoinTests' do
-    inherit! :search_paths
-  end
-
+    pod 'AppCenter'
 end
